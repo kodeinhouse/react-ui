@@ -1,0 +1,19 @@
+{
+  "name": "react-ui",
+  "version": "1.0.0",
+  "description": "React JS components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodeinhouse/react-ui.git"
+  },
+  "author": "Kode in House",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kodeinhouse/react-ui/issues"
+  },
+  "homepage": "https://github.com/kodeinhouse/react-ui#readme"
+}
