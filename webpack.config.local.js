@@ -5,7 +5,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     context: __dirname,
     resolve:  {
-        extensions: ['.js', '.jsx', '.less']
+        extensions: ['.js', '.jsx', '.less'],
+        alias: {
+            
+        }
     },
     entry: [
         './src/export.js'

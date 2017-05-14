@@ -1,0 +1,52 @@
+/* Horizontal Box and Vertical Box */
+.hbox, .vbox
+{
+    display: -webkit-box; /* Safari & Chrome */
+    display: -ms-flexbox; /* Internet Explorer */
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* Vertical Box */
+.vbox
+{
+    -webkit-box-orient: vertical; /* Safari & Chrome */
+    -ms-flex-direction: column; /* Internet Explorer */
+        flex-direction: column;
+}
+
+/*
+ * By default any container that has only one child
+ * and it's set to the center will use all the available space
+ */
+.vbox > .center:only-child,
+.hbox > .center:only-child
+{
+    -webkit-box-flex: 1; /* Safari & Chrome */
+       -moz-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1; /* Internet Explorer */
+                flex: 1;
+}
+
+.vbox > .center:not(only-child),
+.hbox > .center:not(only-child)
+{
+    -webkit-box-flex: 2; /* Safari & Chrome */
+       -moz-box-flex: 2;
+        -webkit-flex: 2;
+            -ms-flex: 2; /* Internet Explorer */
+                flex: 2;
+}
+
+.hbox > .hbox-l,
+.hbox > .hbox-r,
+.hbox > .hbox-c
+{
+    -webkit-box-flex: 1; /* Safari & Chrome */
+       -moz-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1; /* Internet Explorer */
+                flex: 1;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './Container';
+import { Container } from './box/Container';
 
 export class Demo extends Components
 {
