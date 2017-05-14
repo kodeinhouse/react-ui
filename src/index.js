@@ -1,8 +1,8 @@
-class Component
+class Container
 {
 
 }
 
 module.exports = {
-    Component: Component
+    Container: Container
 };

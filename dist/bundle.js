@@ -80,13 +80,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports) {
 
-class Component
+class Container
 {
 
 }
 
 module.exports = {
-    Component: Component
+    Container: Container
 };
 
 
