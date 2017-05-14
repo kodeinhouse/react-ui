@@ -1,8 +1,8 @@
 {
   "name": "react-ui",
   "version": "1.0.0",
-  "description": "React JS components",
-  "main": "index.js",
+  "description": "KIN React Components Library",
+  "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
