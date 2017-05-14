@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kodeinhouse/react-ui/issues"
   },
-  "homepage": "https://github.com/kodeinhouse/react-ui#readme"
+  "homepage": "https://github.com/kodeinhouse/react-ui#readme",
+  "devDependencies": {
+    "webpack": "^2.5.1"
+  }
 }
