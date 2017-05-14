@@ -2,7 +2,7 @@ const resolve = require('path').resolve;
 const webpack = require('webpack');
 
 module.exports = {
-  context: resolve(__dirname, 'src'),
+  context: __dirname,
   resolve:  {
       extensions: ['.js', '.jsx']
   },
@@ -18,14 +18,14 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    './index.js'
+    './dev/index.js'
     // the entry point of our app
   ],
   output: {
     filename: 'bundle.js',
     // the output bundle
 
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, 'dev'),
 
     publicPath: '/'
     // necessary for HMR to know where to load the hot update chunks
@@ -43,7 +43,7 @@ module.exports = {
     disableHostCheck: true,
     // This allows setting the host to 0.0.0.0
 
-    contentBase: resolve(__dirname, 'dist'),
+    contentBase: resolve(__dirname, 'dev'),
     // match the output path
 
     publicPath: '/'

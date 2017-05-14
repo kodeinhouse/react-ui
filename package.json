@@ -4,7 +4,8 @@
   "description": "KIH React Components Library",
   "main": "dist/bundle.js",
   "scripts": {
-      "start": "webpack-dev-server --progress --inline --watch --port 5000"
+      "start": "webpack-dev-server --progress --inline --watch --port 5000",
+      "build": "webpack --config ./webpack.config.prod.js"
   },
   "repository": {
     "type": "git",

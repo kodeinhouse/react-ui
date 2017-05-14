@@ -1,4 +1,4 @@
-import { Container } from './Container.jsx';
+import { Container } from './components/Container.jsx';
 
 module.exports = {
     Container: Container
