@@ -4,8 +4,8 @@
   "description": "KIH React Components Library",
   "main": "dist/bundle.js",
   "scripts": {
-      "start": "webpack-dev-server --progress --inline --watch --port 5000",
-      "build": "webpack --config ./webpack.config.prod.js"
+    "start": "webpack-dev-server --progress --inline --watch --port 5000",
+    "build": "webpack --config ./webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
     "less-loader": "^4.0.3",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1",
