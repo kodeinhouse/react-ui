@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -60,10 +70,10 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1971,26 +1981,23 @@ module.exports = getIteratorFn;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Container_jsx__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_import_less__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_import_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_import_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_import_less__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_import_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__styles_import_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Container__ = __webpack_require__(19);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_1__components_Container__["a"]; });
 
 
+// Export here all the components
 
-
-module.exports = {
-    Container: __WEBPACK_IMPORTED_MODULE_0__components_Container_jsx__["a" /* Container */]
-};
 ;
 
 var _temp = function () {
-    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-        return;
-    }
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
 }();
 
 ;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(38)(module)))
 
 /***/ }),
 /* 19 */
@@ -2024,7 +2031,7 @@ var Container = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                null,
+                { id: this.props.id, className: this.props.className },
                 this.props.children
             );
         }
@@ -4503,36 +4510,6 @@ module.exports = __webpack_require__(26);
 
 /***/ }),
 /* 38 */
-/***/ (function(module, exports) {
-
-module.exports = function(originalModule) {
-	if(!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true,
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(18);
@@ -4540,3 +4517,4 @@ module.exports = __webpack_require__(18);
 
 /***/ })
 /******/ ]);
+});

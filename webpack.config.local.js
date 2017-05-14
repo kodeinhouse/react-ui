@@ -14,10 +14,10 @@ module.exports = {
         filename: 'bundle.js',
         // the output bundle
         libraryTarget: 'umd',
-        
+
         path: resolve(__dirname, 'dist'),
 
-        publicPath: '/dist/'
+        publicPath: '/'
         // necessary for HMR to know where to load the hot update chunks
     },
 

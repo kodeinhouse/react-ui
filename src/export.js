@@ -1,7 +1,4 @@
-import { Container } from './components/Container.jsx';
-
 import '../styles/import.less';
 
-module.exports = {
-    Container: Container
-};
+// Export here all the components
+export { Container } from './components/Container';

@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --watch --port 5000",
+    "watch": "webpack --config ./webpack.config.local.js --watch",
     "build": "webpack --config ./webpack.config.prod.js"
   },
   "repository": {

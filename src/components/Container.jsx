@@ -4,6 +4,6 @@ export class Container extends Component
 {
     render()
     {
-        return <div>{this.props.children}</div>;
+        return <div id={this.props.id} className={this.props.className}>{this.props.children}</div>;
     }
 }
