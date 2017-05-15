@@ -1,0 +1,74 @@
+/* This is the portion of the style that must remain */
+.grid-panel
+{
+    overflow: hidden;
+}
+
+.grid-hd-wrapper,
+.grid-bd-wrapper
+{
+
+}
+
+.grid-hd-wrapper
+{
+    overflow-x: hidden;
+}
+
+.grid-bd-wrapper
+{
+    overflow-y: auto;
+}
+
+.grid-panel.auto
+{
+    .grid-bd-wrapper
+    {
+        overflow-x: auto;
+    }
+}
+
+.grid-panel.fit
+{
+    .grid-bd-wrapper
+    {
+        overflow-x: hidden;
+    }
+}
+
+.grid-header,
+.grid-body
+{
+
+}
+
+.grid-header
+{
+
+}
+
+.grid-body
+{
+
+}
+
+.grid-hd-wrapper
+{
+    /*&::-webkit-scrollbar
+    {
+        display: block;
+    }
+
+	&::-webkit-scrollbar-button
+    {
+        display: none;
+    }*/
+}
+
+.grid-cell-header > .text,
+.grid-cell-body > .text
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

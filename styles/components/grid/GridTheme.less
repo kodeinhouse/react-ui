@@ -1,0 +1,143 @@
+.grid-hd-wrapper
+{
+    min-height: 28px;
+}
+
+.grid-panel.normal
+{
+    .grid-header,
+    .grid-body
+    {
+        width: 100%;
+    }
+}
+
+.grid-panel.auto
+{
+    .grid-header,
+    .grid-body
+    {
+
+    }
+}
+
+.grid-panel.fit
+{
+    .grid-header,
+    .grid-body
+    {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+.grid-header,
+.grid-body
+{
+    border-collapse: collapse;
+}
+
+.grid-header th,
+.grid-body td
+{
+    box-sizing: border-box;
+}
+
+/* Table Header and Table Data need to have the same padding or margin */
+.grid-header th,
+.grid-body td
+{
+    color: #565656;
+    padding: 5px 5px;
+    border: 1px solid lightgray;
+}
+
+.grid-cell-header
+{
+    color: #515967;
+	cursor: pointer;
+	font-weight: normal;
+    background-color: #F5F5F5;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.grid-cell-body
+{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.grid-body > tbody > tr:first-child > td
+{
+    border-top: 0px;
+}
+
+.grid-panel td a,
+.grid-panel td a:visited
+{
+	text-decoration: none;
+}
+
+.grid-body > tbody > tr
+{
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+.grid-body > tbody > tr:first-child
+{
+    border-top: 0px;
+}
+
+.grid-body > tbody > tr {
+	cursor: pointer;
+}
+
+.grid-body > tbody > tr:hover
+{
+    background-color: #F9F9F9;
+}
+
+.grid-body > tbody > tr.x-selected {
+    background-color: #F4F4F4;
+}
+
+.grid-cell-header .arrow
+{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.arrow
+{
+    display: inline-block;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.arrow.down
+{
+    border-top: 4px solid gray;
+}
+
+.arrow.up
+{
+    border-bottom: 4px solid gray;
+}
+
+a:-webkit-any-link
+{
+	color: #565656;
+}

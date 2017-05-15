@@ -8,3 +8,4 @@ export { Link } from './components/nav/Link';
 export { Menu } from './components/nav/Menu';
 export { MenuItem } from './components/nav/MenuItem';
 export { Navigation } from './components/nav/Navigation';
+export { Grid } from './components/other/Grid';
