@@ -2108,7 +2108,7 @@ var Link = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "a",
-                { id: this.props.id, className: "link" },
+                { id: this.props.id, className: "link", href: this.props.path },
                 this.props.children
             );
         }
