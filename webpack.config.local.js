@@ -7,7 +7,7 @@ module.exports = {
     resolve:  {
         extensions: ['.js', '.jsx', '.less'],
         alias: {
-            
+
         }
     },
     entry: [
@@ -43,6 +43,11 @@ module.exports = {
                     }],
                     fallback: 'style-loader'
                 })
+            },
+            {
+              test: /\.png$/,
+              loader: "url-loader",
+              query: { mimetype: "image/png" }
             }
         ]
     },

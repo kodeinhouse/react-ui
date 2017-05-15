@@ -9,3 +9,4 @@ export { Menu } from './components/nav/Menu';
 export { MenuItem } from './components/nav/MenuItem';
 export { Navigation } from './components/nav/Navigation';
 export { Grid } from './components/other/Grid';
+export { SearchField } from './components/form/SearchField';

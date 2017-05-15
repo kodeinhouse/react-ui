@@ -14,7 +14,7 @@ module.exports = {
         filename: 'bundle.js',
         // the output bundle
         libraryTarget: 'umd',
-        
+
         path: resolve(__dirname, 'dist'),
 
         publicPath: '/dist/'
@@ -40,6 +40,11 @@ module.exports = {
                     }],
                     fallback: 'style-loader'
                 })
+            },
+            {
+              test: /\.png$/,
+              loader: "url-loader",
+              query: { mimetype: "image/png" }
             }
         ]
     },

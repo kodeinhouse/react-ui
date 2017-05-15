@@ -189,7 +189,7 @@ ul {
 .grid-body td {
   color: #565656;
   padding: 5px 5px;
-  border: 1px solid lightgray;
+  border: 1px solid #dee1e5;
 }
 .grid-cell-header {
   color: #515967;
@@ -233,8 +233,8 @@ ul {
   text-decoration: none;
 }
 .grid-body > tbody > tr {
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
+  border-top: 1px solid #dee1e5;
+  border-bottom: 1px solid #dee1e5;
 }
 .grid-body > tbody > tr:first-child {
   border-top: 0px;
@@ -265,4 +265,104 @@ ul {
 }
 a:-webkit-any-link {
   color: #565656;
+}
+.form-field {
+  margin-bottom: 10px;
+}
+/* Fields in their normal state will have a gray border and a blue border and shadow on focus */
+.field input,
+.field select,
+.field textarea,
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  outline: none;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  /* Disabled fields will have a gray background and border */
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #89bcf5;
+  box-shadow: 0px 0px 3px #89bcf5;
+}
+.field input:disabled,
+.field select:disabled,
+.field textarea:disabled,
+.form-field input:disabled,
+.form-field select:disabled,
+.form-field textarea:disabled {
+  border-color: lightgray;
+  background-color: #F3F3F3;
+}
+/* Required fields that are valid will be displayed with a blue border */
+.field-required input,
+.field-required select,
+.field-invalid textarea,
+.form-field-required input,
+.form-field-required select,
+.form-field-required textarea {
+  border-color: #89bcf5;
+}
+/* Invalid fields will have the red border even when they are focused */
+.field-invalid input,
+.field-invalid select,
+.field-invalid textarea,
+.form-field-invalid input,
+.form-field-invalid select,
+.form-field-invalid textarea {
+  border-color: #F44336;
+}
+.field-invalid input:focus,
+.field-invalid select:focus,
+.field-invalid textarea:focus,
+.form-field-invalid input:focus,
+.form-field-invalid select:focus,
+.form-field-invalid textarea:focus {
+  border-color: #F44336;
+  box-shadow: 0px 0px 3px #F44336;
+}
+.form-field-value > input[type="checkbox"] {
+  margin: 0px;
+  padding: 0px;
+}
+.form-field-value input[type=date],
+.form-field-value input[type=checkbox] {
+  width: auto;
+}
+.form-field-right input {
+  text-align: right;
+}
+.form-field-left input {
+  text-align: left;
+}
+.form-field-center input {
+  text-align: center;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.field input {
+  width: 100%;
+}
+.form-field-value input,
+.form-field-value select,
+.form-field-value textarea {
+  font-size: 14px;
+}
+.form-type-search input[value=""] {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAATNJREFUOI3tk7FKA1EQRe/sIwmBBBMMghDfbGYjkSU2foCNrUXKpItfYGnhH4hgJXa2foRYxn8QkiCb3oS1UaI7FiqI7sasphG83Zv73rlchgf867eiJGPddbcj1V1VmgIgJR2ZTOa83+8/pg7xmA+FeQ+AeR8y84Zn3TMRWUlFE+a2x9yK8xqNRtGz7kk6oHVPvwns1q31k3wn5vwwM/HJ9ACzNS9QMWNRAABCTh2dpgHmYuYfgNEOjLmeFwioc1Fn3o+7LCKWHF0eDAajJKD5PBiH46BUKtXKS+VOpVi4uQvDe9/3s4V8vuWodjQiMw4nV29tvhZISrLWrmaJ2pFShUinqno5DIKeVKUJirrD0e0BgOek96kkVWnKmnsc1/DHqlVrmx7z0cKAwOvPWSjwb+oFY2hQ/fdYxhgAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+input[type='search']::-webkit-search-cancel-button {
+  margin-top: -1px;
 }
