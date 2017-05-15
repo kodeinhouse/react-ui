@@ -62,9 +62,41 @@ body {
   /* Internet Explorer */
   flex: 1;
 }
+/* Start new classes and try to cover as many scenarios as possible */
+.flex-layout {
+  display: -webkit-box;
+  /* Safari & Chrome */
+  display: -ms-flexbox;
+  /* Internet Explorer */
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+/* This is the most common flex layout we will find */
+.flex-layout > * {
+  -webkit-box-flex: 1;
+  /* Safari & Chrome */
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  /* Internet Explorer */
+  flex: 1;
+}
 ul {
   padding: 0px;
   margin: 0px;
+}
+.ruler {
+  border: 1px solid red;
+  position: relative;
+}
+.ruler::after {
+  content: ' ';
+  border-top: 1px solid black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 49%;
 }
 .align-left {
   text-align: left;
