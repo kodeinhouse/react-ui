@@ -4,6 +4,7 @@ import '../styles/import.less';
 export { Icon } from './components/other/Icon';
 export { Container } from './components/box/Container';
 export { FlexLayout } from './components/box/FlexLayout';
+export { FlowLayout } from './components/box/FlowLayout';
 export { Link } from './components/nav/Link';
 export { Menu } from './components/nav/Menu';
 export { MenuItem } from './components/nav/MenuItem';

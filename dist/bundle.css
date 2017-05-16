@@ -63,7 +63,8 @@ body {
   flex: 1;
 }
 /* Start new classes and try to cover as many scenarios as possible */
-.flex-layout {
+.flex-layout,
+.flow-layout {
   display: -webkit-box;
   /* Safari & Chrome */
   display: -ms-flexbox;
@@ -81,6 +82,16 @@ body {
   -ms-flex: 1;
   /* Internet Explorer */
   flex: 1;
+}
+.flow-wrapper {
+  overflow: hidden;
+}
+.flow-layout {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.flow-layout > * {
+  flex-grow: 1;
 }
 ul {
   padding: 0px;
