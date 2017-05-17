@@ -37,7 +37,7 @@ export class FormField extends Field
             let field = this.props.label ? <div className={labelClass}><label>{this.props.label}:</label></div> : null;
             let value = <div className={valueClass}>{this.createInput(this.props.type)}</div>;
 
-            return (<div className={classes.join(" ")}>
+            return (<div className={classes.join(" ")} style={this.props.style}>
                         {field}
                         {value}
                     </div>);
