@@ -9838,8 +9838,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_8__components_nav_Navigation__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_other_Grid__ = __webpack_require__(89);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_9__components_other_Grid__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_form_SearchField__ = __webpack_require__(201);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchField", function() { return __WEBPACK_IMPORTED_MODULE_10__components_form_SearchField__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_form_Field__ = __webpack_require__(200);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Field", function() { return __WEBPACK_IMPORTED_MODULE_10__components_form_Field__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_form_FormField__ = __webpack_require__(203);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormField", function() { return __WEBPACK_IMPORTED_MODULE_11__components_form_FormField__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_form_SearchField__ = __webpack_require__(201);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchField", function() { return __WEBPACK_IMPORTED_MODULE_12__components_form_SearchField__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_form_DisplayField__ = __webpack_require__(204);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayField", function() { return __WEBPACK_IMPORTED_MODULE_13__components_form_DisplayField__["a"]; });
 
 
 // Export here all the components
@@ -9849,6 +9855,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+
+
+
+// Form Fields
 
 
 
@@ -24251,6 +24262,163 @@ var _temp = function () {
     }
 
     __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlowLayout.jsx');
+}();
+
+;
+
+/***/ }),
+/* 203 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormField; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Field__ = __webpack_require__(200);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+/*
+    @abstract
+*/
+var FormField = function (_Field) {
+    _inherits(FormField, _Field);
+
+    function FormField(props) {
+        _classCallCheck(this, FormField);
+
+        var _this = _possibleConstructorReturn(this, (FormField.__proto__ || Object.getPrototypeOf(FormField)).call(this, props));
+
+        _this.baseClass = 'form-field';
+        return _this;
+    }
+
+    _createClass(FormField, [{
+        key: 'render',
+        value: function render() {
+            if (!this.props.plain) {
+                var classes = [this.baseClass, "form-type-" + this.props.type, this.props.flex ? 'hbox' : ''];
+                var _props = this.props,
+                    className = _props.className,
+                    align = _props.align,
+                    required = _props.required;
+
+
+                if (className && className.length > 0) classes.push(className);
+
+                if (align && align.length > 0) classes.push(this.baseClass + '-' + align);
+
+                if (required === true) classes.push(this.baseClass + '-required');
+
+                if (!this.isValid(this.state.value)) classes.push(this.baseClass + '-' + 'invalid');
+
+                var labelClass = 'form-field-label' + (this.props.flex ? ' hbox-r' : '');
+                var valueClass = 'form-field-value' + (this.props.flex ? ' hbox-l' : '');
+
+                var field = this.props.label ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: labelClass },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'label',
+                        null,
+                        this.props.label,
+                        ':'
+                    )
+                ) : null;
+                var value = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: valueClass },
+                    this.createInput(this.props.type)
+                );
+
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: classes.join(" ") },
+                    field,
+                    value
+                );
+            } else return _get(FormField.prototype.__proto__ || Object.getPrototypeOf(FormField.prototype), 'render', this).call(this);
+        }
+    }]);
+
+    return FormField;
+}(__WEBPACK_IMPORTED_MODULE_1__Field__["a" /* Field */]);
+
+FormField.defaultProps = {
+    flex: true
+};
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormField.jsx');
+}();
+
+;
+
+/***/ }),
+/* 204 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DisplayField; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormField_jsx__ = __webpack_require__(203);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var DisplayField = function (_FormField) {
+    _inherits(DisplayField, _FormField);
+
+    function DisplayField(props) {
+        _classCallCheck(this, DisplayField);
+
+        return _possibleConstructorReturn(this, (DisplayField.__proto__ || Object.getPrototypeOf(DisplayField)).call(this, props));
+    }
+
+    _createClass(DisplayField, [{
+        key: 'createInput',
+        value: function createInput() {
+            return this.props.children;
+        }
+    }]);
+
+    return DisplayField;
+}(__WEBPACK_IMPORTED_MODULE_1__FormField_jsx__["a" /* FormField */]);
+
+DisplayField.defaultProps = {
+    type: 'display'
+};
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayField.jsx');
 }();
 
 ;
