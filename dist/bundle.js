@@ -9915,12 +9915,17 @@ var FlexLayout = function (_Component) {
         key: 'render',
         value: function render() {
             var classes = ['flex-layout'];
+            var style = Object.assign({}, this.props.style || {});
 
             if (this.props.className) classes.push(this.props.className);
 
+            if (this.props.align) style.alignItems = this.props.align;
+
+            if (this.props.justify) style.justifyContent = this.props.justify;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
-                { id: this.props.id, className: classes.join(' ') },
+                { id: this.props.id, className: classes.join(' '), style: style },
                 this.props.children
             );
         }
@@ -24245,6 +24250,10 @@ var FlowLayout = function (_Component) {
             if (this.props.className) classes.push(this.props.className);
 
             if (this.props.margin) style.margin = '-' + this.props.margin;
+
+            if (this.props.align) style.alignItems = this.props.align;
+
+            if (this.props.justify) style.justifyContent = this.props.justify;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],

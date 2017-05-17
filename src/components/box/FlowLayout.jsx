@@ -14,6 +14,12 @@ export class FlowLayout extends Component
         if(this.props.margin)
             style.margin = '-' + this.props.margin;
 
+        if(this.props.align)
+            style.alignItems = this.props.align;
+
+        if(this.props.justify)
+            style.justifyContent = this.props.justify;
+
         return <Container className="flow-wrapper">
                     <Container id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</Container>
                 </Container>;
