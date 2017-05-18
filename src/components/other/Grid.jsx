@@ -272,9 +272,11 @@ export class Grid extends Panel
     {
         let key = "th-" + row + "-" + index;
         let colSpan = column.items ? column.items.length: column.colSpan;
+        let align = column.align;
 
         return <TableColumnHeader   key={key}
                                     index={index}
+                                    align={align}
                                     colSpan={colSpan}
                                     sort={column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null}
                                     onClick={this.onHeaderClick}>{content}</TableColumnHeader>;

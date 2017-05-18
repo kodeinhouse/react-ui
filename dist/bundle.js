@@ -10479,11 +10479,13 @@ var Grid = function (_Panel) {
         value: function getHeader(column, row, index, content, width) {
             var key = "th-" + row + "-" + index;
             var colSpan = column.items ? column.items.length : column.colSpan;
+            var align = column.align;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 TableColumnHeader,
                 { key: key,
                     index: index,
+                    align: align,
                     colSpan: colSpan,
                     sort: column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null,
                     onClick: this.onHeaderClick },
