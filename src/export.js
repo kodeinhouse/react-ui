@@ -2,20 +2,26 @@ import '../styles/import.less';
 
 // Export here all the components
 export { Icon } from './components/other/Icon';
-export { FlexLayout } from './components/box/FlexLayout';
-export { FlowLayout } from './components/box/FlowLayout';
+
+// Other
+export { Text } from './components/other/Text';
+
+// Navigation
 export { Link } from './components/nav/Link';
 export { Menu } from './components/nav/Menu';
 export { MenuItem } from './components/nav/MenuItem';
+export { Breadcrumb } from './components/other/Breadcrumb';
 
 // Form Fields
 export { Field } from './components/form/Field';
 export { FormField } from './components/form/FormField';
 export { SearchField } from './components/form/SearchField';
 export { DisplayField } from './components/form/DisplayField';
+export { DisplayText } from './components/form/DisplayText';
 
-// Navigation
-export { Breadcrumb } from './components/other/Breadcrumb';
+// Layout
+export { FlexLayout } from './components/box/FlexLayout';
+export { FlowLayout } from './components/box/FlowLayout';
 
 // Panels
 export { Container } from './components/box/Container';
