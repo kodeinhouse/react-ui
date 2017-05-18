@@ -14,6 +14,9 @@ export { FormField } from './components/form/FormField';
 export { SearchField } from './components/form/SearchField';
 export { DisplayField } from './components/form/DisplayField';
 
+// Navigation
+export { Breadcrumb } from './components/other/Breadcrumb';
+
 // Panels
 export { Container } from './components/box/Container';
 export { Navigation } from './components/nav/Navigation';
