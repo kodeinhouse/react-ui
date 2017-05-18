@@ -130,6 +130,9 @@ ul {
 .scroll {
   overflow: auto;
 }
+.underline {
+  text-decoration: underline;
+}
 .tab-stripe {
   padding: 0;
   margin: 0;
@@ -162,6 +165,10 @@ ul {
 }
 .link {
   cursor: pointer;
+  text-decoration: none;
+}
+.link.underline {
+  text-decoration: underline;
 }
 /* This is the portion of the style that must remain */
 .grid-panel {
@@ -259,10 +266,6 @@ ul {
 }
 .grid-body > tbody > tr:first-child > td {
   border-top: 0px;
-}
-.grid-panel td a,
-.grid-panel td a:visited {
-  text-decoration: none;
 }
 .grid-body > tbody > tr {
   border-top: 1px solid #dee1e5;

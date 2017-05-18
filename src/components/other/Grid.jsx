@@ -151,6 +151,7 @@ export class Grid extends Panel
             self.setColumnsWidth(bodyCells);
 
             bodyCells.forEach(function(column, index){
+
                 columnConfig = self.props.columns[index];
                 minWidth = columnConfig.minWidth || 50;
                 columnWidth = column.getBoundingClientRect().width;

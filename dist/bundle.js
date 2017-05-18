@@ -9971,18 +9971,49 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Link = function (_Component) {
     _inherits(Link, _Component);
 
-    function Link() {
+    function Link(props) {
         _classCallCheck(this, Link);
 
-        return _possibleConstructorReturn(this, (Link.__proto__ || Object.getPrototypeOf(Link)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Link.__proto__ || Object.getPrototypeOf(Link)).call(this, props));
+
+        _this.state = {
+            classes: ['link']
+        };
+
+        _this.onMouseEnter = _this.onMouseEnter.bind(_this);
+        _this.onMouseLeave = _this.onMouseLeave.bind(_this);
+        return _this;
     }
 
     _createClass(Link, [{
-        key: "render",
+        key: 'onMouseEnter',
+        value: function onMouseEnter(event) {
+            if (this.props.onHoverClass) this.setState({ classes: this.state.classes.concat(this.props.onHoverClass) });
+        }
+    }, {
+        key: 'onMouseLeave',
+        value: function onMouseLeave(event) {
+            var _this2 = this;
+
+            if (this.props.onHoverClass) this.setState({ classes: this.state.classes.filter(function (c) {
+                    return c != _this2.props.onHoverClass;
+                }) });
+        }
+    }, {
+        key: 'render',
         value: function render() {
+            var classes = this.state.classes;
+
+            if (this.props.className) classes.push(this.props.className);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "a",
-                { id: this.props.id, className: "link", href: this.props.path, onClick: this.props.onClick },
+                'a',
+                { id: this.props.id,
+                    className: classes.join(' '),
+                    href: this.props.path,
+                    onClick: this.props.onClick,
+                    onMouseEnter: this.onMouseEnter,
+                    onMouseLeave: this.onMouseLeave },
                 this.props.children
             );
         }
@@ -9997,7 +10028,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Link, "Link", "/Users/brittongr/Development/packages/react-ui/src/components/nav/Link.jsx");
+    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Link.jsx');
 }();
 
 ;
@@ -10338,6 +10369,7 @@ var Grid = function (_Panel) {
                 self.setColumnsWidth(bodyCells);
 
                 bodyCells.forEach(function (column, index) {
+
                     columnConfig = self.props.columns[index];
                     minWidth = columnConfig.minWidth || 50;
                     columnWidth = column.getBoundingClientRect().width;
