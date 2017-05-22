@@ -26,6 +26,8 @@ export { FlowLayout } from './components/box/FlowLayout';
 
 // Panels
 export { Container } from './components/box/Container';
+export { Dialog } from './components/other/Dialog';
+
 export { Toolbar } from './components/other/Toolbar';
 export { Navigation } from './components/nav/Navigation';
 export { TabPanel } from './components/other/TabPanel';

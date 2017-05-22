@@ -29,6 +29,6 @@ export class Button extends Component
             if(this.props.background)
                 classes.push(this.props.background);
 
-        return <button id={this.props.id} className={classes.join(' ')}>{this.props.children}</button>;
+        return <button id={this.props.id} className={classes.join(' ')} onClick={this.props.onClick}>{this.props.children}</button>;
     }
 }

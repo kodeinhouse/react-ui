@@ -157,6 +157,79 @@ ul {
   padding: 5px;
   border: 1px solid lightgray;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.dialog {
+  z-index: 1;
+  margin: auto;
+  background-color: #FFFFFF;
+  border: 1px solid #ECECEC;
+}
+.dialog-header {
+  padding: 10px;
+  font-weight: bold;
+  height: 36px;
+  border-bottom: 1px solid #ECECEC;
+}
+.dialog-body {
+  padding: 10px;
+}
+.dialog-footer {
+  height: 36px;
+  padding: 10px;
+  border-top: 1px solid #ECECEC;
+}
+/* Animation */
+.dialog-enter {
+  opacity: 0.01;
+}
+.dialog-enter .dialog {
+  transform: scale(0.3);
+}
+.dialog-enter.dialog-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+.dialog-enter.dialog-enter-active .dialog {
+  transform: scale(1);
+  transition: transform 700ms ease-in-out;
+}
+.dialog-appear {
+  opacity: 0.01;
+}
+.dialog-appear .dialog {
+  transform: scale(0.01);
+}
+.dialog-appear.dialog-appear-active {
+  opacity: 1;
+  transition: opacity 800ms ease-in;
+}
+.dialog-appear.dialog-appear-active .dialog {
+  transform: scale(1);
+  transition: transform 1500ms ease-in;
+}
+.dialog-leave {
+  opacity: 1;
+}
+.dialog-leave .dialog {
+  transform: scale(1);
+}
+.dialog-leave.dialog-leave-active {
+  opacity: 0.01;
+  transition: opacity 700ms ease-in;
+}
+.dialog-leave.dialog-leave-active .dialog {
+  transform: scale(0.3);
+  transition: transform 700ms ease-in;
+}
 .menu .link {
   color: inherit;
   display: block;

@@ -45,7 +45,7 @@ export class Panel extends Container
             style.width =this.props.width + 'px';
 
         return (
-            <div id={this.props.id} className={this.className} onClick={this.props.onClick} style={style}>
+            <div id={this.props.id} className={this.props.className} onClick={this.props.onClick} style={style}>
                 {header}
                 {body}
                 {footer}
