@@ -121,6 +121,12 @@ ul {
 .align-right {
   text-align: right;
 }
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
 .align-top {
   vertical-align: top;
 }
@@ -183,8 +189,7 @@ ul {
   padding: 10px;
 }
 .dialog-footer {
-  height: 36px;
-  padding: 10px;
+  padding: 5px 10px;
   border-top: 1px solid #ECECEC;
 }
 /* Animation */
@@ -224,11 +229,11 @@ ul {
 }
 .dialog-leave.dialog-leave-active {
   opacity: 0.01;
-  transition: opacity 700ms ease-in;
+  transition: opacity 500ms ease-in;
 }
 .dialog-leave.dialog-leave-active .dialog {
   transform: scale(0.3);
-  transition: transform 700ms ease-in;
+  transition: transform 500ms ease-in;
 }
 .menu .link {
   color: inherit;
@@ -391,8 +396,8 @@ a:-webkit-any-link {
   outline: none;
   padding-left: 2px;
   padding-right: 2px;
-  border: 1px solid lightgray;
-  border-radius: 2px;
+  border: 1px solid #E3E3E3;
+  border-radius: 3px;
   /* Disabled fields will have a gray background and border */
 }
 .field input:focus,

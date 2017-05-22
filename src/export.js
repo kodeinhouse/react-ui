@@ -16,9 +16,11 @@ export { Breadcrumb } from './components/other/Breadcrumb';
 // Form Fields
 export { Field } from './components/form/Field';
 export { FormField } from './components/form/FormField';
+export { TextField } from './components/form/TextField';
 export { SearchField } from './components/form/SearchField';
 export { DisplayField } from './components/form/DisplayField';
 export { DisplayText } from './components/form/DisplayText';
+export { FormPanel } from './components/form/FormPanel';
 
 // Layout
 export { FlexLayout } from './components/box/FlexLayout';

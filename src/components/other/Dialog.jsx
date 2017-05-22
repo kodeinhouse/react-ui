@@ -52,9 +52,9 @@ export class DialogComponent extends Component
         function createButton(item)
         {
             if(item.key == 'close')
-                return (<Button id={"dialog-" + item.key} key={item.key} text={item.text} onClick={this.close.bind(this)} />);
+                return (<Button key={item.key} onClick={this.close.bind(this)}>{item.text}</Button>);
             else
-                return (<Button id={"dialog-" + item.key} key={item.key} text={item.text} onClick={item.handler} />);
+                return (<Button key={item.key} onClick={item.handler}>{item.text}</Button>);
         }
 
         let buttons = [];
@@ -73,6 +73,10 @@ export class DialogComponent extends Component
 
         return (
             <CSSTransitionGroup
+                component="div"
+                transitionEnterTimeout={1000}
+                transitionAppearTimeout={800}
+                transitionLeaveTimeout={700}
                 transitionName="dialog"
                 transitionAppear={true}
                 transitionEnter={true}
@@ -125,5 +129,17 @@ export class Dialog extends DialogComponent
     onClose()
     {
 
+    }
+}
+
+export class DialogFooter extends Component
+{
+    render()
+    {
+        return (
+            <div className="footer">
+                {this.props.children}
+            </div>
+        );
     }
 }

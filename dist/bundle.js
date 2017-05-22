@@ -9844,30 +9844,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Field", function() { return __WEBPACK_IMPORTED_MODULE_8__components_form_Field__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_form_FormField__ = __webpack_require__(203);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormField", function() { return __WEBPACK_IMPORTED_MODULE_9__components_form_FormField__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_form_SearchField__ = __webpack_require__(201);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchField", function() { return __WEBPACK_IMPORTED_MODULE_10__components_form_SearchField__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_form_DisplayField__ = __webpack_require__(204);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayField", function() { return __WEBPACK_IMPORTED_MODULE_11__components_form_DisplayField__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_form_DisplayText__ = __webpack_require__(209);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayText", function() { return __WEBPACK_IMPORTED_MODULE_12__components_form_DisplayText__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_box_FlexLayout__ = __webpack_require__(84);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlexLayout", function() { return __WEBPACK_IMPORTED_MODULE_13__components_box_FlexLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_box_FlowLayout__ = __webpack_require__(202);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlowLayout", function() { return __WEBPACK_IMPORTED_MODULE_14__components_box_FlowLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_box_Container__ = __webpack_require__(33);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_15__components_box_Container__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_other_Dialog__ = __webpack_require__(212);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dialog", function() { return __WEBPACK_IMPORTED_MODULE_16__components_other_Dialog__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_other_Toolbar__ = __webpack_require__(211);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return __WEBPACK_IMPORTED_MODULE_17__components_other_Toolbar__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_nav_Navigation__ = __webpack_require__(88);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_18__components_nav_Navigation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_other_TabPanel__ = __webpack_require__(206);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_19__components_other_TabPanel__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_other_TabItem__ = __webpack_require__(205);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_20__components_other_TabItem__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_other_Grid__ = __webpack_require__(89);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_21__components_other_Grid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_form_TextField__ = __webpack_require__(229);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TextField", function() { return __WEBPACK_IMPORTED_MODULE_10__components_form_TextField__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_form_SearchField__ = __webpack_require__(201);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SearchField", function() { return __WEBPACK_IMPORTED_MODULE_11__components_form_SearchField__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_form_DisplayField__ = __webpack_require__(204);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayField", function() { return __WEBPACK_IMPORTED_MODULE_12__components_form_DisplayField__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_form_DisplayText__ = __webpack_require__(209);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayText", function() { return __WEBPACK_IMPORTED_MODULE_13__components_form_DisplayText__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_form_FormPanel__ = __webpack_require__(230);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormPanel", function() { return __WEBPACK_IMPORTED_MODULE_14__components_form_FormPanel__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_box_FlexLayout__ = __webpack_require__(84);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlexLayout", function() { return __WEBPACK_IMPORTED_MODULE_15__components_box_FlexLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_box_FlowLayout__ = __webpack_require__(202);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlowLayout", function() { return __WEBPACK_IMPORTED_MODULE_16__components_box_FlowLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_box_Container__ = __webpack_require__(33);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_17__components_box_Container__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_other_Dialog__ = __webpack_require__(212);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dialog", function() { return __WEBPACK_IMPORTED_MODULE_18__components_other_Dialog__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_other_Toolbar__ = __webpack_require__(211);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return __WEBPACK_IMPORTED_MODULE_19__components_other_Toolbar__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_nav_Navigation__ = __webpack_require__(88);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_20__components_nav_Navigation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_other_TabPanel__ = __webpack_require__(206);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_21__components_other_TabPanel__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_other_TabItem__ = __webpack_require__(205);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_22__components_other_TabItem__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_other_Grid__ = __webpack_require__(89);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_23__components_other_Grid__["a"]; });
 
 
 // Export here all the components
@@ -9884,6 +9888,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Form Fields
+
+
 
 
 
@@ -24968,6 +24974,7 @@ var _temp = function () {
 "use strict";
 /* unused harmony export DialogComponent */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Dialog; });
+/* unused harmony export DialogFooter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Button__ = __webpack_require__(210);
@@ -25044,7 +25051,15 @@ var DialogComponent = function (_Component) {
             var footer = null;
 
             function createButton(item) {
-                if (item.key == 'close') return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Button__["a" /* Button */], { id: "dialog-" + item.key, key: item.key, text: item.text, onClick: this.close.bind(this) });else return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Button__["a" /* Button */], { id: "dialog-" + item.key, key: item.key, text: item.text, onClick: item.handler });
+                if (item.key == 'close') return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1__Button__["a" /* Button */],
+                    { key: item.key, onClick: this.close.bind(this) },
+                    item.text
+                );else return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1__Button__["a" /* Button */],
+                    { key: item.key, onClick: item.handler },
+                    item.text
+                );
             }
 
             var buttons = [];
@@ -25069,6 +25084,10 @@ var DialogComponent = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup___default.a,
                 {
+                    component: 'div',
+                    transitionEnterTimeout: 1000,
+                    transitionAppearTimeout: 800,
+                    transitionLeaveTimeout: 700,
                     transitionName: 'dialog',
                     transitionAppear: true,
                     transitionEnter: true,
@@ -25134,6 +25153,29 @@ var Dialog = function (_DialogComponent) {
 
     return Dialog;
 }(DialogComponent);
+
+var DialogFooter = function (_Component2) {
+    _inherits(DialogFooter, _Component2);
+
+    function DialogFooter() {
+        _classCallCheck(this, DialogFooter);
+
+        return _possibleConstructorReturn(this, (DialogFooter.__proto__ || Object.getPrototypeOf(DialogFooter)).apply(this, arguments));
+    }
+
+    _createClass(DialogFooter, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'footer' },
+                this.props.children
+            );
+        }
+    }]);
+
+    return DialogFooter;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 ;
 
 var _temp = function () {
@@ -25144,6 +25186,8 @@ var _temp = function () {
     __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
     __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+
+    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 }();
 
 ;
@@ -26398,6 +26442,153 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 229 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TextField; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__FormField_jsx__ = __webpack_require__(203);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var TextField = function (_FormField) {
+    _inherits(TextField, _FormField);
+
+    function TextField(props) {
+        _classCallCheck(this, TextField);
+
+        return _possibleConstructorReturn(this, (TextField.__proto__ || Object.getPrototypeOf(TextField)).call(this, props));
+    }
+
+    return TextField;
+}(__WEBPACK_IMPORTED_MODULE_1__FormField_jsx__["a" /* FormField */]);
+
+TextField.defaultProps = {
+    type: 'text'
+};
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/components/form/TextField.jsx');
+}();
+
+;
+
+/***/ }),
+/* 230 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormPanel; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__other_Panel_jsx__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Field_jsx__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FormField__ = __webpack_require__(203);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var FormPanel = function (_Panel) {
+    _inherits(FormPanel, _Panel);
+
+    function FormPanel(props) {
+        _classCallCheck(this, FormPanel);
+
+        var _this = _possibleConstructorReturn(this, (FormPanel.__proto__ || Object.getPrototypeOf(FormPanel)).call(this, props));
+
+        _this.bodyCls = 'x-form-body vbox';
+
+        _this.isValid = _this.isValid.bind(_this);
+        return _this;
+    }
+
+    _createClass(FormPanel, [{
+        key: 'isValid',
+        value: function isValid(refs) {
+            var fields = this.getFields();
+
+            for (var i = 0; i < fields.length; i++) {
+                if (fields[i].ref != null) {
+                    var component = refs[fields[i].ref];
+
+                    if (this.props.debug) console.log(fields[i].ref + ': ' + component.isValid());
+
+                    if (!component.isValid()) return false;
+                }
+            }
+
+            return true;
+        }
+    }, {
+        key: 'getFields',
+        value: function getFields() {
+            var types = ['text', 'checkbox', 'note', 'dropdown', 'display'];
+
+            return this.getComponents(this);
+        }
+    }, {
+        key: 'getComponents',
+        value: function getComponents(component) {
+            var components = [];
+
+            if (component.type != null && component.type.prototype instanceof __WEBPACK_IMPORTED_MODULE_2__Field_jsx__["a" /* Field */]) return component;else if (component.props != null && component.props.children) {
+                var children = component.props.children;
+
+                if (component.props.children.map) {
+                    var self = this;
+
+                    children.map(function (item) {
+                        if (item != null) components = components.concat(self.getComponents(item));
+                    });
+
+                    return components;
+                } else return this.getComponents(children);
+            } else return components;
+        }
+    }]);
+
+    return FormPanel;
+}(__WEBPACK_IMPORTED_MODULE_1__other_Panel_jsx__["a" /* Panel */]);
+
+FormPanel.defaultProps = {
+    type: 'form-panel',
+    debug: false
+};
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormPanel.jsx');
+}();
+
+;
 
 /***/ })
 /******/ ]);
