@@ -25087,7 +25087,7 @@ var DialogComponent = function (_Component) {
                     component: 'div',
                     transitionEnterTimeout: 1000,
                     transitionAppearTimeout: 800,
-                    transitionLeaveTimeout: 700,
+                    transitionLeaveTimeout: 500,
                     transitionName: 'dialog',
                     transitionAppear: true,
                     transitionEnter: true,

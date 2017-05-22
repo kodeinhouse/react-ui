@@ -178,6 +178,7 @@ ul {
   margin: auto;
   background-color: #FFFFFF;
   border: 1px solid #ECECEC;
+  border-radius: 2px;
 }
 .dialog-header {
   padding: 10px;
@@ -229,11 +230,11 @@ ul {
 }
 .dialog-leave.dialog-leave-active {
   opacity: 0.01;
-  transition: opacity 500ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 .dialog-leave.dialog-leave-active .dialog {
   transform: scale(0.3);
-  transition: transform 500ms ease-in;
+  transition: transform 600ms ease-in;
 }
 .menu .link {
   color: inherit;
