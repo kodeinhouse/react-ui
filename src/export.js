@@ -5,6 +5,7 @@ export { Icon } from './components/other/Icon';
 
 // Other
 export { Text } from './components/other/Text';
+export { Button } from './components/other/Button';
 
 // Navigation
 export { Link } from './components/nav/Link';
@@ -25,6 +26,7 @@ export { FlowLayout } from './components/box/FlowLayout';
 
 // Panels
 export { Container } from './components/box/Container';
+export { Toolbar } from './components/other/Toolbar';
 export { Navigation } from './components/nav/Navigation';
 export { TabPanel } from './components/other/TabPanel';
 export { TabItem } from './components/other/TabItem';

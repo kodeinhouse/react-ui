@@ -74,7 +74,7 @@ body {
   display: flex;
 }
 /* This is the most common flex layout we will find */
-.flex-layout > * {
+.flex-layout.auto > * {
   -webkit-box-flex: 1;
   /* Safari & Chrome */
   -moz-box-flex: 1;
@@ -92,6 +92,9 @@ body {
 }
 .flow-layout > * {
   flex-grow: 1;
+}
+.flex-layout.none > * {
+  flex: none;
 }
 ul {
   padding: 0px;

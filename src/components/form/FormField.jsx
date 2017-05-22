@@ -46,7 +46,3 @@ export class FormField extends Field
             return super.render();
     }
 }
-
-FormField.defaultProps = {
-    flex: true
-};
