@@ -35,7 +35,6 @@ export class Grid extends Panel
         {
             let sort = null;
 
-
             if(config.dataIndex == this.state.sortField)
                 sort = new Sort(config.dataIndex, this.state.sortOrder).toggle();
             else
@@ -47,7 +46,7 @@ export class Grid extends Panel
 
    componentWillReceiveProps(nextProps)
    {
-      this.setState({sortField: nextProps.column, sortOrder: nextProps.order});
+      this.setState({sortField: nextProps.column, sortOrder: nextProps.order, records: nextProps.records});
    }
 
     setSort(column, order)

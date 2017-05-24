@@ -69,7 +69,6 @@ export class DialogComponent extends Component
     render()
     {
         let display = this.state.opened ? '' : 'none';
-        let height = this.state.opened ? '100%' : '0px';
 
         return (
             <CSSTransitionGroup
@@ -81,16 +80,15 @@ export class DialogComponent extends Component
                 transitionAppear={true}
                 transitionEnter={true}
                 transitionLeave={true}>
-
-                    {
-                        this.state.opened ?
-                            <div key={"my-overlay"} className="overlay" onClick={this.onHide} style={{display: display}}>
-                            <DialogPanel id={this.props.id} title={this.props.title} footer={this.getFooter()} className={this.props.className} style={{display: display}}>
-                                {this.props.children}
-                            </DialogPanel>
-                            </div>
-                            : null
-                    }
+                {
+                    this.state.opened ?
+                        <div key={"my-overlay"} className="overlay" onClick={this.onHide}>
+                        <DialogPanel id={this.props.id} title={this.props.title} footer={this.getFooter()} className={this.props.className} style={{display: display}}>
+                            {this.props.children}
+                        </DialogPanel>
+                        </div>
+                        : null
+                }
             </CSSTransitionGroup>
         );
     }
