@@ -19,22 +19,27 @@ export class Field extends Component
         this.onBlur = this.onBlur.bind(this);
         this.onFocus = this.onFocus.bind(this);
     }
+
     componentWillReceiveProps(props)
     {
         this.setState({value: this.processValue(props.value ? props.value : '')});
     }
+
     processValue(value)
     {
         return value;
     }
+
     onFocus(event)
     {
 
     }
+
     onBlur(event)
     {
 
     }
+
     addClass(className)
     {
         let node = ReactDOM.findDOMNode(this);
@@ -42,39 +47,48 @@ export class Field extends Component
         if(!node.classList.contains(className))
             node.classList.add(className);
     }
+
     removeClass(className)
     {
         let node = ReactDOM.findDOMNode(this);
         node.classList.remove(className);
     }
+
     getInput(node)
     {
         return node.querySelector("input");
     }
+
     getDOMValue(input)
     {
         return input.value;
     }
+
     setDOMValue(value)
     {
-        this.setState({value: value});
+        // TODO: Review this assigment, not sure if the could have a side effect
+        this.setState({value: (this.state.value = value)});
     }
+
     getValue()
     {
         return this.getDOMValue(this.getInput(ReactDOM.findDOMNode(this)));
     }
+
     setValue(value)
     {
         this.setDOMValue(value);
     }
+
     onChange(event) {
         let value = this.getDOMValue(event.target);
 
         this.setDOMValue(value);
 
         if(this.props.onChange)
-            this.props.onChange(value);
+            this.props.onChange(this, value);
     }
+
     onKeyPress(event)
     {
         if(this.props.onKeyPress)
@@ -87,8 +101,9 @@ export class Field extends Component
       */
     isNonEmpty(value)
     {
-        return value != null && value.toString().trim() != '';
+        return value != null && value.toString().tri
     }
+
     isValid(value)
     {
         value = arguments.length > 0 ? value : this.state.value;
@@ -103,11 +118,13 @@ export class Field extends Component
 
         return isValid;
     }
+
     checkValue()
     {
         // Override in subclasses if it's necessary
         return true;
     }
+
     createInput(type, align)
     {
         let classes = [];
@@ -130,6 +147,7 @@ export class Field extends Component
             disabled={this.props.disabled}
             autoFocus= {this.props.autoFocus} />);
     }
+    
     render()
     {
         let classes = [this.baseClass];

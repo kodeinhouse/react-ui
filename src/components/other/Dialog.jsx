@@ -33,7 +33,7 @@ export class DialogComponent extends Component
     onClose(event)
     {
         this.setState({opened: false});
-
+        
         if(this.props.onClose)
             this.props.onClose(event);
     }
@@ -43,6 +43,7 @@ export class DialogComponent extends Component
     }
     close(event)
     {
+        console.log('close');
         this.onClose(event);
     }
     getFooter()
@@ -119,14 +120,6 @@ export class Dialog extends DialogComponent
             this.onClose = callback;
 
         this.setState({opened: false}, this.onClose);
-    }
-    onOpen()
-    {
-
-    }
-    onClose()
-    {
-
     }
 }
 
