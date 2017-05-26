@@ -101,7 +101,7 @@ export class Field extends Component
       */
     isNonEmpty(value)
     {
-        return value != null && value.toString().tri
+        return value != null && value.toString().trim();
     }
 
     isValid(value)
@@ -147,7 +147,7 @@ export class Field extends Component
             disabled={this.props.disabled}
             autoFocus= {this.props.autoFocus} />);
     }
-    
+
     render()
     {
         let classes = [this.baseClass];

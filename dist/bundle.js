@@ -3653,7 +3653,7 @@ var Field = function (_Component) {
     }, {
         key: 'isNonEmpty',
         value: function isNonEmpty(value) {
-            return value != null && value.toString().tri;
+            return value != null && value.toString().trim();
         }
     }, {
         key: 'isValid',
