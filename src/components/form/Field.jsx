@@ -22,7 +22,7 @@ export class Field extends Component
 
     componentWillReceiveProps(props)
     {
-        this.setState({value: this.processValue(props.value ? props.value : '')});
+        this.setDOMValue(this.processValue(props.value ? props.value : ''));
     }
 
     processValue(value)

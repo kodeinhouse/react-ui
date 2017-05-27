@@ -17,9 +17,11 @@ export { Breadcrumb } from './components/other/Breadcrumb';
 export { Field } from './components/form/Field';
 export { FormField } from './components/form/FormField';
 export { TextField } from './components/form/TextField';
+export { NumberField } from './components/form/NumberField';
 export { SearchField } from './components/form/SearchField';
 export { DisplayField } from './components/form/DisplayField';
 export { DisplayText } from './components/form/DisplayText';
+export { RadioButton } from './components/form/RadioButton';
 export { FormPanel } from './components/form/FormPanel';
 
 // Layout
