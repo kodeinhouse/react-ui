@@ -12576,6 +12576,8 @@ var Grid = function (_Panel) {
 
             if (this.props.className) classes.push(this.props.className);
 
+            if (this.props.loading) classes.push('mask');
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__["a" /* VerticalLayout */],
                 { id: this.props.id, className: classes.join(' '), style: this.props.style },

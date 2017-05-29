@@ -206,6 +206,7 @@ export class Grid extends Panel
                 column.style.minWidth = null;
 
             if(columnConfig.maxWidth)
+
                 column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);
             else
                 column.style.maxWidth = null;
@@ -408,6 +409,9 @@ export class Grid extends Panel
 
         if(this.props.className)
             classes.push(this.props.className);
+
+        if(this.props.loading)
+            classes.push('mask');
 
         return (
             <VerticalLayout id={this.props.id} className={classes.join(' ')} style={this.props.style}>
