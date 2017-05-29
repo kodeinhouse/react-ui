@@ -25,8 +25,12 @@ export { RadioButton } from './components/form/RadioButton';
 export { FormPanel } from './components/form/FormPanel';
 
 // Layout
+export { FitLayout } from './components/box/FitLayout';
 export { FlexLayout } from './components/box/FlexLayout';
 export { FlowLayout } from './components/box/FlowLayout';
+export { BorderLayout } from './components/box/BorderLayout';
+export { VerticalLayout } from './components/box/VerticalLayout';
+export { HorizontalLayout } from './components/box/HorizontalLayout';
 
 // Panels
 export { Container } from './components/box/Container';

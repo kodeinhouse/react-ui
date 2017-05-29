@@ -10964,24 +10964,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "RadioButton", function() { return __WEBPACK_IMPORTED_MODULE_15__components_form_RadioButton__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_form_FormPanel__ = __webpack_require__(97);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormPanel", function() { return __WEBPACK_IMPORTED_MODULE_16__components_form_FormPanel__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_box_FlexLayout__ = __webpack_require__(93);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlexLayout", function() { return __WEBPACK_IMPORTED_MODULE_17__components_box_FlexLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_box_FlowLayout__ = __webpack_require__(94);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlowLayout", function() { return __WEBPACK_IMPORTED_MODULE_18__components_box_FlowLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_box_Container__ = __webpack_require__(14);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_19__components_box_Container__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_other_Dialog__ = __webpack_require__(105);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dialog", function() { return __WEBPACK_IMPORTED_MODULE_20__components_other_Dialog__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_other_Toolbar__ = __webpack_require__(112);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return __WEBPACK_IMPORTED_MODULE_21__components_other_Toolbar__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_nav_Navigation__ = __webpack_require__(103);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_22__components_nav_Navigation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_other_TabPanel__ = __webpack_require__(110);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_23__components_other_TabPanel__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_other_TabItem__ = __webpack_require__(109);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_24__components_other_TabItem__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_other_Grid__ = __webpack_require__(107);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_25__components_other_Grid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_box_FitLayout__ = __webpack_require__(234);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FitLayout", function() { return __WEBPACK_IMPORTED_MODULE_17__components_box_FitLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_box_FlexLayout__ = __webpack_require__(93);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlexLayout", function() { return __WEBPACK_IMPORTED_MODULE_18__components_box_FlexLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_box_FlowLayout__ = __webpack_require__(94);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlowLayout", function() { return __WEBPACK_IMPORTED_MODULE_19__components_box_FlowLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_box_BorderLayout__ = __webpack_require__(235);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BorderLayout", function() { return __WEBPACK_IMPORTED_MODULE_20__components_box_BorderLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_box_VerticalLayout__ = __webpack_require__(233);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "VerticalLayout", function() { return __WEBPACK_IMPORTED_MODULE_21__components_box_VerticalLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_box_HorizontalLayout__ = __webpack_require__(236);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HorizontalLayout", function() { return __WEBPACK_IMPORTED_MODULE_22__components_box_HorizontalLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_box_Container__ = __webpack_require__(14);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_23__components_box_Container__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_other_Dialog__ = __webpack_require__(105);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dialog", function() { return __WEBPACK_IMPORTED_MODULE_24__components_other_Dialog__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_other_Toolbar__ = __webpack_require__(112);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return __WEBPACK_IMPORTED_MODULE_25__components_other_Toolbar__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_nav_Navigation__ = __webpack_require__(103);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_26__components_nav_Navigation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_other_TabPanel__ = __webpack_require__(110);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_27__components_other_TabPanel__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_other_TabItem__ = __webpack_require__(109);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_28__components_other_TabItem__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_other_Grid__ = __webpack_require__(107);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_29__components_other_Grid__["a"]; });
 
 
 // Export here all the components
@@ -11009,6 +11017,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Layout
+
+
+
+
 
 
 
@@ -11148,7 +11160,7 @@ var FlowLayout = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
-                { className: 'flow-wrapper' },
+                { className: 'flow-wrapper', style: { overflow: 'auto' } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
                     { id: this.props.id, className: classes.join(' '), style: style },
@@ -11783,7 +11795,7 @@ var Navigation = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'nav',
-                { id: this.props.id },
+                { id: this.props.id, className: this.props.className, style: this.props.style },
                 this.props.children
             );
         }
@@ -12141,6 +12153,7 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Panel__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__ = __webpack_require__(233);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12148,6 +12161,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -12558,17 +12572,17 @@ var Grid = function (_Panel) {
 
             var records = this.props.rows || this.getRecords(columns, width);
 
-            var classes = ['grid-panel', this.props.mode, 'vbox'];
+            var classes = ['grid-panel', this.props.mode];
 
             if (this.props.className) classes.push(this.props.className);
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
+                __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__["a" /* VerticalLayout */],
                 { id: this.props.id, className: classes.join(' '), style: this.props.style },
                 this.props.toolbar,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'grid-hd-wrapper' },
+                    { className: 'grid-hd-wrapper', style: { flex: '0 0 auto' } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'table',
                         { className: 'grid-header' },
@@ -12581,7 +12595,7 @@ var Grid = function (_Panel) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'grid-bd-wrapper center' },
+                    { className: 'grid-bd-wrapper', style: { flex: '1 auto' } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'table',
                         { className: 'grid-body' },
@@ -26886,6 +26900,292 @@ var _temp = function () {
     }
 
     __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
+}();
+
+;
+
+/***/ }),
+/* 233 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerticalLayout; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container__ = __webpack_require__(14);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var VerticalLayout = function (_Component) {
+    _inherits(VerticalLayout, _Component);
+
+    function VerticalLayout() {
+        _classCallCheck(this, VerticalLayout);
+
+        return _possibleConstructorReturn(this, (VerticalLayout.__proto__ || Object.getPrototypeOf(VerticalLayout)).apply(this, arguments));
+    }
+
+    _createClass(VerticalLayout, [{
+        key: 'render',
+        value: function render() {
+            var classes = ['vertical-layout'];
+            var style = Object.assign({}, this.props.style || {});
+
+            if (this.props.size) classes.push(this.props.size);
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.align) style.alignItems = this.props.align;
+
+            if (this.props.justify) style.justifyContent = this.props.justify;
+
+            if (this.props.scrollable === false) style.overflow = 'hidden';
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
+                { id: this.props.id, className: classes.join(' '), style: style },
+                this.props.children
+            );
+        }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {};
+        }
+    }]);
+
+    return VerticalLayout;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/VerticalLayout.jsx');
+}();
+
+;
+
+/***/ }),
+/* 234 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FitLayout; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container__ = __webpack_require__(14);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var FitLayout = function (_Component) {
+    _inherits(FitLayout, _Component);
+
+    function FitLayout() {
+        _classCallCheck(this, FitLayout);
+
+        return _possibleConstructorReturn(this, (FitLayout.__proto__ || Object.getPrototypeOf(FitLayout)).apply(this, arguments));
+    }
+
+    _createClass(FitLayout, [{
+        key: 'render',
+        value: function render() {
+            var classes = ['fit-layout'];
+            var style = Object.assign({}, this.props.style || {});
+
+            if (this.props.size) classes.push(this.props.size);
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.align) style.alignItems = this.props.align;
+
+            if (this.props.justify) style.justifyContent = this.props.justify;
+
+            if (this.props.scrollable === false) style.overflow = 'hidden';
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
+                { id: this.props.id, className: classes.join(' '), style: style },
+                this.props.children
+            );
+        }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {};
+        }
+    }]);
+
+    return FitLayout;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FitLayout.jsx');
+}();
+
+;
+
+/***/ }),
+/* 235 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BorderLayout; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container__ = __webpack_require__(14);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var BorderLayout = function (_Component) {
+    _inherits(BorderLayout, _Component);
+
+    function BorderLayout() {
+        _classCallCheck(this, BorderLayout);
+
+        return _possibleConstructorReturn(this, (BorderLayout.__proto__ || Object.getPrototypeOf(BorderLayout)).apply(this, arguments));
+    }
+
+    _createClass(BorderLayout, [{
+        key: 'render',
+        value: function render() {
+            var classes = ['border-layout'];
+            var style = Object.assign({}, this.props.style || {});
+
+            if (this.props.size) classes.push(this.props.size);
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.align) style.alignItems = this.props.align;
+
+            if (this.props.justify) style.justifyContent = this.props.justify;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
+                { id: this.props.id, className: classes.join(' '), style: style },
+                this.props.children
+            );
+        }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {};
+        }
+    }]);
+
+    return BorderLayout;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/BorderLayout.jsx');
+}();
+
+;
+
+/***/ }),
+/* 236 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HorizontalLayout; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container__ = __webpack_require__(14);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var HorizontalLayout = function (_Component) {
+    _inherits(HorizontalLayout, _Component);
+
+    function HorizontalLayout() {
+        _classCallCheck(this, HorizontalLayout);
+
+        return _possibleConstructorReturn(this, (HorizontalLayout.__proto__ || Object.getPrototypeOf(HorizontalLayout)).apply(this, arguments));
+    }
+
+    _createClass(HorizontalLayout, [{
+        key: 'render',
+        value: function render() {
+            var classes = ['horizontal-layout'];
+            var style = Object.assign({}, this.props.style || {});
+
+            if (this.props.size) classes.push(this.props.size);
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.align) style.alignItems = this.props.align;
+
+            if (this.props.justify) style.justifyContent = this.props.justify;
+
+            if (this.props.scrollable === false) style.overflow = 'hidden';
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
+                { id: this.props.id, className: classes.join(' '), style: style },
+                this.props.children
+            );
+        }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {};
+        }
+    }]);
+
+    return HorizontalLayout;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
 }();
 
 ;

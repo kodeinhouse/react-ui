@@ -92,3 +92,27 @@
 {
     flex: none;
 }
+
+.horizontal-layout,
+.vertical-layout,
+.border-layout,
+.fit-layout
+{
+    display: -webkit-box; /* Safari & Chrome */
+    display: -ms-flexbox; /* Internet Explorer */
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.vertical-layout
+{
+    -webkit-box-orient: vertical; /* Safari & Chrome */
+    -ms-flex-direction: column; /* Internet Explorer */
+        flex-direction: column;
+}
+
+/*.fit-layout > :only-child
+{
+    flex: 1 0 auto;
+}*/

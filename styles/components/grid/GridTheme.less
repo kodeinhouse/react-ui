@@ -2,7 +2,13 @@
 
 .grid-hd-wrapper
 {
-    min-height: 28px;
+    border: 1px solid @borderColor;
+    border-bottom: none;
+}
+
+.grid-bd-wrapper
+{
+    border: 1px solid @borderColor;
 }
 
 .grid-panel.normal
@@ -52,6 +58,24 @@
     color: #565656;
     padding: 5px 5px;
     border: 1px solid @borderColor;
+}
+
+.grid-header th
+{
+    border-top: none;
+    border-bottom: none;
+}
+
+.grid-header tr > th:first-child,
+.grid-body tr > td:first-child
+{
+    border-left: none;
+}
+
+.grid-header tr > th:last-child,
+.grid-body tr > td:last-child
+{
+    border-right: none;
 }
 
 .grid-cell-header

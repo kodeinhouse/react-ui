@@ -2,12 +2,6 @@
   /* So 100% means 100% */
   box-sizing: border-box;
 }
-html,
-body {
-  margin: 0px;
-  height: 100%;
-  overflow: hidden;
-}
 /* Horizontal Box and Vertical Box */
 .hbox,
 .vbox {
@@ -96,6 +90,29 @@ body {
 .flex-layout.none > * {
   flex: none;
 }
+.horizontal-layout,
+.vertical-layout,
+.border-layout,
+.fit-layout {
+  display: -webkit-box;
+  /* Safari & Chrome */
+  display: -ms-flexbox;
+  /* Internet Explorer */
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.vertical-layout {
+  -webkit-box-orient: vertical;
+  /* Safari & Chrome */
+  -ms-flex-direction: column;
+  /* Internet Explorer */
+  flex-direction: column;
+}
+/*.fit-layout > :only-child
+{
+    flex: 1 0 auto;
+}*/
 ul {
   padding: 0px;
   margin: 0px;
@@ -286,7 +303,11 @@ ul {
   text-overflow: ellipsis;
 }
 .grid-hd-wrapper {
-  min-height: 28px;
+  border: 1px solid #dee1e5;
+  border-bottom: none;
+}
+.grid-bd-wrapper {
+  border: 1px solid #dee1e5;
 }
 .grid-panel.normal .grid-header,
 .grid-panel.normal .grid-body {
@@ -311,6 +332,18 @@ ul {
   color: #565656;
   padding: 5px 5px;
   border: 1px solid #dee1e5;
+}
+.grid-header th {
+  border-top: none;
+  border-bottom: none;
+}
+.grid-header tr > th:first-child,
+.grid-body tr > td:first-child {
+  border-left: none;
+}
+.grid-header tr > th:last-child,
+.grid-body tr > td:last-child {
+  border-right: none;
 }
 .grid-cell-header {
   color: #515967;

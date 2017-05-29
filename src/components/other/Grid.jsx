@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Panel } from './Panel';
+import { VerticalLayout } from '../box/VerticalLayout';
 
 // TODO: Implement the ColumnGroup tag for the column widths
 
@@ -403,29 +404,29 @@ export class Grid extends Panel
 
 		var records = this.props.rows || this.getRecords(columns, width);
 
-        let classes = ['grid-panel', this.props.mode, 'vbox'];
+        let classes = ['grid-panel', this.props.mode];
 
         if(this.props.className)
             classes.push(this.props.className);
 
         return (
-            <div id={this.props.id} className={classes.join(' ')} style={this.props.style}>
+            <VerticalLayout id={this.props.id} className={classes.join(' ')} style={this.props.style}>
                 {this.props.toolbar}
-                <div className="grid-hd-wrapper">
+                <div className="grid-hd-wrapper" style={{flex: '0 0 auto'}}>
                     <table className="grid-header">
                         <thead>
                             {headers}
                         </thead>
                     </table>
                 </div>
-                <div className="grid-bd-wrapper center">
+                <div className="grid-bd-wrapper" style={{flex: '1 auto'}}>
                     <table className="grid-body">
                         <tbody>
                             {records}
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </VerticalLayout>
         );
     }
 }

@@ -4,6 +4,6 @@ export class Navigation extends Component
 {
     render()
     {
-        return <nav id={this.props.id}>{this.props.children}</nav>;
+        return <nav id={this.props.id} className={this.props.className} style={this.props.style}>{this.props.children}</nav>;
     }
 }
