@@ -12192,6 +12192,7 @@ var Grid = function (_Panel) {
             sortOrder: null
         };
 
+        _this.onResize = _this.onResize.bind(_this);
         _this.onSelectionChange = _this.onSelectionChange.bind(_this);
         _this.onDoubleClick = _this.onDoubleClick.bind(_this);
         _this.onRowClick = _this.onRowClick.bind(_this);
@@ -12252,13 +12253,6 @@ var Grid = function (_Panel) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var ElementQueries = __webpack_require__(114);
-            var ResizeSensor = __webpack_require__(59);
-
-            ElementQueries.listen();
-            ElementQueries.init();
-
-            var self = this;
             var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
             var headerWrapper = dom.querySelector(".grid-hd-wrapper");
             var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
@@ -12267,36 +12261,41 @@ var Grid = function (_Panel) {
                 headerWrapper.scrollLeft = this.scrollLeft;
             });
 
-            var body = bodyWrapper.querySelector(".grid-body");
-            var header = headerWrapper.querySelector(".grid-header");
-
-            var onResize = function onResize(element) {
-                // If the body scroll is visible then display the vertical scroll to keep the same width
-                if (bodyWrapper.scrollHeight > bodyWrapper.clientHeight) headerWrapper.style.overflowY = 'scroll';else headerWrapper.style.overflowY = null;
-
-                self.resizeColumns(header, body);
-            };
+            var ElementQueries = __webpack_require__(114);
+            var ResizeSensor = __webpack_require__(59);
 
             var resizeElement = this.getResizeElement(bodyWrapper);
 
             // Start sensor to detect resize
-            new ResizeSensor(resizeElement, onResize);
+            new ResizeSensor(resizeElement, this.onResize);
 
-            // Check manually the first time
-            onResize();
+            this.onResize();
         }
     }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate(prevProps, prevState) {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
-            var headerWrapper = dom.querySelector(".grid-hd-wrapper");
-            var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
+            // For an unknown reason to me this method doesn't trigger the resize sensor
+            this.onResize();
 
-            var body = bodyWrapper.querySelector(".grid-body");
-            var header = headerWrapper.querySelector(".grid-header");
-
-            this.resizeColumns(header, body);
             this.validateSelection();
+        }
+    }, {
+        key: 'onResize',
+        value: function onResize() {
+            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+
+            if (dom != null) {
+                var headerWrapper = dom.querySelector(".grid-hd-wrapper");
+                var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
+
+                var body = bodyWrapper.querySelector(".grid-body");
+                var header = headerWrapper.querySelector(".grid-header");
+
+                // If the body scroll is visible then display the vertical scroll to keep the same width
+                if (bodyWrapper.scrollHeight > bodyWrapper.clientHeight) headerWrapper.style.overflowY = 'scroll';else headerWrapper.style.overflowY = null;
+
+                this.resizeColumns(header, body);
+            }
         }
     }, {
         key: 'resizeColumns',

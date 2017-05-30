@@ -22,6 +22,7 @@ export class Grid extends Panel
             sortOrder: null
         };
 
+        this.onResize = this.onResize.bind(this);
         this.onSelectionChange = this.onSelectionChange.bind(this);
         this.onDoubleClick = this.onDoubleClick.bind(this);
         this.onRowClick = this.onRowClick.bind(this);
@@ -45,10 +46,10 @@ export class Grid extends Panel
         }
     }
 
-   componentWillReceiveProps(nextProps)
-   {
-      this.setState({sortField: nextProps.column, sortOrder: nextProps.order, records: nextProps.records});
-   }
+    componentWillReceiveProps(nextProps)
+    {
+        this.setState({sortField: nextProps.column, sortOrder: nextProps.order, records: nextProps.records});
+    }
 
     setSort(column, order)
     {
@@ -81,13 +82,6 @@ export class Grid extends Panel
     }
     componentDidMount()
 	{
-        const ElementQueries = require("css-element-queries/src/ElementQueries");
-        const ResizeSensor = require("css-element-queries/src/ResizeSensor");
-
-        ElementQueries.listen();
-        ElementQueries.init();
-
-        let self = this;
         let dom = ReactDOM.findDOMNode(this);
         let headerWrapper = dom.querySelector(".grid-hd-wrapper");
         let bodyWrapper = dom.querySelector(".grid-bd-wrapper");
@@ -96,38 +90,43 @@ export class Grid extends Panel
             headerWrapper.scrollLeft = this.scrollLeft;
         });
 
-        let body = bodyWrapper.querySelector(".grid-body");
-        let header = headerWrapper.querySelector(".grid-header");
+        const ElementQueries = require("css-element-queries/src/ElementQueries");
+        const ResizeSensor = require("css-element-queries/src/ResizeSensor");
 
-        var onResize = function(element){
+        let resizeElement = this.getResizeElement(bodyWrapper);
+
+        // Start sensor to detect resize
+        new ResizeSensor(resizeElement, this.onResize);
+
+        this.onResize();
+	}
+    componentDidUpdate(prevProps, prevState)
+    {
+        // For an unknown reason to me this method doesn't trigger the resize sensor
+        this.onResize();
+
+        this.validateSelection();
+    }
+    onResize()
+    {
+        let dom = ReactDOM.findDOMNode(this);
+
+        if(dom != null)
+        {
+            let headerWrapper = dom.querySelector(".grid-hd-wrapper");
+            let bodyWrapper = dom.querySelector(".grid-bd-wrapper");
+
+            let body = bodyWrapper.querySelector(".grid-body");
+            let header = headerWrapper.querySelector(".grid-header");
+
             // If the body scroll is visible then display the vertical scroll to keep the same width
             if(bodyWrapper.scrollHeight > bodyWrapper.clientHeight)
                 headerWrapper.style.overflowY = 'scroll';
             else
                 headerWrapper.style.overflowY = null;
 
-            self.resizeColumns(header, body);
-        };
-
-        let resizeElement = this.getResizeElement(bodyWrapper);
-
-        // Start sensor to detect resize
-        new ResizeSensor(resizeElement, onResize);
-
-        // Check manually the first time
-        onResize();
-	}
-    componentDidUpdate(prevProps, prevState)
-    {
-        let dom = ReactDOM.findDOMNode(this);
-        let headerWrapper = dom.querySelector(".grid-hd-wrapper");
-        let bodyWrapper = dom.querySelector(".grid-bd-wrapper");
-
-        let body = bodyWrapper.querySelector(".grid-body");
-        let header = headerWrapper.querySelector(".grid-header");
-
-        this.resizeColumns(header, body);
-        this.validateSelection();
+            this.resizeColumns(header, body);
+        }
     }
     resizeColumns(header, body)
     {
