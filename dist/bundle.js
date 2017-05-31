@@ -11482,7 +11482,7 @@ var SearchField = function (_Field) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: classes.join(" ") },
+                { className: classes.join(" "), style: this.props.style },
                 this.props.label ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'form-field-label hbox-l' },
