@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { Panel } from './Panel';
 import { VerticalLayout } from '../box/VerticalLayout';
 
-// TODO: Implement the ColumnGroup tag for the column widths
-
 export class Grid extends Panel
 {
     static get defaultProps(){
@@ -290,10 +288,12 @@ export class Grid extends Panel
         // TODO: Add validations
         return index >= 0 ? this.props.records[index] : null;
     }
-    getRecords(columns, width)
+
+    createRows(data, columns, width)
     {
         let self = this;
-        return this.sortData().map(function(record, rowIndex){
+
+        return data.map(function(record, rowIndex){
             var cells = columns.map(function(column, columnIndex){
                 var align = "align-" + (column.align ? column.align : "left");
                 var data = null;
@@ -325,17 +325,28 @@ export class Grid extends Panel
                     data = column.renderer(record);
 
                 let style = Object.assign({}, {
-                    //width: column.width,
-                    //minWidth: column.minWidth,
-                    //maxWidth: column.maxWidth
+
                 });
 
 
                 return (<td key={"cell-" + rowIndex + "-" + columnIndex} className={"grid-cell-body " + align} colSpan={column.colSpan} style={style}><div className="text">{typeof data == 'boolean' ? data.toString() : data}</div></td>);
             });
 
-            return (<tr id={"tr-" + record.id} data-index={rowIndex} key={"tr-" + rowIndex} data-id={record.id} onClick={self.onRowClick} onDoubleClick={self.onDoubleClick} className={record.className}>{cells}</tr>);
+            let classes = ['grid-row'];
+
+            if(record.className)
+                classes.push(record.className);
+
+            return (<tr id={"tr-" + record._id} className={classes.join(' ')} data-index={rowIndex} key={"tr-" + rowIndex} data-id={record.id} onClick={self.onRowClick} onDoubleClick={self.onDoubleClick}>{cells}</tr>);
         });
+    }
+
+    getRecords(columns, width)
+    {
+        let self = this;
+        let data = this.sortData();
+
+        return this.createRows(data, columns, width);
     }
     sortData()
     {

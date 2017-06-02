@@ -41,3 +41,4 @@ export { Navigation } from './components/nav/Navigation';
 export { TabPanel } from './components/other/TabPanel';
 export { TabItem } from './components/other/TabItem';
 export { Grid } from './components/other/Grid';
+export { GroupingGrid } from './components/other/GroupingGrid';

@@ -10990,6 +10990,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_28__components_other_TabItem__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_other_Grid__ = __webpack_require__(107);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_29__components_other_Grid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_other_GroupingGrid__ = __webpack_require__(237);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupingGrid", function() { return __WEBPACK_IMPORTED_MODULE_30__components_other_GroupingGrid__["a"]; });
 
 
 // Export here all the components
@@ -11025,6 +11027,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Panels
+
 
 
 
@@ -12167,8 +12170,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-// TODO: Implement the ColumnGroup tag for the column widths
-
 var Grid = function (_Panel) {
     _inherits(Grid, _Panel);
 
@@ -12454,10 +12455,11 @@ var Grid = function (_Panel) {
             return index >= 0 ? this.props.records[index] : null;
         }
     }, {
-        key: 'getRecords',
-        value: function getRecords(columns, width) {
+        key: 'createRows',
+        value: function createRows(data, columns, width) {
             var self = this;
-            return this.sortData().map(function (record, rowIndex) {
+
+            return data.map(function (record, rowIndex) {
                 var cells = columns.map(function (column, columnIndex) {
                     var align = "align-" + (column.align ? column.align : "left");
                     var data = null;
@@ -12482,11 +12484,7 @@ var Grid = function (_Panel) {
                         }
                     } else data = column.renderer(record);
 
-                    var style = Object.assign({}, {
-                        //width: column.width,
-                        //minWidth: column.minWidth,
-                        //maxWidth: column.maxWidth
-                    });
+                    var style = Object.assign({}, {});
 
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'td',
@@ -12499,12 +12497,24 @@ var Grid = function (_Panel) {
                     );
                 });
 
+                var classes = ['grid-row'];
+
+                if (record.className) classes.push(record.className);
+
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'tr',
-                    { id: "tr-" + record.id, 'data-index': rowIndex, key: "tr-" + rowIndex, 'data-id': record.id, onClick: self.onRowClick, onDoubleClick: self.onDoubleClick, className: record.className },
+                    { id: "tr-" + record._id, className: classes.join(' '), 'data-index': rowIndex, key: "tr-" + rowIndex, 'data-id': record.id, onClick: self.onRowClick, onDoubleClick: self.onDoubleClick },
                     cells
                 );
             });
+        }
+    }, {
+        key: 'getRecords',
+        value: function getRecords(columns, width) {
+            var self = this;
+            var data = this.sortData();
+
+            return this.createRows(data, columns, width);
         }
     }, {
         key: 'sortData',
@@ -27187,6 +27197,115 @@ var _temp = function () {
     }
 
     __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
+}();
+
+;
+
+/***/ }),
+/* 237 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupingGrid; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Grid__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__ = __webpack_require__(233);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+// TODO: Implement the ColumnGroup tag for the column widths
+
+var GroupingGrid = function (_Grid) {
+    _inherits(GroupingGrid, _Grid);
+
+    function GroupingGrid() {
+        _classCallCheck(this, GroupingGrid);
+
+        return _possibleConstructorReturn(this, (GroupingGrid.__proto__ || Object.getPrototypeOf(GroupingGrid)).apply(this, arguments));
+    }
+
+    _createClass(GroupingGrid, [{
+        key: 'getRowSample',
+        value: function getRowSample(body) {
+            return body.querySelector("tr.grid-row");
+        }
+    }, {
+        key: 'getGroups',
+        value: function getGroups(field, data) {
+            var values = data.map(function (c) {
+                return c[field];
+            });
+
+            return Array.from(new Set(values));
+        }
+    }, {
+        key: 'createGroup',
+        value: function createGroup(group, data, columns, width) {
+            var master = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'tr',
+                { className: 'grid-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'td',
+                    { colSpan: columns.length },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'group-button collapse' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { className: 'text' },
+                        group
+                    )
+                )
+            );
+
+            var detail = this.createRows(data, columns, width);
+
+            return [master, detail];
+        }
+    }, {
+        key: 'getRecords',
+        value: function getRecords(columns, width) {
+            if (this.props.group) {
+                var self = this;
+                var data = this.sortData();
+                var field = this.props.group;
+                var groups = this.getGroups(field, data);
+
+                return groups.map(function (group) {
+                    // Filter the records based on each group
+                    var subset = data.filter(function (c) {
+                        return c[field] == group;
+                    });
+
+                    return self.createGroup(group, subset, columns, width);
+                });
+            } else return _get(GroupingGrid.prototype.__proto__ || Object.getPrototypeOf(GroupingGrid.prototype), 'getRecords', this).call(this, columns, width);
+        }
+    }]);
+
+    return GroupingGrid;
+}(__WEBPACK_IMPORTED_MODULE_2__Grid__["a" /* Grid */]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/brittongr/Development/packages/react-ui/src/components/other/GroupingGrid.jsx');
 }();
 
 ;
