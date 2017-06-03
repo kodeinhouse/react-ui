@@ -10988,10 +10988,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_27__components_other_TabPanel__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_other_TabItem__ = __webpack_require__(109);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_28__components_other_TabItem__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_other_Grid__ = __webpack_require__(107);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_29__components_other_Grid__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_other_GroupingGrid__ = __webpack_require__(237);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupingGrid", function() { return __WEBPACK_IMPORTED_MODULE_30__components_other_GroupingGrid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_other_grid_Grid__ = __webpack_require__(238);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_29__components_other_grid_Grid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_other_grid_GroupingGrid__ = __webpack_require__(239);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupingGrid", function() { return __WEBPACK_IMPORTED_MODULE_30__components_other_grid_GroupingGrid__["a"]; });
 
 
 // Export here all the components
@@ -12146,570 +12146,7 @@ var _temp = function () {
 ;
 
 /***/ }),
-/* 107 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Grid; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Panel__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__ = __webpack_require__(233);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-var Grid = function (_Panel) {
-    _inherits(Grid, _Panel);
-
-    _createClass(Grid, null, [{
-        key: 'defaultProps',
-        get: function get() {
-            return {
-                mode: 'normal' // available options are auto, fit
-            };
-        }
-    }]);
-
-    function Grid(props) {
-        _classCallCheck(this, Grid);
-
-        var _this = _possibleConstructorReturn(this, (Grid.__proto__ || Object.getPrototypeOf(Grid)).call(this, props));
-
-        _this.state = {
-            records: props.records || [],
-            sortField: null,
-            sortOrder: null
-        };
-
-        _this.onResize = _this.onResize.bind(_this);
-        _this.onSelectionChange = _this.onSelectionChange.bind(_this);
-        _this.onDoubleClick = _this.onDoubleClick.bind(_this);
-        _this.onRowClick = _this.onRowClick.bind(_this);
-        _this.getHeader = _this.getHeader.bind(_this);
-        _this.onHeaderClick = _this.onHeaderClick.bind(_this);
-        return _this;
-    }
-
-    _createClass(Grid, [{
-        key: 'onHeaderClick',
-        value: function onHeaderClick(column) {
-            var config = this.getColumnConfig(column.props.index);
-
-            if (config.dataIndex != null) {
-                var sort = null;
-
-                if (config.dataIndex == this.state.sortField) sort = new Sort(config.dataIndex, this.state.sortOrder).toggle();else sort = new Sort(config.dataIndex);
-
-                this.setSort(sort.field, sort.order);
-            }
-        }
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(nextProps) {
-            this.setState({ sortField: nextProps.column, sortOrder: nextProps.order, records: nextProps.records });
-        }
-    }, {
-        key: 'setSort',
-        value: function setSort(column, order) {
-            if (typeof column == 'number') column = this.getColumnConfig(column).dataIndex;
-
-            this.setState({ sortField: column, sortOrder: order });
-        }
-    }, {
-        key: 'onDoubleClick',
-        value: function onDoubleClick(event) {
-            var row = event.target.closest("tr");
-
-            if (row != null) {
-                if (this.props.onRowDoubleClick) this.props.onRowDoubleClick(this.getRecord(this.getRowIndex(row)));
-            }
-        }
-    }, {
-        key: 'getRowIndex',
-        value: function getRowIndex(row) {
-            return row != null ? row.dataset.index : null;
-        }
-    }, {
-        key: 'getRowSample',
-        value: function getRowSample(body) {
-            return body.querySelector("tr");
-        }
-    }, {
-        key: 'getResizeElement',
-        value: function getResizeElement(bodyWrapper) {
-            return bodyWrapper;
-        }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
-            var headerWrapper = dom.querySelector(".grid-hd-wrapper");
-            var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
-
-            bodyWrapper.addEventListener('scroll', function () {
-                headerWrapper.scrollLeft = this.scrollLeft;
-            });
-
-            var ElementQueries = __webpack_require__(114);
-            var ResizeSensor = __webpack_require__(59);
-
-            var resizeElement = this.getResizeElement(bodyWrapper);
-
-            // Start sensor to detect resize
-            new ResizeSensor(resizeElement, this.onResize);
-
-            this.onResize();
-        }
-    }, {
-        key: 'componentDidUpdate',
-        value: function componentDidUpdate(prevProps, prevState) {
-            // For an unknown reason to me this method doesn't trigger the resize sensor
-            this.onResize();
-
-            this.validateSelection();
-        }
-    }, {
-        key: 'onResize',
-        value: function onResize() {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
-
-            if (dom != null) {
-                var headerWrapper = dom.querySelector(".grid-hd-wrapper");
-                var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
-
-                var body = bodyWrapper.querySelector(".grid-body");
-                var header = headerWrapper.querySelector(".grid-header");
-
-                // If the body scroll is visible then display the vertical scroll to keep the same width
-                if (bodyWrapper.scrollHeight > bodyWrapper.clientHeight) headerWrapper.style.overflowY = 'scroll';else headerWrapper.style.overflowY = null;
-
-                this.resizeColumns(header, body);
-            }
-        }
-    }, {
-        key: 'resizeColumns',
-        value: function resizeColumns(header, body) {
-            var self = this;
-
-            // This will retrieve the first row
-            var row = self.getRowSample(body);
-
-            if (row != null) {
-                var headerColumnGroup = self.getColumnGroup(header);
-                var bodyColumnGroup = self.getColumnGroup(body);
-
-                var bodyCells = row.querySelectorAll("td");
-                var headerCells = header.querySelectorAll("th");
-
-                var columnConfig = null;
-                var columnWidth = null;
-                var minWidth = null;
-
-                self.setColumnsWidth(bodyCells);
-
-                bodyCells.forEach(function (column, index) {
-
-                    columnConfig = self.props.columns[index];
-                    minWidth = columnConfig.minWidth || 50;
-                    columnWidth = column.getBoundingClientRect().width;
-
-                    headerCells[index].style.width = columnWidth + 'px';
-                    headerCells[index].style.minWidth = columnWidth + 'px';
-                    headerCells[index].style.maxWidth = columnWidth + 'px';
-                });
-            } else self.setHeadersWidth(header.querySelectorAll("th"));
-        }
-    }, {
-        key: 'setHeadersWidth',
-        value: function setHeadersWidth(headers) {
-            this.setColumnsWidth(headers);
-        }
-    }, {
-        key: 'getColumnGroup',
-        value: function getColumnGroup(element) {
-            var columnGroup = element.querySelector("colgroup");
-
-            if (columnGroup == null) {
-                columnGroup = element.appendChild(document.createElement("colgroup"));
-
-                for (var i = 0; i < this.props.columns.length; i++) {
-                    columnGroup.appendChild(document.createElement("col"));
-                }
-            }
-
-            return columnGroup;
-        }
-    }, {
-        key: 'getColumnWidth',
-        value: function getColumnWidth(width) {
-            var result = width instanceof Number ? width + 'px' : width;
-
-            return result;
-        }
-    }, {
-        key: 'setColumnsWidth',
-        value: function setColumnsWidth(columns) {
-            var self = this;
-
-            columns.forEach(function (column, index) {
-                var columnConfig = self.getColumnConfig(index);
-
-                if (columnConfig.width) column.style.width = self.getColumnWidth(columnConfig.width);else column.style.width = null;
-
-                if (columnConfig.minWidth) column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);else column.style.minWidth = null;
-
-                if (columnConfig.maxWidth) column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);else column.style.maxWidth = null;
-            });
-        }
-    }, {
-        key: 'onRowClick',
-        value: function onRowClick(event) {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
-            var target = event.target.closest("tr");
-            var current = dom.querySelector('.x-selected');
-            var targetIndex = this.getRowIndex(target);
-            var currentIndex = this.getRowIndex(current);
-
-            if (this.props.onRowClick) this.props.onRowClick(this.getRecord(this.getRowIndex(target)));
-
-            if (targetIndex != currentIndex) {
-                if (current != null) current.classList.remove('x-selected');
-
-                target.classList.add('x-selected');
-
-                this.onSelectionChange(this.getRecord(targetIndex), this.getRecord(currentIndex));
-            } else if (event.ctrlKey) {
-                if (target != null) target.classList.remove('x-selected');
-
-                this.onSelectionChange(null, this.getRecord(currentIndex));
-            }
-        }
-    }, {
-        key: 'onSelectionChange',
-        value: function onSelectionChange(current, previous) {
-            if (this.props.onSelectionChange) {
-                this.currentSelection = current;
-                this.props.onSelectionChange(current, previous);
-            }
-        }
-    }, {
-        key: 'validateSelection',
-        value: function validateSelection() {
-            var selected = this.getSelectedRecord();
-            var previous = this.currentSelection;
-
-            // TODO: Add an id property to remove this hardcoded _id
-            var selectedId = selected != null ? selected._id : null;
-            var previousId = previous != null ? previous._id : null;
-
-            if (selectedId != previousId) this.onSelectionChange(selected, previous);
-        }
-    }, {
-        key: 'getMoney',
-        value: function getMoney(value, config) {
-            value = !isNaN(value = parseFloat(value)) ? value : 0;
-
-            value = value.toLocaleString('en-US', { style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, mmaximumFractionDigits: config.decimals });
-
-            return value;
-        }
-    }, {
-        key: 'getHeader',
-        value: function getHeader(column, row, index, content, width) {
-            var key = "th-" + row + "-" + index;
-            var colSpan = column.items ? column.items.length : column.colSpan;
-            var align = column.align;
-
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                TableColumnHeader,
-                { key: key,
-                    index: index,
-                    align: align,
-                    colSpan: colSpan,
-                    sort: column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null,
-                    onClick: this.onHeaderClick },
-                content
-            );
-        }
-    }, {
-        key: 'getColumnConfig',
-        value: function getColumnConfig(index) {
-            return this.props.columns[index];
-        }
-    }, {
-        key: 'getRecord',
-        value: function getRecord(index) {
-            // TODO: Add validations
-            return index >= 0 ? this.props.records[index] : null;
-        }
-    }, {
-        key: 'createRows',
-        value: function createRows(data, columns, width) {
-            var self = this;
-
-            return data.map(function (record, rowIndex) {
-                var cells = columns.map(function (column, columnIndex) {
-                    var align = "align-" + (column.align ? column.align : "left");
-                    var data = null;
-
-                    if (column.renderer == null) {
-                        data = record[column.dataIndex];
-
-                        if (column.format != null) {
-                            var config = column.format;
-
-                            if (typeof column.format == 'string') config = { type: column.format };
-
-                            if (config.type == 'money') {
-                                config = Object.assign({
-                                    decimals: 2,
-                                    currency: 'USD'
-                                }, config);
-
-                                // Implement Intl.NumberFormat
-                                data = self.getMoney(data, config);
-                            }
-                        }
-                    } else data = column.renderer(record);
-
-                    var style = Object.assign({}, {});
-
-                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'td',
-                        { key: "cell-" + rowIndex + "-" + columnIndex, className: "grid-cell-body " + align, colSpan: column.colSpan, style: style },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'text' },
-                            typeof data == 'boolean' ? data.toString() : data
-                        )
-                    );
-                });
-
-                var classes = ['grid-row'];
-
-                if (record.className) classes.push(record.className);
-
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'tr',
-                    { id: "tr-" + record._id, className: classes.join(' '), 'data-index': rowIndex, key: "tr-" + rowIndex, 'data-id': record.id, onClick: self.onRowClick, onDoubleClick: self.onDoubleClick },
-                    cells
-                );
-            });
-        }
-    }, {
-        key: 'getRecords',
-        value: function getRecords(columns, width) {
-            var self = this;
-            var data = this.sortData();
-
-            return this.createRows(data, columns, width);
-        }
-    }, {
-        key: 'sortData',
-        value: function sortData() {
-            var sortOrder = this.state.sortOrder;
-            var dataIndex = this.state.sortField;
-
-            if (sortOrder != null && dataIndex != null) {
-                var order = sortOrder == 'ASC' ? 1 : -1;
-
-                return this.state.records.sort(function (a, b) {
-                    a = a[dataIndex];
-                    b = b[dataIndex];
-
-                    return (a === b ? 0 : a > b ? 1 : -1) * order;
-                });
-            } else return this.state.records;
-        }
-    }, {
-        key: 'getSelectedRecord',
-        value: function getSelectedRecord() {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
-            var body = dom.querySelector(".grid-bd-wrapper");
-            var row = body.querySelector("tr.x-selected");
-
-            if (row != null) return this.getRecord(this.getRowIndex(row));else return null;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var columns = this.props.columns;
-            var width = (100 / columns.length).toFixed(2) + "%";
-            var rows = [{ headers: [] }];
-            var self = this;
-            var date = new Date();
-
-            columns.forEach(function (column, index) {
-                if (self != null) {
-                    rows[0].headers.push(self.getHeader(column, 0, index, column.header, width));
-
-                    if (column.items != null) {
-                        if (rows.length == 1) rows.push({ headers: [] });
-
-                        var width2 = (100 / column.items.length).toFixed(2) + "%";
-
-                        column.items.forEach(function (column2, index2) {
-                            rows[1].headers.push(self.getHeader(column2, index, index2, column2.header, width2));
-                        });
-                    }
-                }
-            });
-
-            var headers = rows.map(function (row, index) {
-                var headers = row.headers.map(function (header) {
-                    return header;
-                });
-
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'tr',
-                    { key: "row-header-" + index },
-                    headers
-                );
-            });
-
-            var records = this.props.rows || this.getRecords(columns, width);
-
-            var classes = ['grid-panel', this.props.mode];
-
-            if (this.props.className) classes.push(this.props.className);
-
-            if (this.props.loading) classes.push('mask');
-
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__["a" /* VerticalLayout */],
-                { id: this.props.id, className: classes.join(' '), style: this.props.style },
-                this.props.toolbar,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'grid-hd-wrapper', style: { flex: '0 0 auto' } },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'table',
-                        { className: 'grid-header' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'thead',
-                            null,
-                            headers
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'grid-bd-wrapper', style: { flex: '1 auto' } },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'table',
-                        { className: 'grid-body' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'tbody',
-                            null,
-                            records
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Grid;
-}(__WEBPACK_IMPORTED_MODULE_2__Panel__["a" /* Panel */]);
-
-var TableColumnHeader = function (_Component) {
-    _inherits(TableColumnHeader, _Component);
-
-    function TableColumnHeader(props) {
-        _classCallCheck(this, TableColumnHeader);
-
-        var _this2 = _possibleConstructorReturn(this, (TableColumnHeader.__proto__ || Object.getPrototypeOf(TableColumnHeader)).call(this, props));
-
-        _this2.state = {
-            sort: _this2.props.sort
-        };
-
-        _this2.onClick = _this2.onClick.bind(_this2);
-        return _this2;
-    }
-
-    _createClass(TableColumnHeader, [{
-        key: 'onClick',
-        value: function onClick() {
-            if (this.props.onClick) this.props.onClick(this);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var sort = null;
-            var align = "align-" + (this.props.align ? this.props.align : "left"); // TODO: align property shouldn't have a default
-            var classes = ['grid-cell-header', align];
-
-            if (this.props.sort) sort = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: ['arrow', this.props.sort == 'ASC' ? 'up' : 'down'].join(' ') });
-
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'th',
-                { colSpan: this.props.colSpan,
-                    className: classes.join(' '),
-                    onClick: this.onClick },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'text' },
-                    this.props.children,
-                    sort
-                )
-            );
-        }
-    }]);
-
-    return TableColumnHeader;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-var Sort = function () {
-    function Sort(field, order) {
-        _classCallCheck(this, Sort);
-
-        this.field = field;
-        this.order = order || 'ASC';
-    }
-
-    _createClass(Sort, [{
-        key: 'toggle',
-        value: function toggle() {
-            this.order = this.order == 'ASC' ? 'DESC' : 'ASC';
-
-            // Return the instance because what one can expect it's the object with the field and order properties
-            return this;
-        }
-    }]);
-
-    return Sort;
-}();
-
-;
-
-var _temp = function () {
-    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-        return;
-    }
-
-    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/brittongr/Development/packages/react-ui/src/components/other/Grid.jsx');
-
-    __REACT_HOT_LOADER__.register(TableColumnHeader, 'TableColumnHeader', '/Users/brittongr/Development/packages/react-ui/src/components/other/Grid.jsx');
-
-    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/brittongr/Development/packages/react-ui/src/components/other/Grid.jsx');
-}();
-
-;
-
-/***/ }),
+/* 107 */,
 /* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27202,7 +26639,501 @@ var _temp = function () {
 ;
 
 /***/ }),
-/* 237 */
+/* 237 */,
+/* 238 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Grid; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Panel__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__TableColumnHeader__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Sort__ = __webpack_require__(240);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+var Grid = function (_Panel) {
+    _inherits(Grid, _Panel);
+
+    _createClass(Grid, null, [{
+        key: 'defaultProps',
+        get: function get() {
+            return {
+                mode: 'normal' // available options are auto, fit
+            };
+        }
+    }]);
+
+    function Grid(props) {
+        _classCallCheck(this, Grid);
+
+        var _this = _possibleConstructorReturn(this, (Grid.__proto__ || Object.getPrototypeOf(Grid)).call(this, props));
+
+        _this.state = {
+            records: props.records || [],
+            sortField: null,
+            sortOrder: null
+        };
+
+        _this.onResize = _this.onResize.bind(_this);
+        _this.onSelectionChange = _this.onSelectionChange.bind(_this);
+        _this.onDoubleClick = _this.onDoubleClick.bind(_this);
+        _this.onRowClick = _this.onRowClick.bind(_this);
+        _this.getHeader = _this.getHeader.bind(_this);
+        _this.onHeaderClick = _this.onHeaderClick.bind(_this);
+        return _this;
+    }
+
+    _createClass(Grid, [{
+        key: 'onHeaderClick',
+        value: function onHeaderClick(column) {
+            var config = this.getColumnConfig(column.props.index);
+
+            if (config.dataIndex != null) {
+                var sort = null;
+
+                if (config.dataIndex == this.state.sortField) sort = new __WEBPACK_IMPORTED_MODULE_5__Sort__["a" /* Sort */](config.dataIndex, this.state.sortOrder).toggle();else sort = new __WEBPACK_IMPORTED_MODULE_5__Sort__["a" /* Sort */](config.dataIndex);
+
+                this.setSort(sort.field, sort.order);
+            }
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            this.setState({ sortField: nextProps.column, sortOrder: nextProps.order, records: nextProps.records });
+        }
+    }, {
+        key: 'setSort',
+        value: function setSort(column, order) {
+            if (typeof column == 'number') column = this.getColumnConfig(column).dataIndex;
+
+            this.setState({ sortField: column, sortOrder: order });
+        }
+    }, {
+        key: 'onDoubleClick',
+        value: function onDoubleClick(event) {
+            var row = event.target.closest("tr");
+
+            if (row != null) {
+                if (this.props.onRowDoubleClick) this.props.onRowDoubleClick(this.getRecord(this.getRowIndex(row)));
+            }
+        }
+    }, {
+        key: 'getRowIndex',
+        value: function getRowIndex(row) {
+            return row != null ? row.dataset.index : null;
+        }
+    }, {
+        key: 'getRowSample',
+        value: function getRowSample(body) {
+            return body.querySelector("tr");
+        }
+    }, {
+        key: 'getResizeElement',
+        value: function getResizeElement(bodyWrapper) {
+            return bodyWrapper;
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var headerWrapper = dom.querySelector(".grid-hd-wrapper");
+            var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
+
+            bodyWrapper.addEventListener('scroll', function () {
+                headerWrapper.scrollLeft = this.scrollLeft;
+            });
+
+            var ElementQueries = __webpack_require__(114);
+            var ResizeSensor = __webpack_require__(59);
+
+            var resizeElement = this.getResizeElement(bodyWrapper);
+
+            // Start sensor to detect resize
+            new ResizeSensor(resizeElement, this.onResize);
+
+            this.onResize();
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            // For an unknown reason to me this method doesn't trigger the resize sensor
+            this.onResize();
+
+            this.validateSelection();
+        }
+    }, {
+        key: 'onResize',
+        value: function onResize() {
+            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+
+            if (dom != null) {
+                var headerWrapper = dom.querySelector(".grid-hd-wrapper");
+                var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
+
+                var body = bodyWrapper.querySelector(".grid-body");
+                var header = headerWrapper.querySelector(".grid-header");
+
+                // If the body scroll is visible then display the vertical scroll to keep the same width
+                if (bodyWrapper.scrollHeight > bodyWrapper.clientHeight) headerWrapper.style.overflowY = 'scroll';else headerWrapper.style.overflowY = null;
+
+                this.resizeColumns(header, body);
+            }
+        }
+    }, {
+        key: 'resizeColumns',
+        value: function resizeColumns(header, body) {
+            var self = this;
+
+            // This will retrieve the first row
+            var row = self.getRowSample(body);
+
+            if (row != null) {
+                var headerColumnGroup = self.getColumnGroup(header);
+                var bodyColumnGroup = self.getColumnGroup(body);
+
+                var bodyCells = row.querySelectorAll("td");
+                var headerCells = header.querySelectorAll("th");
+
+                var columnConfig = null;
+                var columnWidth = null;
+                var minWidth = null;
+
+                self.setColumnsWidth(bodyCells);
+
+                bodyCells.forEach(function (column, index) {
+
+                    columnConfig = self.props.columns[index];
+                    minWidth = columnConfig.minWidth || 50;
+                    columnWidth = column.getBoundingClientRect().width;
+
+                    headerCells[index].style.width = columnWidth + 'px';
+                    headerCells[index].style.minWidth = columnWidth + 'px';
+                    headerCells[index].style.maxWidth = columnWidth + 'px';
+                });
+            } else self.setHeadersWidth(header.querySelectorAll("th"));
+        }
+    }, {
+        key: 'setHeadersWidth',
+        value: function setHeadersWidth(headers) {
+            this.setColumnsWidth(headers);
+        }
+    }, {
+        key: 'getColumnGroup',
+        value: function getColumnGroup(element) {
+            var columnGroup = element.querySelector("colgroup");
+
+            if (columnGroup == null) {
+                columnGroup = element.appendChild(document.createElement("colgroup"));
+
+                for (var i = 0; i < this.props.columns.length; i++) {
+                    columnGroup.appendChild(document.createElement("col"));
+                }
+            }
+
+            return columnGroup;
+        }
+    }, {
+        key: 'getColumnWidth',
+        value: function getColumnWidth(width) {
+            var result = width instanceof Number ? width + 'px' : width;
+
+            return result;
+        }
+    }, {
+        key: 'setColumnsWidth',
+        value: function setColumnsWidth(columns) {
+            var self = this;
+
+            columns.forEach(function (column, index) {
+                var columnConfig = self.getColumnConfig(index);
+
+                if (columnConfig.width) column.style.width = self.getColumnWidth(columnConfig.width);else column.style.width = null;
+
+                if (columnConfig.minWidth) column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);else column.style.minWidth = null;
+
+                if (columnConfig.maxWidth) column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);else column.style.maxWidth = null;
+            });
+        }
+    }, {
+        key: 'onRowClick',
+        value: function onRowClick(event) {
+            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var target = event.target.closest("tr");
+            var current = dom.querySelector('.x-selected');
+            var targetIndex = this.getRowIndex(target);
+            var currentIndex = this.getRowIndex(current);
+
+            if (this.props.onRowClick) this.props.onRowClick(this.getRecord(this.getRowIndex(target)));
+
+            if (targetIndex != currentIndex) {
+                if (current != null) current.classList.remove('x-selected');
+
+                target.classList.add('x-selected');
+
+                this.onSelectionChange(this.getRecord(targetIndex), this.getRecord(currentIndex));
+            } else if (event.ctrlKey) {
+                if (target != null) target.classList.remove('x-selected');
+
+                this.onSelectionChange(null, this.getRecord(currentIndex));
+            }
+        }
+    }, {
+        key: 'onSelectionChange',
+        value: function onSelectionChange(current, previous) {
+            if (this.props.onSelectionChange) {
+                this.currentSelection = current;
+                this.props.onSelectionChange(current, previous);
+            }
+        }
+    }, {
+        key: 'validateSelection',
+        value: function validateSelection() {
+            var selected = this.getSelectedRecord();
+            var previous = this.currentSelection;
+
+            // TODO: Add an id property to remove this hardcoded _id
+            var selectedId = selected != null ? selected._id : null;
+            var previousId = previous != null ? previous._id : null;
+
+            if (selectedId != previousId) this.onSelectionChange(selected, previous);
+        }
+    }, {
+        key: 'getMoney',
+        value: function getMoney(value, config) {
+            value = !isNaN(value = parseFloat(value)) ? value : 0;
+
+            value = value.toLocaleString('en-US', { style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, mmaximumFractionDigits: config.decimals });
+
+            return value;
+        }
+    }, {
+        key: 'getHeader',
+        value: function getHeader(column, row, index, content, width) {
+            var key = "th-" + row + "-" + index;
+            var colSpan = column.items ? column.items.length : column.colSpan;
+            var align = column.align;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_4__TableColumnHeader__["a" /* TableColumnHeader */],
+                { key: key,
+                    index: index,
+                    align: align,
+                    colSpan: colSpan,
+                    sort: column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null,
+                    onClick: this.onHeaderClick },
+                content
+            );
+        }
+    }, {
+        key: 'getColumnConfig',
+        value: function getColumnConfig(index) {
+            return this.props.columns[index];
+        }
+    }, {
+        key: 'getRecord',
+        value: function getRecord(index) {
+            // TODO: Add validations
+            return index >= 0 ? this.props.records[index] : null;
+        }
+    }, {
+        key: 'createRows',
+        value: function createRows(data, columns, width) {
+            var self = this;
+
+            return data.map(function (record, rowIndex) {
+                var cells = columns.map(function (column, columnIndex) {
+                    var align = "align-" + (column.align ? column.align : "left");
+                    var data = null;
+
+                    if (column.renderer == null) {
+                        data = record[column.dataIndex];
+
+                        if (column.format != null) {
+                            var config = column.format;
+
+                            if (typeof column.format == 'string') config = { type: column.format };
+
+                            if (config.type == 'money') {
+                                config = Object.assign({
+                                    decimals: 2,
+                                    currency: 'USD'
+                                }, config);
+
+                                // Implement Intl.NumberFormat
+                                data = self.getMoney(data, config);
+                            }
+                        }
+                    } else data = column.renderer(record);
+
+                    var style = Object.assign({}, {});
+
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        { key: "cell-" + rowIndex + "-" + columnIndex, className: "grid-cell-body " + align, colSpan: column.colSpan, style: style },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'text' },
+                            typeof data == 'boolean' ? data.toString() : data
+                        )
+                    );
+                });
+
+                var classes = ['grid-row'];
+
+                if (record.className) classes.push(record.className);
+
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'tr',
+                    { id: "tr-" + record._id, className: classes.join(' '), 'data-index': rowIndex, key: "tr-" + rowIndex, 'data-id': record.id, onClick: self.onRowClick, onDoubleClick: self.onDoubleClick },
+                    cells
+                );
+            });
+        }
+    }, {
+        key: 'getRecords',
+        value: function getRecords(columns, width) {
+            var data = this.sortData();
+
+            return this.createRows(data, columns, width);
+        }
+    }, {
+        key: 'sortData',
+        value: function sortData() {
+            var sortOrder = this.state.sortOrder;
+            var dataIndex = this.state.sortField;
+
+            if (sortOrder != null && dataIndex != null) {
+                var order = sortOrder == 'ASC' ? 1 : -1;
+
+                return this.state.records.sort(function (a, b) {
+                    a = a[dataIndex];
+                    b = b[dataIndex];
+
+                    return (a === b ? 0 : a > b ? 1 : -1) * order;
+                });
+            } else return this.state.records;
+        }
+    }, {
+        key: 'getSelectedRecord',
+        value: function getSelectedRecord() {
+            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var body = dom.querySelector(".grid-bd-wrapper");
+            var row = body.querySelector("tr.x-selected");
+
+            if (row != null) return this.getRecord(this.getRowIndex(row));else return null;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var columns = this.props.columns;
+            var width = (100 / columns.length).toFixed(2) + "%";
+            var rows = [{ headers: [] }];
+            var self = this;
+            var date = new Date();
+
+            columns.forEach(function (column, index) {
+                if (self != null) {
+                    rows[0].headers.push(self.getHeader(column, 0, index, column.header, width));
+
+                    if (column.items != null) {
+                        if (rows.length == 1) rows.push({ headers: [] });
+
+                        var width2 = (100 / column.items.length).toFixed(2) + "%";
+
+                        column.items.forEach(function (column2, index2) {
+                            rows[1].headers.push(self.getHeader(column2, index, index2, column2.header, width2));
+                        });
+                    }
+                }
+            });
+
+            var headers = rows.map(function (row, index) {
+                var headers = row.headers.map(function (header) {
+                    return header;
+                });
+
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'tr',
+                    { key: "row-header-" + index },
+                    headers
+                );
+            });
+
+            var records = this.props.rows || this.getRecords(columns, width);
+
+            var classes = ['grid-panel', this.props.mode];
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.loading) classes.push('mask');
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__["a" /* VerticalLayout */],
+                { id: this.props.id, className: classes.join(' '), style: this.props.style },
+                this.props.toolbar,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'grid-hd-wrapper', style: { flex: '0 0 auto' } },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'table',
+                        { className: 'grid-header' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'thead',
+                            null,
+                            headers
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'grid-bd-wrapper', style: { flex: '1 auto' } },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'table',
+                        { className: 'grid-body' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'tbody',
+                            null,
+                            records
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Grid;
+}(__WEBPACK_IMPORTED_MODULE_2__Panel__["a" /* Panel */]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/brittongr/Development/packages/react-ui/src/components/other/grid/Grid.jsx');
+}();
+
+;
+
+/***/ }),
+/* 239 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27211,8 +27142,9 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Grid__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Grid__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__RowGroup__ = __webpack_require__(244);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
@@ -27228,18 +27160,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 // TODO: Implement the ColumnGroup tag for the column widths
 
 var GroupingGrid = function (_Grid) {
     _inherits(GroupingGrid, _Grid);
 
-    function GroupingGrid() {
+    function GroupingGrid(props) {
         _classCallCheck(this, GroupingGrid);
 
-        return _possibleConstructorReturn(this, (GroupingGrid.__proto__ || Object.getPrototypeOf(GroupingGrid)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (GroupingGrid.__proto__ || Object.getPrototypeOf(GroupingGrid)).call(this, props));
+
+        _this.onExpandCollapse = _this.onExpandCollapse.bind(_this);
+        return _this;
     }
 
     _createClass(GroupingGrid, [{
+        key: 'onExpandCollapse',
+        value: function onExpandCollapse(group, state) {
+            // Set the groups
+            var groups = this.state.groups || [];
+
+            if (groups[group] == null) groups[group] = {};
+
+            groups[group].state = state;
+
+            this.setState({ groups: groups });
+        }
+    }, {
         key: 'getRowSample',
         value: function getRowSample(body) {
             return body.querySelector("tr.grid-row");
@@ -27256,22 +27204,12 @@ var GroupingGrid = function (_Grid) {
     }, {
         key: 'createGroup',
         value: function createGroup(group, data, columns, width) {
-            var master = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'tr',
-                { className: 'grid-group' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'td',
-                    { colSpan: columns.length },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'group-button collapse' }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'span',
-                        { className: 'text' },
-                        group
-                    )
-                )
-            );
+            var self = this;
+            var master = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__RowGroup__["a" /* RowGroup */], { span: columns.length, name: group.name, state: group.state, onExpandCollapse: this.onExpandCollapse });
 
-            var detail = this.createRows(data, columns, width);
+            var detail = [];
+
+            if (group.state != 'collapsed') detail = this.createRows(data, columns, width);
 
             return [master, detail];
         }
@@ -27283,14 +27221,16 @@ var GroupingGrid = function (_Grid) {
                 var data = this.sortData();
                 var field = this.props.group;
                 var groups = this.getGroups(field, data);
+                var items = this.state.groups || [];
 
                 return groups.map(function (group) {
                     // Filter the records based on each group
                     var subset = data.filter(function (c) {
                         return c[field] == group;
                     });
+                    var state = items[group] != null ? items[group].state : 'expanded';
 
-                    return self.createGroup(group, subset, columns, width);
+                    return self.createGroup({ name: group, state: state }, subset, columns, width);
                 });
             } else return _get(GroupingGrid.prototype.__proto__ || Object.getPrototypeOf(GroupingGrid.prototype), 'getRecords', this).call(this, columns, width);
         }
@@ -27305,7 +27245,210 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/brittongr/Development/packages/react-ui/src/components/other/GroupingGrid.jsx');
+    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/brittongr/Development/packages/react-ui/src/components/other/grid/GroupingGrid.jsx');
+}();
+
+;
+
+/***/ }),
+/* 240 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Sort; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Sort = function () {
+    function Sort(field, order) {
+        _classCallCheck(this, Sort);
+
+        this.field = field;
+        this.order = order || 'ASC';
+    }
+
+    _createClass(Sort, [{
+        key: 'toggle',
+        value: function toggle() {
+            this.order = this.order == 'ASC' ? 'DESC' : 'ASC';
+
+            // Return the instance because what one can expect it's the object with the field and order properties
+            return this;
+        }
+    }]);
+
+    return Sort;
+}();
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/brittongr/Development/packages/react-ui/src/components/other/grid/Sort.js');
+}();
+
+;
+
+/***/ }),
+/* 241 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableColumnHeader; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var TableColumnHeader = function (_Component) {
+    _inherits(TableColumnHeader, _Component);
+
+    function TableColumnHeader(props) {
+        _classCallCheck(this, TableColumnHeader);
+
+        var _this = _possibleConstructorReturn(this, (TableColumnHeader.__proto__ || Object.getPrototypeOf(TableColumnHeader)).call(this, props));
+
+        _this.state = {
+            sort: _this.props.sort
+        };
+
+        _this.onClick = _this.onClick.bind(_this);
+        return _this;
+    }
+
+    _createClass(TableColumnHeader, [{
+        key: "onClick",
+        value: function onClick() {
+            if (this.props.onClick) this.props.onClick(this);
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var sort = null;
+            var align = "align-" + (this.props.align ? this.props.align : "left"); // TODO: align property shouldn't have a default
+            var classes = ['grid-cell-header', align];
+
+            if (this.props.sort) sort = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: ['arrow', this.props.sort == 'ASC' ? 'up' : 'down'].join(' ') });
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "th",
+                { colSpan: this.props.colSpan,
+                    className: classes.join(' '),
+                    onClick: this.onClick },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "text" },
+                    this.props.children,
+                    sort
+                )
+            );
+        }
+    }]);
+
+    return TableColumnHeader;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/brittongr/Development/packages/react-ui/src/components/other/grid/TableColumnHeader.jsx");
+}();
+
+;
+
+/***/ }),
+/* 242 */,
+/* 243 */,
+/* 244 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RowGroup; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var RowGroup = function (_Component) {
+    _inherits(RowGroup, _Component);
+
+    _createClass(RowGroup, null, [{
+        key: 'defaultProps',
+        get: function get() {
+            return {
+                state: 'expanded'
+            };
+        }
+    }]);
+
+    function RowGroup(props) {
+        _classCallCheck(this, RowGroup);
+
+        var _this = _possibleConstructorReturn(this, (RowGroup.__proto__ || Object.getPrototypeOf(RowGroup)).call(this, props));
+
+        _this.onExpandCollapse = _this.onExpandCollapse.bind(_this);
+        return _this;
+    }
+
+    _createClass(RowGroup, [{
+        key: 'onExpandCollapse',
+        value: function onExpandCollapse() {
+            var state = this.props.state == 'expanded' ? 'collapsed' : 'expanded';
+
+            if (this.props.onExpandCollapse) this.props.onExpandCollapse(this.props.name, state);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var classes = ['group-button', this.props.state];
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'tr',
+                { className: 'grid-group' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'td',
+                    { colSpan: this.props.span },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: classes.join(' '), onClick: this.onExpandCollapse }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { className: 'text' },
+                        this.props.name
+                    )
+                )
+            );
+        }
+    }]);
+
+    return RowGroup;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/brittongr/Development/packages/react-ui/src/components/other/grid/RowGroup.jsx');
 }();
 
 ;

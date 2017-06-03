@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Panel } from './Panel';
-import { VerticalLayout } from '../box/VerticalLayout';
+import { Panel } from '../Panel';
+import { VerticalLayout } from '../../box/VerticalLayout';
+import { TableColumnHeader } from './TableColumnHeader';
+import { Sort } from './Sort';
 
 export class Grid extends Panel
 {
@@ -27,6 +29,7 @@ export class Grid extends Panel
         this.getHeader = this.getHeader.bind(this);
         this.onHeaderClick = this.onHeaderClick.bind(this);
     }
+
     onHeaderClick(column)
     {
         let config = this.getColumnConfig(column.props.index);
@@ -56,6 +59,7 @@ export class Grid extends Panel
 
         this.setState({sortField: column, sortOrder: order});
     }
+
     onDoubleClick(event)
     {
         let row = event.target.closest("tr");
@@ -66,10 +70,12 @@ export class Grid extends Panel
                 this.props.onRowDoubleClick(this.getRecord(this.getRowIndex(row)));
         }
     }
+
     getRowIndex(row)
     {
         return row != null ? row.dataset.index : null;
     }
+
     getRowSample(body)
     {
         return body.querySelector("tr");
@@ -343,11 +349,11 @@ export class Grid extends Panel
 
     getRecords(columns, width)
     {
-        let self = this;
         let data = this.sortData();
 
         return this.createRows(data, columns, width);
     }
+
     sortData()
     {
         let sortOrder = this.state.sortOrder;
@@ -367,6 +373,7 @@ export class Grid extends Panel
         else
             return this.state.records;
     }
+
     getSelectedRecord()
     {
         let dom = ReactDOM.findDOMNode(this);
@@ -378,6 +385,7 @@ export class Grid extends Panel
         else
             return null;
     }
+
     render()
     {
         let columns = this.props.columns;
@@ -442,56 +450,5 @@ export class Grid extends Panel
                 </div>
             </VerticalLayout>
         );
-    }
-}
-
-class TableColumnHeader extends Component
-{
-    constructor(props)
-    {
-        super(props);
-
-        this.state = {
-            sort: this.props.sort
-        };
-
-        this.onClick = this.onClick.bind(this);
-    }
-    onClick()
-    {
-        if(this.props.onClick)
-            this.props.onClick(this);
-    }
-    render()
-    {
-        let sort = null;
-        let align = "align-" + (this.props.align ? this.props.align : "left"); // TODO: align property shouldn't have a default
-        let classes = ['grid-cell-header', align];
-
-        if(this.props.sort)
-            sort = <span className={['arrow', this.props.sort == 'ASC' ? 'up' : 'down'].join(' ')}></span>;
-
-        return (
-                <th colSpan={this.props.colSpan}
-                    className={classes.join(' ')}
-                    onClick={this.onClick}>
-                        <div className="text">{this.props.children}{sort}</div>
-                </th>);
-    }
-}
-
-class Sort
-{
-    constructor(field, order)
-    {
-        this.field = field;
-        this.order = order || 'ASC';
-    }
-    toggle()
-    {
-        this.order = this.order == 'ASC' ? 'DESC' : 'ASC';
-
-        // Return the instance because what one can expect it's the object with the field and order properties
-        return this;
     }
 }

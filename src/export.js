@@ -40,5 +40,5 @@ export { Toolbar } from './components/other/Toolbar';
 export { Navigation } from './components/nav/Navigation';
 export { TabPanel } from './components/other/TabPanel';
 export { TabItem } from './components/other/TabItem';
-export { Grid } from './components/other/Grid';
-export { GroupingGrid } from './components/other/GroupingGrid';
+export { Grid } from './components/other/grid/Grid';
+export { GroupingGrid } from './components/other/grid/GroupingGrid';
