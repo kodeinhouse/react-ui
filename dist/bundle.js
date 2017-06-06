@@ -1228,6 +1228,8 @@ var Container = function (_Component) {
 
             if (this.props.align) classes.push(this.props.align);
 
+            if (this.props.region) classes.push('region-' + this.props.region);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { id: this.props.id, className: classes.join(' '), style: this.props.style },
@@ -5217,6 +5219,8 @@ var VerticalLayout = function (_Component) {
             if (this.props.scrollableY === true) style.overflowY = 'auto';
 
             if (this.props.scrollableX === true) style.overflowX = 'auto';
+
+            if (this.props.region) classes.push('region-' + this.props.region);
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
@@ -12132,6 +12136,14 @@ var FitLayout = function (_Component) {
 
             if (this.props.scrollable === false) style.overflow = 'hidden';
 
+            if (this.props.scrollable === true) style.overflow = 'auto';
+
+            if (this.props.scrollableY === true) style.overflowY = 'auto';
+
+            if (this.props.scrollableX === true) style.overflowX = 'auto';
+
+            if (this.props.region) classes.push('region-' + this.props.region);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
                 { id: this.props.id, className: classes.join(' '), style: style },
@@ -12350,6 +12362,8 @@ var HorizontalLayout = function (_Component) {
             if (this.props.scrollableY === true) style.overflowY = 'auto';
 
             if (this.props.scrollableX === true) style.overflowX = 'auto';
+
+            if (this.props.region) classes.push('region-' + this.props.region);
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
@@ -13301,9 +13315,20 @@ var Navigation = function (_Component) {
     _createClass(Navigation, [{
         key: 'render',
         value: function render() {
+            var style = Object.assign({}, this.props.style);
+            var classes = [];
+
+            // If a region was giving it means this component is being used inside a flex layout
+            // So instead of assigning to the width property we use the flexBasis
+            if (this.props.region && this.props.width) style.flexBasis = this.props.width;
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.region) classes.push('region-' + this.props.region);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'nav',
-                { id: this.props.id, className: this.props.className, style: this.props.style },
+                { id: this.props.id, className: classes.join(' '), style: style },
                 this.props.children
             );
         }
@@ -13361,7 +13386,7 @@ var Breadcrumb = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__box_Container__["a" /* Container */],
-                { className: classes.join(' ') },
+                { className: classes.join(' '), region: this.props.region },
                 this.props.children
             );
         }

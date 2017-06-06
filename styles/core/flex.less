@@ -112,7 +112,43 @@
         flex-direction: column;
 }
 
-/*.fit-layout > :only-child
+.fit-layout > :only-child
 {
-    flex: 1 0 auto;
-}*/
+    flex: 1 1 100%;
+}
+
+.vertical-layout
+{
+    & > .region-north
+    {
+        flex: 0 0 auto;
+    }
+
+    & > .region-center
+    {
+        flex: 1 auto;
+    }
+
+    & > .region-footer
+    {
+        flex: 0 0 auto;
+    }
+}
+
+.horizontal-layout
+{
+    & > .region-east
+    {
+        flex: 0 0 auto;
+    }
+
+    & > .region-center
+    {
+        flex: 1 auto;
+    }
+
+    & > .region-west
+    {
+        flex: 0 0 auto;
+    }
+}

@@ -109,10 +109,27 @@
   /* Internet Explorer */
   flex-direction: column;
 }
-/*.fit-layout > :only-child
-{
-    flex: 1 0 auto;
-}*/
+.fit-layout > :only-child {
+  flex: 1 1 100%;
+}
+.vertical-layout > .region-north {
+  flex: 0 0 auto;
+}
+.vertical-layout > .region-center {
+  flex: 1 auto;
+}
+.vertical-layout > .region-footer {
+  flex: 0 0 auto;
+}
+.horizontal-layout > .region-east {
+  flex: 0 0 auto;
+}
+.horizontal-layout > .region-center {
+  flex: 1 auto;
+}
+.horizontal-layout > .region-west {
+  flex: 0 0 auto;
+}
 ul {
   padding: 0px;
   margin: 0px;

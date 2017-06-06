@@ -6,7 +6,7 @@ export class VerticalLayout extends Component
     static get defaultProps()
     {
         return {
-
+            
         };
     }
     render()
@@ -37,6 +37,9 @@ export class VerticalLayout extends Component
 
         if(this.props.scrollableX === true)
             style.overflowX = 'auto';
+
+        if(this.props.region)
+            classes.push('region-' + this.props.region);
 
         return <Container id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</Container>;
     }
