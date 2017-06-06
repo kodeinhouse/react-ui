@@ -12394,7 +12394,7 @@ var Text = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'span',
-                { id: this.props.id, className: this.props.className },
+                { id: this.props.id, className: this.props.className, style: this.props.style },
                 this.props.children
             );
         }
@@ -26397,6 +26397,12 @@ var VerticalLayout = function (_Component) {
 
             if (this.props.scrollable === false) style.overflow = 'hidden';
 
+            if (this.props.scrollable === true) style.overflow = 'auto';
+
+            if (this.props.scrollableY === true) style.overflowY = 'auto';
+
+            if (this.props.scrollableX === true) style.overflowX = 'auto';
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
                 { id: this.props.id, className: classes.join(' '), style: style },
@@ -26610,6 +26616,12 @@ var HorizontalLayout = function (_Component) {
             if (this.props.justify) style.justifyContent = this.props.justify;
 
             if (this.props.scrollable === false) style.overflow = 'hidden';
+
+            if (this.props.scrollable === true) style.overflow = 'auto';
+
+            if (this.props.scrollableY === true) style.overflowY = 'auto';
+
+            if (this.props.scrollableX === true) style.overflowX = 'auto';
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
@@ -27082,8 +27094,6 @@ var Grid = function (_Panel) {
 
             if (this.props.className) classes.push(this.props.className);
 
-            if (this.props.loading) classes.push('mask');
-
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__["a" /* VerticalLayout */],
                 { id: this.props.id, className: classes.join(' '), style: this.props.style },
@@ -27103,7 +27113,7 @@ var Grid = function (_Panel) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'grid-bd-wrapper', style: { flex: '1 auto' } },
+                    { className: "grid-bd-wrapper" + (this.props.loading ? ' mask' : ''), style: { flex: '1 auto' } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'table',
                         { className: 'grid-body' },

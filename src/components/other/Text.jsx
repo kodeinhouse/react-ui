@@ -4,6 +4,6 @@ export class Text extends Component
 {
     render()
     {
-        return <span id={this.props.id} className={this.props.className}>{this.props.children}</span>;
+        return <span id={this.props.id} className={this.props.className} style={this.props.style}>{this.props.children}</span>;
     }
 }

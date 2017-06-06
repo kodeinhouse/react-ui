@@ -428,9 +428,6 @@ export class Grid extends Panel
         if(this.props.className)
             classes.push(this.props.className);
 
-        if(this.props.loading)
-            classes.push('mask');
-
         return (
             <VerticalLayout id={this.props.id} className={classes.join(' ')} style={this.props.style}>
                 {this.props.toolbar}
@@ -441,7 +438,7 @@ export class Grid extends Panel
                         </thead>
                     </table>
                 </div>
-                <div className="grid-bd-wrapper" style={{flex: '1 auto'}}>
+                <div className={"grid-bd-wrapper" + (this.props.loading ? ' mask' : '')} style={{flex: '1 auto'}}>
                     <table className="grid-body">
                         <tbody>
                             {records}

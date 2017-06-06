@@ -29,6 +29,15 @@ export class VerticalLayout extends Component
         if(this.props.scrollable === false)
             style.overflow = 'hidden';
 
+        if(this.props.scrollable === true)
+            style.overflow = 'auto';
+
+        if(this.props.scrollableY === true)
+            style.overflowY = 'auto';
+
+        if(this.props.scrollableX === true)
+            style.overflowX = 'auto';
+
         return <Container id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</Container>;
     }
 }
