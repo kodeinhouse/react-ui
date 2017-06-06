@@ -20,6 +20,9 @@ export class FlowLayout extends Component
         if(this.props.justify)
             style.justifyContent = this.props.justify;
 
+        if(this.props.region)
+            classes.push('region-' + this.props.region);
+
         return <Container className="flow-wrapper" style={{overflow: 'auto'}}>
                     <Container id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</Container>
                 </Container>;

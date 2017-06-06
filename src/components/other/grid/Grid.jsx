@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Panel } from '../Panel';
 import { VerticalLayout } from '../../box/VerticalLayout';
+import { Container } from '../../box/Container';
 import { TableColumnHeader } from './TableColumnHeader';
 import { Sort } from './Sort';
 
@@ -429,22 +430,22 @@ export class Grid extends Panel
             classes.push(this.props.className);
 
         return (
-            <VerticalLayout id={this.props.id} className={classes.join(' ')} style={this.props.style}>
+            <VerticalLayout id={this.props.id} className={classes.join(' ')} style={this.props.style} region={this.props.region}>
                 {this.props.toolbar}
-                <div className="grid-hd-wrapper" style={{flex: '0 0 auto'}}>
+                <Container className="grid-hd-wrapper" region="north">
                     <table className="grid-header">
                         <thead>
                             {headers}
                         </thead>
                     </table>
-                </div>
-                <div className={"grid-bd-wrapper" + (this.props.loading ? ' mask' : '')} style={{flex: '1 auto'}}>
+                </Container>
+                <Container className={"grid-bd-wrapper" + (this.props.loading ? ' mask' : '')} region="center">
                     <table className="grid-body">
                         <tbody>
                             {records}
                         </tbody>
                     </table>
-                </div>
+                </Container>
             </VerticalLayout>
         );
     }

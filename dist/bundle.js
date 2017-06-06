@@ -5231,7 +5231,9 @@ var VerticalLayout = function (_Component) {
     }], [{
         key: 'defaultProps',
         get: function get() {
-            return {};
+            return {
+                scrollable: false
+            };
         }
     }]);
 
@@ -7695,8 +7697,9 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Panel__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__TableColumnHeader__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Sort__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__box_Container__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__TableColumnHeader__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Sort__ = __webpack_require__(240);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7704,6 +7707,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -7752,7 +7756,7 @@ var Grid = function (_Panel) {
             if (config.dataIndex != null) {
                 var sort = null;
 
-                if (config.dataIndex == this.state.sortField) sort = new __WEBPACK_IMPORTED_MODULE_5__Sort__["a" /* Sort */](config.dataIndex, this.state.sortOrder).toggle();else sort = new __WEBPACK_IMPORTED_MODULE_5__Sort__["a" /* Sort */](config.dataIndex);
+                if (config.dataIndex == this.state.sortField) sort = new __WEBPACK_IMPORTED_MODULE_6__Sort__["a" /* Sort */](config.dataIndex, this.state.sortOrder).toggle();else sort = new __WEBPACK_IMPORTED_MODULE_6__Sort__["a" /* Sort */](config.dataIndex);
 
                 this.setSort(sort.field, sort.order);
             }
@@ -7975,7 +7979,7 @@ var Grid = function (_Panel) {
             var align = column.align;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_4__TableColumnHeader__["a" /* TableColumnHeader */],
+                __WEBPACK_IMPORTED_MODULE_5__TableColumnHeader__["a" /* TableColumnHeader */],
                 { key: key,
                     index: index,
                     align: align,
@@ -8128,11 +8132,11 @@ var Grid = function (_Panel) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__box_VerticalLayout__["a" /* VerticalLayout */],
-                { id: this.props.id, className: classes.join(' '), style: this.props.style },
+                { id: this.props.id, className: classes.join(' '), style: this.props.style, region: this.props.region },
                 this.props.toolbar,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'grid-hd-wrapper', style: { flex: '0 0 auto' } },
+                    __WEBPACK_IMPORTED_MODULE_4__box_Container__["a" /* Container */],
+                    { className: 'grid-hd-wrapper', region: 'north' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'table',
                         { className: 'grid-header' },
@@ -8144,8 +8148,8 @@ var Grid = function (_Panel) {
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: "grid-bd-wrapper" + (this.props.loading ? ' mask' : ''), style: { flex: '1 auto' } },
+                    __WEBPACK_IMPORTED_MODULE_4__box_Container__["a" /* Container */],
+                    { className: "grid-bd-wrapper" + (this.props.loading ? ' mask' : ''), region: 'center' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'table',
                         { className: 'grid-body' },
@@ -12153,7 +12157,9 @@ var FitLayout = function (_Component) {
     }], [{
         key: 'defaultProps',
         get: function get() {
-            return {};
+            return {
+                scrollable: false
+            };
         }
     }]);
 
@@ -12286,6 +12292,8 @@ var FlowLayout = function (_Component) {
 
             if (this.props.justify) style.justifyContent = this.props.justify;
 
+            if (this.props.region) classes.push('region-' + this.props.region);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
                 { className: 'flow-wrapper', style: { overflow: 'auto' } },
@@ -12374,7 +12382,9 @@ var HorizontalLayout = function (_Component) {
     }], [{
         key: 'defaultProps',
         get: function get() {
-            return {};
+            return {
+                scrollable: false
+            };
         }
     }]);
 

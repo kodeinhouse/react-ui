@@ -6,7 +6,7 @@ export class FitLayout extends Component
     static get defaultProps()
     {
         return {
-
+            scrollable: false
         };
     }
     render()

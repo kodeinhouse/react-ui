@@ -6,7 +6,7 @@ export class HorizontalLayout extends Component
     static get defaultProps()
     {
         return {
-            
+            scrollable: false
         };
     }
     render()
