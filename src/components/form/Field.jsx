@@ -66,8 +66,6 @@ export class Field extends Component
 
     setDOMValue(value)
     {
-        console.log('setDOMValue: ' + value);
-        
         // TODO: Review this assigment, not sure if the could have a side effect
         this.setState({value: (this.state.value = value)});
     }

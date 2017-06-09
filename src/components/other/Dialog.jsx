@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from './Button';
 import { DialogPanel } from './DialogPanel';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import ReactDOM from 'react-dom';
 
 export class DialogComponent extends Component
 {
@@ -10,6 +11,7 @@ export class DialogComponent extends Component
             modal: false
         };
     }
+
     constructor(props)
     {
         super(props);
@@ -20,7 +22,38 @@ export class DialogComponent extends Component
 
         this.onHide = this.onHide.bind(this);
         this.onClose = this.onClose.bind(this);
+        this.onResize = this.onResize.bind(this);
     }
+
+    componentDidUpdate()
+    {
+        if(!this.resizeSensor)
+        {
+            let element = ReactDOM.findDOMNode(this).querySelector(".overlay");
+
+            if(element != null)
+            {
+                const ResizeSensor = require("css-element-queries/src/ResizeSensor");
+
+                // Start sensor to detect resize
+                this.resizeSensor = new ResizeSensor(element, this.onResize);
+            }
+        }
+    }
+
+    onResize()
+    {
+        let element = ReactDOM.findDOMNode(this);
+
+        if(this.state.opened)
+        {
+            let dialog = element.querySelector('.dialog');
+
+            dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
+            dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
+        }
+    }
+
     onHide(event)
     {
         // Close the modal only if the click was directly on the overlay
@@ -30,22 +63,25 @@ export class DialogComponent extends Component
         if(this.props.onHide)
             this.props.onHide(event);
     }
+
     onClose(event)
     {
         this.setState({opened: false});
-        
+
         if(this.props.onClose)
             this.props.onClose(event);
     }
+
     open()
     {
         this.setState({opened: true});
     }
+
     close(event)
     {
-        console.log('close');
         this.onClose(event);
     }
+
     getFooter()
     {
         let footer = null;
@@ -67,6 +103,7 @@ export class DialogComponent extends Component
 
         return footer;
     }
+
     render()
     {
         let display = this.state.opened ? '' : 'none';

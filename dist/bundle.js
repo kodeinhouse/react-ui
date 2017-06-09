@@ -3748,8 +3748,6 @@ var Field = function (_Component) {
     }, {
         key: 'setDOMValue',
         value: function setDOMValue(value) {
-            console.log('setDOMValue: ' + value);
-
             // TODO: Review this assigment, not sure if the could have a side effect
             this.setState({ value: this.state.value = value });
         }
@@ -13172,6 +13170,8 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DialogPanel__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_dom__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13179,6 +13179,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -13208,10 +13209,37 @@ var DialogComponent = function (_Component) {
 
         _this.onHide = _this.onHide.bind(_this);
         _this.onClose = _this.onClose.bind(_this);
+        _this.onResize = _this.onResize.bind(_this);
         return _this;
     }
 
     _createClass(DialogComponent, [{
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            if (!this.resizeSensor) {
+                var element = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this).querySelector(".overlay");
+
+                if (element != null) {
+                    var ResizeSensor = __webpack_require__(62);
+
+                    // Start sensor to detect resize
+                    this.resizeSensor = new ResizeSensor(element, this.onResize);
+                }
+            }
+        }
+    }, {
+        key: 'onResize',
+        value: function onResize() {
+            var element = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this);
+
+            if (this.state.opened) {
+                var dialog = element.querySelector('.dialog');
+
+                dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
+                dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
+            }
+        }
+    }, {
         key: 'onHide',
         value: function onHide(event) {
             // Close the modal only if the click was directly on the overlay
@@ -13234,7 +13262,6 @@ var DialogComponent = function (_Component) {
     }, {
         key: 'close',
         value: function close(event) {
-            console.log('close');
             this.onClose(event);
         }
     }, {
@@ -13386,11 +13413,16 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Panel__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -13407,6 +13439,18 @@ var DialogPanel = function (_Panel) {
         _this.bodyCls = 'dialog-body vbox center';
         return _this;
     }
+
+    _createClass(DialogPanel, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var element = __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.findDOMNode(this);
+
+            var clientRect = element.getBoundingClientRect();
+            console.log(clientRect);
+            // We want the dialog to stay still while switching between options that could make it large
+            element.style.marginTop = clientRect.top + 'px';
+        }
+    }]);
 
     return DialogPanel;
 }(__WEBPACK_IMPORTED_MODULE_1__Panel__["a" /* Panel */]);

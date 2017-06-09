@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Panel } from './Panel';
+import ReactDOM from 'react-dom';
 
 export class DialogPanel extends Panel
 {
@@ -9,6 +10,16 @@ export class DialogPanel extends Panel
 
         this.headerCls = 'dialog-header';
         this.bodyCls   = 'dialog-body vbox center';
+    }
+
+    componentDidMount()
+    {
+        let element = ReactDOM.findDOMNode(this);
+
+        let clientRect = element.getBoundingClientRect();
+        console.log(clientRect);
+        // We want the dialog to stay still while switching between options that could make it large
+        element.style.marginTop = clientRect.top + 'px';
     }
 }
 
