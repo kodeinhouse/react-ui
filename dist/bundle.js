@@ -11615,36 +11615,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayText", function() { return __WEBPACK_IMPORTED_MODULE_15__components_form_DisplayText__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_form_RadioButton__ = __webpack_require__(106);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "RadioButton", function() { return __WEBPACK_IMPORTED_MODULE_16__components_form_RadioButton__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_form_FormPanel__ = __webpack_require__(104);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormPanel", function() { return __WEBPACK_IMPORTED_MODULE_17__components_form_FormPanel__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_box_FitLayout__ = __webpack_require__(97);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FitLayout", function() { return __WEBPACK_IMPORTED_MODULE_18__components_box_FitLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_box_FlexLayout__ = __webpack_require__(98);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlexLayout", function() { return __WEBPACK_IMPORTED_MODULE_19__components_box_FlexLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_box_FlowLayout__ = __webpack_require__(99);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlowLayout", function() { return __WEBPACK_IMPORTED_MODULE_20__components_box_FlowLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_box_BorderLayout__ = __webpack_require__(96);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BorderLayout", function() { return __WEBPACK_IMPORTED_MODULE_21__components_box_BorderLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_box_VerticalLayout__ = __webpack_require__(38);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "VerticalLayout", function() { return __WEBPACK_IMPORTED_MODULE_22__components_box_VerticalLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_box_HorizontalLayout__ = __webpack_require__(100);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HorizontalLayout", function() { return __WEBPACK_IMPORTED_MODULE_23__components_box_HorizontalLayout__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_box_Container__ = __webpack_require__(8);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_24__components_box_Container__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_other_Dialog__ = __webpack_require__(113);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dialog", function() { return __WEBPACK_IMPORTED_MODULE_25__components_other_Dialog__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_other_Toolbar__ = __webpack_require__(119);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return __WEBPACK_IMPORTED_MODULE_26__components_other_Toolbar__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_nav_Navigation__ = __webpack_require__(111);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_27__components_nav_Navigation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_other_TabPanel__ = __webpack_require__(117);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_28__components_other_TabPanel__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_other_TabItem__ = __webpack_require__(116);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_29__components_other_TabItem__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_other_grid_Grid__ = __webpack_require__(61);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_30__components_other_grid_Grid__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_other_grid_GroupingGrid__ = __webpack_require__(120);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupingGrid", function() { return __WEBPACK_IMPORTED_MODULE_31__components_other_grid_GroupingGrid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_form_Fieldset__ = __webpack_require__(244);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Fieldset", function() { return __WEBPACK_IMPORTED_MODULE_17__components_form_Fieldset__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_form_FormPanel__ = __webpack_require__(104);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormPanel", function() { return __WEBPACK_IMPORTED_MODULE_18__components_form_FormPanel__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_box_FitLayout__ = __webpack_require__(97);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FitLayout", function() { return __WEBPACK_IMPORTED_MODULE_19__components_box_FitLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_box_FlexLayout__ = __webpack_require__(98);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlexLayout", function() { return __WEBPACK_IMPORTED_MODULE_20__components_box_FlexLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_box_FlowLayout__ = __webpack_require__(99);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FlowLayout", function() { return __WEBPACK_IMPORTED_MODULE_21__components_box_FlowLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_box_BorderLayout__ = __webpack_require__(96);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BorderLayout", function() { return __WEBPACK_IMPORTED_MODULE_22__components_box_BorderLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_box_VerticalLayout__ = __webpack_require__(38);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "VerticalLayout", function() { return __WEBPACK_IMPORTED_MODULE_23__components_box_VerticalLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_box_HorizontalLayout__ = __webpack_require__(100);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HorizontalLayout", function() { return __WEBPACK_IMPORTED_MODULE_24__components_box_HorizontalLayout__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_box_Container__ = __webpack_require__(8);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Container", function() { return __WEBPACK_IMPORTED_MODULE_25__components_box_Container__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_other_Dialog__ = __webpack_require__(113);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dialog", function() { return __WEBPACK_IMPORTED_MODULE_26__components_other_Dialog__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_other_Toolbar__ = __webpack_require__(119);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Toolbar", function() { return __WEBPACK_IMPORTED_MODULE_27__components_other_Toolbar__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_nav_Navigation__ = __webpack_require__(111);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return __WEBPACK_IMPORTED_MODULE_28__components_nav_Navigation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_other_TabPanel__ = __webpack_require__(117);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabPanel", function() { return __WEBPACK_IMPORTED_MODULE_29__components_other_TabPanel__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_other_TabItem__ = __webpack_require__(116);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabItem", function() { return __WEBPACK_IMPORTED_MODULE_30__components_other_TabItem__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_other_grid_Grid__ = __webpack_require__(61);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_31__components_other_grid_Grid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_other_grid_GroupingGrid__ = __webpack_require__(120);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupingGrid", function() { return __WEBPACK_IMPORTED_MODULE_32__components_other_grid_GroupingGrid__["a"]; });
 
 
 // Export here all the components
@@ -11661,6 +11663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Form Fields
+
 
 
 
@@ -12690,7 +12693,7 @@ var RadioButton = function (_FormField) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'form-field-radio' },
+                { className: 'form-field-radio', style: this.props.style },
                 this.createInput(this.props.type),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'span',
@@ -27651,6 +27654,75 @@ module.exports = warning;
 
 module.exports = __webpack_require__(95);
 
+
+/***/ }),
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Fieldset; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__box_Container_jsx__ = __webpack_require__(8);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Fieldset = function (_Container) {
+    _inherits(Fieldset, _Container);
+
+    function Fieldset(props) {
+        _classCallCheck(this, Fieldset);
+
+        return _possibleConstructorReturn(this, (Fieldset.__proto__ || Object.getPrototypeOf(Fieldset)).call(this, props));
+    }
+
+    _createClass(Fieldset, [{
+        key: 'render',
+        value: function render() {
+            var props = Object.assign({}, this.props);
+
+            if (props.className) props.className = ['fieldset', props.className].join(' ');else props.className = 'fieldset';
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__box_Container_jsx__["a" /* Container */],
+                props,
+                this.props.children
+            );
+        }
+    }]);
+
+    return Fieldset;
+}(__WEBPACK_IMPORTED_MODULE_1__box_Container_jsx__["a" /* Container */]);
+
+Fieldset.defaultProps = {
+    type: 'fieldset'
+};
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/components/form/Fieldset.jsx');
+}();
+
+;
 
 /***/ })
 /******/ ]);

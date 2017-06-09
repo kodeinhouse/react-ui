@@ -23,6 +23,7 @@ export { SearchField } from './components/form/SearchField';
 export { DisplayField } from './components/form/DisplayField';
 export { DisplayText } from './components/form/DisplayText';
 export { RadioButton } from './components/form/RadioButton';
+export { Fieldset } from './components/form/Fieldset';
 export { FormPanel } from './components/form/FormPanel';
 
 // Layout
