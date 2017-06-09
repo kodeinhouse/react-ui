@@ -16,7 +16,7 @@ export class RadioButton extends FormField
     createInput()
     {
         let classes = [];
-        
+
         return (
           <input
             className={classes.join(' ')}

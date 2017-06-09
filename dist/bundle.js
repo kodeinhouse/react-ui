@@ -2598,10 +2598,43 @@ var FormField = function (_Field) {
     }
 
     _createClass(FormField, [{
+        key: 'createMessage',
+        value: function createMessage() {
+            if (this.errors && this.errors.length > 0) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'error' },
+                this.errors[0]
+            );else return null;
+        }
+    }, {
+        key: 'createLabel',
+        value: function createLabel(label, className) {
+            return label ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: className },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'label',
+                    null,
+                    label,
+                    ':'
+                )
+            ) : null;
+        }
+    }, {
+        key: 'createValue',
+        value: function createValue(type, className) {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: className },
+                this.createInput(type),
+                this.createMessage(this.errors)
+            );
+        }
+    }, {
         key: 'render',
         value: function render() {
             if (!this.props.plain) {
-                var classes = [this.baseClass, "form-type-" + this.props.type, this.props.flex ? 'hbox' : ''];
+                var classes = [this.baseClass, "form-type-" + this.props.type, this.props.flex ? 'hbox' : '', this.props.inline ? 'inline' : ''];
                 var _props = this.props,
                     className = _props.className,
                     align = _props.align,
@@ -2619,21 +2652,8 @@ var FormField = function (_Field) {
                 var labelClass = 'form-field-label' + (this.props.flex ? ' hbox-r' : '');
                 var valueClass = 'form-field-value' + (this.props.flex ? ' hbox-l' : '');
 
-                var field = this.props.label ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: labelClass },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        this.props.label,
-                        ':'
-                    )
-                ) : null;
-                var value = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: valueClass },
-                    this.createInput(this.props.type)
-                );
+                var field = this.createLabel(this.props.label, labelClass);
+                var value = this.createValue(this.props.type, className);
 
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
@@ -3728,6 +3748,8 @@ var Field = function (_Component) {
     }, {
         key: 'setDOMValue',
         value: function setDOMValue(value) {
+            console.log('setDOMValue: ' + value);
+
             // TODO: Review this assigment, not sure if the could have a side effect
             this.setState({ value: this.state.value = value });
         }
@@ -12385,7 +12407,8 @@ var NumberField = function (_TextField) {
             return {
                 type: 'text',
                 align: 'right',
-                minValue: null,
+                minValue: Number.MIN_VALUE,
+                maxValue: Number.MAX_VALUE,
                 allowNegative: true,
                 decimals: 2,
                 value: '',
@@ -12411,6 +12434,25 @@ var NumberField = function (_TextField) {
         _this.onBlur = _this.onBlur.bind(_this);
         _this.onChange = _this.onChange.bind(_this);
         _this.onKeyPress = _this.onKeyPress.bind(_this);
+
+        _this.validator = new Validator({
+            rules: [{
+                check: function check(field, value) {
+                    return !field.props.required || field.props.required === true && !isNaN(parseFloat(value));
+                },
+                message: "This field is required"
+            }, {
+                check: function check(field, value) {
+                    return value >= _this.props.minValue;
+                },
+                message: "Value can't be less than " + _this.props.minValue
+            }, {
+                check: function check(field, value) {
+                    return value <= _this.props.maxValue;
+                },
+                message: "Value can't be greater than " + _this.props.maxValue
+            }]
+        });
         return _this;
     }
 
@@ -12448,7 +12490,7 @@ var NumberField = function (_TextField) {
         key: 'parseValue',
         value: function parseValue(value) {
             // TODO: Add international support
-            var result = value != null && value.length > 0 ? value.toString().replace('$', '').replace(/\,/g, '') : '';
+            var result = value != null && value.toString().length > 0 ? value.toString().replace('$', '').replace(/\,/g, '') : '';
 
             return result;
         }
@@ -12523,7 +12565,9 @@ var NumberField = function (_TextField) {
         value: function isValid(value) {
             value = this.parseValue(arguments.length > 0 ? value : this.state.value);
 
-            return !this.props.required || this.props.required === true && !isNaN(parseFloat(value));
+            this.errors = this.validator.run(this, value);
+
+            return this.errors.length == 0;
         }
     }, {
         key: 'createInput',
@@ -12548,6 +12592,30 @@ var NumberField = function (_TextField) {
 
     return NumberField;
 }(__WEBPACK_IMPORTED_MODULE_1__TextField_jsx__["a" /* TextField */]);
+
+var Validator = function () {
+    function Validator(props) {
+        _classCallCheck(this, Validator);
+
+        this.rules = props.rules || [];
+    }
+
+    _createClass(Validator, [{
+        key: 'run',
+        value: function run(field, value) {
+            var errors = [];
+
+            this.rules.forEach(function (rule) {
+                if (!rule.check(field, value)) errors.push(rule.message);
+            });
+
+            return errors;
+        }
+    }]);
+
+    return Validator;
+}();
+
 ;
 
 var _temp = function () {
@@ -12556,6 +12624,8 @@ var _temp = function () {
     }
 
     __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
+
+    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
 }();
 
 ;

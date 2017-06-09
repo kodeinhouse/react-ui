@@ -9,13 +9,15 @@ export class NumberField extends TextField
         return {
             type: 'text',
             align: 'right',
-            minValue: null,
+            minValue: Number.MIN_VALUE,
+            maxValue: Number.MAX_VALUE,
             allowNegative: true,
             decimals: 2,
             value: '',
             default: ''
         };
     }
+
     constructor(props)
     {
         super(props);
@@ -32,7 +34,23 @@ export class NumberField extends TextField
         this.onBlur = this.onBlur.bind(this);
         this.onChange = this.onChange.bind(this);
         this.onKeyPress = this.onKeyPress.bind(this);
+
+        this.validator = new Validator({
+            rules: [{
+                check: ((field, value) => { return !field.props.required || (field.props.required === true && !isNaN(parseFloat(value)))}),
+                message: "This field is required"
+            },
+            {
+                check: ((field, value) => { return value >= this.props.minValue; }),
+                message: "Value can't be less than " + this.props.minValue
+            },
+            {
+                check: ((field, value) => { return value <= this.props.maxValue; }),
+                message: "Value can't be greater than " + this.props.maxValue
+            }]
+        });
     }
+
     componentWillReceiveProps(props)
     {
         if(this.isFocused())
@@ -40,39 +58,46 @@ export class NumberField extends TextField
         else
             this.setDOMValue(this.formatValue(props.value));
     }
+
     isFocused()
     {
         return document.activeElement == ReactDOM.findDOMNode(this).querySelector("input");
     }
+
     getValue()
     {
         let value = this.parseValue(this.state.value);
 
         return value || value === 0 ? value : null;
     }
+
     getInt()
     {
         let value = this.getValue() || 0;
 
         return parseInt(value);
     }
+
     getFloat()
     {
         let value = this.getValue() || 0;
         return parseFloat(parseFloat(value).toFixed(this.props.decimals));
     }
+
     parseValue(value)
     {
         // TODO: Add international support
-        let result = value != null && value.length > 0 ? value.toString().replace('$', '').replace(/\,/g, '') : '';
+        let result = value != null && value.toString().length > 0 ? value.toString().replace('$', '').replace(/\,/g, '') : '';
 
         return result;
     }
+
     setValue(value)
     {
         // TODO: Validate this function. Value has to be a number.
         this.setDOMValue(this.formatValue(value));
     }
+
     formatValue(value)
     {
         value = value || value === 0 ? value : this.props.default;
@@ -97,14 +122,17 @@ export class NumberField extends TextField
         else
             return '';
     }
+
     onFocus(event)
     {
         this.setDOMValue(this.parseValue(this.state.value));
     }
+
     onBlur(event)
     {
         this.setDOMValue(this.formatValue(this.state.value));
     }
+
     onChange(event)
     {
         let value = event.target.value;
@@ -117,6 +145,7 @@ export class NumberField extends TextField
         if(this.props.onChange != null)
             this.props.onChange(this, value);
     }
+
     onKeyPress(event)
     {
         let nativeEvent = event.nativeEvent;
@@ -138,12 +167,16 @@ export class NumberField extends TextField
             }
         }
     }
+
     isValid(value)
     {
-         value = this.parseValue(arguments.length > 0 ? value : this.state.value);
+        value = this.parseValue(arguments.length > 0 ? value : this.state.value);
 
-        return !this.props.required || (this.props.required === true && !isNaN(parseFloat(value)));
+        this.errors = this.validator.run(this, value);
+
+        return this.errors.length == 0;
     }
+
     createInput(type, align)
     {
         let classes = [];
@@ -162,5 +195,25 @@ export class NumberField extends TextField
                  readOnly={this.props.readOnly}
                  disabled={this.props.disabled}
                  tabIndex={this.tabIndex}/>);
+    }
+}
+
+class Validator
+{
+    constructor(props)
+    {
+        this.rules = props.rules || [];
+    }
+
+    run(field, value)
+    {
+        let errors = [];
+
+        this.rules.forEach(function(rule){
+            if(!rule.check(field, value))
+                errors.push(rule.message);
+        });
+
+        return errors;
     }
 }
