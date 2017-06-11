@@ -1,4 +1,3 @@
-
 .form-field {
     margin-bottom: 10px;
 }
@@ -16,6 +15,8 @@
     padding-right: 2px;
     border: 1px solid #E3E3E3;
     border-radius: 3px;
+    font-size: inherit;
+    color: inherit;
 
     &:focus
     {
@@ -34,12 +35,22 @@
 /* Required fields that are valid will be displayed with a blue border */
 .field-required input,
 .field-required select,
-.field-invalid textarea,
+.field-required textarea,
 .form-field-required input,
 .form-field-required select,
 .form-field-required textarea
 {
     border-color: #89bcf5;
+}
+
+.field-required.no-border input,
+.field-required.no-border select,
+.field-required.no-border textarea,
+.form-field-required.no-border input,
+.form-field-required.no-border select,
+.form-field-required.no-border textarea
+{
+    border-color: transparent;
 }
 
 /* Invalid fields will have the red border even when they are focused */
@@ -179,7 +190,7 @@ input[type='checkbox']
 .form-field .error
 {
     text-align: right;
-    font-size: 11px;
+    font-size: 12px;
     color: gray;
     padding: 2px 0px;
 }

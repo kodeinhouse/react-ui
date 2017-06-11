@@ -131,6 +131,9 @@ export class NumberField extends TextField
     onBlur(event)
     {
         this.setDOMValue(this.formatValue(this.state.value));
+
+        if(this.props.onBlur)
+            this.props.onBlur(this, this.parseValue(this.state.value));
     }
 
     onChange(event)
@@ -192,6 +195,7 @@ export class NumberField extends TextField
                  onBlur={this.onBlur}
                  onKeyPress={this.onKeyPress}
                  className={classes.join(' ')}
+                 placeholder={this.props.placeholder}
                  readOnly={this.props.readOnly}
                  disabled={this.props.disabled}
                  tabIndex={this.tabIndex}/>);

@@ -23,6 +23,7 @@ export { SearchField } from './components/form/SearchField';
 export { DisplayField } from './components/form/DisplayField';
 export { DisplayText } from './components/form/DisplayText';
 export { RadioButton } from './components/form/RadioButton';
+export { NoteField } from './components/form/NoteField';
 export { Fieldset } from './components/form/Fieldset';
 export { FormPanel } from './components/form/FormPanel';
 
@@ -30,6 +31,7 @@ export { FormPanel } from './components/form/FormPanel';
 export { FitLayout } from './components/box/FitLayout';
 export { FlexLayout } from './components/box/FlexLayout';
 export { FlowLayout } from './components/box/FlowLayout';
+export { ColumnLayout } from './components/box/ColumnLayout';
 export { BorderLayout } from './components/box/BorderLayout';
 export { VerticalLayout } from './components/box/VerticalLayout';
 export { HorizontalLayout } from './components/box/HorizontalLayout';

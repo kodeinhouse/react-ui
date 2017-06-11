@@ -15,8 +15,8 @@ export class FormPanel extends Panel
     }
     isValid(refs)
     {
-        let fields = this.getFields();
-
+        let fields = this.getFields(this);
+        
         for (let i = 0; i < fields.length; i++) {
             if(fields[i].ref != null)
             {
@@ -32,6 +32,34 @@ export class FormPanel extends Panel
 
         return true;
     }
+
+    /**
+     * This is another version of the algorithm to get the Field components
+     */
+    getFormFields(component)
+    {
+        let components = [];
+        let self = this;
+
+        if(component.type != null && component.type.prototype instanceof Field)
+            components.push(component);
+        else
+            if(component.props != null)
+            {
+                if(Array.isArray(component.props.children))
+                {
+                    component.props.children.forEach(function(item){
+                        components = components.concat(self.getFormFields(item));
+                    });
+                }
+                else
+                    if(component.props.children != null)
+                        components = this.getFormFields(component.props.children);
+            }
+
+        return components;
+    }
+
     getFields()
     {
         var types = ['text', 'checkbox', 'note', 'dropdown', 'display'];

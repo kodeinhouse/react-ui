@@ -6,6 +6,12 @@ import { Field } from './Field';
 */
 export class FormField extends Field
 {
+    static get defaultProps(){
+        return {
+            showError: false
+        };
+    }
+
     constructor(props)
     {
         super(props);
@@ -15,7 +21,7 @@ export class FormField extends Field
 
     createMessage()
     {
-        if(this.errors && this.errors.length > 0)
+        if(this.props.showError && this.errors && this.errors.length > 0)
             return <div className="error">{this.errors[0]}</div>;
         else
             return null;

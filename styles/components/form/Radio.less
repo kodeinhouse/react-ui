@@ -5,14 +5,14 @@
     input
     {
         margin: 0 10px 0 0;
-        vertical-align: middle;
+        vertical-align: text-bottom;
         position: relative;
         border: none;
         background-color: transparent;
         -webkit-appearance: none;
         appearance: none;
         cursor: pointer;
-
+        
         &:focus
         {
             outline: none;
@@ -63,5 +63,19 @@
     &+&
     {
         margin-left: 10px;
+    }
+
+    /* Since labels are clickable let's change the cursor */
+    label
+    {
+        display: block;
+        cursor: pointer;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome and Opera */
     }
 }

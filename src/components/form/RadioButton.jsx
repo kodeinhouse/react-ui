@@ -33,7 +33,9 @@ export class RadioButton extends FormField
     render()
     {
         return(
-            <div className="form-field-radio" style={this.props.style}>{this.createInput(this.props.type)}<span>{this.props.label}</span></div>
+            <div className="form-field-radio" style={this.props.style}>
+                <label>{this.createInput(this.props.type)}<span>{this.props.label}</span></label>
+            </div>
         );
     }
 }

@@ -77,6 +77,16 @@
   /* Internet Explorer */
   flex: 1;
 }
+/* This is the most common flex layout we will find */
+.column-layout.auto > * {
+  -webkit-box-flex: 1;
+  /* Safari & Chrome */
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  /* Internet Explorer */
+  flex: 1;
+}
 .flow-wrapper {
   overflow: hidden;
 }
@@ -93,6 +103,7 @@
 .horizontal-layout,
 .vertical-layout,
 .border-layout,
+.column-layout,
 .fit-layout {
   display: -webkit-box;
   /* Safari & Chrome */
@@ -467,6 +478,8 @@ a:-webkit-any-link {
   padding-right: 2px;
   border: 1px solid #E3E3E3;
   border-radius: 3px;
+  font-size: inherit;
+  color: inherit;
   /* Disabled fields will have a gray background and border */
 }
 .field input:focus,
@@ -490,11 +503,19 @@ a:-webkit-any-link {
 /* Required fields that are valid will be displayed with a blue border */
 .field-required input,
 .field-required select,
-.field-invalid textarea,
+.field-required textarea,
 .form-field-required input,
 .form-field-required select,
 .form-field-required textarea {
   border-color: #89bcf5;
+}
+.field-required.no-border input,
+.field-required.no-border select,
+.field-required.no-border textarea,
+.form-field-required.no-border input,
+.form-field-required.no-border select,
+.form-field-required.no-border textarea {
+  border-color: transparent;
 }
 /* Invalid fields will have the red border even when they are focused */
 .field-invalid input,
@@ -601,16 +622,17 @@ input[type='checkbox']:checked::after {
 }
 .form-field .error {
   text-align: right;
-  font-size: 11px;
+  font-size: 12px;
   color: gray;
   padding: 2px 0px;
 }
 .form-field-radio {
   margin-bottom: 10px;
+  /* Since labels are clickable let's change the cursor */
 }
 .form-field-radio input {
   margin: 0 10px 0 0;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   position: relative;
   border: none;
   background-color: transparent;
@@ -656,4 +678,21 @@ input[type='checkbox']:checked::after {
 }
 .form-field-radio + .form-field-radio {
   margin-left: 10px;
+}
+.form-field-radio label {
+  display: block;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                      supported by Chrome and Opera */
 }

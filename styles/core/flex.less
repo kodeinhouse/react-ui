@@ -72,6 +72,16 @@
                 flex: 1;
 }
 
+/* This is the most common flex layout we will find */
+.column-layout.auto > *
+{
+    -webkit-box-flex: 1; /* Safari & Chrome */
+       -moz-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1; /* Internet Explorer */
+                flex: 1;
+}
+
 .flow-wrapper
 {
     overflow: hidden;
@@ -96,6 +106,7 @@
 .horizontal-layout,
 .vertical-layout,
 .border-layout,
+.column-layout,
 .fit-layout
 {
     display: -webkit-box; /* Safari & Chrome */
