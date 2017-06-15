@@ -81,6 +81,7 @@ export class NumberField extends TextField
     getFloat()
     {
         let value = this.getValue() || 0;
+        
         return parseFloat(parseFloat(value).toFixed(this.props.decimals));
     }
 

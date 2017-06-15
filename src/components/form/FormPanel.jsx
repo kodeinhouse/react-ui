@@ -13,10 +13,11 @@ export class FormPanel extends Panel
 
         this.isValid = this.isValid.bind(this);
     }
+
     isValid(refs)
     {
         let fields = this.getFields(this);
-        
+
         for (let i = 0; i < fields.length; i++) {
             if(fields[i].ref != null)
             {
@@ -31,6 +32,20 @@ export class FormPanel extends Panel
         }
 
         return true;
+    }
+
+    getValues(refs)
+    {
+        let fields = this.getFields();
+        let values = {}, component = null;
+        console.log(refs);
+        fields.forEach(function(field){
+            component = refs[field.ref];
+
+            values[field.ref] = component.getValue();
+        });
+
+        return values;
     }
 
     /**
@@ -66,6 +81,7 @@ export class FormPanel extends Panel
 
         return this.getComponents(this);
     }
+
     getComponents(component)
     {
         let components = [];

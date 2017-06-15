@@ -2153,7 +2153,7 @@ var FormField = function (_Field) {
                 var valueClass = 'form-field-value' + (this.props.flex ? ' hbox-l' : '');
 
                 var field = this.createLabel(this.props.label, labelClass);
-                var value = this.createValue(this.props.type, className);
+                var value = this.createValue(this.props.type, valueClass);
 
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
@@ -11821,6 +11821,8 @@ var ColumnLayout = function (_Component) {
             var classes = ['column-layout', 'auto'];
             var style = Object.assign({}, this.props.style || {});
 
+            if (this.props.className) classes.push(this.props.className);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
                 { id: this.props.id, className: classes.join(' '), style: style },
@@ -12463,6 +12465,21 @@ var FormPanel = function (_Panel) {
 
             return true;
         }
+    }, {
+        key: 'getValues',
+        value: function getValues(refs) {
+            var fields = this.getFields();
+            var values = {},
+                component = null;
+            console.log(refs);
+            fields.forEach(function (field) {
+                component = refs[field.ref];
+
+                values[field.ref] = component.getValue();
+            });
+
+            return values;
+        }
 
         /**
          * This is another version of the algorithm to get the Field components
@@ -12704,6 +12721,7 @@ var NumberField = function (_TextField) {
         key: 'getFloat',
         value: function getFloat() {
             var value = this.getValue() || 0;
+
             return parseFloat(parseFloat(value).toFixed(this.props.decimals));
         }
     }, {

@@ -65,7 +65,7 @@ export class FormField extends Field
             let valueClass = 'form-field-value' + (this.props.flex ? ' hbox-l' : '');
 
             let field = this.createLabel(this.props.label, labelClass);
-            let value = this.createValue(this.props.type, className);
+            let value = this.createValue(this.props.type, valueClass);
 
             return (<div className={classes.join(" ")} style={this.props.style}>
                         {field}
