@@ -8,7 +8,8 @@ export class FormField extends Field
 {
     static get defaultProps(){
         return {
-            showError: false
+            showError: false,
+            separator: ':'
         };
     }
 
@@ -29,7 +30,7 @@ export class FormField extends Field
 
     createLabel(label, className)
     {
-        return label ? <div className={className}><label>{label}:</label></div> : null
+        return label ? <div className={className}><label>{label}{this.props.separator}</label></div> : null
     }
 
     createValue(type, className)

@@ -40,8 +40,6 @@
 }
 
 /* Animation */
-@opacityDuration: 800ms;
-@scaleDuration: 1500ms;
 
 .dialog-enter {
   opacity: 0.01;
@@ -54,12 +52,12 @@
 
 .dialog-enter.dialog-enter-active {
     opacity: 1;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 800ms ease-in;
 
     .dialog
     {
         transform: scale(1);
-        transition: transform 700ms ease-in-out;
+        transition: transform 1000ms ease-in-out;
     }
 }
 
@@ -74,12 +72,12 @@
 
 .dialog-appear.dialog-appear-active {
     opacity: 1;
-    transition: opacity @opacityDuration ease-in;
+    transition: opacity 800ms ease-in; /* Keep the opacity transition time lower than the scale duration */
 
     .dialog
     {
         transform: scale(1);
-        transition: transform @scaleDuration ease-in;
+        transition: transform 1000ms ease-in; /* Having the scale performing longer than the opacity gives a better UX */
     }
 }
 

@@ -248,11 +248,11 @@ ul {
 }
 .dialog-enter.dialog-enter-active {
   opacity: 1;
-  transition: opacity 1000ms ease-in;
+  transition: opacity 800ms ease-in;
 }
 .dialog-enter.dialog-enter-active .dialog {
   transform: scale(1);
-  transition: transform 700ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
 }
 .dialog-appear {
   opacity: 0.01;
@@ -263,10 +263,12 @@ ul {
 .dialog-appear.dialog-appear-active {
   opacity: 1;
   transition: opacity 800ms ease-in;
+  /* Keep the opacity transition time lower than the scale duration */
 }
 .dialog-appear.dialog-appear-active .dialog {
   transform: scale(1);
-  transition: transform 1500ms ease-in;
+  transition: transform 1000ms ease-in;
+  /* Having the scale performing longer than the opacity gives a better UX */
 }
 .dialog-leave {
   opacity: 1;
@@ -462,6 +464,19 @@ a:-webkit-any-link {
   font-weight: 500;
   vertical-align: text-top;
 }
+.grid {
+  border-collapse: collapse;
+  color: gray;
+}
+.grid thead th {
+  font-weight: normal;
+  background-color: #F1F1F1;
+}
+.grid thead th,
+.grid tbody td {
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+}
 .form-field {
   margin-bottom: 10px;
 }
@@ -625,6 +640,15 @@ input[type='checkbox']:checked::after {
   font-size: 12px;
   color: gray;
   padding: 2px 0px;
+}
+.form-group {
+  display: flex;
+}
+.form-group > * {
+  flex: 1;
+}
+.form-group.horizontal > .form-field + .form-field {
+  margin-left: 10px;
 }
 .form-field-radio {
   margin-bottom: 10px;

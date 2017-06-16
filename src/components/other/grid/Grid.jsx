@@ -25,10 +25,10 @@ export class Grid extends Panel
 
         this.onResize = this.onResize.bind(this);
         this.onSelectionChange = this.onSelectionChange.bind(this);
-        this.onDoubleClick = this.onDoubleClick.bind(this);
-        this.onRowClick = this.onRowClick.bind(this);
         this.getHeader = this.getHeader.bind(this);
         this.onHeaderClick = this.onHeaderClick.bind(this);
+        this.onDoubleClick = this.onDoubleClick.bind(this);
+        this.onRowClick = this.onRowClick.bind(this);
     }
 
     onHeaderClick(column)
@@ -81,10 +81,12 @@ export class Grid extends Panel
     {
         return body.querySelector("tr");
     }
+
     getResizeElement(bodyWrapper)
     {
         return bodyWrapper;
     }
+
     componentDidMount()
 	{
         let dom = ReactDOM.findDOMNode(this);
@@ -105,6 +107,7 @@ export class Grid extends Panel
 
         this.onResize();
 	}
+
     componentDidUpdate(prevProps, prevState)
     {
         // For an unknown reason to me this method doesn't trigger the resize sensor
@@ -112,6 +115,7 @@ export class Grid extends Panel
 
         this.validateSelection();
     }
+
     onResize()
     {
         let dom = ReactDOM.findDOMNode(this);
@@ -133,6 +137,7 @@ export class Grid extends Panel
             this.resizeColumns(header, body);
         }
     }
+
     resizeColumns(header, body)
     {
         let self = this;
@@ -168,10 +173,12 @@ export class Grid extends Panel
         else
             self.setHeadersWidth(header.querySelectorAll("th"));
     }
+
     setHeadersWidth(headers)
     {
         this.setColumnsWidth(headers);
     }
+
     getColumnGroup(element)
     {
         let columnGroup = element.querySelector("colgroup");
@@ -186,12 +193,14 @@ export class Grid extends Panel
 
         return columnGroup;
     }
+
     getColumnWidth(width)
     {
         let result = width instanceof Number ? width + 'px' : width
 
         return result;
     }
+
     setColumnsWidth(columns)
     {
         let self = this;
@@ -216,6 +225,7 @@ export class Grid extends Panel
                 column.style.maxWidth = null;
         });
     }
+
 	onRowClick(event)
     {
         let dom = ReactDOM.findDOMNode(this);
@@ -245,6 +255,7 @@ export class Grid extends Panel
                 this.onSelectionChange(null, this.getRecord(currentIndex));
             }
     }
+
     onSelectionChange(current, previous)
     {
         if(this.props.onSelectionChange)
@@ -253,6 +264,7 @@ export class Grid extends Panel
             this.props.onSelectionChange(current, previous);
         }
     }
+
     validateSelection()
     {
         let selected = this.getSelectedRecord();
@@ -265,14 +277,57 @@ export class Grid extends Panel
         if(selectedId != previousId)
             this.onSelectionChange(selected, previous);
     }
-    getMoney(value, config)
+
+    getColumnConfig(index)
     {
-        value = !isNaN(value = parseFloat(value)) ? value : 0;
-
-        value = value.toLocaleString('en-US', {style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, mmaximumFractionDigits: config.decimals});
-
-        return value;
+        return this.props.columns[index];
     }
+
+    getRecord(index)
+    {
+        // TODO: Add validations
+        return index >= 0 ? this.props.records[index] : null;
+    }
+
+    getRecords(columns, width)
+    {
+        let data = this.sortData();
+
+        return this.createRows(data, columns, width);
+    }
+
+    sortData()
+    {
+        let sortOrder = this.state.sortOrder;
+        let dataIndex = this.state.sortField;
+
+        if(sortOrder != null && dataIndex != null)
+        {
+            let order = sortOrder == 'ASC' ? 1 : -1;
+
+            return this.state.records.sort(function(a, b){
+                a = a[dataIndex];
+                b = b[dataIndex];
+
+                return (a === b ? 0 : a > b ? 1 : -1) * order;
+            });
+        }
+        else
+            return this.state.records;
+    }
+
+    getSelectedRecord()
+    {
+        let dom = ReactDOM.findDOMNode(this);
+        let body = dom.querySelector(".grid-bd-wrapper");
+        let row = body.querySelector("tr.x-selected");
+
+        if(row != null)
+            return this.getRecord(this.getRowIndex(row));
+        else
+            return null;
+    }
+
     getHeader(column, row, index, content, width)
     {
         let key = "th-" + row + "-" + index;
@@ -286,14 +341,14 @@ export class Grid extends Panel
                                     sort={column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null}
                                     onClick={this.onHeaderClick}>{content}</TableColumnHeader>;
     }
-    getColumnConfig(index)
+
+    getMoney(value, config)
     {
-        return this.props.columns[index];
-    }
-    getRecord(index)
-    {
-        // TODO: Add validations
-        return index >= 0 ? this.props.records[index] : null;
+        value = !isNaN(value = parseFloat(value)) ? value : 0;
+
+        value = value.toLocaleString('en-US', {style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, mmaximumFractionDigits: config.decimals});
+
+        return value;
     }
 
     createRows(data, columns, width)
@@ -346,45 +401,6 @@ export class Grid extends Panel
 
             return (<tr id={"tr-" + record._id} className={classes.join(' ')} data-index={rowIndex} key={"tr-" + rowIndex} data-id={record.id} onClick={self.onRowClick} onDoubleClick={self.onDoubleClick}>{cells}</tr>);
         });
-    }
-
-    getRecords(columns, width)
-    {
-        let data = this.sortData();
-
-        return this.createRows(data, columns, width);
-    }
-
-    sortData()
-    {
-        let sortOrder = this.state.sortOrder;
-        let dataIndex = this.state.sortField;
-
-        if(sortOrder != null && dataIndex != null)
-        {
-            let order = sortOrder == 'ASC' ? 1 : -1;
-
-            return this.state.records.sort(function(a, b){
-                a = a[dataIndex];
-                b = b[dataIndex];
-
-                return (a === b ? 0 : a > b ? 1 : -1) * order;
-            });
-        }
-        else
-            return this.state.records;
-    }
-
-    getSelectedRecord()
-    {
-        let dom = ReactDOM.findDOMNode(this);
-        let body = dom.querySelector(".grid-bd-wrapper");
-        let row = body.querySelector("tr.x-selected");
-
-        if(row != null)
-            return this.getRecord(this.getRowIndex(row));
-        else
-            return null;
     }
 
     render()

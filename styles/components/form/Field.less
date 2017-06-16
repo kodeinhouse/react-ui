@@ -194,3 +194,21 @@ input[type='checkbox']
     color: gray;
     padding: 2px 0px;
 }
+
+.form-group
+{
+    display: flex;
+
+    & > *
+    {
+        flex: 1;
+    }
+
+    &.horizontal
+    {
+        & > .form-field + .form-field
+        {
+            margin-left: 10px;
+        }
+    }
+}

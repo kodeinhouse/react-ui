@@ -81,7 +81,7 @@ export class NumberField extends TextField
     getFloat()
     {
         let value = this.getValue() || 0;
-        
+
         return parseFloat(parseFloat(value).toFixed(this.props.decimals));
     }
 
@@ -101,6 +101,8 @@ export class NumberField extends TextField
 
     formatValue(value)
     {
+        console.log(this.props.default);
+        
         value = value || value === 0 ? value : this.props.default;
 
         let isNumber = !isNaN(value = parseFloat(value));

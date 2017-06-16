@@ -26,6 +26,7 @@ export { RadioButton } from './components/form/RadioButton';
 export { NoteField } from './components/form/NoteField';
 export { Fieldset } from './components/form/Fieldset';
 export { FormPanel } from './components/form/FormPanel';
+export { FormGroup } from './components/form/FormGroup';
 
 // Layout
 export { FitLayout } from './components/box/FitLayout';
@@ -45,4 +46,5 @@ export { Navigation } from './components/nav/Navigation';
 export { TabPanel } from './components/other/TabPanel';
 export { TabItem } from './components/other/TabItem';
 export { Grid } from './components/other/grid/Grid';
+export { SimpleGrid } from './components/other/grid/SimpleGrid';
 export { GroupingGrid } from './components/other/grid/GroupingGrid';
