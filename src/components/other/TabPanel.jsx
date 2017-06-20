@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from '../box/Container';
+import { VerticalLayout } from '../box/VerticalLayout';
 
 export class TabPanel extends Container
 {
@@ -11,6 +12,7 @@ export class TabPanel extends Container
             selected: 0
         };
     }
+
     renderHeader()
     {
         var headers = [];
@@ -25,27 +27,36 @@ export class TabPanel extends Container
             return (<li key={index} className={active ? "active": null}><a href="#" onClick={this.handleOnClick.bind(this, index)}>{item.props.title}</a></li>);
         }
 
-        return (<ul className="tab-stripe">{this.props.children.map(createTabStrip.bind(this))}</ul>);
+        return (<ul className="tab-stripe region-north">{this.props.children.map(createTabStrip.bind(this))}</ul>);
     }
-    renderActiveTab()
+
+    renderTabs()
     {
-        return this.props.children[this.state.selected];
+        let selected = this.state.selected;
+
+        return React.Children.map(this.props.children, function(child, index){
+            return React.cloneElement(child, {
+                active: (selected == index)
+            });
+        });
     }
+
     handleOnClick(index, event)
     {
         event.preventDefault();
 
         this.setState({selected: index});
     }
+
     render()
     {
         let classes = ['tab-panel', this.props.theme];
 
         return (
-            <div className={classes.join(' ')}>
+            <VerticalLayout className={classes.join(' ')} style={this.props.style}>
                 {this.renderHeader()}
-                {this.renderActiveTab()}
-            </div>
+                {this.renderTabs()}
+            </VerticalLayout>
         );
     }
 }

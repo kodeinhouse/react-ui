@@ -14,6 +14,7 @@ export class NumberField extends TextField
             allowNegative: true,
             decimals: 2,
             value: '',
+            separator: ':',
             default: ''
         };
     }
@@ -101,8 +102,6 @@ export class NumberField extends TextField
 
     formatValue(value)
     {
-        console.log(this.props.default);
-        
         value = value || value === 0 ? value : this.props.default;
 
         let isNumber = !isNaN(value = parseFloat(value));

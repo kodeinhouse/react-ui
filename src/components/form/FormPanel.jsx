@@ -17,17 +17,29 @@ export class FormPanel extends Panel
     isValid(refs)
     {
         let fields = this.getFields(this);
+        let name = null;
+        console.log(refs);
 
         for (let i = 0; i < fields.length; i++) {
-            if(fields[i].ref != null)
+            let name = fields[i].props.name;
+
+            if(name != null)
             {
-                let component = refs[fields[i].ref];
+                let component = refs[name];
 
-                if(this.props.debug)
-                    console.log(fields[i].ref + ': ' + component.isValid());
+                try {
 
-                if(!component.isValid())
-                    return false;
+                    if(this.props.debug)
+                        console.log(name + ': ' + component.isValid());
+
+                    if(!component.isValid())
+                        return false;
+                }
+                catch (e) {
+                    console.log(name);
+                    console.log(e);
+                }
+
             }
         }
 
@@ -38,11 +50,11 @@ export class FormPanel extends Panel
     {
         let fields = this.getFields();
         let values = {}, component = null;
-        console.log(refs);
-        fields.forEach(function(field){
-            component = refs[field.ref];
 
-            values[field.ref] = component.getValue();
+        fields.forEach(function(field){
+            component = refs[field.props.name];
+
+            values[field.props.name] = component.getValue();
         });
 
         return values;

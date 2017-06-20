@@ -53,5 +53,6 @@ export class SearchField extends Field
 }
 
 SearchField.defaultProps = {
-    type: 'search'
+    type: 'search',
+    separator: ':'
 };

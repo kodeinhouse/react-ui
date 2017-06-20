@@ -165,3 +165,7 @@ export class Field extends Component
         return <div className={classes.join(' ')} style={this.props.style}>{this.createInput(this.props.type)}</div>;
     }
 }
+
+Field.defaultProps = {
+    lazyCheck: false
+};

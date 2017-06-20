@@ -6,7 +6,8 @@ export class DisplayField extends FormField
     static get defaultProps(){
         return {
             type: 'display',
-            flex: true
+            flex: true,
+            separator: ':'
         };
     }
     constructor(props)

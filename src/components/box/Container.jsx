@@ -5,6 +5,7 @@ export class Container extends Component
     render()
     {
         let classes = [];
+        let style = Object.assign({}, this.props.style || {});
 
         if(this.props.className)
             classes.push(this.props.className);
@@ -15,6 +16,18 @@ export class Container extends Component
         if(this.props.region)
             classes.push('region-' + this.props.region);
 
-        return <div id={this.props.id} className={classes.join(' ')} style={this.props.style}>{this.props.children}</div>;
+        if(this.props.scrollable === false)
+            style.overflow = 'hidden';
+
+        if(this.props.scrollable === true)
+            style.overflow = 'auto';
+
+        if(this.props.scrollableY === true)
+            style.overflowY = 'auto';
+
+        if(this.props.scrollableX === true)
+            style.overflowX = 'auto';
+                
+        return <div id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</div>;
     }
 }

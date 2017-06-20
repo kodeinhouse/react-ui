@@ -5,7 +5,8 @@ export class FormGroup extends Component
     static get defaultProps()
     {
         return {
-            orientation: 'horizontal'
+            layout: 'horizontal',
+            label: 'left'
         };
     }
 
@@ -13,8 +14,11 @@ export class FormGroup extends Component
     {
         let classes = ['form-group'];
 
-        if(this.props.orientation)
-            classes.push(this.props.orientation);
+        if(this.props.layout)
+            classes.push(this.props.layout);
+
+        if(this.props.label)
+            classes.push('label ' + this.props.label);
 
         return (
             <div className={classes.join(' ')}>

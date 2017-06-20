@@ -6,7 +6,8 @@ export class RadioButton extends FormField
     static get defaultProps()
     {
         return {
-            type: 'radio'
+            type: 'radio',
+            separator: ':'
         };
     }
     constructor(props)

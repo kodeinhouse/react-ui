@@ -6,7 +6,8 @@ export class NoteField extends FormField
     static get defaultProps()
     {
         return {
-            type: 'note'
+            type: 'note',
+            separator: ':'
         };
     }
 
@@ -19,7 +20,7 @@ export class NoteField extends FormField
     {
         return node.querySelector('textarea');
     }
-    
+
     createInput()
     {
         return (<textarea id={this.props.id} name={this.props.name} value={this.state.value} rows={this.props.rows} onChange={this.onChange} readOnly={this.props.readOnly} disabled={this.props.disabled}/>);

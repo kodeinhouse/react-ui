@@ -211,4 +211,47 @@ input[type='checkbox']
             margin-left: 10px;
         }
     }
+
+    &.vertical
+    {
+        flex-direction: column;
+
+        &.inline
+        {
+            .form-field
+            {
+                display: flex;
+
+                .form-field-label
+                {
+                    flex: 1;
+                    line-height: 32px;
+                    max-width: 200px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+
+                .form-field-value
+                {
+                    flex: 1;
+                }
+
+            }
+        }
+
+        &.top
+        {
+            .form-field-label
+            {
+                text-align: left;
+            }
+        }
+
+
+
+        & > .form-field + .form-field
+        {
+
+        }
+    }
 }

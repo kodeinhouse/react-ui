@@ -6,9 +6,11 @@ export class TextField extends FormField
     static get defaultProps()
     {
         return {
-            type: 'text'
+            type: 'text',
+            separator: ':'
         };
     }
+
     constructor(props)
     {
         super(props);

@@ -5,7 +5,8 @@ export class CheckBox extends FormField
 {
     static get defaultProps(){
         return {
-            type: 'checkbox'
+            type: 'checkbox',
+            separator: ':'
         };
     }
 
