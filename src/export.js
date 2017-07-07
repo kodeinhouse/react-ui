@@ -48,3 +48,5 @@ export { TabItem } from './components/other/TabItem';
 export { Grid } from './components/other/grid/Grid';
 export { SimpleGrid } from './components/other/grid/SimpleGrid';
 export { GroupingGrid } from './components/other/grid/GroupingGrid';
+
+export { ApplicationLayout } from './components/layout/Application';

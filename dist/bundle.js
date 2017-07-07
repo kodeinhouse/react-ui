@@ -11754,6 +11754,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SimpleGrid", function() { return __WEBPACK_IMPORTED_MODULE_35__components_other_grid_SimpleGrid__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_other_grid_GroupingGrid__ = __webpack_require__(126);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupingGrid", function() { return __WEBPACK_IMPORTED_MODULE_36__components_other_grid_GroupingGrid__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_layout_Application__ = __webpack_require__(253);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ApplicationLayout", function() { return __WEBPACK_IMPORTED_MODULE_37__components_layout_Application__["a"]; });
 
 
 // Export here all the components
@@ -11794,6 +11796,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // Panels
+
+
 
 
 
@@ -45429,6 +45433,240 @@ module.exports = function(module) {
 
 module.exports = __webpack_require__(96);
 
+
+/***/ }),
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApplicationLayout; });
+/* unused harmony export Header */
+/* unused harmony export Container */
+/* unused harmony export Content */
+/* unused harmony export Navigation */
+/* unused harmony export Aside */
+/* unused harmony export Footer */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__box_FitLayout__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__box_VerticalLayout__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__box_HorizontalLayout__ = __webpack_require__(102);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var ApplicationLayout = function (_Component) {
+    _inherits(ApplicationLayout, _Component);
+
+    function ApplicationLayout() {
+        _classCallCheck(this, ApplicationLayout);
+
+        return _possibleConstructorReturn(this, (ApplicationLayout.__proto__ || Object.getPrototypeOf(ApplicationLayout)).apply(this, arguments));
+    }
+
+    _createClass(ApplicationLayout, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2__box_VerticalLayout__["a" /* VerticalLayout */],
+                { id: 'react-app', style: { flex: '1 auto' } },
+                this.props.children
+            );
+        }
+    }]);
+
+    return ApplicationLayout;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Header = function (_Component2) {
+    _inherits(Header, _Component2);
+
+    function Header() {
+        _classCallCheck(this, Header);
+
+        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    }
+
+    _createClass(Header, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__box_HorizontalLayout__["a" /* HorizontalLayout */],
+                { id: 'main-header', region: 'north', className: this.props.className, style: this.props.style },
+                this.props.children
+            );
+        }
+    }]);
+
+    return Header;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Container = function (_Component3) {
+    _inherits(Container, _Component3);
+
+    function Container() {
+        _classCallCheck(this, Container);
+
+        return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
+    }
+
+    _createClass(Container, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3__box_HorizontalLayout__["a" /* HorizontalLayout */],
+                { id: 'main-container', region: 'center' },
+                this.props.children
+            );
+        }
+    }]);
+
+    return Container;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Content = function (_Component4) {
+    _inherits(Content, _Component4);
+
+    function Content() {
+        _classCallCheck(this, Content);
+
+        return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).apply(this, arguments));
+    }
+
+    _createClass(Content, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__box_FitLayout__["a" /* FitLayout */],
+                { id: 'main-content', region: 'center' },
+                this.props.children
+            );
+        }
+    }]);
+
+    return Content;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Navigation = function (_Component5) {
+    _inherits(Navigation, _Component5);
+
+    function Navigation() {
+        _classCallCheck(this, Navigation);
+
+        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).apply(this, arguments));
+    }
+
+    _createClass(Navigation, [{
+        key: 'render',
+        value: function render() {
+            var style = Object.assign({}, this.props.style);
+            var classes = [];
+            var id = this.props.id || "main-nav";
+            var region = this.props.region || 'east';
+            var width = this.props.width || "260px";
+
+            // If a region was giving it means this component is being used inside a flex layout
+            // So instead of assigning to the width property we use the flexBasis
+            if (region && width) style.flexBasis = width;
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (region) classes.push('region-' + region);
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'nav',
+                { id: id, className: classes.join(' '), style: style },
+                this.props.children
+            );
+        }
+    }]);
+
+    return Navigation;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Aside = function (_Component6) {
+    _inherits(Aside, _Component6);
+
+    function Aside() {
+        _classCallCheck(this, Aside);
+
+        return _possibleConstructorReturn(this, (Aside.__proto__ || Object.getPrototypeOf(Aside)).apply(this, arguments));
+    }
+
+    _createClass(Aside, [{
+        key: 'render',
+        value: function render() {
+            return null;
+        }
+    }]);
+
+    return Aside;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var Footer = function (_Component7) {
+    _inherits(Footer, _Component7);
+
+    function Footer() {
+        _classCallCheck(this, Footer);
+
+        return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+    }
+
+    _createClass(Footer, [{
+        key: 'render',
+        value: function render() {
+            return null;
+        }
+    }]);
+
+    return Footer;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+ApplicationLayout.Aside = Aside;
+ApplicationLayout.Header = Header;
+ApplicationLayout.Footer = Footer;
+ApplicationLayout.Content = Content;
+ApplicationLayout.Container = Container;
+ApplicationLayout.Navigation = Navigation;
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(ApplicationLayout, 'ApplicationLayout', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+
+    __REACT_HOT_LOADER__.register(Header, 'Header', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+
+    __REACT_HOT_LOADER__.register(Content, 'Content', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+
+    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+
+    __REACT_HOT_LOADER__.register(Aside, 'Aside', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+
+    __REACT_HOT_LOADER__.register(Footer, 'Footer', '/Users/brittongr/Development/packages/react-ui/src/components/layout/Application.jsx');
+}();
+
+;
 
 /***/ })
 /******/ ]);

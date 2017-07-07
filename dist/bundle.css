@@ -145,6 +145,27 @@ ul {
   padding: 0px;
   margin: 0px;
 }
+html {
+  margin: 0px;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+body {
+  margin: 0px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  overflow: hidden;
+}
+#react-root {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  overflow: hidden;
+}
 .ruler {
   border: 1px solid red;
   position: relative;
