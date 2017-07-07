@@ -12619,7 +12619,6 @@ var FormPanel = function (_Panel) {
         value: function isValid(refs) {
             var fields = this.getFields(this);
             var name = null;
-            console.log(refs);
 
             for (var i = 0; i < fields.length; i++) {
                 var _name = fields[i].props.name;

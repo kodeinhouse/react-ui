@@ -18,8 +18,7 @@ export class FormPanel extends Panel
     {
         let fields = this.getFields(this);
         let name = null;
-        console.log(refs);
-
+        
         for (let i = 0; i < fields.length; i++) {
             let name = fields[i].props.name;
 
