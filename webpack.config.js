@@ -4,7 +4,10 @@ const webpack = require('webpack');
 module.exports = {
   context: __dirname,
   resolve:  {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      alias: {
+          components: resolve(__dirname, 'src/export.js')
+      }
   },
   entry: [
     'react-hot-loader/patch',
@@ -62,9 +65,8 @@ module.exports = {
             use: [ 'style-loader', 'css-loader', 'less-loader'],
         },
         {
-            test: /\.png$/,
-            loader: "url-loader",
-            query: { mimetype: "image/png" }
+            test: /\.(png|gif)$/,
+            loader: "url-loader"
         }
     ],
   },

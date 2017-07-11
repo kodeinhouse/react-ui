@@ -1,0 +1,117 @@
+.form-header.blue
+{
+    color: #2196F3;
+}
+
+.form-section
+{
+    .form-header
+    {
+        color: #505458;
+    }
+}
+
+.form-section+.form-section
+{
+    margin-top: 20px;
+}
+
+.x-form-body
+{
+    .form-field-label
+    {
+        color: gray;
+        font-weight: 600;
+    }
+
+    .form-field:not(.inline)
+    {
+        .form-field-label
+        {
+            margin-bottom: 5px;
+        }
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        padding: 7px 12px;
+    }
+}
+
+.form-label
+{
+    .form-field
+    {
+        position: relative;
+
+        .form-field-label
+        {
+            top: 2px;
+            font-size: 12px;
+            position: absolute;
+            padding: 0px 12px;
+            transition: opacity ease-in-out 0.25s;
+
+            label
+            {
+                font-family: Arial;
+                font-weight: normal;
+            }
+        }
+
+        .form-field-value
+        {
+            input
+            {
+                padding: 11px 12px;
+                transition: padding linear 0.2s;
+            }
+        }
+    }
+
+    .form-field:not(.form-field-invalid)
+    {
+        .form-field-label
+        {
+            opacity: 1;
+            visibility: visible;
+
+            label
+            {
+                color: gray;
+            }
+        }
+
+        .form-field-value
+        {
+            input
+            {
+                padding: 18px 12px 4px 12px;
+            }
+        }
+    }
+
+    .form-field-invalid
+    {
+        .form-field-label
+        {
+            opacity: 0;
+            visibility: hidden;
+
+            label
+            {
+                color: gray;
+            }
+        }
+
+        .form-field-value
+        {
+            input
+            {
+                padding: 11px 12px;
+                background: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+.overlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog
+{
+	z-index: 1;
+    margin: auto;
+	background-color: #FFFFFF;
+    border: 1px solid #ECECEC;
+    border-radius: 2px;
+}
+
+.dialog-header
+{
+    color: gray;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.dialog-body
+{
+    padding: 10px;
+}
+
+.dialog-footer
+{
+    padding: 5px 10px;
+    border-top: 1px solid #ECECEC;
+}
+
+.dialog .footer
+{
+    padding-top: 10px;
+}
+
+/* Animation */
+
+.dialog-enter {
+  opacity: 0.01;
+
+    .dialog
+    {
+        transform: scale(0.3);
+    }
+}
+
+.dialog-enter.dialog-enter-active {
+    opacity: 1;
+    transition: opacity 800ms ease-in;
+
+    .dialog
+    {
+        transform: scale(1);
+        transition: transform 1000ms ease-in-out;
+    }
+}
+
+.dialog-appear {
+    opacity: 0.01;
+
+    .dialog
+    {
+        transform: scale(0.01);
+    }
+}
+
+.dialog-appear.dialog-appear-active {
+    opacity: 1;
+    transition: opacity 800ms ease-in; /* Keep the opacity transition time lower than the scale duration */
+
+    .dialog
+    {
+        transform: scale(1);
+        transition: transform 1000ms ease-in; /* Having the scale performing longer than the opacity gives a better UX */
+    }
+}
+
+.dialog-leave {
+    opacity: 1;
+
+    .dialog
+    {
+        transform: scale(1);
+    }
+}
+
+.dialog-leave.dialog-leave-active {
+    opacity: 0.01;
+    transition: opacity 400ms ease-in;
+
+    .dialog
+    {
+        transform: scale(0.3);
+        transition: transform 600ms ease-in;
+    }
+}

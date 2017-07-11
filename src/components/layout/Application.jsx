@@ -2,99 +2,91 @@ import React, { Component } from 'react';
 import { FitLayout } from '../box/FitLayout';
 import { VerticalLayout } from '../box/VerticalLayout';
 import { HorizontalLayout } from '../box/HorizontalLayout';
+import { Container } from '../box/Container';
 
-export class ApplicationLayout extends Component
+export class Application extends Component
 {
     render()
     {
         return (
-            <VerticalLayout id="react-app" style={{flex: '1 auto'}}>
+            <Container id="react-app" layout="border" orientation="vertical">
                 {this.props.children}
-            </VerticalLayout>
+            </Container>
         );
     }
 }
 
-export class Header extends Component
+export class ApplicationHeader extends Component
 {
     render()
     {
         return (
-            <HorizontalLayout id="main-header" region="north" className={this.props.className} style={this.props.style}>
+            <Container id="main-header" region="north" {...this.props}>
                 {this.props.children}
-            </HorizontalLayout>
+            </Container>
         );
     }
 }
 
-export class Container extends Component
+export class ApplicationContainer extends Component
 {
     render()
     {
         return (
-            <HorizontalLayout id="main-container" region="center">
+            <Container id="main-container" layout="border" region="center">
                 {this.props.children}
-            </HorizontalLayout>
+            </Container>
         );
     }
 }
 
-export class Content extends Component
+export class ApplicationContent extends Component
 {
     render()
     {
         return (
-            <FitLayout id="main-content" region="center">
+            <Container id="main-content" region="center" {...this.props}>
                 {this.props.children}
-            </FitLayout>
+            </Container>
         );
     }
 }
 
-export class Navigation extends Component
+export class ApplicationNavigation extends Component
 {
     render()
     {
-        let style = Object.assign({}, this.props.style);
-        let classes = [];
-        let id = this.props.id || "main-nav";
-        let region = this.props.region || 'east';
-        let width = this.props.width || "260px";
-
-        // If a region was giving it means this component is being used inside a flex layout
-        // So instead of assigning to the width property we use the flexBasis
-        if(region && width)
-            style.flexBasis = width;
-
-        if(this.props.className)
-            classes.push(this.props.className);
-
-        if(region)
-            classes.push('region-' + region);
-
-        return <nav id={id} className={classes.join(' ')} style={style}>{this.props.children}</nav>;
+        return <Container id="main-nav" {...this.props}>{this.props.children}</Container>;
     }
 }
 
-export class Aside extends Component
+export class ApplicationAside extends Component
 {
     render()
     {
-        return null;
+        return (
+            <Container id="main-aside" {...this.props}>
+                {this.props.children}
+            </Container>
+        );
     }
 }
 
-export class Footer extends Component
+export class ApplicationFooter extends Component
 {
     render()
     {
-        return null;
+        return (
+            <Container id="main-footer" {...this.props}>
+                {this.props.children}
+            </Container>
+        );
     }
 }
 
-ApplicationLayout.Aside = Aside;
-ApplicationLayout.Header = Header;
-ApplicationLayout.Footer = Footer;
-ApplicationLayout.Content = Content;
-ApplicationLayout.Container = Container;
-ApplicationLayout.Navigation = Navigation;
+Application.Aside = ApplicationAside;
+Application.Header = ApplicationHeader;
+Application.Footer = ApplicationFooter;
+Application.Content = ApplicationContent;
+Application.Container = ApplicationContainer;
+Application.Navigation = ApplicationNavigation;

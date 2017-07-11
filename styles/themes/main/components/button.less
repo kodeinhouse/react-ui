@@ -1,0 +1,152 @@
+.button
+{
+    padding: 8px 10px;
+    width: 120px;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    transition: background-color ease-in-out 0.3s;
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+
+    &.solid
+    {
+        &.default
+        {
+            color: @white;
+            border-color: @gray;
+            background-color: @gray;
+        }
+
+        &.green
+        {
+            color: @white;
+            background-color: @green;
+            border-color: @green;
+        }
+
+        &.blue
+        {
+            color: @white;
+            border-color: #2196F3;
+            background-color: #2196F3;
+        }
+
+        &.white
+        {
+            border-color: @white;
+            background-color: @white;
+        }
+
+        &.orange
+        {
+            color: @white;
+            border-color: orange;
+            background-color: orange;
+        }
+
+        &.black
+        {
+            border-color: black;
+            background-color: black;
+        }
+
+        &.red
+        {
+            color: @white;
+            border-color: #ff5252;
+            background-color: #ff5252;
+        }
+
+        &:hover
+        {
+            opacity: 0.9;
+        }
+
+        &:active
+        {
+            opacity: 1;
+        }
+    }
+
+    &.outline
+    {
+        background-color: transparent;
+
+        &.default
+        {
+            color: @gray;
+            border-color: @gray;
+
+            &:hover
+            {
+                color: black;
+            }
+        }
+
+        &.white
+        {
+            color: @white;
+            border-color: @white;
+        }
+
+        &.blue
+        {
+            color: #2196F3;
+            border-color: #2196F3;
+
+            &:hover
+            {
+                color: @white;
+                background-color: #2196F3;
+            }
+        }
+
+        &.red
+        {
+            color: #ff5252;
+            border-color: #ff5252;
+
+            &:hover
+            {
+                color: @white;
+                background-color: #ff5252;
+            }
+        }
+
+        &.green
+        {
+            color: @green;
+            border-color: @green;
+
+            &:hover
+            {
+                color: @white;
+                background-color: @green;
+            }
+        }
+
+        &.black
+        {
+            color: #000000;
+            border-color: #000000;
+        }
+    }
+
+    + .button
+    {
+        margin-left: 10px;
+    }
+
+    &[disabled=disabled], &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}

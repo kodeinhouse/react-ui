@@ -7,7 +7,7 @@ module.exports = {
     resolve:  {
         extensions: ['.js', '.jsx', '.less'],
         alias: {
-
+            components: resolve(__dirname, 'src/export.js')
         }
     },
     entry: [
@@ -45,9 +45,8 @@ module.exports = {
                 })
             },
             {
-              test: /\.png$/,
-              loader: "url-loader",
-              query: { mimetype: "image/png" }
+                test: /\.(png|gif)$/,
+                loader: "url-loader"
             }
         ]
     },

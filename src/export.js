@@ -1,8 +1,9 @@
-import '../styles/import.less';
+//import '../styles/import.less';
 
 // Export here all the components
 export { Icon } from './components/other/Icon';
-
+export { Badge } from './components/other/Badge';
+export { Logo } from './components/other/Logo';
 // Other
 export { Text } from './components/other/Text';
 export { Button } from './components/other/Button';
@@ -40,6 +41,7 @@ export { HorizontalLayout } from './components/box/HorizontalLayout';
 // Panels
 export { Container } from './components/box/Container';
 export { Dialog } from './components/other/Dialog';
+export { LoadingMask } from './components/other/LoadingMask';
 
 export { Toolbar } from './components/other/Toolbar';
 export { Navigation } from './components/nav/Navigation';
@@ -49,4 +51,4 @@ export { Grid } from './components/other/grid/Grid';
 export { SimpleGrid } from './components/other/grid/SimpleGrid';
 export { GroupingGrid } from './components/other/grid/GroupingGrid';
 
-export { ApplicationLayout } from './components/layout/Application';
+export { Application } from './components/layout/Application';

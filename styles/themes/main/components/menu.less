@@ -1,0 +1,65 @@
+.menu .link
+{
+    padding: 10px;
+}
+
+.menu .icon
+{
+    padding: 10px 16px;
+
+    + span
+    {
+        padding-left: 10px;
+    }
+}
+
+.menu
+{
+    list-style: none;
+}
+
+.menu > .item
+{
+    & > .link
+    {
+        display: block;
+    }
+}
+
+.menu > .item.active,
+.menu > .item.expanded
+{
+    & > .menu
+    {
+        
+    }
+}
+
+.menu:first-child > .item.active
+{
+    & > .link
+    {
+
+    }
+
+    & > .menu > .item
+    {
+
+    }
+}
+
+.menu .item.active
+{
+    & > .link
+    {
+
+    }
+}
+
+.menu .item .link
+{
+    &:hover
+    {
+
+    }
+}
