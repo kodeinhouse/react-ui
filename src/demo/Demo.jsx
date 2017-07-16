@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'components';
-import { Application } from 'components';
+import { Application } from 'react-layout';
 import { Menu, MenuItem, Icon, Badge, Link as MenuLink } from 'components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
@@ -19,37 +19,29 @@ export class Demo extends Component
                     </MenuLink>
                     <Menu>
                         <MenuItem>
-                            <Link to="/about" className="link">About</Link>
+                            <Link to="/form" className="link">Form</Link>
                         </MenuItem>
                         <MenuItem active={true}>
-                            <MenuLink path="/"><span>This is a sub link</span><Badge /></MenuLink>
+                                <Link to="/textfield" className="link"><span>Text Fields</span><Badge /></Link>
                                 <Menu>
                                     <MenuItem>
-                                        <MenuLink path="/">This is a sub link</MenuLink>
+                                        <Link to="/radiobutton" className="link">Radio Buttons</Link>
                                     </MenuItem>
                                     <MenuItem>
-                                        <MenuLink path="/">This is a sub link</MenuLink>
+                                        <Link to="/checkbox" className="link">Check Boxes</Link>
                                     </MenuItem>
                                     <MenuItem>
-                                        <MenuLink path="/">This is a sub link</MenuLink>
+                                        <Link to="/dropdown" className="link">Dropdowns</Link>
                                     </MenuItem>
                                 </Menu>
                         </MenuItem>
                         <MenuItem>
-                            <MenuLink path="/">This is a sub link</MenuLink>
+                            <Link to="/navigation" className="link">Navigation</Link>
                         </MenuItem>
                     </Menu>
                 </MenuItem>
                 <MenuItem>
-                    <MenuLink path="/customers"><Icon className="customer" /><span>Customers</span></MenuLink>
-                    <Menu></Menu>
-                </MenuItem>
-                <MenuItem>
-                    <MenuLink path="/invoices"><Icon className="invoice" /><span>Invoices</span></MenuLink>
-                    <Menu></Menu>
-                </MenuItem>
-                <MenuItem>
-                    <MenuLink path="/coupons"><Icon className="coupon" /><span>Coupons</span></MenuLink>
+                    <MenuLink path="/horizontal-nav"><Icon className="customer" /><span>Horizontal</span></MenuLink>
                     <Menu></Menu>
                 </MenuItem>
             </Menu>
@@ -58,8 +50,6 @@ export class Demo extends Component
 
     render()
     {
-        console.log('rendering again');
-
         return (
             <Router>
                 <Application>
@@ -73,8 +63,12 @@ export class Demo extends Component
                         </Application.Navigation>
                         <Application.Content>
                             <Route exact path="/" component={() => { return <Container>Home Path</Container>}}/>
-                            <Route path="/about" component={() => { return <Container>About Path</Container>}}/>
-                            <Route path="/topics" component={() => { return <Container>Topics Path</Container>}}/>
+                            <Route path="/form" component={() => { return <Container>Form Demo</Container>}}/>
+                            <Route path="/textfield" component={() => { return <Container>Text Field Demo</Container>}}/>
+                            <Route path="/radiobutton" component={() => { return <Container>Radio Button Demo</Container>}}/>
+                            <Route path="/checkbox" component={() => { return <Container>Check Box Demo</Container>}}/>
+                            <Route path="/dropdown" component={() => { return <Container>Dropdown Demo</Container>}}/>
+                            <Route path="/navigation" component={() => { return <Container>Navigation Demo</Container>}}/>
                         </Application.Content>
                         <Application.Aside>
                             Aside
