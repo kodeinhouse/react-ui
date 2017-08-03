@@ -39,12 +39,12 @@ module.exports = {
                         loader: 'less-loader'
                     }],
                     fallback: 'style-loader'
-                })
+                }),
+                exclude: [resolve(__dirname, 'styles/_components'), resolve(__dirname, 'styles/_core')]
             },
             {
-              test: /\.png$/,
-              loader: "url-loader",
-              query: { mimetype: "image/png" }
+                test: /\.(png|gif)$/,
+                loader: "url-loader"
             }
         ]
     },

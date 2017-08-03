@@ -1,0 +1,72 @@
+.row
+{
+    display: flex;
+}
+
+.half
+{
+    flex: 0 1 50%;
+}
+
+.stacked
+{
+    /* For default style we don't need to add anything else */
+
+
+}
+
+.inline
+{
+    display: flex;
+
+    &.auto > *
+    {
+        flex: 0 0 auto;
+    }
+
+    &.equal > *
+    {
+        flex: 1 1 100%;
+    }
+}
+
+/* Make all childs the same width */
+.equal
+{
+    display: flex;
+
+    & > *
+    {
+        flex: 1 1 100%;
+    }
+}
+
+.layout-flex
+{
+    display: flex;
+}
+
+/*.inline
+{
+    display: flex;
+
+    & > .auto
+    {
+        flex: 0 0 auto;
+    }
+
+    & > .equal
+    {
+        flex: 1 1 100%;
+    }
+}
+
+.fluid
+{
+    display: flex;
+
+    & > *
+    {
+        flex: 0 1 auto;
+    }
+}*/

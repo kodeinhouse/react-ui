@@ -1,0 +1,268 @@
+@borderColor: #D3D3D3;
+
+.field
+{
+    max-width: 320px;
+    margin-bottom: 15px;
+
+    input, select, textarea
+    {
+        padding: 7px 12px;
+        border: 1px solid @borderColor;
+        border-radius: 3px;
+    }
+
+    label
+    {
+        display: block;
+    }
+
+    /* These selectors prevent applying the same styles to Radio Buttons and CheckBoxes */
+    label + input,
+    label + select,
+    label + textarea
+    {
+        margin-top: 10px;
+    }
+}
+
+/* This is the default field style having the input, select and textarea using the full width*/
+.stacked
+{
+    & > .field
+    {
+        label + input,
+        label + select,
+        label + textarea
+        {
+            width: 100%;
+        }
+    }
+}
+
+/* Inline fields with auto width it's the default expected style */
+.inline
+{
+    /* Separate fields from each other */
+    & > .field + .field
+    {
+        margin-left: 10px;
+    }
+
+    &.equal
+    {
+        & > .field
+        {
+            label + input,
+            label + select,
+            label + textarea
+            {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.field
+{
+    &.inline
+    {
+        display: flex;
+        align-items: baseline;
+
+        & > label
+        {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        & > input
+        {
+            flex: 0 1 100%;
+        }
+    }
+}
+
+/* Fields in their normal state will have a gray border and a blue border and shadow on focus */
+input,
+select,
+textarea,
+{
+    width: 100%;
+    outline: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #E3E3E3;
+    border-radius: 3px;
+    font-size: inherit;
+    color: inherit;
+
+    &:focus
+    {
+        border-color: #89bcf5;
+        box-shadow: 0px 0px 3px #89bcf5;
+    }
+
+    /* Disabled fields will have a gray background and border */
+    &:disabled
+    {
+        border-color: lightgray;
+        background-color: #F3F3F3;
+    }
+}
+
+input[type="radio"],
+input[type="checkbox"]
+{
+    width: auto;
+    padding: 0px;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+/* Required fields that are valid will be displayed with a blue border */
+.field-required input,
+.field-required select,
+.field-required textarea,
+.form-field-required input,
+.form-field-required select,
+.form-field-required textarea
+{
+    border-color: #89bcf5;
+}
+
+.field-required.no-border input,
+.field-required.no-border select,
+.field-required.no-border textarea,
+.form-field-required.no-border input,
+.form-field-required.no-border select,
+.form-field-required.no-border textarea
+{
+    border-color: transparent;
+}
+
+/* Invalid fields will have the red border even when they are focused */
+.field-invalid input,
+.field-invalid select,
+.field-invalid textarea,
+.form-field-invalid input,
+.form-field-invalid select,
+.form-field-invalid textarea
+{
+    border-color: #F44336;
+
+    &:focus
+    {
+        border-color: #F44336;
+        box-shadow: 0px 0px 3px #F44336;
+    }
+}
+
+.form-group
+{
+    display: flex;
+
+    & > *
+    {
+        flex: 1;
+    }
+
+    &.horizontal
+    {
+        & > .form-field + .form-field
+        {
+            margin-left: 10px;
+        }
+    }
+
+    &.vertical
+    {
+        flex-direction: column;
+
+        &.inline
+        {
+            .form-field
+            {
+                display: flex;
+
+                .form-field-label
+                {
+                    flex: 1;
+                    line-height: 32px;
+                    max-width: 200px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+
+                .form-field-value
+                {
+                    flex: 1;
+
+                    input
+                    {
+                        /*line-height: 32px;*/
+                    }
+                }
+
+            }
+        }
+
+        &.top
+        {
+            .form-field-label
+            {
+                text-align: left;
+            }
+        }
+
+
+
+        & > .form-field + .form-field
+        {
+
+        }
+    }
+}
+
+.form-field-right input
+{
+    text-align: right;
+}
+
+.form-field-left input
+{
+    text-align: left;
+}
+
+.form-field-center input
+{
+    text-align: center;
+}
+
+.form-field-value input,
+.form-field-value select,
+.form-field-value textarea
+{
+    font-size: 14px;
+}
+
+.form-field.inline
+{
+    display: flex;
+
+    .form-field-label
+    {
+        padding-top: 6px;
+        margin-right: 10px;
+    }
+}
+
+.form-field .error
+{
+    text-align: right;
+    font-size: 12px;
+    color: gray;
+    padding: 2px 0px;
+}

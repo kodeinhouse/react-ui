@@ -7,6 +7,11 @@ module.exports = {
     resolve:  {
         extensions: ['.js', '.jsx', '.less'],
         alias: {
+            menu: resolve(__dirname, 'src/menu.js'),
+            grid: resolve(__dirname, 'src/grid.js'),
+            form: resolve(__dirname, 'src/form.js'),
+            util: resolve(__dirname, 'src/util.js'),
+            container: resolve(__dirname, 'src/container.js'),
             components: resolve(__dirname, 'src/export.js')
         }
     },
@@ -42,7 +47,8 @@ module.exports = {
                         loader: 'less-loader'
                     }],
                     fallback: 'style-loader'
-                })
+                }),
+                exclude: [resolve(__dirname, 'styles/_components'), resolve(__dirname, 'styles/_core')]
             },
             {
                 test: /\.(png|gif)$/,

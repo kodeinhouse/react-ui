@@ -35,6 +35,7 @@ export class SearchField extends Field
     {
         let classes = [this.baseClass, "form-type-" + this.props.type];
         let { className, align, required} = this.props;
+        let style = Object.assign({}, this.props.style);
 
         if(className && className.length > 0)
             classes.push(className);
@@ -45,7 +46,10 @@ export class SearchField extends Field
         if(required === true)
             classes.push(this.baseClass + '-required');
 
-        return (<div className={classes.join(" ")} style={this.props.style}>
+        if(this.props.margin)
+            style.margin = this.props.margin;
+
+        return (<div className={classes.join(" ")} style={style}>
                 {this.props.label? <div className="form-field-label hbox-l"><label>{this.props.label}:</label></div> : null}
                 <div className="form-field-value hbox-r">{this.createInput(this.props.type)}</div>
             </div>);
