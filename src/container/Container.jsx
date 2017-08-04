@@ -16,7 +16,7 @@ export class Container extends Component
         if(this.props.orientation)
             classes.push(this.props.orientation);
 
-        if(this.props.columns == 'equal' && this.props.align)
+        if((this.props.columns == 'equal' || this.props.layout == 'flex') && this.props.align)
         {
             if(this.props.align == 'bottom')
                 style.alignItems = 'flex-end';
@@ -24,7 +24,7 @@ export class Container extends Component
                 if(this.props.align == 'top')
                     style.alignItems = 'flex-start';
                 else
-                    style.alignItems = this.prps.align;
+                    style.alignItems = this.props.align;
         }
         else
             if(this.props.align)

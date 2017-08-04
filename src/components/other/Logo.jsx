@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'container';
+import { Container } from '../box/container';
 
 export class Logo extends Component
 {

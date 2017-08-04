@@ -4,6 +4,8 @@
 export { Icon } from './components/other/Icon';
 export { Badge } from './components/other/Badge';
 export { Logo } from './components/other/Logo';
+export { Avatar } from './util/Avatar';
+
 // Other
 export { Text } from './components/other/Text';
 export { Button } from './components/other/Button';
@@ -52,6 +54,8 @@ export { TabItem } from './components/other/TabItem';
 
 // Container
 export { Container } from './container/Container';
+export { Porlet } from './container/Porlet';
+export { Card } from './container/Card';
 
 // Grid
 export { Grid } from './grid/Grid';
