@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from '../box/Container';
+import { Container } from './Container';
 import { clone } from 'lodash';
 
 export class TabItem extends Component

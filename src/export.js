@@ -49,8 +49,8 @@ export { LoadingMask } from './util/LoadingMask';
 
 export { Toolbar } from './components/other/Toolbar';
 export { Navigation } from './components/nav/Navigation';
-export { TabPanel } from './components/other/TabPanel';
-export { TabItem } from './components/other/TabItem';
+export { TabPanel } from './container/TabPanel';
+export { TabItem } from './container/TabItem';
 
 // Container
 export { Container } from './container/Container';

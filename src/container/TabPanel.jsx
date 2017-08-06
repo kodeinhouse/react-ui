@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Container } from '../box/Container';
-import { VerticalLayout } from '../box/VerticalLayout';
+import { Container } from './Container';
 
-export class TabPanel extends Container
+export class TabPanel extends Component
 {
     constructor(props)
     {
@@ -52,11 +51,20 @@ export class TabPanel extends Container
     {
         let classes = ['tab-panel', this.props.theme];
 
+        let props = Object.assign({region: 'center', layout: 'border', orientation: 'vertical'}, this.props);
+
+        if(this.props.className)
+        {
+            classes.push(this.props.className);
+
+            props.className = classes.join(' ');
+        }
+
         return (
-            <VerticalLayout className={classes.join(' ')} style={this.props.style}>
+            <Container {...props}>
                 {this.renderHeader()}
                 {this.renderTabs()}
-            </VerticalLayout>
+            </Container>
         );
     }
 }

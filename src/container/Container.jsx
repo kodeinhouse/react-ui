@@ -36,6 +36,21 @@ export class Container extends Component
         if(this.props.wrap)
             style.flexWrap = 'wrap';
 
+        if(this.props.flex)
+            style.flex = this.props.flex;
+
+        if(this.props.grow === true)
+            style.flexGrow = '1';
+        else
+            if(this.props.grow)
+                style.flexGrow = this.props.grow;
+
+        if(this.props.shrink === true)
+            style.flexShrink = 1;
+        else
+            if(this.props.shrink === false)
+                style.flexShrink = 0;
+
         if(this.props.region)
             classes.push('region-' + this.props.region);
 

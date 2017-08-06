@@ -5,6 +5,7 @@ import { Menu, MenuItem, Icon, Badge, Link as MenuLink } from 'components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { FormDemo } from './Form';
 import { RadioForm } from './RadioForm';
+import { TabPanelDemo } from './TabPanel';
 
 export class App extends Component
 {
@@ -43,6 +44,9 @@ export class App extends Component
                     </Menu>
                 </MenuItem>
                 <MenuItem>
+                    <Link to="/tabpanel" className="link">Tab Panel</Link>
+                </MenuItem>
+                <MenuItem>
                     <MenuLink path="/horizontal-nav"><Icon className="customer" /><span>Horizontal</span></MenuLink>
                     <Menu></Menu>
                 </MenuItem>
@@ -71,6 +75,7 @@ export class App extends Component
                             <Route path="/radiobutton" component={() => { return <RadioForm />}}/>
                             <Route path="/checkbox" component={() => { return <Container>Check Box Demo</Container>}}/>
                             <Route path="/dropdown" component={() => { return <Container>Dropdown Demo</Container>}}/>
+                            <Route path="/tabpanel" component={() => { return <TabPanelDemo /> }} />
                             <Route path="/navigation" component={() => { return <Container>Navigation Demo</Container>}}/>
                         </Application.Content>
                         <Application.Aside>
