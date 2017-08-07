@@ -44,7 +44,16 @@
 .layout-flex
 {
     display: flex;
+
+    &.vertical
+    {
+        -webkit-box-orient: vertical; /* Safari & Chrome */
+        -ms-flex-direction: column; /* Internet Explorer */
+            flex-direction: column;
+    }
 }
+
+
 
 /*.inline
 {

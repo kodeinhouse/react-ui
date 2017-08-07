@@ -13,6 +13,7 @@ import { RadioGroup } from './RadioGroup';
 import { SearchField } from './SearchField';
 import { TextArea } from './TextArea';
 import { TextField } from './TextField';
+import { CompositeField } from './CompositeField';
 
 export class Form extends Component
 {
@@ -44,3 +45,4 @@ Form.RadioGroup = RadioGroup;
 Form.SearchField = SearchField;
 Form.TextArea = TextArea;
 Form.TextField = TextField;
+Form.CompositeField = CompositeField;

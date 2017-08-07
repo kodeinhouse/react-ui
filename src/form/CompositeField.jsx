@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Container } from '../container/Container';
 
-export class FieldGroup extends Component
+export class CompositeField extends Component
 {
     render()
     {
-        let classes = ['group'];
+        let classes = ['composite field'];
         let props = Object.assign({}, this.props);
 
         if(this.props.className)
@@ -14,9 +14,12 @@ export class FieldGroup extends Component
         props.className = classes.join(' ');
 
         return (
-            <Container {...props}>
-                {this.props.children}
-            </Container>
+            <div {...props}>
+                <label>{this.props.label}</label>
+                <Container columns="equal">
+                    {this.props.children}
+                </Container>
+            </div>
         );
     }
 }

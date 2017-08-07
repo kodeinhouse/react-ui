@@ -2,7 +2,7 @@
 
 .field
 {
-    max-width: 320px;
+    /*max-width: 320px;*/
     margin-bottom: 15px;
 
     input, select, textarea
@@ -14,6 +14,7 @@
 
     label
     {
+        white-space: nowrap;
         display: block;
     }
 
@@ -23,6 +24,19 @@
     label + textarea
     {
         margin-top: 10px;
+    }
+
+    &.composite
+    {
+        label + div
+        {
+            margin-top: 10px;
+        }
+    }
+
+    & + .group
+    {
+        margin-left: 10px;
     }
 }
 
@@ -80,6 +94,19 @@
         {
             flex: 0 1 100%;
         }
+    }
+}
+
+.equal
+{
+    .field + .field
+    {
+        margin-left: 10px;
+    }
+
+    .field:only-child
+    {
+        margin-right: 10px;
     }
 }
 

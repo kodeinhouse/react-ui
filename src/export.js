@@ -31,8 +31,10 @@ export { NoteField } from './components/form/NoteField';
 export { Fieldset } from './components/form/Fieldset';
 export { FormPanel } from './components/form/FormPanel';
 export { FormGroup } from './components/form/FormGroup';
-
+export { Legend } from './form/Legend';
+export { FieldGroup } from './form/FieldGroup';
 export { RadioGroup } from './form/RadioGroup';
+export { CompositeField } from './form/CompositeField';
 
 // Layout
 export { FitLayout } from './components/box/FitLayout';
