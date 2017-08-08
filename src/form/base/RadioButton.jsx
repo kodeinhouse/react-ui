@@ -17,6 +17,10 @@ export class RadioButton extends Component
 
     render()
     {
-        return <input type="radio" name={this.props.name} value={this.props.value} checked={this.props.checked} onChange={this.onChange}/>;
+        return <input   type="radio"
+                        name={this.props.name}
+                        value={this.props.value}
+                        checked={this.props.checked} 
+                        onChange={this.onChange} />;
     }
 }

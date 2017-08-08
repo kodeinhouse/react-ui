@@ -54,6 +54,9 @@ export class Container extends Component
         if(this.props.region)
             classes.push('region-' + this.props.region);
 
+        if(this.props.overflow === false)
+            style.overflow = 'hidden';
+            
         if(this.props.scrollable === false)
             style.overflow = 'hidden';
 
