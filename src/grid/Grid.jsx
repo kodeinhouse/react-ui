@@ -51,7 +51,7 @@ export class Grid extends Panel
 
     componentWillReceiveProps(nextProps)
     {
-        this.setState({sortField: nextProps.column, sortOrder: nextProps.order, records: nextProps.records});
+        this.setState({sortField: nextProps.sortField, sortOrder: nextProps.sortOrder, records: nextProps.records});
     }
 
     setSort(column, order)
@@ -334,7 +334,7 @@ export class Grid extends Panel
         let key = "th-" + row + "-" + index;
         let colSpan = column.items ? column.items.length: column.colSpan;
         let align = column.align;
-
+        
         return <TableColumnHeader   key={key}
                                     index={index}
                                     align={align}
