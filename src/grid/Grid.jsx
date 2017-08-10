@@ -306,7 +306,7 @@ export class Grid extends Panel
         {
             let order = sortOrder == 'ASC' ? 1 : -1;
 
-            return this.state.records.sort(function(a, b){
+            return this.props.records.sort(function(a, b){
                 a = a[dataIndex];
                 b = b[dataIndex];
 
@@ -314,7 +314,7 @@ export class Grid extends Panel
             });
         }
         else
-            return this.state.records;
+            return this.props.records;
     }
 
     getSelectedRecord()
@@ -334,7 +334,7 @@ export class Grid extends Panel
         let key = "th-" + row + "-" + index;
         let colSpan = column.items ? column.items.length: column.colSpan;
         let align = column.align;
-        
+
         return <TableColumnHeader   key={key}
                                     index={index}
                                     align={align}
