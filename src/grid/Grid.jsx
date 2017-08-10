@@ -360,16 +360,16 @@ export class Grid extends Panel
     {
         value = !isNaN(value = parseFloat(value)) ? value : 0;
 
-        value = value.toLocaleString('en-US', {style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, mmaximumFractionDigits: config.decimals});
+        value = value.toLocaleString('en-US', {style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, maximumFractionDigits: config.decimals});
 
         return value;
     }
 
-    createRows(data, columns, width)
+    createRows(records, columns, width)
     {
         let self = this;
 
-        return data.map(function(record, rowIndex){
+        return records.map(function(record, rowIndex){
             var cells = columns.map(function(column, columnIndex){
                 var align = "align-" + (column.align ? column.align : "left");
                 var data = null;
@@ -398,7 +398,7 @@ export class Grid extends Panel
                     }
                 }
                 else
-                    data = column.renderer(record);
+                    data = column.renderer(record, rowIndex, records);
 
                 let style = Object.assign({}, {
 

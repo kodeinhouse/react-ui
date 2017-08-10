@@ -8621,16 +8621,16 @@ var Grid = function (_Panel) {
         value: function getMoney(value, config) {
             value = !isNaN(value = parseFloat(value)) ? value : 0;
 
-            value = value.toLocaleString('en-US', { style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, mmaximumFractionDigits: config.decimals });
+            value = value.toLocaleString('en-US', { style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, maximumFractionDigits: config.decimals });
 
             return value;
         }
     }, {
         key: 'createRows',
-        value: function createRows(data, columns, width) {
+        value: function createRows(records, columns, width) {
             var self = this;
 
-            return data.map(function (record, rowIndex) {
+            return records.map(function (record, rowIndex) {
                 var cells = columns.map(function (column, columnIndex) {
                     var align = "align-" + (column.align ? column.align : "left");
                     var data = null;
@@ -8653,7 +8653,7 @@ var Grid = function (_Panel) {
                                 data = self.getMoney(data, config);
                             }
                         }
-                    } else data = column.renderer(record);
+                    } else data = column.renderer(record, rowIndex, records);
 
                     var style = Object.assign({}, {});
 
