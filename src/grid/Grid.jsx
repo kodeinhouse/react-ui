@@ -5,6 +5,7 @@ import { Container } from '../container/Container';
 import { TableColumnHeader } from './TableColumnHeader';
 import { Sort } from './Sort';
 import { LoadingMask } from '../util/LoadingMask';
+import { isEqual, isEqualWith, isFunction } from 'lodash';
 
 export class Grid extends Panel
 {
@@ -19,7 +20,6 @@ export class Grid extends Panel
         super(props);
 
         this.state = {
-            records: props.records || [],
             sortField: props.sortField,
             sortOrder: props.sortOrder
         };
@@ -51,7 +51,7 @@ export class Grid extends Panel
 
     componentWillReceiveProps(nextProps)
     {
-        this.setState({sortField: nextProps.sortField, sortOrder: nextProps.sortOrder, records: nextProps.records});
+        this.setState({sortField: nextProps.sortField, sortOrder: nextProps.sortOrder});
     }
 
     setSort(column, order)
@@ -115,6 +115,17 @@ export class Grid extends Panel
         this.onResize();
 
         this.validateSelection();
+    }
+
+    shouldComponentUpdate(nextProps, nextState)
+    {
+        let propsAreEqual = isEqualWith(this.props, nextProps, function(val1, val2)
+        {
+            if(isFunction(val1) && isFunction(val2))
+                return val1.toString() === val2.toString();
+        });
+
+        return !propsAreEqual || !isEqual(this.state, nextState);
     }
 
     onResize()
@@ -307,8 +318,10 @@ export class Grid extends Panel
             let order = sortOrder == 'ASC' ? 1 : -1;
 
             return this.props.records.sort(function(a, b){
+
                 a = a[dataIndex];
                 b = b[dataIndex];
+
 
                 return (a === b ? 0 : a > b ? 1 : -1) * order;
             });
@@ -400,7 +413,7 @@ export class Grid extends Panel
             if(record.className)
                 classes.push(record.className);
 
-            return (<tr id={"tr-" + record._id} className={classes.join(' ')} data-index={rowIndex} key={"tr-" + rowIndex} data-id={record.id} onClick={self.onRowClick} onDoubleClick={self.onDoubleClick}>{cells}</tr>);
+            return (<tr id={"tr-" + record._id} className={classes.join(' ')} data-index={rowIndex} key={"tr-" + (record._id || rowIndex)} data-id={record.id} onClick={self.onRowClick} onDoubleClick={self.onDoubleClick}>{cells}</tr>);
         });
     }
 
@@ -410,7 +423,6 @@ export class Grid extends Panel
         let width = ((100/columns.length).toFixed(2) + "%");
         let rows = [{headers: []}];
         let self = this;
-        let date = new Date();
 
         columns.forEach(function(column, index){
                 if(self != null)
