@@ -1,20 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Form,
-    Label,
-    Legend,
-    TextField,
-    CheckBox,
-    CheckGroup,
-    RadioGroup,
-    NumberField,
-    SearchField,
-    RadioButton,
-    Dropdown,
-    TextArea,
-    FieldGroup,
-    Fieldset
-} from 'form';
+import { Form, TextField, NumberField } from 'form';
 
 import {
     Menu,
@@ -30,70 +15,80 @@ export class FormDemo extends Component
         return (
             <Form>
                 <Container className="row">
-                    <Container className="half">
-                        <Legend>Stacked fields</Legend>
-                        <FieldGroup className="stacked">
-                            <TextField label="First Name" className=""/>
-                            <TextField label="Last Name" className="" />
-                            <NumberField label="Age" className=""/>
-                        </FieldGroup>
+                    <Container className="half" style={{padding: '5px'}}>
+                        <Form.Legend>Stacked Fields (Eager Validation)</Form.Legend>
+                        <Form.FieldGroup className="stacked">
+                            <Form.TextField label="First Name" placeholder="Enter your first name" required/>
+                            <Form.TextField label="Last Name" placeholder="Enter your last name" required/>
+                            <Form.NumberField label="Age" placeholder="Enter your age" required />
+                        </Form.FieldGroup>
 
-                        <Legend>Inline fields with label on top</Legend>
-                        <FieldGroup className="inline">
-                            <TextField label="First Name" />
-                            <TextField label="Last Name" />
-                            <NumberField label="Age" />
-                        </FieldGroup>
+                        <Form.Legend>Inline fields with label on top</Form.Legend>
+                        <Form.FieldGroup className="inline">
+                            <Form.TextField label="First Name" className="custom" error={false} required/>
+                            <Form.TextField label="Last Name" className="border" error={false} required/>
+                            <Form.NumberField label="Age" />
+                        </Form.FieldGroup>
 
-                        <Legend>Inline fields with label at the left</Legend>
-                        <FieldGroup className="inline">
-                            <TextField label="First Name" className="inline"/>
-                            <TextField label="Last Name" className="inline"/>
-                            <NumberField label="Age" className="inline"/>
-                        </FieldGroup>
+                        <Form.Legend>Inline fields with label at the left</Form.Legend>
+                        <Form.FieldGroup className="inline">
+                            <Form.TextField label="First Name" className="inline"/>
+                            <Form.TextField label="Last Name" className="inline"/>
+                            <Form.NumberField label="Age" className="inline"/>
+                        </Form.FieldGroup>
 
-                        <Legend>Inline fields with label on top using the full width</Legend>
-                        <FieldGroup className="inline equal">
-                            <TextField label="First Name"/>
-                            <TextField label="Last Name"/>
-                            <NumberField label="Age"/>
-                        </FieldGroup>
+                        <Form.Legend>Inline fields with label on top using the full width</Form.Legend>
+                        <Form.FieldGroup className="inline equal">
+                            <Form.TextField label="First Name"/>
+                            <Form.TextField label="Last Name"/>
+                            <Form.NumberField label="Age"/>
+                        </Form.FieldGroup>
 
-                        <Legend>Inline fields with label at the left using the full width</Legend>
-                        <FieldGroup className="inline equal">
-                            <TextField label="First Name" className="inline"/>
-                            <TextField label="Last Name" className="inline"/>
-                            <NumberField label="Age"  className="inline"/>
-                        </FieldGroup>
+                        <Form.Legend>Inline fields with label at the left using the full width</Form.Legend>
+                        <Form.FieldGroup className="inline equal">
+                            <Form.TextField label="First Name" className="inline" required/>
+                            <Form.TextField label="Last Name" className="inline"/>
+                            <Form.NumberField label="Age"  className="inline"/>
+                        </Form.FieldGroup>
 
-                        <RadioGroup name="gender" className="inline">
-                            <Label>Gender:</Label>
-                            <RadioButton label="Male" />
-                            <RadioButton label="Female" />
-                        </RadioGroup>
-                        <NumberField label="Salary" currency="USD"/>
-                        <CheckGroup className="inline">
-                            <Label>Assets:</Label>
-                            <CheckBox label="Own House"/>
-                            <CheckBox label="Own Car"/>
-                        </CheckGroup>
-                        <Dropdown label="Country" options={[{text: 'Nicaragua'}, {text: 'Canada'}, {text: 'Irlanda'}, {text: 'Noruega'}]}>
+                        <Form.RadioGroup name="gender" className="inline">
+                            <Form.Label>Gender:</Form.Label>
+                            <Form.RadioButton label="Male" />
+                            <Form.RadioButton label="Female" />
+                        </Form.RadioGroup>
+                        <Form.NumberField label="Salary" currency="USD"/>
+                        <Form.CheckGroup className="inline">
+                            <Form.Label>Assets:</Form.Label>
+                            <Form.CheckBox label="Own House"/>
+                            <Form.CheckBox label="Own Car"/>
+                        </Form.CheckGroup>
+                        <Form.Dropdown label="Country" options={[{text: 'Nicaragua'}, {text: 'Canada'}, {text: 'Irlanda'}, {text: 'Noruega'}]}>
                             <Menu>
                                 <MenuItem>Nicaragua</MenuItem>
                                 <MenuItem>Canada</MenuItem>
                                 <MenuItem>Irlanda</MenuItem>
                                 <MenuItem>Noruega</MenuItem>
                             </Menu>
-                        </Dropdown>
-                        <TextArea label="Purpose"/>
+                        </Form.Dropdown>
+                        <Form.TextArea label="Purpose"/>
                     </Container>
-                    <Container className="half">
-                        <Legend>Stacked Fields</Legend>
-                        <FieldGroup className="stacked">
-                            <TextField label="First Name" />
-                            <SearchField label="Search Field" />
-                            <NumberField label="Age" />
-                        </FieldGroup>
+                    <Container className="half" style={{padding: '5px'}}>
+                        <Form.Legend>Stacked Fields (Lazy Validation)</Form.Legend>
+                        <Form.FieldGroup className="stacked">
+                            <Form.FormField validation="lazy" required>
+                                <Form.Label>First Name Name</Form.Label>
+                                <TextField required />
+                            </Form.FormField>
+                            <Form.FormField validation="lazy" required>
+                                <Form.Label>Last Name</Form.Label>
+                                <TextField required />
+                            </Form.FormField>
+                            <Form.FormField validation="lazy" required>
+                                <Form.Label>Age <span className="color red">*</span></Form.Label>
+                                <NumberField  />
+                            </Form.FormField>
+                            <Form.SearchField label="Search Field" required/>
+                        </Form.FieldGroup>
                     </Container>
                 </Container>
             </Form>

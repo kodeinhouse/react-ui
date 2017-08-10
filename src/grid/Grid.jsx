@@ -20,8 +20,8 @@ export class Grid extends Panel
 
         this.state = {
             records: props.records || [],
-            sortField: null,
-            sortOrder: null
+            sortField: props.sortField,
+            sortOrder: props.sortOrder
         };
 
         this.onResize = this.onResize.bind(this);
@@ -445,7 +445,7 @@ export class Grid extends Panel
 
         if(this.props.className)
             classes.push(this.props.className);
-        
+
         return (
             <Container id={this.props.id} className={classes.join(' ')} style={this.props.style} layout="border" region={this.props.region} orientation="vertical">
                 {this.props.toolbar}

@@ -37,6 +37,7 @@ Form.CheckGroup = CheckGroup;
 Form.Dropdown = Dropdown;
 Form.FieldGroup = FieldGroup;
 Form.Fieldset = Fieldset;
+Form.FormField = FormField;
 Form.Label = Label;
 Form.Legend = Legend;
 Form.NumberField = NumberField;

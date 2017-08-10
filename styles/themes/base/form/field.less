@@ -21,22 +21,31 @@
     /* These selectors prevent applying the same styles to Radio Buttons and CheckBoxes */
     label + input,
     label + select,
-    label + textarea
+    label + textarea,
+    label + div.wrapper,
     {
         margin-top: 10px;
     }
 
+    /* Composite fields don't have a input, select or textarea next to the label so previous style doesn't apply */
     &.composite
     {
         label + div
         {
-            margin-top: 10px;
+            
         }
     }
 
+    /* When a field is put together with a FieldGroup component */
     & + .group
     {
         margin-left: 10px;
+    }
+
+    .error
+    {
+        color: red;
+        padding: 5px 0px;
     }
 }
 
@@ -107,6 +116,18 @@
     .field:only-child
     {
         margin-right: 10px;
+    }
+}
+
+.check,
+.radio
+{
+    &.group
+    {
+        &.inline
+        {
+            align-items: baseline;
+        }
     }
 }
 

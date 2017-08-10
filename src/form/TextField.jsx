@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import { FormField } from './FormField';
-import { TextField as TextInput } from './base/TextField';
+import { Field } from './Field';
+import { TextField as BaseField } from './base/TextField';
 
-export class TextField extends Component
+export class TextField extends Field
 {
-    constructor(props)
+    createField()
     {
-        super(props);
-    }
+        let value = this.processValue(this.pick(this.props.value, this.state.value));
 
-    render()
-    {
-        return (
-            <FormField {...this.props}>
-                <TextInput {...this.props}/>
-            </FormField>
-        );
+        return <BaseField
+                    name={this.props.name}
+                    value={value}
+                    label={this.props.label}
+                    required={this.props.required}
+                    disabled={this.props.disabled}
+                    readOnly={this.props.readOnly}
+                    placeholder={this.props.placeholder}
+                    onChange={this.onChange}
+                    onBlur={this.onBlur} />;
     }
 }

@@ -11,16 +11,14 @@ export class TextField extends Component
 
     onChange(event)
     {
+        let target = event.target;
+
         if(this.props.onChange)
-            this.props.onChange(this.props, event.target.value);
+            this.props.onChange(this.props, target.value);
     }
 
     render()
     {
-        let props = Object.assign({}, this.props);
-
-        props.onChange = this.onChange;
-
-        return <input type="text" {...props}/>;
+        return <input type="text" {...this.props} onChange={this.onChange} />;
     }
 }

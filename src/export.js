@@ -5,6 +5,7 @@ export { Icon } from './components/other/Icon';
 export { Badge } from './components/other/Badge';
 export { Logo } from './components/other/Logo';
 export { Avatar } from './util/Avatar';
+export { Validator } from './form/Validator';
 
 // Other
 export { Text } from './components/other/Text';
@@ -21,6 +22,7 @@ export { Field } from './components/form/Field';
 export { Form } from './form/Form';
 export { FormField } from './components/form/FormField';
 export { TextField } from './components/form/TextField';
+export { TextField as TextFieldBase } from './form/base/TextField';
 export { CheckBox } from './components/form/CheckBox';
 export { NumberField } from './components/form/NumberField';
 export { SearchField } from './components/form/SearchField';

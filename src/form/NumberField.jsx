@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import { FormField } from './FormField';
-import { NumberField as NumberInput } from './base/NumberField';
+import { Field } from './Field';
+import { NumberField as BaseField } from './base/NumberField';
 
-export class NumberField extends Component
+export class NumberField extends Field
 {
-    render()
+    createField()
     {
-        return (
-            <FormField {...this.props}>
-                <NumberInput />
-            </FormField>
-        );
+        let value = this.processValue(this.pick(this.props.value, this.state.value));
+
+        return <BaseField
+                    name={this.props.name}
+                    value={value}
+                    label={this.props.label}
+                    required={this.props.required}
+                    disabled={this.props.disabled}
+                    readOnly={this.props.readOnly}
+                    placeholder={this.props.placeholder}
+                    onChange={this.onChange}
+                    onBlur={this.onBlur} />;
     }
 }

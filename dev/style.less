@@ -15,3 +15,24 @@
 {
     border: 1px solid lightgray;
 }
+
+.field.invalid
+{
+    &.custom
+    {
+        label
+        {
+            color: red;
+        }
+    }
+
+    &.border
+    {
+        input,
+        select,
+        textarea
+        {
+            border-color: red;
+        }
+    }
+}
