@@ -91,7 +91,7 @@ export class Field extends Component
         // If the user wants to prevent the message tag from being created just need to set the error attribute to true
         // The error displayed will be from the validations, we can modify this later to allow any direct error
         // from outside the component
-        return this.props.error !== false ? <div className="error">{error}</div> : null;
+        return this.props.error !== false && this.props.error != null ? <div className="error">{error}</div> : null;
     }
 
     render()

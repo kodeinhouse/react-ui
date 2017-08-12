@@ -32,7 +32,7 @@
     {
         label + div
         {
-            
+
         }
     }
 
@@ -46,6 +46,15 @@
     {
         color: red;
         padding: 5px 0px;
+    }
+
+    &.inline
+    {
+        /* This is overriding the div.wrapper margin-top so we need to improve that style */
+        .wrapper
+        {
+            margin-top: 0px;
+        }
     }
 }
 
