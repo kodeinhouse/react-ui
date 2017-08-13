@@ -163,7 +163,7 @@ export class Grid extends Panel
             let bodyColumnGroup = self.getColumnGroup(body);
 
             let bodyCells = row.querySelectorAll("td");
-            let headerCells = header.querySelectorAll("th");
+            let headerCells = header.querySelectorAll("tr:first-child > th");
 
             let columnConfig = null;
             let columnWidth = null;
@@ -183,7 +183,7 @@ export class Grid extends Panel
             });
         }
         else
-            self.setHeadersWidth(header.querySelectorAll("th"));
+            self.setHeadersWidth(header.querySelectorAll("tr:first-child > th"));
     }
 
     setHeadersWidth(headers)
@@ -224,7 +224,7 @@ export class Grid extends Panel
                 column.style.width = self.getColumnWidth(columnConfig.width);
             else
                 column.style.width = null;
-
+            
             if(columnConfig.minWidth)
                 column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);
             else

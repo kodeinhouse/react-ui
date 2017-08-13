@@ -8448,7 +8448,7 @@ var Grid = function (_Panel) {
                 var bodyColumnGroup = self.getColumnGroup(body);
 
                 var bodyCells = row.querySelectorAll("td");
-                var headerCells = header.querySelectorAll("th");
+                var headerCells = header.querySelectorAll("tr:first-child > th");
 
                 var columnConfig = null;
                 var columnWidth = null;
@@ -8466,7 +8466,7 @@ var Grid = function (_Panel) {
                     headerCells[index].style.minWidth = columnWidth + 'px';
                     headerCells[index].style.maxWidth = columnWidth + 'px';
                 });
-            } else self.setHeadersWidth(header.querySelectorAll("th"));
+            } else self.setHeadersWidth(header.querySelectorAll("tr:first-child > th"));
         }
     }, {
         key: 'setHeadersWidth',
