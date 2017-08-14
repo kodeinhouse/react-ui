@@ -8444,11 +8444,8 @@ var Grid = function (_Panel) {
             var row = self.getRowSample(body);
 
             if (row != null) {
-                var headerColumnGroup = self.getColumnGroup(header);
-                var bodyColumnGroup = self.getColumnGroup(body);
-
+                var headers = header.querySelectorAll("tr");
                 var bodyCells = row.querySelectorAll("td");
-                var headerCells = header.querySelectorAll("tr:first-child > th");
 
                 var columnConfig = null;
                 var columnWidth = null;
@@ -8462,31 +8459,18 @@ var Grid = function (_Panel) {
                     minWidth = columnConfig.minWidth || 50;
                     columnWidth = column.getBoundingClientRect().width;
 
-                    headerCells[index].style.width = columnWidth + 'px';
-                    headerCells[index].style.minWidth = columnWidth + 'px';
-                    headerCells[index].style.maxWidth = columnWidth + 'px';
+                    headers.forEach(function (header) {
+                        header.cells[index].style.width = columnWidth + 'px';
+                        header.cells[index].style.minWidth = columnWidth + 'px';
+                        header.cells[index].style.maxWidth = columnWidth + 'px';
+                    });
                 });
-            } else self.setHeadersWidth(header.querySelectorAll("tr:first-child > th"));
+            } else self.setHeadersWidth(header.querySelectorAll("th"));
         }
     }, {
         key: 'setHeadersWidth',
         value: function setHeadersWidth(headers) {
             this.setColumnsWidth(headers);
-        }
-    }, {
-        key: 'getColumnGroup',
-        value: function getColumnGroup(element) {
-            var columnGroup = element.querySelector("colgroup");
-
-            if (columnGroup == null) {
-                columnGroup = element.appendChild(document.createElement("colgroup"));
-
-                for (var i = 0; i < this.props.columns.length; i++) {
-                    columnGroup.appendChild(document.createElement("col"));
-                }
-            }
-
-            return columnGroup;
         }
     }, {
         key: 'getColumnWidth',
@@ -8503,11 +8487,13 @@ var Grid = function (_Panel) {
             columns.forEach(function (column, index) {
                 var columnConfig = self.getColumnConfig(index);
 
-                if (columnConfig.width) column.style.width = self.getColumnWidth(columnConfig.width);else column.style.width = null;
+                if (columnConfig != null) {
+                    if (columnConfig.width) column.style.width = self.getColumnWidth(columnConfig.width);else column.style.width = null;
 
-                if (columnConfig.minWidth) column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);else column.style.minWidth = null;
+                    if (columnConfig.minWidth) column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);else column.style.minWidth = null;
 
-                if (columnConfig.maxWidth) column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);else column.style.maxWidth = null;
+                    if (columnConfig.maxWidth) column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);else column.style.maxWidth = null;
+                }
             });
         }
     }, {

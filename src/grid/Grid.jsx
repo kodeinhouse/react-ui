@@ -159,11 +159,8 @@ export class Grid extends Panel
 
         if(row != null)
         {
-            let headerColumnGroup = self.getColumnGroup(header);
-            let bodyColumnGroup = self.getColumnGroup(body);
-
+            let headers = header.querySelectorAll("tr");
             let bodyCells = row.querySelectorAll("td");
-            let headerCells = header.querySelectorAll("tr:first-child > th");
 
             let columnConfig = null;
             let columnWidth = null;
@@ -177,33 +174,20 @@ export class Grid extends Panel
                 minWidth = columnConfig.minWidth || 50;
                 columnWidth = column.getBoundingClientRect().width;
 
-                headerCells[index].style.width = columnWidth + 'px';
-                headerCells[index].style.minWidth = columnWidth + 'px';
-                headerCells[index].style.maxWidth = columnWidth + 'px';
+                headers.forEach(function(header){
+                    header.cells[index].style.width = columnWidth + 'px';
+                    header.cells[index].style.minWidth = columnWidth + 'px';
+                    header.cells[index].style.maxWidth = columnWidth + 'px';
+                });
             });
         }
         else
-            self.setHeadersWidth(header.querySelectorAll("tr:first-child > th"));
+            self.setHeadersWidth(header.querySelectorAll("th"));
     }
 
     setHeadersWidth(headers)
     {
         this.setColumnsWidth(headers);
-    }
-
-    getColumnGroup(element)
-    {
-        let columnGroup = element.querySelector("colgroup");
-
-        if(columnGroup == null)
-        {
-            columnGroup = element.appendChild(document.createElement("colgroup"));
-
-            for(let i = 0; i < this.props.columns.length; i++)
-                columnGroup.appendChild(document.createElement("col"));
-        }
-
-        return columnGroup;
     }
 
     getColumnWidth(width)
@@ -220,21 +204,24 @@ export class Grid extends Panel
         columns.forEach(function(column, index){
             let columnConfig = self.getColumnConfig(index);
 
-            if(columnConfig.width)
-                column.style.width = self.getColumnWidth(columnConfig.width);
-            else
-                column.style.width = null;
-            
-            if(columnConfig.minWidth)
-                column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);
-            else
-                column.style.minWidth = null;
+            if(columnConfig != null)
+            {
+                if(columnConfig.width)
+                    column.style.width = self.getColumnWidth(columnConfig.width);
+                else
+                    column.style.width = null;
 
-            if(columnConfig.maxWidth)
+                if(columnConfig.minWidth)
+                    column.style.minWidth = self.getColumnWidth(columnConfig.minWidth);
+                else
+                    column.style.minWidth = null;
 
-                column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);
-            else
-                column.style.maxWidth = null;
+                if(columnConfig.maxWidth)
+
+                    column.style.maxWidth = self.getColumnWidth(columnConfig.maxWidth);
+                else
+                    column.style.maxWidth = null;
+            }
         });
     }
 
