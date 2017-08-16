@@ -32500,11 +32500,9 @@ var TabPanel = function (_Component) {
 
             var props = Object.assign({ region: 'center', layout: 'border', orientation: 'vertical' }, this.props);
 
-            if (this.props.className) {
-                classes.push(this.props.className);
+            if (this.props.className) classes.push(this.props.className);
 
-                props.className = classes.join(' ');
-            }
+            props.className = classes.join(' ');
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],

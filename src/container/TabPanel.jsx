@@ -54,11 +54,9 @@ export class TabPanel extends Component
         let props = Object.assign({region: 'center', layout: 'border', orientation: 'vertical'}, this.props);
 
         if(this.props.className)
-        {
             classes.push(this.props.className);
 
-            props.className = classes.join(' ');
-        }
+        props.className = classes.join(' ');
 
         return (
             <Container {...props}>
