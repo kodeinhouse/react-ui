@@ -323,3 +323,45 @@ input[type="checkbox"]
     color: gray;
     padding: 2px 0px;
 }
+
+.spinner
+{
+    position: relative;
+
+    .decrement,
+    .increment
+    {
+        cursor: pointer;
+        background: none;
+        outline: none;
+        border: none;
+        padding: 0 5px;
+        width: 30px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-size: 28px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .decrement
+    {
+        left: 0;
+        border-right: 1px solid #dee1e5;
+        background-image: url("../../../../icons/minus-32.png");
+    }
+
+    .increment
+    {
+        right: 0;
+        border-left: 1px solid #dee1e5;
+        background-image: url("../../../../icons/plus-32.png");
+    }
+
+    input
+    {
+        padding: 7px 35px;
+        text-align: center;
+    }
+}

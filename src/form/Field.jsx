@@ -17,7 +17,7 @@ export class Field extends Component
             rules: [{
                 check: ((field, value) =>
                 {
-                    return !field.required || (field.required === true && value != null && value.trim().length > 0)
+                    return !field.required || (field.required === true && value != null && value.toString().trim().length > 0)
                 }),
                 message: "This field is required"
             }]
@@ -42,7 +42,7 @@ export class Field extends Component
 
     onChange(field, value)
     {
-        value = value != '' ? value : null;
+        value = (value !== '' ? value : null);
 
         // Having the onChange prop will let us know this is a controlled field
         if(this.props.onChange)
@@ -65,6 +65,8 @@ export class Field extends Component
 
     pick(prop, state)
     {
+        // If the field has the onChange it means that it's controlled
+        // So we read from the prop instead the state
         if(this.props.onChange)
             return prop;
         else

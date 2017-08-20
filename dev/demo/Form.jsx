@@ -88,6 +88,7 @@ export class FormDemo extends Component
                                 <NumberField  />
                             </Form.FormField>
                             <Form.SearchField label="Search Field" required/>
+                            <Form.SpinnerField label="Spinner Field" value={1} min={0} template={"{number} Test"} required/>
                         </Form.FieldGroup>
                     </Container>
                 </Container>

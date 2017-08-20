@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { FormField } from './FormField';
-import { Dropdown as DropdownInput } from './base/Dropdown';
+import { Field } from './Field';
+import { Dropdown as BaseField } from './base/Dropdown';
 
-export class Dropdown extends Component
+export class Dropdown extends Field
 {
-    render()
+    createField()
     {
-        return (
-            <FormField label={this.props.label}>
-                <DropdownInput options={this.props.options}/>
-            </FormField>
-        );
+        return <BaseField
+                    name={this.props.name}
+                    value={this.props.value}
+                    label={this.props.label}
+                    options={this.props.options}
+                    onChange={this.props.onChange} />;
     }
 }

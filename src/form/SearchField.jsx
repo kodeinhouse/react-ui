@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
-import { FormField } from './FormField';
-import { SearchField as SearchInput } from './base/SearchField';
+import { Field } from './Field';
+import { SearchField as BaseField } from './base/SearchField';
 
-export class SearchField extends Component
+export class SearchField extends Field
 {
-    render()
+    /*render()
     {
         let props = Object.assign({value: ''}, this.props);
 
         return (
             <FormField {...this.props}>
-                <SearchInput {...props}/>
+                <BaseField {...props}/>
             </FormField>
         );
+    }*/
+
+    createField()
+    {
+        let value = this.processValue(this.pick(this.props.value, this.state.value));
+
+        return <BaseField
+                    name={this.props.name}
+                    value={value}
+                    label={this.props.label}
+                    required={this.props.required}
+                    disabled={this.props.disabled}
+                    readOnly={this.props.readOnly}
+                    placeholder={this.props.placeholder}
+                    onChange={this.onChange}
+                    onBlur={this.onBlur} />;
     }
 }

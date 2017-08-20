@@ -9,8 +9,8 @@ export class NumberField extends TextField
         return {
             type: 'text',
             align: 'right',
-            minValue: Number.MIN_VALUE,
-            maxValue: Number.MAX_VALUE,
+            minValue: -Number.MAX_VALUE,
+            maxValue: +Number.MAX_VALUE,
             allowNegative: true,
             decimals: 2,
             value: '',
@@ -178,7 +178,7 @@ export class NumberField extends TextField
         value = this.parseValue(arguments.length > 0 ? value : this.state.value);
 
         this.errors = this.validator.run(this, value);
-
+        
         return this.errors.length == 0;
     }
 
