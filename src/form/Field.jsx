@@ -30,7 +30,8 @@ export class Field extends Component
     static get defaultProps()
     {
         return {
-            validation: 'eager'
+            validation: 'eager',
+            error: true // By default the error is displayed
         };
     }
 
@@ -93,7 +94,9 @@ export class Field extends Component
         // If the user wants to prevent the message tag from being created just need to set the error attribute to true
         // The error displayed will be from the validations, we can modify this later to allow any direct error
         // from outside the component
-        return this.props.error !== false && this.props.error != null ? <div className="error">{error}</div> : null;
+
+        // If the user wants to prevent the error from being displayed the error property can be set to false
+        return this.props.error !== false && error != null ? <div className="error">{error}</div> : null;
     }
 
     render()
