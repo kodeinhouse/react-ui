@@ -26,14 +26,18 @@ export class TabPanel extends Component
             return (<li key={index} className={active ? "active": null}><a href="#" onClick={this.handleOnClick.bind(this, index)}>{item.props.title}</a></li>);
         }
 
-        return (<ul className="tab-stripe region-north">{this.props.children.map(createTabStrip.bind(this))}</ul>);
+        let children = Array.isArray(this.props.children) ? this.props.children : [this.props.children];
+
+        return (<ul className="tab-stripe region-north">{children.map(createTabStrip.bind(this))}</ul>);
     }
 
     renderTabs()
     {
         let selected = this.state.selected;
 
-        return React.Children.map(this.props.children, function(child, index){
+        let children = Array.isArray(this.props.children) ? this.props.children : [this.props.children];
+
+        return React.Children.map(children, function(child, index){
             return React.cloneElement(child, {
                 active: (selected == index)
             });
