@@ -12,7 +12,8 @@ export class Grid extends Panel
 {
     static get defaultProps(){
         return {
-            mode: 'normal' // available options are auto, fit
+            mode: 'normal', // available options are auto, fit
+            sortable: true // We allow sorting by default
         };
     }
 
@@ -358,13 +359,14 @@ export class Grid extends Panel
         let key = "th-" + row + "-" + index;
         let colSpan = column.items ? column.items.length: column.colSpan;
         let align = column.align;
+        let isSortable = this.props.sortable && column.sortable !== false;
 
         return <TableColumnHeader   key={key}
                                     index={index}
                                     align={align}
                                     colSpan={colSpan}
-                                    sort={column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null}
-                                    onClick={this.onHeaderClick}>{content}</TableColumnHeader>;
+                                    sort={isSortable && column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null}
+                                    onClick={isSortable ? this.onHeaderClick : null }>{content}</TableColumnHeader>;
     }
 
     getMoney(value, config)

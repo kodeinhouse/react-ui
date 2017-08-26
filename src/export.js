@@ -10,6 +10,7 @@ export { Validator } from './form/Validator';
 // Other
 export { Text } from './components/other/Text';
 export { Button } from './components/other/Button';
+export { ToggleButton } from './components/other/ToggleButton';
 
 // Navigation
 export { Link } from './components/nav/Link';
