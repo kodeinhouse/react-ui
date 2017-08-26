@@ -155,8 +155,6 @@ export class Grid extends Panel
     {
         let dom = ReactDOM.findDOMNode(this);
 
-        console.log('onResize : ' + this.props.id);
-
         if(dom != null)
         {
             let headerWrapper = dom.querySelector(".grid-hd-wrapper");
