@@ -34,6 +34,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "clay.js": "^0.1.6",
     "css-element-queries": "^0.4.0",
     "less": "^2.7.2",
     "lodash": "^4.17.4",

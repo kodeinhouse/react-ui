@@ -6,6 +6,7 @@ import { TableColumnHeader } from './TableColumnHeader';
 import { Sort } from './Sort';
 import { LoadingMask } from '../util/LoadingMask';
 import { isEqual, isEqualWith, isFunction } from 'lodash';
+import Clay from 'clay.js';
 
 export class Grid extends Panel
 {
@@ -85,7 +86,7 @@ export class Grid extends Panel
 
     getResizeElement(bodyWrapper)
     {
-        return bodyWrapper;
+        return bodyWrapper.querySelector(".grid-body");
     }
 
     componentDidMount()
@@ -98,15 +99,31 @@ export class Grid extends Panel
             headerWrapper.scrollLeft = this.scrollLeft;
         });
 
-        const ElementQueries = require("css-element-queries/src/ElementQueries");
-        const ResizeSensor = require("css-element-queries/src/ResizeSensor");
-
         let resizeElement = this.getResizeElement(bodyWrapper);
 
         // Start sensor to detect resize
-        new ResizeSensor(resizeElement, this.onResize);
+        let clay = new Clay(resizeElement);
+        clay.on('resize', this.onResize);
 
-        this.onResize();
+        // Check first if it's necessary to start an instance of the MutationObserver
+        if(dom.closest(".tab-item") != null)
+        {
+            let self = this;
+
+            // This is a horrible but necessary hack to detect when the
+            // Grid becomes visible if it's inside a tab panel
+            this.observer = new MutationObserver(function(mutations){
+                mutations.forEach(function(mutation) {
+                    if(mutation.target.style.display != 'none')
+                        self.onResize();
+               });
+            });
+
+            this.observer.observe(dom.closest(".tab-item"), {
+                attributes:    true,
+                attributeFilter: ["style"]
+            });
+        }
 	}
 
     componentDidUpdate(prevProps, prevState)
@@ -115,6 +132,12 @@ export class Grid extends Panel
         this.onResize();
 
         this.validateSelection();
+    }
+
+    componentWillUnmount()
+    {
+        if(this.observer)
+            this.observer.disconnect();
     }
 
     shouldComponentUpdate(nextProps, nextState)
@@ -131,6 +154,8 @@ export class Grid extends Panel
     onResize()
     {
         let dom = ReactDOM.findDOMNode(this);
+
+        console.log('onResize : ' + this.props.id);
 
         if(dom != null)
         {
@@ -175,6 +200,7 @@ export class Grid extends Panel
                 columnWidth = column.getBoundingClientRect().width;
 
                 headers.forEach(function(header){
+
                     header.cells[index].style.width = columnWidth + 'px';
                     header.cells[index].style.minWidth = columnWidth + 'px';
                     header.cells[index].style.maxWidth = columnWidth + 'px';
@@ -446,7 +472,7 @@ export class Grid extends Panel
             classes.push(this.props.className);
 
         return (
-            <Container id={this.props.id} className={classes.join(' ')} style={this.props.style} layout="border" region={this.props.region} orientation="vertical">
+            <Container id={this.props.id} className={classes.join(' ')} style={this.props.style} layout="border" region={this.props.region} orientation="vertical" overflow={false}>
                 {this.props.toolbar}
                 <Container className="grid-hd-wrapper" region="north">
                     <table className="grid-header">
