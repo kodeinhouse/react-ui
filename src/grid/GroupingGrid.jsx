@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Grid } from './Grid';
 import { RowGroup } from './RowGroup';
+import { clone } from 'lodash';
 
 // TODO: Implement the ColumnGroup tag for the column widths
 
@@ -16,11 +17,11 @@ export class GroupingGrid extends Grid
 
     onExpandCollapse(group, state)
     {
-        // Set the groups
-        let groups = this.state.groups || [];
+        // Set the groups - Need to clone the groups to prevent a direct update to the state
+        let groups = Object.assign({}, this.state.groups);
 
-        if(groups[group] == null)
-            groups[group] = {};
+        // Do an assign to prevent the instance being modified directly
+        groups[group] = Object.assign({}, groups[group]);
 
         groups[group].state = state;
 

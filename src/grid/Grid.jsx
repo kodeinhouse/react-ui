@@ -5,7 +5,7 @@ import { Container } from '../container/Container';
 import { TableColumnHeader } from './TableColumnHeader';
 import { Sort } from './Sort';
 import { LoadingMask } from '../util/LoadingMask';
-import { isEqual, isEqualWith, isFunction } from 'lodash';
+import { isEqual, isEqualWith, isFunction, isMatch } from 'lodash';
 import Clay from 'clay.js';
 
 export class Grid extends Panel
@@ -152,7 +152,15 @@ export class Grid extends Panel
                 return val1.toString() === val2.toString();
         });
 
-        return !propsAreEqual || !isEqual(this.state, nextState);
+        // Need to use isMatch to perform an unordered comparison
+        let statesAreEqual = isEqualWith(this.state, nextState, function(val1, val2){
+            if(Array.isArray(val1) && Array.isArray(val2))
+                return isMatch(val1, val2);
+        });
+
+        let update = !propsAreEqual || !statesAreEqual;
+
+        return update;
     }
 
     onResize()

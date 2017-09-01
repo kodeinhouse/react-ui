@@ -15,10 +15,13 @@ export class RowGroup extends Component
         this.onExpandCollapse = this.onExpandCollapse.bind(this);
     }
 
-    onExpandCollapse()
+    onExpandCollapse(event)
     {
+        event.preventDefault();
+        event.stopPropagation();
+
         let state = (this.props.state == 'expanded' ? 'collapsed' : 'expanded');
-        
+
         if(this.props.onExpandCollapse)
             this.props.onExpandCollapse(this.props.name, state);
     }
