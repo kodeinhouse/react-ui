@@ -8318,6 +8318,9 @@ var Grid = function (_Panel) {
                     attributeFilter: ["style"]
                 });
             }
+
+            // This is required so when an element become visible and this is executed the columns could be in synch
+            this.onResize();
         }
     }, {
         key: 'componentDidUpdate',
@@ -31360,6 +31363,7 @@ var Link = function (_Component) {
                 { id: this.props.id,
                     className: classes.join(' '),
                     href: this.props.path,
+                    style: this.props.style,
                     onClick: this.props.onClick,
                     onMouseEnter: this.onMouseEnter,
                     onMouseLeave: this.onMouseLeave },

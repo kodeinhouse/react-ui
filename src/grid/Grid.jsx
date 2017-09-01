@@ -125,6 +125,9 @@ export class Grid extends Panel
                 attributeFilter: ["style"]
             });
         }
+
+        // This is required so when an element become visible and this is executed the columns could be in synch
+        this.onResize();
 	}
 
     componentDidUpdate(prevProps, prevState)

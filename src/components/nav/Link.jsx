@@ -33,6 +33,7 @@ export class Link extends Component
         return <a   id={this.props.id}
                     className={classes.join(' ')}
                     href={this.props.path}
+                    style={this.props.style}
                     onClick={this.props.onClick}
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}>{this.props.children}</a>;
