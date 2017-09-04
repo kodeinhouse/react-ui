@@ -10,7 +10,7 @@ export class FormField extends Component
     render()
     {
         let classes = ['field'];
-        let props = Object.assign({}, this.props);
+        let props = Object.assign({style: {}}, this.props);
 
         if(this.props.className)
             classes.push(this.props.className);
@@ -20,6 +20,9 @@ export class FormField extends Component
 
         if(this.props.invalid)
             classes.push('invalid');
+
+        if(props.visible === false)
+            props.style.display = 'none';
 
         return (
             <div className={classes.join(' ')} style={props.style}>

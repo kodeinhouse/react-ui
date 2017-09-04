@@ -3486,13 +3486,15 @@ var FormField = function (_Component) {
         key: 'render',
         value: function render() {
             var classes = ['field'];
-            var props = Object.assign({}, this.props);
+            var props = Object.assign({ style: {} }, this.props);
 
             if (this.props.className) classes.push(this.props.className);
 
             if (this.props.required) classes.push('required');
 
             if (this.props.invalid) classes.push('invalid');
+
+            if (props.visible === false) props.style.display = 'none';
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
