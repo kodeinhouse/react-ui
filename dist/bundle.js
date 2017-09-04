@@ -2299,6 +2299,7 @@ var FormField = function (_Field) {
                     align = _props.align,
                     required = _props.required;
 
+                var style = Object.assign({}, this.props.style);
 
                 if (className && className.length > 0) classes.push(className);
 
@@ -2308,6 +2309,8 @@ var FormField = function (_Field) {
 
                 if (!this.isValid(this.state.value)) classes.push(this.baseClass + '-' + 'invalid');
 
+                if (this.props.visible === false) style.display = 'none';
+
                 var labelClass = 'form-field-label' + (this.props.flex ? ' hbox-r' : '');
                 var valueClass = 'form-field-value' + (this.props.flex ? ' hbox-l' : '');
 
@@ -2316,7 +2319,7 @@ var FormField = function (_Field) {
 
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: classes.join(" "), style: this.props.style },
+                    { className: classes.join(" "), style: style },
                     field,
                     value
                 );

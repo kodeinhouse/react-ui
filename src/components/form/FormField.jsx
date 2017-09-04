@@ -49,6 +49,7 @@ export class FormField extends Field
         {
             let classes = [this.baseClass, "form-type-" + this.props.type, (this.props.flex ? 'hbox' : ''), (this.props.inline ? 'inline' : '')];
             let { className, align, required} = this.props;
+            let style = Object.assign({}, this.props.style);
 
             if(className && className.length > 0)
                 classes.push(className);
@@ -62,13 +63,17 @@ export class FormField extends Field
             if(!this.isValid(this.state.value))
                 classes.push(this.baseClass + '-' + 'invalid');
 
+            if(this.props.visible === false)
+                style.display = 'none';
+
             let labelClass = 'form-field-label' + (this.props.flex ? ' hbox-r' : '');
             let valueClass = 'form-field-value' + (this.props.flex ? ' hbox-l' : '');
 
             let field = this.createLabel(this.props.label, labelClass);
             let value = this.createValue(this.props.type, valueClass);
 
-            return (<div className={classes.join(" ")} style={this.props.style}>
+
+            return (<div className={classes.join(" ")} style={style}>
                         {field}
                         {value}
                     </div>);
