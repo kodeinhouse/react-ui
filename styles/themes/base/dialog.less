@@ -45,6 +45,11 @@
 }
 
 /* Animation */
+@opacityEnterTiming:800ms; /* Value for slow appearance 800ms */
+@scaleEnterTiming:1000ms; /* Value for slow appearance 1000ms */
+
+@opacityLeaveTiming:400ms;
+@scaleLeaveTiming:600ms;
 
 .dialog-enter {
   opacity: 0.01;
@@ -57,12 +62,12 @@
 
 .dialog-enter.dialog-enter-active {
     opacity: 1;
-    transition: opacity 800ms ease-in;
+    transition: opacity @opacityEnterTiming ease-in;
 
     .dialog
     {
         transform: scale(1);
-        transition: transform 1000ms ease-in-out;
+        transition: transform @scaleEnterTiming ease-in-out;
     }
 }
 
@@ -77,12 +82,12 @@
 
 .dialog-appear.dialog-appear-active {
     opacity: 1;
-    transition: opacity 800ms ease-in; /* Keep the opacity transition time lower than the scale duration */
+    transition: opacity @opacityEnterTiming ease-in; /* Keep the opacity transition time lower than the scale duration */
 
     .dialog
     {
         transform: scale(1);
-        transition: transform 1000ms ease-in; /* Having the scale performing longer than the opacity gives a better UX */
+        transition: transform @scaleEnterTiming ease-in; /* Having the scale performing longer than the opacity gives a better UX */
     }
 }
 
@@ -97,11 +102,68 @@
 
 .dialog-leave.dialog-leave-active {
     opacity: 0.01;
-    transition: opacity 400ms ease-in;
+    transition: opacity @opacityLeaveTiming ease-in;
 
     .dialog
     {
         transform: scale(0.3);
-        transition: transform 600ms ease-in;
+        transition: transform @scaleLeaveTiming ease-in;
     }
+}
+
+/* Another Transition */
+/* Animation */
+@opacityEnterFastTiming:10ms; /* Value for slow appearance 800ms */
+@scaleEnterFastTiming:200ms; /* Value for slow appearance 1000ms */
+
+@opacityLeaveFastTiming:50ms;
+@scaleLeaveFastTiming:100ms;
+
+.dialog-fast-enter {
+  opacity: 0.6;
+
+    .dialog
+    {
+        transform: scale(0.7);
+    }
+}
+
+.dialog-fast-enter.dialog-fast-enter-active {
+    opacity: 1;
+    transition: opacity @opacityEnterFastTiming ease-out;
+
+    .dialog
+    {
+        transform: scale(1);
+        transition: transform @scaleEnterFastTiming ease-out;
+    }
+}
+
+.dialog-fast-appear {
+    opacity: 0.6;
+
+    .dialog
+    {
+        transform: scale(0.7);
+    }
+}
+
+.dialog-fast-appear.dialog-fast-appear-active {
+    opacity: 1;
+    transition: opacity @opacityEnterFastTiming ease-out; /* Keep the opacity transition time lower than the scale duration */
+
+    .dialog
+    {
+        transform: scale(1);
+        transition: transform @scaleEnterFastTiming ease-out; /* Having the scale performing longer than the opacity gives a better UX */
+    }
+}
+
+.dialog-fast-leave {
+    opacity: 1;
+}
+
+.dialog-fast-leave.dialog-fast-leave-active {
+    opacity: 0.2;
+    transition: opacity @opacityLeaveFastTiming linear;
 }

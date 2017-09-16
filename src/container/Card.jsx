@@ -10,7 +10,7 @@ export class Card extends Component
         if(this.props.className)
             classes.push(this.props.className);
 
-        return (<Container className={classes.join(' ')} style={this.props.style}>
+        return (<Container className={classes.join(' ')} style={this.props.style} onClick={this.props.onClick}>
                     {this.props.children}
                 </Container>)
     }

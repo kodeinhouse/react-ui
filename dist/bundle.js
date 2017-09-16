@@ -1702,7 +1702,7 @@ var Container = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { id: this.props.id, className: classes.join(' '), style: style },
+                { id: this.props.id, className: classes.join(' '), style: style, onClick: this.props.onClick },
                 this.props.children
             );
         }
@@ -31628,7 +31628,11 @@ var DialogComponent = function (_Component) {
         key: 'defaultProps',
         get: function get() {
             return {
-                modal: false
+                modal: false,
+                transition: '',
+                transitionEnterTimeout: 1000,
+                transitionAppearTimeout: 800,
+                transitionLeaveTimeout: 500
             };
         }
     }]);
@@ -31738,10 +31742,10 @@ var DialogComponent = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup___default.a,
                 {
                     component: 'div',
-                    transitionEnterTimeout: 1000,
-                    transitionAppearTimeout: 800,
-                    transitionLeaveTimeout: 500,
-                    transitionName: 'dialog',
+                    transitionEnterTimeout: this.props.transitionEnterTimeout,
+                    transitionAppearTimeout: this.props.transitionAppearTimeout,
+                    transitionLeaveTimeout: this.props.transitionLeaveTimeout,
+                    transitionName: 'dialog' + (this.props.transition != '' ? '-' + this.props.transition : ''),
                     transitionAppear: true,
                     transitionEnter: true,
                     transitionLeave: true },
@@ -31793,7 +31797,11 @@ var Dialog = function (_DialogComponent) {
         key: 'defaultProps',
         get: function get() {
             return {
-                className: 'dialog'
+                className: 'dialog',
+                transition: '',
+                transitionEnterTimeout: 1000,
+                transitionAppearTimeout: 800,
+                transitionLeaveTimeout: 500
             };
         }
     }]);
@@ -32240,7 +32248,7 @@ var Card = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
-                { className: classes.join(' '), style: this.props.style },
+                { className: classes.join(' '), style: this.props.style, onClick: this.props.onClick },
                 this.props.children
             );
         }

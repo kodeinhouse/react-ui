@@ -56,7 +56,7 @@ export class Container extends Component
 
         if(this.props.overflow === false)
             style.overflow = 'hidden';
-            
+
         if(this.props.scrollable === false)
             style.overflow = 'hidden';
 
@@ -84,6 +84,6 @@ export class Container extends Component
         if(this.props.columns)
             classes.push(this.props.columns);
 
-        return <div id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</div>;
+        return <div id={this.props.id} className={classes.join(' ')} style={style} onClick={this.props.onClick}>{this.props.children}</div>;
     }
 }

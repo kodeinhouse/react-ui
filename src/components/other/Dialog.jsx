@@ -8,7 +8,11 @@ export class DialogComponent extends Component
 {
     static get defaultProps(){
         return {
-            modal: false
+            modal: false,
+            transition: '',
+            transitionEnterTimeout:1000,
+            transitionAppearTimeout:800,
+            transitionLeaveTimeout:500
         };
     }
 
@@ -111,10 +115,10 @@ export class DialogComponent extends Component
         return (
             <CSSTransitionGroup
                 component="div"
-                transitionEnterTimeout={1000}
-                transitionAppearTimeout={800}
-                transitionLeaveTimeout={500}
-                transitionName="dialog"
+                transitionEnterTimeout={this.props.transitionEnterTimeout}
+                transitionAppearTimeout={this.props.transitionAppearTimeout}
+                transitionLeaveTimeout={this.props.transitionLeaveTimeout}
+                transitionName={'dialog' + (this.props.transition != '' ? '-' + this.props.transition : '')}
                 transitionAppear={true}
                 transitionEnter={true}
                 transitionLeave={true}>
@@ -137,7 +141,11 @@ export class Dialog extends DialogComponent
     static get defaultProps()
     {
         return {
-            className: 'dialog'
+            className: 'dialog',
+            transition: '',
+            transitionEnterTimeout:1000,
+            transitionAppearTimeout:800,
+            transitionLeaveTimeout:500
         };
     }
     componentWillReceiveProps(nextProps)
