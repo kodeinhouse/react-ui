@@ -9,13 +9,16 @@ export class Button extends Component
             background: 'solid'
         };
     }
+
     constructor(props)
     {
         super(props);
     }
+
     render()
     {
         let classes = ['button'];
+        let style = this.props.style || {};
 
         if(this.props.className)
             classes.push(this.props.className);
@@ -29,6 +32,23 @@ export class Button extends Component
             if(this.props.background)
                 classes.push(this.props.background);
 
-        return <button id={this.props.id} className={classes.join(' ')} onClick={this.props.onClick} disabled={this.props.disabled}>{this.props.children}</button>;
+        if(this.props.icon)
+            classes.push('icon');
+
+        if(this.props.border)
+            style.border = this.props.border;
+
+        if(this.props.width)
+            style.width = this.props.width;
+
+        if(this.props.decoration)
+            style.textDecoration = this.props.decoration;
+            
+        return (
+            <button id={this.props.id} className={classes.join(' ')} onClick={this.props.onClick} disabled={this.props.disabled} style={style}>
+                {this.props.icon ? <i className={`icon ${this.props.icon}`}></i> : null}
+                {this.props.children}
+            </button>
+        );
     }
 }

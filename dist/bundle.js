@@ -1700,6 +1700,10 @@ var Container = function (_Component) {
 
             if (this.props.columns) classes.push(this.props.columns);
 
+            if (this.props.padding) style.padding = this.props.padding;
+
+            if (this.props.border) style.border = this.props.border;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { id: this.props.id, className: classes.join(' '), style: style, onClick: this.props.onClick },
@@ -24800,6 +24804,7 @@ var Button = function (_Component) {
         key: 'render',
         value: function render() {
             var classes = ['button'];
+            var style = this.props.style || {};
 
             if (this.props.className) classes.push(this.props.className);
 
@@ -24807,9 +24812,18 @@ var Button = function (_Component) {
 
             if (this.props.background == 'transparent') classes.push('outline');else if (this.props.background) classes.push(this.props.background);
 
+            if (this.props.icon) classes.push('icon');
+
+            if (this.props.border) style.border = this.props.border;
+
+            if (this.props.width) style.width = this.props.width;
+
+            if (this.props.decoration) style.textDecoration = this.props.decoration;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
-                { id: this.props.id, className: classes.join(' '), onClick: this.props.onClick, disabled: this.props.disabled },
+                { id: this.props.id, className: classes.join(' '), onClick: this.props.onClick, disabled: this.props.disabled, style: style },
+                this.props.icon ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'icon ' + this.props.icon }) : null,
                 this.props.children
             );
         }

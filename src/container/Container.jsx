@@ -84,6 +84,12 @@ export class Container extends Component
         if(this.props.columns)
             classes.push(this.props.columns);
 
+        if(this.props.padding)
+            style.padding = this.props.padding;
+
+        if(this.props.border)
+            style.border =this.props.border;
+
         return <div id={this.props.id} className={classes.join(' ')} style={style} onClick={this.props.onClick}>{this.props.children}</div>;
     }
 }
