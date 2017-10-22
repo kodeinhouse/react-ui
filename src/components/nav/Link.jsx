@@ -26,15 +26,20 @@ export class Link extends Component
     render()
     {
         let classes = this.state.classes;
+        let style = Object.assign({}, this.props.style);
 
         if(this.props.className)
             classes.push(this.props.className);
 
+        if(this.props.marginLeft)
+            style.marginLeft = this.props.marginLeft;
+
         return <a   id={this.props.id}
                     className={classes.join(' ')}
                     href={this.props.path}
-                    style={this.props.style}
+                    style={style}
                     onClick={this.props.onClick}
+                    target={this.props.target}
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}>{this.props.children}</a>;
     }

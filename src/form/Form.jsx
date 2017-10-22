@@ -16,6 +16,7 @@ import { SpinnerField } from './SpinnerField';
 import { TextArea } from './TextArea';
 import { TextField } from './TextField';
 import { CompositeField } from './CompositeField';
+import { DisplayField } from './DisplayField';
 
 export class Form extends Component
 {
@@ -51,3 +52,4 @@ Form.SpinnerField = SpinnerField;
 Form.TextArea = TextArea;
 Form.TextField = TextField;
 Form.CompositeField = CompositeField;
+Form.DisplayField = DisplayField;

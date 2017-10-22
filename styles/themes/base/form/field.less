@@ -39,7 +39,7 @@
     /* When a field is put together with a FieldGroup component */
     & + .group
     {
-        margin-left: 10px;
+        /*margin-left: 10px;*/
     }
 
     .error
@@ -54,6 +54,15 @@
         .wrapper
         {
             margin-top: 0px;
+        }
+    }
+
+    /* Display Field */
+    &.display
+    {
+        label
+        {
+            font-weight: bold;
         }
     }
 }
@@ -117,12 +126,12 @@
 
 .equal
 {
-    .field + .field
+    & > .field + .field
     {
         margin-left: 10px;
     }
 
-    .field:only-child
+    & > .field:only-child
     {
         margin-right: 10px;
     }

@@ -43,7 +43,19 @@ export class Button extends Component
 
         if(this.props.decoration)
             style.textDecoration = this.props.decoration;
-            
+
+        if(this.props.push)
+        {
+            classes.push('push');
+            classes.push(this.props.push);
+        }
+
+        if(this.props.padding)
+            style.padding = this.props.padding;
+
+        if(this.props.visible === false)
+            style.display = 'none';
+
         return (
             <button id={this.props.id} className={classes.join(' ')} onClick={this.props.onClick} disabled={this.props.disabled} style={style}>
                 {this.props.icon ? <i className={`icon ${this.props.icon}`}></i> : null}

@@ -81,6 +81,9 @@ export class Container extends Component
         if(this.props.margin)
             style.margin = this.props.margin;
 
+        if(this.props.marginTop)
+            style.marginTop = this.props.marginTop;
+
         if(this.props.columns)
             classes.push(this.props.columns);
 
@@ -90,6 +93,18 @@ export class Container extends Component
         if(this.props.border)
             style.border =this.props.border;
 
-        return <div id={this.props.id} className={classes.join(' ')} style={style} onClick={this.props.onClick}>{this.props.children}</div>;
+        if(this.props.visible === false)
+            style.visibility = 'hidden';
+
+        let dnd = {
+            onDragOver: this.props.onDragOver,
+            onDrop: this.props.onDrop,
+            onDragLeave: this.props.onDragLeave,
+            onDragEnter: this.props.onDragEnter,
+            onDragStart: this.props.onDragStart,
+            onDragEnd: this.onDragEnd
+        };
+
+        return <div id={this.props.id} className={classes.join(' ')} style={style} onClick={this.props.onClick} {...dnd}>{this.props.children}</div>;
     }
 }
