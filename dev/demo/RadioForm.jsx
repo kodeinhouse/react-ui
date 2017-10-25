@@ -27,7 +27,7 @@ export class RadioForm extends Component
         return (
             <div>
                 <label>We are a group of radio buttons</label>
-                <RadioGroup name="who" value={this.state.who} onChange={this.onChange}>
+                <RadioGroup stacked name="who" value={this.state.who} onChange={this.onChange}>
                     <RadioButton label="I'm a radio button" value="first"/>
                     <RadioButton label="Me too" value="second"/>
                     <RadioButton label="I'm too" value="third"/>

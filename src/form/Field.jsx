@@ -76,7 +76,10 @@ export class Field extends Component
 
     createLabel()
     {
-        return <Label>{this.props.label}</Label>;
+        if(this.props.label)
+            return <Label>{this.props.label}</Label>;
+        else
+            return null;
     }
 
     createField()

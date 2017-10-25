@@ -37,8 +37,11 @@ export class RadioGroup extends Component
         if(this.props.className)
             classes.push(this.props.className);
 
+        if(this.props.stacked)
+            classes.push('stacked');
+
         return (
-            <div className={classes.join(' ')}>
+            <div className={classes.join(' ')} style={this.props.style}>
                 {this.createOptions(this.props.name)}
             </div>
         );

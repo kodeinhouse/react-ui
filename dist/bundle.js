@@ -744,11 +744,11 @@ var Field = function (_Component) {
     }, {
         key: 'createLabel',
         value: function createLabel() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            if (this.props.label) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__Label__["a" /* Label */],
                 null,
                 this.props.label
-            );
+            );else return null;
         }
     }, {
         key: 'createField',
@@ -19573,9 +19573,11 @@ var RadioGroup = function (_Component) {
 
             if (this.props.className) classes.push(this.props.className);
 
+            if (this.props.stacked) classes.push('stacked');
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: classes.join(' ') },
+                { className: classes.join(' '), style: this.props.style },
                 this.createOptions(this.props.name)
             );
         }
