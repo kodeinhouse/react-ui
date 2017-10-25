@@ -8,7 +8,7 @@ import { LoadingMask } from '../util/LoadingMask';
 import { isEqual, isEqualWith, isFunction, isMatch } from 'lodash';
 import Clay from 'clay.js';
 
-export class Grid extends Panel
+export class Grid extends Component
 {
     static get defaultProps(){
         return {
@@ -367,26 +367,41 @@ export class Grid extends Panel
 
     getHeader(column, row, index, content, width)
     {
+        let config = typeof content != 'object' ? {text: content} : content;
         let key = "th-" + row + "-" + index;
         let colSpan = column.items ? column.items.length: column.colSpan;
-        let align = column.align;
+        let align = config.align || column.align;
         let isSortable = this.props.sortable && column.sortable !== false;
+        let text = config.text;
 
         return <TableColumnHeader   key={key}
                                     index={index}
                                     align={align}
                                     colSpan={colSpan}
                                     sort={isSortable && column.dataIndex == this.state.sortField && column.dataIndex != null ? this.state.sortOrder : null}
-                                    onClick={isSortable ? this.onHeaderClick : null }>{content}</TableColumnHeader>;
+                                    onClick={isSortable ? this.onHeaderClick : null }>{text}</TableColumnHeader>;
     }
 
     getMoney(value, config)
     {
         value = !isNaN(value = parseFloat(value)) ? value : 0;
 
-        value = value.toLocaleString('en-US', {style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, maximumFractionDigits: config.decimals});
+        return this.getNumber(value, {style: 'currency', currency: config.currency, minimumFractionDigits: config.decimals, maximumFractionDigits: config.decimals});
+    }
 
-        return value;
+    getInteger(value, config)
+    {
+        return this.getNumber(value);
+    }
+
+    getDecimal(value, config)
+    {
+        return this.getNumber(value, {minimumFractionDigits: config.decimals, maximumFractionDigits: config.decimals});
+    }
+
+    getNumber(value, options)
+    {
+        return value.toLocaleString('en-US', options || {});
     }
 
     createRows(records, columns, width)
@@ -419,6 +434,13 @@ export class Grid extends Panel
                             // Implement Intl.NumberFormat
                             data = self.getMoney(data, config);
                         }
+                        else
+                            if(config.type == 'integer')
+                                data = self.getInteger(data, config);
+                            else
+                                if(config.type == 'decimal')
+                                    data = self.getDecimal(data, config);
+
                     }
                 }
                 else
