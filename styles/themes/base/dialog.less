@@ -1,6 +1,5 @@
 .overlay
 {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -9,6 +8,16 @@
     display: flex;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
+
+    &.fixed
+    {
+        position: fixed;
+    }
+
+    &.relative
+    {
+        position: absolute;
+    }
 }
 
 .dialog

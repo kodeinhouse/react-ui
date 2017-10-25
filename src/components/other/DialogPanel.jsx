@@ -16,10 +16,13 @@ export class DialogPanel extends Panel
     {
         let element = ReactDOM.findDOMNode(this);
 
-        let clientRect = element.getBoundingClientRect();
-        
-        // We want the dialog to stay still while switching between options that could make it large
-        element.style.marginTop = clientRect.top + 'px';
+        if(this.props.position != 'relative')
+        {
+            let clientRect = element.getBoundingClientRect();
+
+            // We want the dialog to stay still while switching between options that could make it large
+            element.style.marginTop = clientRect.top + 'px';
+        }
     }
 }
 

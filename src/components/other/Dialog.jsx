@@ -53,8 +53,11 @@ export class DialogComponent extends Component
         {
             let dialog = element.querySelector('.dialog');
 
-            dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
-            dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
+            if(this.props.position != 'relative')
+            {
+                dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
+                dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
+            }
         }
     }
 
@@ -111,6 +114,7 @@ export class DialogComponent extends Component
     render()
     {
         let display = this.state.opened ? '' : 'none';
+        let classes = ['overlay', this.props.position];
 
         return (
             <CSSTransitionGroup
@@ -124,10 +128,10 @@ export class DialogComponent extends Component
                 transitionLeave={true}>
                 {
                     this.state.opened ?
-                        <div key={"my-overlay"} className="overlay" onClick={this.onHide}>
-                        <DialogPanel id={this.props.id} title={this.props.title} footer={this.getFooter()} className={this.props.className} style={{display: display}}>
-                            {this.props.children}
-                        </DialogPanel>
+                        <div key={"my-overlay"} className={classes.join(' ')} onClick={this.onHide}>
+                            <DialogPanel id={this.props.id} title={this.props.title} width={this.props.width} footer={this.getFooter()} position={this.props.position} className={this.props.className} style={{display: display}}>
+                                {this.props.children}
+                            </DialogPanel>
                         </div>
                         : null
                 }
@@ -141,6 +145,7 @@ export class Dialog extends DialogComponent
     static get defaultProps()
     {
         return {
+            position: 'fixed',
             className: 'dialog',
             transition: '',
             transitionEnterTimeout:1000,

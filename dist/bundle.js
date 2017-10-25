@@ -22910,8 +22910,10 @@ var DialogComponent = function (_Component) {
             if (this.state.opened) {
                 var dialog = element.querySelector('.dialog');
 
-                dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
-                dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
+                if (this.props.position != 'relative') {
+                    dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
+                    dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
+                }
             }
         }
     }, {
@@ -22973,6 +22975,7 @@ var DialogComponent = function (_Component) {
         key: 'render',
         value: function render() {
             var display = this.state.opened ? '' : 'none';
+            var classes = ['overlay', this.props.position];
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup___default.a,
@@ -22987,10 +22990,10 @@ var DialogComponent = function (_Component) {
                     transitionLeave: true },
                 this.state.opened ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { key: "my-overlay", className: 'overlay', onClick: this.onHide },
+                    { key: "my-overlay", className: classes.join(' '), onClick: this.onHide },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_2__DialogPanel__["a" /* DialogPanel */],
-                        { id: this.props.id, title: this.props.title, footer: this.getFooter(), className: this.props.className, style: { display: display } },
+                        { id: this.props.id, title: this.props.title, width: this.props.width, footer: this.getFooter(), position: this.props.position, className: this.props.className, style: { display: display } },
                         this.props.children
                     )
                 ) : null
@@ -23033,6 +23036,7 @@ var Dialog = function (_DialogComponent) {
         key: 'defaultProps',
         get: function get() {
             return {
+                position: 'fixed',
                 className: 'dialog',
                 transition: '',
                 transitionEnterTimeout: 1000,
@@ -23124,10 +23128,12 @@ var DialogPanel = function (_Panel) {
         value: function componentDidMount() {
             var element = __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.findDOMNode(this);
 
-            var clientRect = element.getBoundingClientRect();
+            if (this.props.position != 'relative') {
+                var clientRect = element.getBoundingClientRect();
 
-            // We want the dialog to stay still while switching between options that could make it large
-            element.style.marginTop = clientRect.top + 'px';
+                // We want the dialog to stay still while switching between options that could make it large
+                element.style.marginTop = clientRect.top + 'px';
+            }
         }
     }]);
 
