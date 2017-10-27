@@ -24473,7 +24473,7 @@ var TextArea = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__FormField__["a" /* FormField */],
                 { label: this.props.label },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextArea__["a" /* TextArea */], null)
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextArea__["a" /* TextArea */], { value: this.props.value, onChange: this.props.onChange, onKeyPress: this.props.onKeyPress })
             );
         }
     }]);
@@ -24938,16 +24938,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var TextArea = function (_Component) {
     _inherits(TextArea, _Component);
 
-    function TextArea() {
+    function TextArea(props) {
         _classCallCheck(this, TextArea);
 
-        return _possibleConstructorReturn(this, (TextArea.__proto__ || Object.getPrototypeOf(TextArea)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (TextArea.__proto__ || Object.getPrototypeOf(TextArea)).call(this, props));
+
+        _this.onChange = _this.onChange.bind(_this);
+        return _this;
     }
 
     _createClass(TextArea, [{
+        key: 'onChange',
+        value: function onChange(event) {
+            var target = event.target;
+
+            if (this.props.onChange) this.props.onChange(this.props, target.value);
+        }
+    }, {
         key: 'render',
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', null);
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { value: this.props.value, onChange: this.onChange, onKeyPress: this.props.onKeyPress });
         }
     }]);
 
