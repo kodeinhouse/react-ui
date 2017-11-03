@@ -9,7 +9,7 @@ export class DisplayField extends Component
     {
         return (
             <FormField className="display inline">
-                <Label width={this.props.labelWidth}>{this.props.label}:</Label>
+                <Label width={this.props.labelWidth} align={this.props.labelAlign}>{this.props.label}:</Label>
                 <Text>{this.props.children}</Text>
             </FormField>
         );

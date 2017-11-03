@@ -1463,6 +1463,8 @@ var Label = function (_Component) {
 
             if (this.props.width) style.width = this.props.width;
 
+            if (this.props.align) classes.push(this.props.align);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'label',
                 { id: this.props.id, className: classes.join(' '), style: style },
@@ -19438,10 +19440,19 @@ var FieldGroup = function (_Component) {
 
             props.className = classes.join(' ');
 
+            var children = __WEBPACK_IMPORTED_MODULE_0_react___default.a.Children.map(this.props.children, function (child, index) {
+                if (child != null) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(child, {
+                        labelWidth: child.labelWidth || props.labelWidth,
+                        labelAlign: child.labelAlign || props.labelAlign
+                    });
+                } else return child;
+            });
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__container_Container__["a" /* Container */],
                 props,
-                this.props.children
+                children
             );
         }
     }]);
@@ -23870,7 +23881,7 @@ var DisplayField = function (_Component) {
                 { className: 'display inline' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2__Label__["a" /* Label */],
-                    { width: this.props.labelWidth },
+                    { width: this.props.labelWidth, align: this.props.labelAlign },
                     this.props.label,
                     ':'
                 ),
