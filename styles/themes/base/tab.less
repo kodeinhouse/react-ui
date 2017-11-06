@@ -27,3 +27,53 @@
   padding: 5px;
   border: 1px solid lightgray;
 }
+
+.tab-panel.material
+{
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+    .tab-stripe
+    {
+        background-color: #FFFFFF;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        border: none;
+
+        li
+        {
+            border-bottom: 2px solid transparent;
+
+            a
+            {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            &.active
+            {
+                border-bottom: 3px solid #65be96;
+            }
+        }
+
+        &.left
+        {
+            text-align: left;
+        }
+
+        &.center
+        {
+            text-align: center;
+        }
+
+        &.right
+        {
+            text-align: right;
+        }
+    }
+
+
+    .tab-item
+    {
+        border: none;
+    }
+}

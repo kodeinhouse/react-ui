@@ -23657,7 +23657,7 @@ var TabPanel = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'ul',
-                { className: 'tab-stripe region-north' },
+                { className: "tab-stripe region-north " + this.props.stripeAlign },
                 children.map(createTabStrip.bind(this))
             );
         }
@@ -23705,7 +23705,8 @@ var TabPanel = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 TabPanel.defaultProps = {
-    theme: 'neutral'
+    theme: 'neutral',
+    stripeAlign: 'center'
 };
 ;
 

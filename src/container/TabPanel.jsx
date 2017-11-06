@@ -28,7 +28,7 @@ export class TabPanel extends Component
 
         let children = Array.isArray(this.props.children) ? this.props.children : [this.props.children];
 
-        return (<ul className="tab-stripe region-north">{children.map(createTabStrip.bind(this))}</ul>);
+        return (<ul className={"tab-stripe region-north " + this.props.stripeAlign}>{children.map(createTabStrip.bind(this))}</ul>);
     }
 
     renderTabs()
@@ -72,5 +72,6 @@ export class TabPanel extends Component
 }
 
 TabPanel.defaultProps = {
-    theme: 'neutral'
+    theme: 'neutral',
+    stripeAlign: 'center'
 };
