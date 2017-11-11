@@ -16,6 +16,7 @@ export class TextField extends Field
                     disabled={this.props.disabled}
                     readOnly={this.props.readOnly}
                     placeholder={this.props.placeholder}
+                    onKeyPress={this.props.onKeyPress}
                     onChange={this.onChange}
                     onBlur={this.onBlur} />;
     }

@@ -10,6 +10,7 @@ export class Field extends Component
         super(props);
 
         this.state = {
+            value: props.value,
             validate: props.validation == 'eager'
         };
 
@@ -35,10 +36,13 @@ export class Field extends Component
         };
     }
 
-    onBlur(field, value)
+    onBlur(event)
     {
         if(!this.state.validate)
             this.setState({validate: true});
+
+        if(this.props.onBlur)
+            this.props.onBlur(event);
     }
 
     onChange(field, value)

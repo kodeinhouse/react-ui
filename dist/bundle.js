@@ -691,6 +691,7 @@ var Field = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Field.__proto__ || Object.getPrototypeOf(Field)).call(this, props));
 
         _this.state = {
+            value: props.value,
             validate: props.validation == 'eager'
         };
 
@@ -710,8 +711,10 @@ var Field = function (_Component) {
 
     _createClass(Field, [{
         key: 'onBlur',
-        value: function onBlur(field, value) {
+        value: function onBlur(event) {
             if (!this.state.validate) this.setState({ validate: true });
+
+            if (this.props.onBlur) this.props.onBlur(event);
         }
     }, {
         key: 'onChange',
@@ -24548,6 +24551,7 @@ var TextField = function (_Field) {
                 disabled: this.props.disabled,
                 readOnly: this.props.readOnly,
                 placeholder: this.props.placeholder,
+                onKeyPress: this.props.onKeyPress,
                 onChange: this.onChange,
                 onBlur: this.onBlur });
         }
@@ -24575,6 +24579,8 @@ var _temp = function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckBox; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24588,16 +24594,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var CheckBox = function (_Component) {
     _inherits(CheckBox, _Component);
 
-    function CheckBox() {
+    function CheckBox(props) {
         _classCallCheck(this, CheckBox);
 
-        return _possibleConstructorReturn(this, (CheckBox.__proto__ || Object.getPrototypeOf(CheckBox)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (CheckBox.__proto__ || Object.getPrototypeOf(CheckBox)).call(this, props));
+
+        _this.onChange = _this.onChange.bind(_this);
+        return _this;
     }
 
     _createClass(CheckBox, [{
+        key: "onChange",
+        value: function onChange(event) {
+            var target = event.target;
+
+            if (this.props.onChange) this.props.onChange(this.props, target.value);
+        }
+    }, {
         key: "render",
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "checkbox" });
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", _extends({ type: "checkbox" }, this.props, { onChange: this.onChange }));
         }
     }]);
 
