@@ -78,6 +78,9 @@ export class Container extends Component
         if(this.props.minWidth)
             style.minWidth = this.props.minWidth;
 
+        if(this.props.maxWidth)
+            style.maxWidth = this.props.maxWidth;
+
         if(this.props.margin)
             style.margin = this.props.margin;
 

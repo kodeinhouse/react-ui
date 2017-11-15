@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 143);
@@ -434,6 +434,8 @@ var Container = function (_Component) {
             if (this.props.height) style.height = this.props.height;
 
             if (this.props.minWidth) style.minWidth = this.props.minWidth;
+
+            if (this.props.maxWidth) style.maxWidth = this.props.maxWidth;
 
             if (this.props.margin) style.margin = this.props.margin;
 
@@ -23445,13 +23447,16 @@ var Card = function (_Component) {
     _createClass(Card, [{
         key: 'render',
         value: function render() {
+            var props = Object.assign({}, this.props);
             var classes = ['card'];
 
             if (this.props.className) classes.push(this.props.className);
 
+            props.className = classes.join(' ');
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Container__["a" /* Container */],
-                { className: classes.join(' '), style: this.props.style, onClick: this.props.onClick },
+                props,
                 this.props.children
             );
         }
@@ -23757,18 +23762,39 @@ var CheckBox = function (_Component) {
     _createClass(CheckBox, [{
         key: 'render',
         value: function render() {
+            var classes = ['field'];
+
+            if (this.props.className) classes.push(this.props.className);
+
+            var label = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { className: 'align middle' },
+                this.props.label
+            );
+            var leftSide = null,
+                rightSide = null;
+
+            if (this.props.labelAlign == 'left') leftSide = label;else if (this.props.labelAlign == 'right') rightSide = label;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'field' },
+                { className: classes.join(' '), style: this.props.style },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'label',
                     null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_CheckBox__["a" /* CheckBox */], null),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'span',
-                        { className: 'align middle' },
-                        this.props.label
-                    )
+                    leftSide,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_CheckBox__["a" /* CheckBox */], {
+                        name: this.props.name,
+                        checked: this.props.checked,
+                        label: this.props.label,
+                        required: this.props.required,
+                        disabled: this.props.disabled,
+                        readOnly: this.props.readOnly,
+                        placeholder: this.props.placeholder,
+                        onKeyPress: this.props.onKeyPress,
+                        onChange: this.props.onChange,
+                        onBlur: this.props.onBlur }),
+                    rightSide
                 )
             );
         }
