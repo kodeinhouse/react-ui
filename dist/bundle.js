@@ -1462,7 +1462,7 @@ var Label = function (_Component) {
         key: 'render',
         value: function render() {
             var classes = [];
-            var style = Object.assign({}, this.props);
+            var style = Object.assign({}, this.props.style);
 
             if (this.props.className) classes.push(this.props.className);
 
@@ -23798,6 +23798,13 @@ var CheckBox = function (_Component) {
                 )
             );
         }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {
+                labelAlign: 'right'
+            };
+        }
     }]);
 
     return CheckBox;
@@ -24514,7 +24521,7 @@ var TextArea = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__FormField__["a" /* FormField */],
                 { label: this.props.label },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextArea__["a" /* TextArea */], { value: this.props.value, onChange: this.props.onChange, onKeyPress: this.props.onKeyPress })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextArea__["a" /* TextArea */], { value: this.props.value, onChange: this.props.onChange, onKeyPress: this.props.onKeyPress, rows: this.props.rows })
             );
         }
     }]);
@@ -24634,7 +24641,7 @@ var CheckBox = function (_Component) {
         value: function onChange(event) {
             var target = event.target;
 
-            if (this.props.onChange) this.props.onChange(this.props, target.value);
+            if (this.props.onChange) this.props.onChange(this.props, target.checked);
         }
     }, {
         key: "render",
@@ -25011,7 +25018,7 @@ var TextArea = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { value: this.props.value, onChange: this.onChange, onKeyPress: this.props.onKeyPress });
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { value: this.props.value, onChange: this.onChange, onKeyPress: this.props.onKeyPress, rows: this.props.rows });
         }
     }]);
 

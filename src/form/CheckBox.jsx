@@ -4,6 +4,13 @@ import { CheckBox as BaseField } from './base/CheckBox';
 
 export class CheckBox extends Component
 {
+    static get defaultProps()
+    {
+        return {
+            labelAlign: 'right'
+        };
+    }
+
     render()
     {
         let classes = ['field'];

@@ -5,7 +5,7 @@ export class Label extends Component
     render()
     {
         let classes = [];
-        let style = Object.assign({}, this.props);
+        let style = Object.assign({}, this.props.style);
 
         if(this.props.className)
             classes.push(this.props.className);
@@ -15,7 +15,7 @@ export class Label extends Component
 
         if(this.props.align)
             classes.push(this.props.align);
-            
+
         return <label id={this.props.id} className={classes.join(' ')} style={style}>{this.props.children}</label>;
     }
 }
