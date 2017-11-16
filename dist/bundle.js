@@ -22850,7 +22850,6 @@ var _temp = function () {
 "use strict";
 /* unused harmony export DialogComponent */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Dialog; });
-/* unused harmony export DialogFooter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Button__ = __webpack_require__(27);
@@ -23077,9 +23076,13 @@ var DialogFooter = function (_Component2) {
     _createClass(DialogFooter, [{
         key: 'render',
         value: function render() {
+            var classes = ['footer'];
+
+            if (this.props.className) classes.push(this.props.className);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'footer' },
+                { className: classes.join(' '), style: this.props.style },
                 this.props.children
             );
         }
@@ -23087,6 +23090,8 @@ var DialogFooter = function (_Component2) {
 
     return DialogFooter;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+Dialog.Footer = DialogFooter;
 ;
 
 var _temp = function () {
@@ -23784,6 +23789,7 @@ var CheckBox = function (_Component) {
                     null,
                     leftSide,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_CheckBox__["a" /* CheckBox */], {
+                        value: this.props.value,
                         name: this.props.name,
                         checked: this.props.checked,
                         label: this.props.label,
@@ -24521,7 +24527,7 @@ var TextArea = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__FormField__["a" /* FormField */],
                 { label: this.props.label },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextArea__["a" /* TextArea */], { value: this.props.value, onChange: this.props.onChange, onKeyPress: this.props.onKeyPress, rows: this.props.rows })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextArea__["a" /* TextArea */], { name: this.props.name, value: this.props.value, onChange: this.props.onChange, onKeyPress: this.props.onKeyPress, rows: this.props.rows })
             );
         }
     }]);
@@ -25018,7 +25024,7 @@ var TextArea = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { value: this.props.value, onChange: this.onChange, onKeyPress: this.props.onKeyPress, rows: this.props.rows });
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { name: this.props.name, value: this.props.value, onChange: this.onChange, onKeyPress: this.props.onKeyPress, rows: this.props.rows });
         }
     }]);
 

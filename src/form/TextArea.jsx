@@ -8,7 +8,7 @@ export class TextArea extends Component
     {
         return (
             <FormField label={this.props.label}>
-                <BaseField value={this.props.value} onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} rows={this.props.rows}/>
+                <BaseField name={this.props.name} value={this.props.value} onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} rows={this.props.rows}/>
             </FormField>
         );
     }

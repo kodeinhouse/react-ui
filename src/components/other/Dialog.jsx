@@ -173,14 +173,21 @@ export class Dialog extends DialogComponent
     }
 }
 
-export class DialogFooter extends Component
+class DialogFooter extends Component
 {
     render()
     {
+        let classes = ['footer'];
+
+        if(this.props.className)
+            classes.push(this.props.className);
+
         return (
-            <div className="footer">
+            <div className={classes.join(' ')} style={this.props.style}>
                 {this.props.children}
             </div>
         );
     }
 }
+
+Dialog.Footer = DialogFooter;

@@ -20,7 +20,7 @@ export class TextArea extends Component
     render()
     {
         return (
-            <textarea value={this.props.value} onChange={this.onChange} onKeyPress={this.props.onKeyPress} rows={this.props.rows} />
+            <textarea name={this.props.name} value={this.props.value} onChange={this.onChange} onKeyPress={this.props.onKeyPress} rows={this.props.rows} />
         );
     }
 }

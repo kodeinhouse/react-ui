@@ -32,6 +32,7 @@ export class CheckBox extends Component
                 <label>
                     {leftSide}
                     <BaseField
+                        value={this.props.value}
                         name={this.props.name}
                         checked={this.props.checked}
                         label={this.props.label}
