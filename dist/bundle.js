@@ -19871,18 +19871,19 @@ var Grid = function (_Component) {
             var row = self.getRowSample(body);
 
             if (row != null) {
-                var headers = header.querySelectorAll("tr");
+                var headers = header.querySelectorAll("tr:last-child");
                 var bodyCells = row.querySelectorAll("td");
 
                 var columnConfig = null;
                 var columnWidth = null;
                 var minWidth = null;
+                var columns = this.getColumns(self.props.columns);
 
                 self.setColumnsWidth(bodyCells);
 
                 bodyCells.forEach(function (column, index) {
 
-                    columnConfig = self.props.columns[index];
+                    columnConfig = columns[index];
                     minWidth = columnConfig.minWidth || 50;
                     columnWidth = column.getBoundingClientRect().width;
 
@@ -19899,6 +19900,17 @@ var Grid = function (_Component) {
         key: 'setHeadersWidth',
         value: function setHeadersWidth(headers) {
             this.setColumnsWidth(headers);
+        }
+    }, {
+        key: 'getColumns',
+        value: function getColumns(columns) {
+            var fields = [];
+
+            columns.forEach(function (column, index) {
+                if (column.items != null) fields = fields.concat(column.items);else fields.push(column);
+            });
+
+            return fields;
         }
     }, {
         key: 'getColumnWidth',
@@ -20116,6 +20128,7 @@ var Grid = function (_Component) {
             var width = (100 / columns.length).toFixed(2) + "%";
             var rows = [{ headers: [] }];
             var self = this;
+            var fields = [];
 
             columns.forEach(function (column, index) {
                 if (self != null) {
@@ -20129,7 +20142,9 @@ var Grid = function (_Component) {
                         column.items.forEach(function (column2, index2) {
                             rows[1].headers.push(self.getHeader(column2, index, index2, column2.header, width2));
                         });
-                    }
+
+                        fields = fields.concat(column.items);
+                    } else fields.push(column);
                 }
             });
 
@@ -20145,7 +20160,7 @@ var Grid = function (_Component) {
                 );
             });
 
-            var records = this.props.rows || this.getRecords(columns, width);
+            var records = this.props.rows || this.getRecords(fields, width);
 
             var classes = ['grid-panel', this.props.mode];
 
