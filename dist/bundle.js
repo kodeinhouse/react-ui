@@ -751,7 +751,7 @@ var Field = function (_Component) {
         value: function createLabel() {
             if (this.props.label) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__Label__["a" /* Label */],
-                null,
+                { width: this.props.labelWidth },
                 this.props.label
             );else return null;
         }
@@ -22873,6 +22873,9 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__container_Container__ = __webpack_require__(3);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22880,6 +22883,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -23002,9 +23006,35 @@ var DialogComponent = function (_Component) {
             return footer;
         }
     }, {
+        key: 'renderContent',
+        value: function renderContent() {
+            var display = this.state.opened ? '' : 'none';
+
+            // Compatibility while we delete the DialogPanel
+            if (!this.props.plain) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_2__DialogPanel__["a" /* DialogPanel */],
+                    { id: this.props.id, title: this.props.title, width: this.props.width, footer: this.getFooter(), position: this.props.position, className: this.props.className, style: { display: display } },
+                    this.props.children
+                );
+            } else {
+                var classes = ['dialog'];
+                var style = Object.assign({}, this.props.style);
+
+                style.width = this.props.width;
+                style.height = this.props.height;
+                style.display = display;
+
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_5__container_Container__["a" /* Container */],
+                    { id: this.props.id, layout: 'border', orientation: 'vertical', className: classes.join(' '), style: style },
+                    this.props.children
+                );
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var display = this.state.opened ? '' : 'none';
             var classes = ['overlay', this.props.position];
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -23021,11 +23051,7 @@ var DialogComponent = function (_Component) {
                 this.state.opened ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { key: "my-overlay", className: classes.join(' '), onClick: this.onHide },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_2__DialogPanel__["a" /* DialogPanel */],
-                        { id: this.props.id, title: this.props.title, width: this.props.width, footer: this.getFooter(), position: this.props.position, className: this.props.className, style: { display: display } },
-                        this.props.children
-                    )
+                    this.renderContent()
                 ) : null
             );
         }
@@ -23079,8 +23105,75 @@ var Dialog = function (_DialogComponent) {
     return Dialog;
 }(DialogComponent);
 
-var DialogFooter = function (_Component2) {
-    _inherits(DialogFooter, _Component2);
+var DialogBody = function (_Component2) {
+    _inherits(DialogBody, _Component2);
+
+    function DialogBody() {
+        _classCallCheck(this, DialogBody);
+
+        return _possibleConstructorReturn(this, (DialogBody.__proto__ || Object.getPrototypeOf(DialogBody)).apply(this, arguments));
+    }
+
+    _createClass(DialogBody, [{
+        key: 'render',
+        value: function render() {
+            var classes = ['dialog-body'];
+
+            if (this.props.className) classes.push(this.props.className);
+
+            if (this.props.mask) classes.push('mask');
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_5__container_Container__["a" /* Container */],
+                _extends({}, this.props, { className: classes.join(' ') }),
+                this.props.children
+            );
+        }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {
+                region: 'center'
+            };
+        }
+    }]);
+
+    return DialogBody;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+Dialog.Body = DialogBody;
+
+var DialogHeader = function (_Component3) {
+    _inherits(DialogHeader, _Component3);
+
+    function DialogHeader() {
+        _classCallCheck(this, DialogHeader);
+
+        return _possibleConstructorReturn(this, (DialogHeader.__proto__ || Object.getPrototypeOf(DialogHeader)).apply(this, arguments));
+    }
+
+    _createClass(DialogHeader, [{
+        key: 'render',
+        value: function render() {
+            var classes = ['dialog-header'];
+
+            if (this.props.className) classes.push(this.props.className);
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                _extends({}, this.props, { className: classes.join(' ') }),
+                this.props.children
+            );
+        }
+    }]);
+
+    return DialogHeader;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+Dialog.Header = DialogHeader;
+
+var DialogFooter = function (_Component4) {
+    _inherits(DialogFooter, _Component4);
 
     function DialogFooter() {
         _classCallCheck(this, DialogFooter);
@@ -23092,12 +23185,13 @@ var DialogFooter = function (_Component2) {
         key: 'render',
         value: function render() {
             var classes = ['footer'];
+            var style = Object.assign({ borderTop: '1px outset', textAlign: 'right' }, this.props.style);
 
             if (this.props.className) classes.push(this.props.className);
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: classes.join(' '), style: this.props.style },
+                { className: classes.join(' '), style: style },
                 this.props.children
             );
         }
@@ -23117,6 +23211,10 @@ var _temp = function () {
     __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
     __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+
+    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+
+    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
     __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 }();

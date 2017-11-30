@@ -3,6 +3,7 @@ import { Button } from './Button';
 import { DialogPanel } from './DialogPanel';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import ReactDOM from 'react-dom';
+import { Container } from '../../container/Container';
 
 export class DialogComponent extends Component
 {
@@ -111,9 +112,38 @@ export class DialogComponent extends Component
         return footer;
     }
 
-    render()
+    renderContent()
     {
         let display = this.state.opened ? '' : 'none';
+
+        // Compatibility while we delete the DialogPanel
+        if(!this.props.plain)
+        {
+            return (
+                <DialogPanel id={this.props.id} title={this.props.title} width={this.props.width} footer={this.getFooter()} position={this.props.position} className={this.props.className} style={{display: display}}>
+                    {this.props.children}
+                </DialogPanel>
+            );
+        }
+        else
+        {
+            let classes = ['dialog'];
+            let style = Object.assign({}, this.props.style)
+
+            style.width = this.props.width;
+            style.height = this.props.height;
+            style.display = display;
+
+            return (
+                <Container id={this.props.id} layout="border" orientation="vertical" className={classes.join(' ')} style={style}>
+                    {this.props.children}
+                </Container>
+            );
+        }
+    }
+
+    render()
+    {
         let classes = ['overlay', this.props.position];
 
         return (
@@ -129,9 +159,7 @@ export class DialogComponent extends Component
                 {
                     this.state.opened ?
                         <div key={"my-overlay"} className={classes.join(' ')} onClick={this.onHide}>
-                            <DialogPanel id={this.props.id} title={this.props.title} width={this.props.width} footer={this.getFooter()} position={this.props.position} className={this.props.className} style={{display: display}}>
-                                {this.props.children}
-                            </DialogPanel>
+                            {this.renderContent()}
                         </div>
                         : null
                 }
@@ -173,17 +201,66 @@ export class Dialog extends DialogComponent
     }
 }
 
-class DialogFooter extends Component
+class DialogBody extends Component
+{
+    static get defaultProps()
+    {
+        return {
+            region: 'center'
+        };
+    }
+
+    render()
+    {
+        let classes = ['dialog-body'];
+
+        if(this.props.className)
+            classes.push(this.props.className);
+
+        if(this.props.mask)
+            classes.push('mask');
+
+        return (
+            <Container {...this.props} className={classes.join(' ')} >
+                {this.props.children}
+            </Container>
+        );
+    }
+}
+
+Dialog.Body = DialogBody;
+
+class DialogHeader extends Component
 {
     render()
     {
-        let classes = ['footer'];
+        let classes = ['dialog-header'];
 
         if(this.props.className)
             classes.push(this.props.className);
 
         return (
-            <div className={classes.join(' ')} style={this.props.style}>
+            <div {...this.props} className={classes.join(' ')}>
+                {this.props.children}
+            </div>
+        );
+    }
+}
+
+Dialog.Header = DialogHeader;
+
+class DialogFooter extends Component
+{
+    render()
+    {
+        let classes = ['footer'];
+        let style = Object.assign({borderTop: '1px outset', textAlign: 'right'}, this.props.style);
+
+        if(this.props.className)
+            classes.push(this.props.className);
+
+        return (
+            <div className={classes.join(' ')} style={style}>
                 {this.props.children}
             </div>
         );
