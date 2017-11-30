@@ -11,9 +11,8 @@ export class Dropdown extends Component
 
     onChange(event)
     {
-        // TODO: Need to replace the first parameter by this.props to match the other fields
         if(this.props.onChange)
-            this.props.onChange(this, event.target.value);
+            this.props.onChange(this.props, event.target.value);
     }
 
     isValid()

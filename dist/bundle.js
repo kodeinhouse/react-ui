@@ -25025,8 +25025,7 @@ var Dropdown = function (_Component) {
     _createClass(Dropdown, [{
         key: "onChange",
         value: function onChange(event) {
-            // TODO: Need to replace the first parameter by this.props to match the other fields
-            if (this.props.onChange) this.props.onChange(this, event.target.value);
+            if (this.props.onChange) this.props.onChange(this.props, event.target.value);
         }
     }, {
         key: "isValid",
