@@ -56,6 +56,12 @@ export class Field extends Component
             this.setState({value: value});
     }
 
+    componentWillReceiveProps(nextProps)
+    {
+        if(!nextProps.onChange)
+            this.setState({value: nextProps.value});
+    }
+
     processValue(value)
     {
         return value != null ? value : ''; // Input shouldn't receive ever a null value
