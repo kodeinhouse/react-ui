@@ -23966,6 +23966,7 @@ var AutoTextArea = function (_Component) {
             var _this2 = this;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { id: this.props.id,
+                name: this.props.name,
                 className: this.props.className,
                 ref: function ref(c) {
                     return _this2.textarea = c;

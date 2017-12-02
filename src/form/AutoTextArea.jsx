@@ -92,6 +92,7 @@ export class AutoTextArea extends Component
     render()
     {
         return (<textarea id={this.props.id}
+                          name={this.props.name}
                           className={this.props.className}
                           ref={(c) => this.textarea = c}
                           value={this.state.value}
