@@ -194,18 +194,19 @@ export class Grid extends Component
 
         if(row != null)
         {
-            let headers = header.querySelectorAll("tr");
+            let headers = header.querySelectorAll("tr:last-child");
             let bodyCells = row.querySelectorAll("td");
 
             let columnConfig = null;
             let columnWidth = null;
             let minWidth = null;
+            let columns = this.getColumns(self.props.columns);
 
             self.setColumnsWidth(bodyCells);
 
             bodyCells.forEach(function(column, index){
 
-                columnConfig = self.props.columns[index];
+                columnConfig = columns[index];
                 minWidth = columnConfig.minWidth || 50;
                 columnWidth = column.getBoundingClientRect().width;
 
@@ -224,6 +225,21 @@ export class Grid extends Component
     setHeadersWidth(headers)
     {
         this.setColumnsWidth(headers);
+    }
+
+    getColumns(columns)
+    {
+        let fields = [];
+
+        columns.forEach(function(column, index){
+            if(column.items != null)
+                fields = fields.concat(column.items);
+            else
+                fields.push(column);
+        });
+
+        return fields;
+
     }
 
     getColumnWidth(width)
@@ -469,6 +485,7 @@ export class Grid extends Component
         let width = ((100/columns.length).toFixed(2) + "%");
         let rows = [{headers: []}];
         let self = this;
+        let fields = [];
 
         columns.forEach(function(column, index){
                 if(self != null)
@@ -485,7 +502,11 @@ export class Grid extends Component
                         column.items.forEach(function(column2, index2){
                             rows[1].headers.push(self.getHeader(column2, index, index2, column2.header, width2));
                         });
+
+                        fields = fields.concat(column.items);
                     }
+                    else
+                        fields.push(column);
                 }
         });
 
@@ -497,7 +518,7 @@ export class Grid extends Component
             return <tr key={"row-header-" + index}>{headers}</tr>;
         });
 
-		var records = this.props.rows || this.getRecords(columns, width);
+        let records = this.props.rows || this.getRecords(fields, width);
 
         let classes = ['grid-panel', this.props.mode];
 

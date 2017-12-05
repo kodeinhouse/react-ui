@@ -56,6 +56,12 @@ export class Field extends Component
             this.setState({value: value});
     }
 
+    componentWillReceiveProps(nextProps)
+    {
+        if(!nextProps.onChange)
+            this.setState({value: nextProps.value});
+    }
+
     processValue(value)
     {
         return value != null ? value : ''; // Input shouldn't receive ever a null value
@@ -81,7 +87,7 @@ export class Field extends Component
     createLabel()
     {
         if(this.props.label)
-            return <Label>{this.props.label}</Label>;
+            return <Label width={this.props.labelWidth} >{this.props.label}</Label>;
         else
             return null;
     }

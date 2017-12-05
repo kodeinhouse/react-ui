@@ -14,9 +14,9 @@ export class CheckBox extends Component
         let target = event.target;
 
         if(this.props.onChange)
-            this.props.onChange(this.props, target.value);
+            this.props.onChange(this.props, target.checked);
     }
-    
+
     render()
     {
         return <input type="checkbox"  {...this.props} onChange={this.onChange} />;

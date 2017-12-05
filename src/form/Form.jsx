@@ -17,6 +17,7 @@ import { TextArea } from './TextArea';
 import { TextField } from './TextField';
 import { CompositeField } from './CompositeField';
 import { DisplayField } from './DisplayField';
+import { AutoTextArea } from './AutoTextArea';
 
 export class Form extends Component
 {
@@ -35,6 +36,7 @@ export class Form extends Component
     }
 }
 
+Form.AutoTextArea = AutoTextArea;
 Form.CheckBox = CheckBox;
 Form.CheckGroup = CheckGroup;
 Form.Dropdown = Dropdown;

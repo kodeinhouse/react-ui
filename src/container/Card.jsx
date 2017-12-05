@@ -5,12 +5,15 @@ export class Card extends Component
 {
     render()
     {
+        let props = Object.assign({}, this.props);
         let classes = ['card'];
 
         if(this.props.className)
             classes.push(this.props.className);
 
-        return (<Container className={classes.join(' ')} style={this.props.style} onClick={this.props.onClick}>
+        props.className = classes.join(' ');
+
+        return (<Container {...props}>
                     {this.props.children}
                 </Container>)
     }

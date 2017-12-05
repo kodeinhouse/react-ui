@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormField } from './FormField';
-import { TextArea as TextAreaInput } from './base/TextArea';
+import { TextArea as BaseField } from './base/TextArea';
 
 export class TextArea extends Component
 {
@@ -8,7 +8,7 @@ export class TextArea extends Component
     {
         return (
             <FormField label={this.props.label}>
-                <TextAreaInput value={this.props.value} onChange={this.props.onChange} onKeyPress={this.props.onKeyPress}/>
+                <BaseField name={this.props.name} value={this.props.value} onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} rows={this.props.rows}/>
             </FormField>
         );
     }
