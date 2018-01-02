@@ -19,14 +19,6 @@ export class DateField extends Component
 
     render()
     {
-        return <input   type="date"
-                        name={this.props.name}
-                        value={this.props.value}
-                        label={this.props.label}
-                        required={this.props.required}
-                        disabled={this.props.disabled}
-                        readOnly={this.props.readOnly}
-                        placeholder={this.props.placeholder}
-                        onChange={this.onChange} />;
+        return <input type="date" {...this.props} onChange={this.onChange} />;
     }
 }

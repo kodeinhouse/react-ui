@@ -76,7 +76,7 @@ export class FormDemo extends Component
                     <Container className="half" style={{padding: '5px'}}>
                         <Form.Legend>Stacked Fields (Lazy Validation)</Form.Legend>
                         <Form.FieldGroup className="stacked">
-                            <Form.TextField label="First Name" validation="lazy" required />
+                            <Form.TextField label="First Name (Lazy)" validation="lazy" required />
                             <Form.FormField validation="lazy" required>
                                 <Form.Label>Last Name</Form.Label>
                                 <TextField required />

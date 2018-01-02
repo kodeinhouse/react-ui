@@ -87,7 +87,13 @@ export class Field extends Component
     createLabel()
     {
         if(this.props.label)
-            return <Label width={this.props.labelWidth} align={this.props.labelAlign}>{this.props.label}</Label>;
+        {
+            return (
+                <Label width={this.props.labelWidth} align={this.props.labelAlign}>
+                    {this.props.label} {this.props.required ? <span style={{color: "red"}}>*</span> : null}
+                </Label>
+            );
+        }
         else
             return null;
     }
@@ -110,6 +116,17 @@ export class Field extends Component
 
         // If the user wants to prevent the error from being displayed the error property can be set to false
         return this.props.error !== false && error != null ? <div className="error">{error}</div> : null;
+    }
+
+    getDataAttributes(){
+        let attributes = Object.keys(this.props).filter( c => c.indexOf('data-') != -1);
+        let properties = [];
+
+        for (var i = 0; i < attributes.length; i++) {
+            properties[attributes[i]] = this.props[attributes[i]];
+        }
+
+        return properties;
     }
 
     render()

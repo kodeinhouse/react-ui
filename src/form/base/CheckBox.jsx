@@ -19,6 +19,17 @@ export class CheckBox extends Component
 
     render()
     {
-        return <input type="checkbox"  {...this.props} onChange={this.onChange} />;
+        return <input type="checkbox"
+                    value={this.props.value}
+                    name={this.props.name}
+                    checked={this.props.checked}
+                    label={this.props.label}
+                    required={this.props.required}
+                    disabled={this.props.disabled}
+                    readOnly={this.props.readOnly}
+                    placeholder={this.props.placeholder}
+                    onKeyPress={this.props.onKeyPress}
+                    onChange={this.onChange}
+                    onBlur={this.props.onBlur} />;
     }
 }
