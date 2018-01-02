@@ -87,7 +87,7 @@ export class Field extends Component
     createLabel()
     {
         if(this.props.label)
-            return <Label width={this.props.labelWidth} >{this.props.label}</Label>;
+            return <Label width={this.props.labelWidth} align={this.props.labelAlign}>{this.props.label}</Label>;
         else
             return null;
     }
