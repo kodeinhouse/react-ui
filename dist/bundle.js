@@ -19384,16 +19384,9 @@ var DateField = function (_Field) {
         value: function createField() {
             var value = this.processValue(this.pick(this.props.value, this.state.value));
 
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_DateField__["a" /* DateField */], {
-                name: this.props.name,
-                value: value,
-                label: this.props.label,
-                required: this.props.required,
-                disabled: this.props.disabled,
-                readOnly: this.props.readOnly,
-                placeholder: this.props.placeholder,
-                onChange: this.onChange,
-                onBlur: this.onBlur });
+            var props = Object.assign({}, this.props, { value: value });
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_DateField__["a" /* DateField */], props);
         }
     }]);
 
@@ -24934,8 +24927,6 @@ var _temp = function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateField; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24968,7 +24959,15 @@ var DateField = function (_Component) {
     }, {
         key: "render",
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", _extends({ type: "date" }, this.props, { onChange: this.onChange }));
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "date",
+                name: this.props.name,
+                value: this.props.value,
+                label: this.props.label,
+                required: this.props.required,
+                disabled: this.props.disabled,
+                readOnly: this.props.readOnly,
+                placeholder: this.props.placeholder,
+                onChange: this.onChange });
         }
     }]);
 
