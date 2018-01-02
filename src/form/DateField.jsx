@@ -16,7 +16,18 @@ export class DateField extends Field
     {
         let value = this.processValue(this.pick(this.props.value, this.state.value));
 
-        let props = Object.assign({}, this.props, {value: value});
+        let props = Object.assign({}, {
+            name: this.props.name,
+            value: value,
+            label: this.props.label,
+            required: this.props.required,
+            disabled: this.props.disabled,
+            readOnly: this.props.readOnly,
+            placeholder: this.props.placeholder,
+            onKeyPress: this.props.onKeyPress,
+            onChange: this.onChange,
+            onBlur: this.onBlur,
+        }, this.getDataAttributes());
 
         return <BaseField {...props} />;
     }

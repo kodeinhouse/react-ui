@@ -19406,7 +19406,18 @@ var DateField = function (_Field) {
         value: function createField() {
             var value = this.processValue(this.pick(this.props.value, this.state.value));
 
-            var props = Object.assign({}, this.props, { value: value });
+            var props = Object.assign({}, {
+                name: this.props.name,
+                value: value,
+                label: this.props.label,
+                required: this.props.required,
+                disabled: this.props.disabled,
+                readOnly: this.props.readOnly,
+                placeholder: this.props.placeholder,
+                onKeyPress: this.props.onKeyPress,
+                onChange: this.onChange,
+                onBlur: this.onBlur
+            }, this.getDataAttributes());
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_DateField__["a" /* DateField */], props);
         }
