@@ -4,6 +4,12 @@ import { TextField as BaseField } from './base/TextField';
 
 export class TextField extends Field
 {
+
+    constructor(props)
+    {
+        super(props);
+    }
+
     createField()
     {
         let value = this.processValue(this.pick(this.props.value, this.state.value));
@@ -13,6 +19,7 @@ export class TextField extends Field
             value: value,
             label: this.props.label,
             required: this.props.required,
+            maxLength: this.props.maxLength
             disabled: this.props.disabled,
             readOnly: this.props.readOnly,
             placeholder: this.props.placeholder,
