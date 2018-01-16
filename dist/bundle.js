@@ -24885,7 +24885,8 @@ var TextField = function (_Field) {
                 placeholder: this.props.placeholder,
                 onKeyPress: this.props.onKeyPress,
                 onChange: this.onChange,
-                onBlur: this.onBlur
+                onBlur: this.onBlur,
+                maxLength: this.props.maxLength
             }, this.getDataAttributes());
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextField__["a" /* TextField */], props);

@@ -18,7 +18,7 @@ export class FormDemo extends Component
                     <Container className="half" style={{padding: '5px'}}>
                         <Form.Legend>Stacked Fields (Eager Validation)</Form.Legend>
                         <Form.FieldGroup className="stacked">
-                            <Form.TextField label="First Name" placeholder="Enter your first name" required/>
+                            <Form.TextField label="First Name" placeholder="Enter your first name" required maxLength="5"/>
                             <Form.TextField label="Last Name" placeholder="Enter your last name" required/>
                             <Form.NumberField label="Age" placeholder="Enter your age" required />
                             <Form.DisplayField label="Date Format" value="DDD">DD/MM/YYYY</Form.DisplayField>
