@@ -7,10 +7,15 @@ export class DisplayField extends Component
 {
     render()
     {
+        let classes = ['display'];
+
+        if(this.props.className)
+            classes.push(this.props.className)
+            
         return (
-            <FormField className="display inline">
+            <FormField className={classes.join(' ')}>
                 <Label width={this.props.labelWidth} align={this.props.labelAlign}>{this.props.label}:</Label>
-                <Text>{this.props.children}</Text>
+                <div className="wrapper"><Text>{this.props.children}</Text></div>
             </FormField>
         );
     }

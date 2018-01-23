@@ -21,7 +21,7 @@ export class FormDemo extends Component
                             <Form.TextField label="First Name" placeholder="Enter your first name" required maxLength="5"/>
                             <Form.TextField label="Last Name" placeholder="Enter your last name" required/>
                             <Form.NumberField label="Age" placeholder="Enter your age" required />
-                            <Form.DisplayField label="Date Format" value="DDD">DD/MM/YYYY</Form.DisplayField>
+                            <Form.DisplayField label="Date Format" className="inline" value="DDD">DD/MM/YYYY</Form.DisplayField>
                         </Form.FieldGroup>
 
                         <Form.Legend>Inline fields with label on top</Form.Legend>

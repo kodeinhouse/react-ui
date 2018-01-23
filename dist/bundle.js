@@ -24229,9 +24229,13 @@ var DisplayField = function (_Component) {
     _createClass(DisplayField, [{
         key: 'render',
         value: function render() {
+            var classes = ['display'];
+
+            if (this.props.className) classes.push(this.props.className);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__FormField__["a" /* FormField */],
-                { className: 'display inline' },
+                { className: classes.join(' ') },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2__Label__["a" /* Label */],
                     { width: this.props.labelWidth, align: this.props.labelAlign },
@@ -24239,9 +24243,13 @@ var DisplayField = function (_Component) {
                     ':'
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_3__components_other_Text__["a" /* Text */],
-                    null,
-                    this.props.children
+                    'div',
+                    { className: 'wrapper' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_3__components_other_Text__["a" /* Text */],
+                        null,
+                        this.props.children
+                    )
                 )
             );
         }
