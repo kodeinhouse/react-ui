@@ -24233,6 +24233,8 @@ var DisplayField = function (_Component) {
 
             if (this.props.className) classes.push(this.props.className);
 
+            if (this.props.inline && !this.props.stacked) classes.push('inline');
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__FormField__["a" /* FormField */],
                 { className: classes.join(' ') },
@@ -24252,6 +24254,14 @@ var DisplayField = function (_Component) {
                     )
                 )
             );
+        }
+    }], [{
+        key: 'defaultProps',
+        get: function get() {
+            return {
+                inline: true,
+                stacked: false
+            };
         }
     }]);
 
