@@ -8,13 +8,25 @@ import { Container } from '../../container/Container';
 export class DialogComponent extends Component
 {
     static get defaultProps(){
-        return {
-            modal: false,
-            transition: '',
-            transitionEnterTimeout:1000,
-            transitionAppearTimeout:800,
-            transitionLeaveTimeout:500
+        let transition = 'fast';
+
+        let transitions = {
+            'slow': {
+                transitionEnterTimeout:1000,
+                transitionAppearTimeout:800,
+                transitionLeaveTimeout:500
+            },
+            'fast': {
+                transitionEnterTimeout: 0,
+                transitionAppearTimeout: 0,
+                transitionLeaveTimeout: 0
+            }
         };
+
+        return Object.assign({
+            modal: false,
+            transition: transition
+        }, transitions[transition]);
     }
 
     constructor(props)
@@ -172,19 +184,33 @@ export class Dialog extends DialogComponent
 {
     static get defaultProps()
     {
-        return {
+        let transition = 'fast';
+
+        let transitions = {
+            'slow': {
+                transitionEnterTimeout:1000,
+                transitionAppearTimeout:800,
+                transitionLeaveTimeout:500
+            },
+            'fast': {
+                transitionEnterTimeout: 700,
+                transitionAppearTimeout: 400,
+                transitionLeaveTimeout: 0
+            }
+        };
+
+        return Object.assign({
             position: 'fixed',
             className: 'dialog',
-            transition: '',
-            transitionEnterTimeout:1000,
-            transitionAppearTimeout:800,
-            transitionLeaveTimeout:500
-        };
+            transition: transition
+        }, transitions[transition]);
     }
+
     componentWillReceiveProps(nextProps)
     {
         this.setState({opened: nextProps.opened});
     }
+
     open(callback)
     {
         if(callback && typeof callback == 'function')
@@ -192,6 +218,7 @@ export class Dialog extends DialogComponent
 
         this.setState({opened: true}, this.onOpen);
     }
+
     close(callback)
     {
         if(callback && typeof callback == 'function')

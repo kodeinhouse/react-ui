@@ -22928,13 +22928,25 @@ var DialogComponent = function (_Component) {
     _createClass(DialogComponent, null, [{
         key: 'defaultProps',
         get: function get() {
-            return {
-                modal: false,
-                transition: '',
-                transitionEnterTimeout: 1000,
-                transitionAppearTimeout: 800,
-                transitionLeaveTimeout: 500
+            var transition = 'fast';
+
+            var transitions = {
+                'slow': {
+                    transitionEnterTimeout: 1000,
+                    transitionAppearTimeout: 800,
+                    transitionLeaveTimeout: 500
+                },
+                'fast': {
+                    transitionEnterTimeout: 0,
+                    transitionAppearTimeout: 0,
+                    transitionLeaveTimeout: 0
+                }
             };
+
+            return Object.assign({
+                modal: false,
+                transition: transition
+            }, transitions[transition]);
         }
     }]);
 
@@ -23122,14 +23134,26 @@ var Dialog = function (_DialogComponent) {
     }], [{
         key: 'defaultProps',
         get: function get() {
-            return {
+            var transition = 'fast';
+
+            var transitions = {
+                'slow': {
+                    transitionEnterTimeout: 1000,
+                    transitionAppearTimeout: 800,
+                    transitionLeaveTimeout: 500
+                },
+                'fast': {
+                    transitionEnterTimeout: 700,
+                    transitionAppearTimeout: 400,
+                    transitionLeaveTimeout: 0
+                }
+            };
+
+            return Object.assign({
                 position: 'fixed',
                 className: 'dialog',
-                transition: '',
-                transitionEnterTimeout: 1000,
-                transitionAppearTimeout: 800,
-                transitionLeaveTimeout: 500
-            };
+                transition: transition
+            }, transitions[transition]);
         }
     }]);
 
