@@ -18,18 +18,20 @@ import { TextField } from './TextField';
 import { CompositeField } from './CompositeField';
 import { DisplayField } from './DisplayField';
 import { AutoTextArea } from './AutoTextArea';
+import { Helper } from '../helper';
 
 export class Form extends Component
 {
     render()
     {
         let classes = ['form'];
+        let style = Helper.extractStyle(this.props);
 
         if(this.props.className)
             classes.push(this.props.className);
 
         return (
-            <form className={classes.join(' ')}>
+            <form className={classes.join(' ')} style={style}>
                 {this.props.children}
             </form>
         );
