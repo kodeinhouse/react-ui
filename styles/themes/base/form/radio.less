@@ -1,61 +1,65 @@
-input[type='radio']
+.field
 {
-    margin: 0 10px 0 0;
-    vertical-align: middle;
-    position: relative;
-    border: none;
-    background-color: transparent;
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-
-    &:focus
+    input[type='radio']
     {
-        outline: none;
-        box-shadow: none;
-    }
+        margin: 0 10px 0 0;
+        vertical-align: middle;
+        position: relative;
+        border: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
 
-    &::before,
-    &::after
-    {
-        content: "";
-        display: block;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        -webkit-transition: 240ms;
-        -o-transition: 240ms;
-        transition: 240ms;
-    }
+        &:focus
+        {
+            outline: none;
+            box-shadow: none;
+        }
 
-    &::before
-    {
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        background-color: #2196f3;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-        transform: scale(0);
-    }
+        &::before,
+        &::after
+        {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            -webkit-transition: 240ms;
+            -o-transition: 240ms;
+            transition: 240ms;
+        }
 
-    &::after
-    {
-        border: 2px solid #666666;
-    }
+        &::before
+        {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            background-color: #2196f3;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
+        }
 
-    &:checked:before {
-        -webkit-transform: scale(.8);
-        -ms-transform: scale(.8);
-        -o-transform: scale(.8);
-        transform: scale(.8);
-    }
+        &::after
+        {
+            border: 2px solid #666666;
+        }
 
-    &:checked:after {
-        border-color: #2196f3;
+        &:checked:before {
+            -webkit-transform: scale(.8);
+            -ms-transform: scale(.8);
+            -o-transform: scale(.8);
+            transform: scale(.8);
+        }
+
+        &:checked:after {
+            border-color: #2196f3;
+        }
     }
 }
+
 
 .form-field-radio
 {
