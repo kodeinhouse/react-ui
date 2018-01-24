@@ -466,8 +466,10 @@ export class Grid extends Component
 
                 });
 
-
-                return (<td key={"cell-" + rowIndex + "-" + columnIndex} className={"grid-cell-body " + align} colSpan={column.colSpan} style={style}><div className="text">{typeof data == 'boolean' ? data.toString() : data}</div></td>);
+                return (<td key={"cell-" + rowIndex + "-" + columnIndex} className={"grid-cell-body " + align} colSpan={column.colSpan} style={style}>
+                            <div className="text" style={{overflow: (column.overflow ? 'visible' : 'hidden')}}>{typeof data == 'boolean' ? data.toString() : data}</div>
+                        </td>
+                );
             });
 
             let classes = ['grid-row'];

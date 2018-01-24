@@ -6,6 +6,7 @@ export { Badge } from './components/other/Badge';
 export { Logo } from './components/other/Logo';
 export { Avatar } from './util/Avatar';
 export { Validator } from './form/Validator';
+export { Dropdown } from './components/other/Dropdown';
 
 // Other
 export { Text } from './components/other/Text';
