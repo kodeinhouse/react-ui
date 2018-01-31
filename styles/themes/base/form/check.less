@@ -18,6 +18,7 @@
         -webkit-appearance: none;
         appearance: none;
         cursor: pointer;
+        height: 16px;
 
         &::after
         {
@@ -31,6 +32,7 @@
             -o-transition: 240ms;
             transition: 240ms;
             box-sizing: border-box;
+
         }
 
         &:focus
@@ -45,9 +47,10 @@
             top: 2px;
             left: 6px;
             display: table;
-            width: 3px;
-            height: 8px;
+            width: 5px;
+            height: 10px;
             border: 2px solid #fff;
+            box-sizing: border-box;
             border-top-width: 0;
             border-left-width: 0;
             -webkit-transform: rotate(45deg);
@@ -60,6 +63,11 @@
         {
             background-color: #2196f3;
             border-color: #2196f3;
+        }
+
+        &+span
+        {
+            margin-left: 10px;
         }
     }
 }

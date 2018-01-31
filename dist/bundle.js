@@ -24273,7 +24273,7 @@ var CheckBox = function (_Component) {
                 { className: classes.join(' '), style: this.props.style },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'label',
-                    null,
+                    { style: { display: 'inline-block' } },
                     leftSide,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_CheckBox__["a" /* CheckBox */], {
                         value: this.props.value,
