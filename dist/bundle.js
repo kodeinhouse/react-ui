@@ -23497,7 +23497,7 @@ var Dropdown = function (_Component) {
 				'div',
 				{ id: this.props.id, ref: function ref(c) {
 						_this2.child = c;
-					}, className: classes },
+					}, className: classes, style: this.props.style },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'a',
 					{ href: 'javascript:void(0);', className: 'dropdown-trigger', onClick: this.onTriggerClick, onBlur: this.onBlur },

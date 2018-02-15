@@ -104,7 +104,7 @@ export class Dropdown extends Component
 	{
 		var classes = ['dropdown', this.props.className].join(' ');
 
-		return (<div id={this.props.id} ref={c => {this.child = c;}} className={classes}>
+		return (<div id={this.props.id} ref={c => {this.child = c;}} className={classes} style={this.props.style}>
 					<a href="javascript:void(0);" className="dropdown-trigger" onClick={this.onTriggerClick} onBlur={this.onBlur}>
 						{this.props.children}
 					</a>
