@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, TextField, NumberField } from 'form';
+import { Dropdown } from 'components';
 
 import {
     Menu,
@@ -87,6 +88,7 @@ export class FormDemo extends Component
                             </Form.FormField>
                             <Form.SearchField label="Search Field" required/>
                             <Form.SpinnerField label="Spinner Field" value={1} min={0} template={"{number} Test"} required/>
+                            <Form.MultiSelect label="Multi Select" value={['1', '3']} items={[{id: '1', text: 'Uno'}, {id: '2', text: 'Dos'}, {id: '3', text: 'Tres'}]}/>
                         </Form.FieldGroup>
                     </Container>
                 </Container>

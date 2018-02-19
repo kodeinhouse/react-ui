@@ -5,7 +5,9 @@ export class Dropdown extends Component
 {
 	static get defaultProps() {
 		return {
-			align: 'center'
+			align: 'center',
+			items: [],
+			closeOnClick: true
 		};
 	}
 
@@ -37,7 +39,8 @@ export class Dropdown extends Component
 		// When testing it from the Breakdown view when I clicked an item in the New button the placeholder were being created and removed immediately
 		event.preventDefault();
 
-		this.onHide();
+		if(this.props.closeOnClick)
+			this.onHide();
 
 		if(this.props.onChange)
 			this.props.onChange(this, item);
@@ -102,7 +105,7 @@ export class Dropdown extends Component
 
 	render()
 	{
-		var classes = ['dropdown', this.props.className].join(' ');
+		let classes = ['dropdown', this.props.className].join(' ');
 
 		return (<div id={this.props.id} ref={c => {this.child = c;}} className={classes} style={this.props.style}>
 					<a href="javascript:void(0);" className="dropdown-trigger" onClick={this.onTriggerClick} onBlur={this.onBlur}>
