@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field } from './Field';
 import { Dropdown } from '../components/other/Dropdown';
 import { Tag } from '../components/other/Tag';
+import PropTypes from 'prop-types';
 
 export class MultiSelect extends Field
 {
@@ -33,8 +34,9 @@ export class MultiSelect extends Field
 
     getSelectedTags(values){
         let items = {};
+        let tags = this.props.items || [];
 
-        this.props.items.forEach(c => { items[c.id] = c;});
+        tags.forEach(c => { items[c.id] = c;});
 
         return values.map(c => { return items[c]});
     }
@@ -55,11 +57,15 @@ export class MultiSelect extends Field
 
         return (
             <Dropdown onChange={this.onItemClick} items={this.props.items} onCreateItem={this.onCreateItem} style={style} closeOnClick={false}>
-                <div style={{minHeight: '15px'}}>{this.renderTags(this.getSelectedTags(values))}</div>
+                <div style={{minHeight: '15px'}}>{values.length > 0 ? this.renderTags(this.getSelectedTags(values)) : <div style={{color: 'gray'}}>Please select an item</div>}</div>
             </Dropdown>
         );
     }
 }
+
+MultiSelect.propTypes = {
+    items: PropTypes.array
+};
 
 class CustomTag extends Component{
     constructor(props){
