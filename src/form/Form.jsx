@@ -18,7 +18,8 @@ import { TextField } from './TextField';
 import { CompositeField } from './CompositeField';
 import { DisplayField } from './DisplayField';
 import { AutoTextArea } from './AutoTextArea';
-import { MultiSelect } from './MultiSelect';
+import { MultiSelect } from './AutoComplete';
+import { AutoComplete } from './AutoComplete';
 import { Helper } from '../helper';
 
 export class Form extends Component
@@ -59,3 +60,4 @@ Form.TextField = TextField;
 Form.CompositeField = CompositeField;
 Form.DisplayField = DisplayField;
 Form.MultiSelect = MultiSelect;
+Form.AutoComplete = AutoComplete;
