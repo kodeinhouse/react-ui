@@ -105,6 +105,12 @@ export class AutoComplete extends Field
         this.onTextChange = this.onTextChange.bind(this);
     }
 
+    componentWillReceiveProps(nextProps){
+        super.componentWillReceiveProps(nextProps);
+        
+        this.setState({items: nextProps.items});
+    }
+
     onBlur(event){
         this.onHide();
     }
@@ -227,6 +233,7 @@ export class AutoComplete extends Field
 
     renderTags(tags){
         if(tags.length > 0){
+            console.log(tags);
             let items = tags.map(c => {return <CustomTag key={`tag-${c.id}`} onRemove={e => this.onRemove(this.props, c)} {...c} />});
 
             return items;

@@ -19538,6 +19538,8 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_other_Tag__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -19712,6 +19714,13 @@ var AutoComplete = function (_Field2) {
     }
 
     _createClass(AutoComplete, [{
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            _get(AutoComplete.prototype.__proto__ || Object.getPrototypeOf(AutoComplete.prototype), 'componentWillReceiveProps', this).call(this, nextProps);
+
+            this.setState({ items: nextProps.items });
+        }
+    }, {
         key: 'onBlur',
         value: function onBlur(event) {
             this.onHide();
@@ -19872,6 +19881,7 @@ var AutoComplete = function (_Field2) {
             var _this6 = this;
 
             if (tags.length > 0) {
+                console.log(tags);
                 var items = tags.map(function (c) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CustomTag, _extends({ key: 'tag-' + c.id, onRemove: function onRemove(e) {
                             return _this6.onRemove(_this6.props, c);
