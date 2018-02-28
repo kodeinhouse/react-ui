@@ -22,6 +22,7 @@ export class SearchField extends Field
         return <BaseField
                     name={this.props.name}
                     value={value}
+                    onKeyPress={this.props.onKeyPress}
                     label={this.props.label}
                     required={this.props.required}
                     disabled={this.props.disabled}
