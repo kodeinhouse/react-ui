@@ -28,6 +28,7 @@ export class SearchField extends Field
                     readOnly={this.props.readOnly}
                     placeholder={this.props.placeholder}
                     onChange={this.onChange}
+                    onKeyPress={this.props.onKeyPress}
                     onBlur={this.onBlur} />;
     }
 }

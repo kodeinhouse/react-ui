@@ -24880,6 +24880,7 @@ var SearchField = function (_Field) {
                 readOnly: this.props.readOnly,
                 placeholder: this.props.placeholder,
                 onChange: this.onChange,
+                onKeyPress: this.props.onKeyPress,
                 onBlur: this.onBlur });
         }
     }]);
@@ -25480,10 +25481,16 @@ var SearchField = function (_Component) {
         var _this = _possibleConstructorReturn(this, (SearchField.__proto__ || Object.getPrototypeOf(SearchField)).call(this, props));
 
         _this.onChange = _this.onChange.bind(_this);
+        _this.onKeyPress = _this.onKeyPress.bind(_this);
         return _this;
     }
 
     _createClass(SearchField, [{
+        key: "onKeyPress",
+        value: function onKeyPress(event) {
+            if (this.props.onKeyPress) this.props.onKeyPress(event);
+        }
+    }, {
         key: "onChange",
         value: function onChange(event) {
             var target = event.target;
@@ -25493,7 +25500,7 @@ var SearchField = function (_Component) {
     }, {
         key: "render",
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", _extends({ type: "search" }, this.props, { onChange: this.onChange }));
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", _extends({ type: "search" }, this.props, { onChange: this.onChange, onKeyPress: this.onKeyPress }));
         }
     }]);
 
