@@ -357,7 +357,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/Container.jsx');
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/components/box/Container.jsx');
 }();
 
 ;
@@ -475,7 +475,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/otonielmcn/workspace/packages/react-ui/src/container/Container.jsx');
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/container/Container.jsx');
 }();
 
 ;
@@ -653,7 +653,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/FormField.jsx');
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormField.jsx');
 }();
 
 ;
@@ -848,7 +848,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/otonielmcn/workspace/packages/react-ui/src/form/Field.jsx');
+    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/brittongr/Development/packages/react-ui/src/form/Field.jsx');
 }();
 
 ;
@@ -911,55 +911,13 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/FormField.jsx');
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/form/FormField.jsx');
 }();
 
 ;
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1056,16 +1014,56 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
+  };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
+
+module.exports = emptyFunction;
+
+/***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 if (process.env.NODE_ENV !== 'production') {
@@ -1350,7 +1348,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/Field.jsx');
+    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/brittongr/Development/packages/react-ui/src/components/form/Field.jsx');
 }();
 
 ;
@@ -1414,7 +1412,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, "TextField", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/TextField.jsx");
+    __REACT_HOT_LOADER__.register(TextField, "TextField", "/Users/brittongr/Development/packages/react-ui/src/form/base/TextField.jsx");
 }();
 
 ;
@@ -1517,7 +1515,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Panel, 'Panel', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Panel.jsx');
+    __REACT_HOT_LOADER__.register(Panel, 'Panel', '/Users/brittongr/Development/packages/react-ui/src/components/other/Panel.jsx');
 }();
 
 ;
@@ -1578,119 +1576,13 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Label, 'Label', '/Users/otonielmcn/workspace/packages/react-ui/src/form/Label.jsx');
+    __REACT_HOT_LOADER__.register(Label, 'Label', '/Users/brittongr/Development/packages/react-ui/src/form/Label.jsx');
 }();
 
 ;
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var validateFormat = function validateFormat(format) {};
-
-if (process.env.NODE_ENV !== 'production') {
-  validateFormat = function validateFormat(format) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  };
-}
-
-function invariant(condition, format, a, b, c, d, e, f) {
-  validateFormat(format);
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(format.replace(/%s/g, function () {
-        return args[argIndex++];
-      }));
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-}
-
-module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18782,17 +18674,15 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(146), __webpack_require__(147)(module)))
 
 /***/ }),
-/* 19 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -18801,6 +18691,108 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
+  };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
+
+module.exports = emptyFunction;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var validateFormat = function validateFormat(format) {};
+
+if (process.env.NODE_ENV !== 'production') {
+  validateFormat = function validateFormat(format) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  };
+}
+
+function invariant(condition, format, a, b, c, d, e, f) {
+  validateFormat(format);
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+}
+
+module.exports = invariant;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 20 */
@@ -18856,7 +18848,7 @@ module.exports = ExecutionEnvironment;
 
 
 
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -19091,7 +19083,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NoteField, 'NoteField', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/NoteField.jsx');
+    __REACT_HOT_LOADER__.register(NoteField, 'NoteField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NoteField.jsx');
 }();
 
 ;
@@ -19144,7 +19136,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/TextField.jsx');
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/components/form/TextField.jsx');
 }();
 
 ;
@@ -19233,7 +19225,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Button, 'Button', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Button.jsx');
+    __REACT_HOT_LOADER__.register(Button, 'Button', '/Users/brittongr/Development/packages/react-ui/src/components/other/Button.jsx');
 }();
 
 ;
@@ -19409,7 +19401,7 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Dropdown.jsx');
+	__REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dropdown.jsx');
 }();
 
 ;
@@ -19465,7 +19457,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Tag, 'Tag', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Tag.jsx');
+    __REACT_HOT_LOADER__.register(Tag, 'Tag', '/Users/brittongr/Development/packages/react-ui/src/components/other/Tag.jsx');
 }();
 
 ;
@@ -19526,7 +19518,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Text, 'Text', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Text.jsx');
+    __REACT_HOT_LOADER__.register(Text, 'Text', '/Users/brittongr/Development/packages/react-ui/src/components/other/Text.jsx');
 }();
 
 ;
@@ -19931,11 +19923,11 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(MultiSelect, 'MultiSelect', '/Users/otonielmcn/workspace/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(MultiSelect, 'MultiSelect', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
 
-    __REACT_HOT_LOADER__.register(CustomTag, 'CustomTag', '/Users/otonielmcn/workspace/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(CustomTag, 'CustomTag', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
 
-    __REACT_HOT_LOADER__.register(AutoComplete, 'AutoComplete', '/Users/otonielmcn/workspace/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(AutoComplete, 'AutoComplete', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
 }();
 
 ;
@@ -20005,7 +19997,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CompositeField, 'CompositeField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/CompositeField.jsx');
+    __REACT_HOT_LOADER__.register(CompositeField, 'CompositeField', '/Users/brittongr/Development/packages/react-ui/src/form/CompositeField.jsx');
 }();
 
 ;
@@ -20077,7 +20069,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DateField, 'DateField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/DateField.jsx');
+    __REACT_HOT_LOADER__.register(DateField, 'DateField', '/Users/brittongr/Development/packages/react-ui/src/form/DateField.jsx');
 }();
 
 ;
@@ -20147,7 +20139,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FieldGroup, 'FieldGroup', '/Users/otonielmcn/workspace/packages/react-ui/src/form/FieldGroup.jsx');
+    __REACT_HOT_LOADER__.register(FieldGroup, 'FieldGroup', '/Users/brittongr/Development/packages/react-ui/src/form/FieldGroup.jsx');
 }();
 
 ;
@@ -20203,7 +20195,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Legend, 'Legend', '/Users/otonielmcn/workspace/packages/react-ui/src/form/Legend.jsx');
+    __REACT_HOT_LOADER__.register(Legend, 'Legend', '/Users/brittongr/Development/packages/react-ui/src/form/Legend.jsx');
 }();
 
 ;
@@ -20284,7 +20276,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioGroup, "RadioGroup", "/Users/otonielmcn/workspace/packages/react-ui/src/form/RadioGroup.jsx");
+    __REACT_HOT_LOADER__.register(RadioGroup, "RadioGroup", "/Users/brittongr/Development/packages/react-ui/src/form/RadioGroup.jsx");
 }();
 
 ;
@@ -20328,7 +20320,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Validator, "Validator", "/Users/otonielmcn/workspace/packages/react-ui/src/form/Validator.js");
+    __REACT_HOT_LOADER__.register(Validator, "Validator", "/Users/brittongr/Development/packages/react-ui/src/form/Validator.js");
 }();
 
 ;
@@ -20348,7 +20340,7 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__TableColumnHeader__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Sort__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_LoadingMask__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_clay_js__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_clay_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_clay_js__);
@@ -20885,7 +20877,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/otonielmcn/workspace/packages/react-ui/src/grid/Grid.jsx');
+    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/brittongr/Development/packages/react-ui/src/grid/Grid.jsx');
 }();
 
 ;
@@ -20962,7 +20954,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/otonielmcn/workspace/packages/react-ui/src/grid/TableColumnHeader.jsx");
+    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/brittongr/Development/packages/react-ui/src/grid/TableColumnHeader.jsx");
 }();
 
 ;
@@ -21010,7 +21002,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(LoadingMask, "LoadingMask", "/Users/otonielmcn/workspace/packages/react-ui/src/util/LoadingMask.jsx");
+    __REACT_HOT_LOADER__.register(LoadingMask, "LoadingMask", "/Users/brittongr/Development/packages/react-ui/src/util/LoadingMask.jsx");
 }();
 
 ;
@@ -21034,18 +21026,16 @@ module.exports = exports['default'];
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2014-2015, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2014-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
  */
 
 
 
-var emptyFunction = __webpack_require__(16);
+var emptyFunction = __webpack_require__(18);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -21057,45 +21047,43 @@ var emptyFunction = __webpack_require__(16);
 var warning = emptyFunction;
 
 if (process.env.NODE_ENV !== 'production') {
-  (function () {
-    var printWarning = function printWarning(format) {
-      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
+  var printWarning = function printWarning(format) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function warning(condition, format) {
+    if (format === undefined) {
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (format.indexOf('Failed Composite propType: ') === 0) {
+      return; // Ignore CompositeComponent proptype check.
+    }
+
+    if (!condition) {
+      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
       }
 
-      var argIndex = 0;
-      var message = 'Warning: ' + format.replace(/%s/g, function () {
-        return args[argIndex++];
-      });
-      if (typeof console !== 'undefined') {
-        console.error(message);
-      }
-      try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-      } catch (x) {}
-    };
-
-    warning = function warning(condition, format) {
-      if (format === undefined) {
-        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-      }
-
-      if (format.indexOf('Failed Composite propType: ') === 0) {
-        return; // Ignore CompositeComponent proptype check.
-      }
-
-      if (!condition) {
-        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-          args[_key2 - 2] = arguments[_key2];
-        }
-
-        printWarning.apply(undefined, [format].concat(args));
-      }
-    };
-  })();
+      printWarning.apply(undefined, [format].concat(args));
+    }
+  };
 }
 
 module.exports = warning;
@@ -21117,7 +21105,7 @@ module.exports = warning;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -21867,7 +21855,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/BorderLayout.jsx');
+    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/BorderLayout.jsx');
 }();
 
 ;
@@ -21926,7 +21914,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(ColumnLayout, 'ColumnLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/ColumnLayout.jsx');
+    __REACT_HOT_LOADER__.register(ColumnLayout, 'ColumnLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/ColumnLayout.jsx');
 }();
 
 ;
@@ -22008,7 +21996,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/FitLayout.jsx');
+    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FitLayout.jsx');
 }();
 
 ;
@@ -22080,7 +22068,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FlexLayout, 'FlexLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/FlexLayout.jsx');
+    __REACT_HOT_LOADER__.register(FlexLayout, 'FlexLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlexLayout.jsx');
 }();
 
 ;
@@ -22151,7 +22139,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/FlowLayout.jsx');
+    __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlowLayout.jsx');
 }();
 
 ;
@@ -22233,7 +22221,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/HorizontalLayout.jsx');
+    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
 }();
 
 ;
@@ -22315,7 +22303,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/otonielmcn/workspace/packages/react-ui/src/components/box/VerticalLayout.jsx');
+    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/VerticalLayout.jsx');
 }();
 
 ;
@@ -22390,7 +22378,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/CheckBox.jsx');
+    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/brittongr/Development/packages/react-ui/src/components/form/CheckBox.jsx');
 }();
 
 ;
@@ -22451,7 +22439,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/DisplayField.jsx');
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayField.jsx');
 }();
 
 ;
@@ -22513,7 +22501,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayText, "DisplayText", "/Users/otonielmcn/workspace/packages/react-ui/src/components/form/DisplayText.jsx");
+    __REACT_HOT_LOADER__.register(DisplayText, "DisplayText", "/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayText.jsx");
 }();
 
 ;
@@ -22575,7 +22563,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/Fieldset.jsx');
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/components/form/Fieldset.jsx');
 }();
 
 ;
@@ -22641,7 +22629,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormGroup, 'FormGroup', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/FormGroup.jsx');
+    __REACT_HOT_LOADER__.register(FormGroup, 'FormGroup', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormGroup.jsx');
 }();
 
 ;
@@ -22788,7 +22776,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/FormPanel.jsx');
+    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormPanel.jsx');
 }();
 
 ;
@@ -23046,9 +23034,9 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
 
-    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
 }();
 
 ;
@@ -23138,7 +23126,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/RadioButton.jsx');
+    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/brittongr/Development/packages/react-ui/src/components/form/RadioButton.jsx');
 }();
 
 ;
@@ -23254,7 +23242,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/otonielmcn/workspace/packages/react-ui/src/components/form/SearchField.jsx');
+    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/brittongr/Development/packages/react-ui/src/components/form/SearchField.jsx');
 }();
 
 ;
@@ -23342,7 +23330,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/otonielmcn/workspace/packages/react-ui/src/components/nav/Link.jsx');
+    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Link.jsx');
 }();
 
 ;
@@ -23405,7 +23393,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/otonielmcn/workspace/packages/react-ui/src/components/nav/Navigation.jsx');
+    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Navigation.jsx');
 }();
 
 ;
@@ -23461,7 +23449,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Badge, 'Badge', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Badge.jsx');
+    __REACT_HOT_LOADER__.register(Badge, 'Badge', '/Users/brittongr/Development/packages/react-ui/src/components/other/Badge.jsx');
 }();
 
 ;
@@ -23535,7 +23523,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Breadcrumb, 'Breadcrumb', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Breadcrumb.jsx');
+    __REACT_HOT_LOADER__.register(Breadcrumb, 'Breadcrumb', '/Users/brittongr/Development/packages/react-ui/src/components/other/Breadcrumb.jsx');
 }();
 
 ;
@@ -23914,15 +23902,15 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
 }();
 
 ;
@@ -23991,7 +23979,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DialogPanel, 'DialogPanel', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/DialogPanel.jsx');
+    __REACT_HOT_LOADER__.register(DialogPanel, 'DialogPanel', '/Users/brittongr/Development/packages/react-ui/src/components/other/DialogPanel.jsx');
 }();
 
 ;
@@ -24046,7 +24034,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Icon, 'Icon', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Icon.jsx');
+    __REACT_HOT_LOADER__.register(Icon, 'Icon', '/Users/brittongr/Development/packages/react-ui/src/components/other/Icon.jsx');
 }();
 
 ;
@@ -24102,7 +24090,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Logo, 'Logo', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Logo.jsx');
+    __REACT_HOT_LOADER__.register(Logo, 'Logo', '/Users/brittongr/Development/packages/react-ui/src/components/other/Logo.jsx');
 }();
 
 ;
@@ -24193,7 +24181,7 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(ToggleButton, "ToggleButton", "/Users/otonielmcn/workspace/packages/react-ui/src/components/other/ToggleButton.jsx");
+	__REACT_HOT_LOADER__.register(ToggleButton, "ToggleButton", "/Users/brittongr/Development/packages/react-ui/src/components/other/ToggleButton.jsx");
 }();
 
 ;
@@ -24234,7 +24222,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Toolbar, 'Toolbar', '/Users/otonielmcn/workspace/packages/react-ui/src/components/other/Toolbar.jsx');
+  __REACT_HOT_LOADER__.register(Toolbar, 'Toolbar', '/Users/brittongr/Development/packages/react-ui/src/components/other/Toolbar.jsx');
 }();
 
 ;
@@ -24295,7 +24283,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Card, 'Card', '/Users/otonielmcn/workspace/packages/react-ui/src/container/Card.jsx');
+    __REACT_HOT_LOADER__.register(Card, 'Card', '/Users/brittongr/Development/packages/react-ui/src/container/Card.jsx');
 }();
 
 ;
@@ -24358,7 +24346,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Porlet, 'Porlet', '/Users/otonielmcn/workspace/packages/react-ui/src/container/Porlet.jsx');
+    __REACT_HOT_LOADER__.register(Porlet, 'Porlet', '/Users/brittongr/Development/packages/react-ui/src/container/Porlet.jsx');
 }();
 
 ;
@@ -24372,7 +24360,7 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Container__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -24425,7 +24413,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TabItem, 'TabItem', '/Users/otonielmcn/workspace/packages/react-ui/src/container/TabItem.jsx');
+    __REACT_HOT_LOADER__.register(TabItem, 'TabItem', '/Users/brittongr/Development/packages/react-ui/src/container/TabItem.jsx');
 }();
 
 ;
@@ -24547,7 +24535,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TabPanel, 'TabPanel', '/Users/otonielmcn/workspace/packages/react-ui/src/container/TabPanel.jsx');
+    __REACT_HOT_LOADER__.register(TabPanel, 'TabPanel', '/Users/brittongr/Development/packages/react-ui/src/container/TabPanel.jsx');
 }();
 
 ;
@@ -24689,7 +24677,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(AutoTextArea, 'AutoTextArea', '/Users/otonielmcn/workspace/packages/react-ui/src/form/AutoTextArea.jsx');
+    __REACT_HOT_LOADER__.register(AutoTextArea, 'AutoTextArea', '/Users/brittongr/Development/packages/react-ui/src/form/AutoTextArea.jsx');
 }();
 
 ;
@@ -24783,7 +24771,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/otonielmcn/workspace/packages/react-ui/src/form/CheckBox.jsx');
+    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/brittongr/Development/packages/react-ui/src/form/CheckBox.jsx');
 }();
 
 ;
@@ -24839,7 +24827,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckGroup, "CheckGroup", "/Users/otonielmcn/workspace/packages/react-ui/src/form/CheckGroup.jsx");
+    __REACT_HOT_LOADER__.register(CheckGroup, "CheckGroup", "/Users/brittongr/Development/packages/react-ui/src/form/CheckGroup.jsx");
 }();
 
 ;
@@ -24925,7 +24913,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/DisplayField.jsx');
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/form/DisplayField.jsx');
 }();
 
 ;
@@ -24982,7 +24970,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/otonielmcn/workspace/packages/react-ui/src/form/Dropdown.jsx');
+    __REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/brittongr/Development/packages/react-ui/src/form/Dropdown.jsx');
 }();
 
 ;
@@ -25036,7 +25024,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/otonielmcn/workspace/packages/react-ui/src/form/Fieldset.jsx');
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/form/Fieldset.jsx');
 }();
 
 ;
@@ -25158,7 +25146,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Form, 'Form', '/Users/otonielmcn/workspace/packages/react-ui/src/form/Form.jsx');
+    __REACT_HOT_LOADER__.register(Form, 'Form', '/Users/brittongr/Development/packages/react-ui/src/form/Form.jsx');
 }();
 
 ;
@@ -25225,7 +25213,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/form/NumberField.jsx');
 }();
 
 ;
@@ -25298,7 +25286,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/otonielmcn/workspace/packages/react-ui/src/form/RadioButton.jsx');
+    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/brittongr/Development/packages/react-ui/src/form/RadioButton.jsx');
 }();
 
 ;
@@ -25377,7 +25365,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/SearchField.jsx');
+    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/brittongr/Development/packages/react-ui/src/form/SearchField.jsx');
 }();
 
 ;
@@ -25484,7 +25472,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SpinnerField, 'SpinnerField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/SpinnerField.jsx');
+    __REACT_HOT_LOADER__.register(SpinnerField, 'SpinnerField', '/Users/brittongr/Development/packages/react-ui/src/form/SpinnerField.jsx');
 }();
 
 ;
@@ -25540,7 +25528,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/otonielmcn/workspace/packages/react-ui/src/form/TextArea.jsx');
+    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/brittongr/Development/packages/react-ui/src/form/TextArea.jsx');
 }();
 
 ;
@@ -25608,7 +25596,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/otonielmcn/workspace/packages/react-ui/src/form/TextField.jsx');
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/form/TextField.jsx');
 }();
 
 ;
@@ -25677,7 +25665,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, "CheckBox", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/CheckBox.jsx");
+    __REACT_HOT_LOADER__.register(CheckBox, "CheckBox", "/Users/brittongr/Development/packages/react-ui/src/form/base/CheckBox.jsx");
 }();
 
 ;
@@ -25737,7 +25725,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DateField, "DateField", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/DateField.jsx");
+    __REACT_HOT_LOADER__.register(DateField, "DateField", "/Users/brittongr/Development/packages/react-ui/src/form/base/DateField.jsx");
 }();
 
 ;
@@ -25810,7 +25798,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Dropdown, "Dropdown", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/Dropdown.jsx");
+    __REACT_HOT_LOADER__.register(Dropdown, "Dropdown", "/Users/brittongr/Development/packages/react-ui/src/form/base/Dropdown.jsx");
 }();
 
 ;
@@ -25870,7 +25858,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, "NumberField", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/NumberField.jsx");
+    __REACT_HOT_LOADER__.register(NumberField, "NumberField", "/Users/brittongr/Development/packages/react-ui/src/form/base/NumberField.jsx");
 }();
 
 ;
@@ -25930,7 +25918,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, "RadioButton", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/RadioButton.jsx");
+    __REACT_HOT_LOADER__.register(RadioButton, "RadioButton", "/Users/brittongr/Development/packages/react-ui/src/form/base/RadioButton.jsx");
 }();
 
 ;
@@ -25996,7 +25984,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, "SearchField", "/Users/otonielmcn/workspace/packages/react-ui/src/form/base/SearchField.jsx");
+    __REACT_HOT_LOADER__.register(SearchField, "SearchField", "/Users/brittongr/Development/packages/react-ui/src/form/base/SearchField.jsx");
 }();
 
 ;
@@ -26054,7 +26042,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/otonielmcn/workspace/packages/react-ui/src/form/base/TextArea.jsx');
+    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/brittongr/Development/packages/react-ui/src/form/base/TextArea.jsx');
 }();
 
 ;
@@ -26188,7 +26176,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GridBase, 'GridBase', '/Users/otonielmcn/workspace/packages/react-ui/src/grid/GridBase.jsx');
+    __REACT_HOT_LOADER__.register(GridBase, 'GridBase', '/Users/brittongr/Development/packages/react-ui/src/grid/GridBase.jsx');
 }();
 
 ;
@@ -26205,7 +26193,7 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Grid__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RowGroup__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_lodash__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -26308,7 +26296,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/otonielmcn/workspace/packages/react-ui/src/grid/GroupingGrid.jsx');
+    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/brittongr/Development/packages/react-ui/src/grid/GroupingGrid.jsx');
 }();
 
 ;
@@ -26393,7 +26381,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/otonielmcn/workspace/packages/react-ui/src/grid/RowGroup.jsx');
+    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/brittongr/Development/packages/react-ui/src/grid/RowGroup.jsx');
 }();
 
 ;
@@ -26481,7 +26469,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SimpleGrid, 'SimpleGrid', '/Users/otonielmcn/workspace/packages/react-ui/src/grid/SimpleGrid.jsx');
+    __REACT_HOT_LOADER__.register(SimpleGrid, 'SimpleGrid', '/Users/brittongr/Development/packages/react-ui/src/grid/SimpleGrid.jsx');
 }();
 
 ;
@@ -26523,7 +26511,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/otonielmcn/workspace/packages/react-ui/src/grid/Sort.js');
+    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/brittongr/Development/packages/react-ui/src/grid/Sort.js');
 }();
 
 ;
@@ -26551,7 +26539,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Helper, "Helper", "/Users/otonielmcn/workspace/packages/react-ui/src/helper.js");
+    __REACT_HOT_LOADER__.register(Helper, "Helper", "/Users/brittongr/Development/packages/react-ui/src/helper.js");
 }();
 
 ;
@@ -26607,7 +26595,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Menu, 'Menu', '/Users/otonielmcn/workspace/packages/react-ui/src/menu/Menu.jsx');
+    __REACT_HOT_LOADER__.register(Menu, 'Menu', '/Users/brittongr/Development/packages/react-ui/src/menu/Menu.jsx');
 }();
 
 ;
@@ -26665,7 +26653,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(MenuItem, 'MenuItem', '/Users/otonielmcn/workspace/packages/react-ui/src/menu/MenuItem.jsx');
+    __REACT_HOT_LOADER__.register(MenuItem, 'MenuItem', '/Users/brittongr/Development/packages/react-ui/src/menu/MenuItem.jsx');
 }();
 
 ;
@@ -26715,7 +26703,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Avatar, 'Avatar', '/Users/otonielmcn/workspace/packages/react-ui/src/util/Avatar.jsx');
+    __REACT_HOT_LOADER__.register(Avatar, 'Avatar', '/Users/brittongr/Development/packages/react-ui/src/util/Avatar.jsx');
 }();
 
 ;
@@ -27479,20 +27467,18 @@ module.exports = exports['default'];
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(17);
+  var invariant = __webpack_require__(19);
   var warning = __webpack_require__(42);
-  var ReactPropTypesSecret = __webpack_require__(19);
+  var ReactPropTypesSecret = __webpack_require__(17);
   var loggedTypeFailures = {};
 }
 
@@ -27518,7 +27504,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
         try {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
-          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
+          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, typeof typeSpecs[typeSpecName]);
           error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
         } catch (ex) {
           error = ex;
@@ -27548,19 +27534,17 @@ module.exports = checkPropTypes;
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
 
-var emptyFunction = __webpack_require__(16);
-var invariant = __webpack_require__(17);
-var ReactPropTypesSecret = __webpack_require__(19);
+var emptyFunction = __webpack_require__(18);
+var invariant = __webpack_require__(19);
+var ReactPropTypesSecret = __webpack_require__(17);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -27598,7 +27582,8 @@ module.exports = function() {
     objectOf: getShim,
     oneOf: getShim,
     oneOfType: getShim,
-    shape: getShim
+    shape: getShim,
+    exact: getShim
   };
 
   ReactPropTypes.checkPropTypes = emptyFunction;
@@ -27614,21 +27599,20 @@ module.exports = function() {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
 
-var emptyFunction = __webpack_require__(16);
-var invariant = __webpack_require__(17);
+var emptyFunction = __webpack_require__(18);
+var invariant = __webpack_require__(19);
 var warning = __webpack_require__(42);
+var assign = __webpack_require__(8);
 
-var ReactPropTypesSecret = __webpack_require__(19);
+var ReactPropTypesSecret = __webpack_require__(17);
 var checkPropTypes = __webpack_require__(121);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
@@ -27725,7 +27709,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     objectOf: createObjectOfTypeChecker,
     oneOf: createEnumTypeChecker,
     oneOfType: createUnionTypeChecker,
-    shape: createShapeTypeChecker
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
   };
 
   /**
@@ -27940,7 +27925,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       if (typeof checker !== 'function') {
         warning(
           false,
-          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
           'received %s at index %s.',
           getPostfixForTypeWarning(checker),
           i
@@ -27991,6 +27976,36 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
       return null;
     }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
     return createChainableTypeChecker(validate);
   }
 
@@ -28152,11 +28167,11 @@ if (process.env.NODE_ENV !== "production") {
 var react = __webpack_require__(0);
 var invariant = __webpack_require__(11);
 var ExecutionEnvironment = __webpack_require__(20);
-var _assign = __webpack_require__(9);
+var _assign = __webpack_require__(8);
 var EventListener = __webpack_require__(43);
 var require$$0 = __webpack_require__(21);
 var hyphenateStyleName = __webpack_require__(129);
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 var camelizeStyleName = __webpack_require__(127);
 var performanceNow = __webpack_require__(133);
 var propTypes = __webpack_require__(136);
@@ -45372,7 +45387,7 @@ module.exports = ReactDOMFiberEntry;
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0);__webpack_require__(11);var l=__webpack_require__(20),n=__webpack_require__(9),ba=__webpack_require__(43),ca=__webpack_require__(8),da=__webpack_require__(45),ea=__webpack_require__(48),fa=__webpack_require__(44),ha=__webpack_require__(46),ia=__webpack_require__(47);
+var aa=__webpack_require__(0);__webpack_require__(11);var l=__webpack_require__(20),n=__webpack_require__(8),ba=__webpack_require__(43),ca=__webpack_require__(9),da=__webpack_require__(45),ea=__webpack_require__(48),fa=__webpack_require__(44),ha=__webpack_require__(46),ia=__webpack_require__(47);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -45909,7 +45924,7 @@ module.exports = performanceNow;
 
 
 
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 var invariant = __webpack_require__(11);
 var ReactPropTypesSecret = __webpack_require__(22);
 
@@ -45974,10 +45989,10 @@ module.exports = function() {
 
 
 
-var emptyFunction = __webpack_require__(8);
+var emptyFunction = __webpack_require__(9);
 var invariant = __webpack_require__(11);
 var warning = __webpack_require__(21);
-var assign = __webpack_require__(9);
+var assign = __webpack_require__(8);
 
 var ReactPropTypesSecret = __webpack_require__(22);
 var checkPropTypes = __webpack_require__(49);
@@ -47276,7 +47291,7 @@ if (process.env.NODE_ENV !== "production") {
 
 'use strict';
 
-var objectAssign$1 = __webpack_require__(9);
+var objectAssign$1 = __webpack_require__(8);
 var require$$0 = __webpack_require__(52);
 var emptyObject = __webpack_require__(51);
 var invariant = __webpack_require__(24);
@@ -48975,7 +48990,7 @@ module.exports = ReactEntry;
  This source code is licensed under the MIT license found in the
  LICENSE file in the root directory of this source tree.
 */
-var f=__webpack_require__(9),p=__webpack_require__(51);__webpack_require__(24);var r=__webpack_require__(23);
+var f=__webpack_require__(8),p=__webpack_require__(51);__webpack_require__(24);var r=__webpack_require__(23);
 function t(a){for(var b=arguments.length-1,d="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,e=0;e<b;e++)d+="\x26args[]\x3d"+encodeURIComponent(arguments[e+1]);b=Error(d+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var u={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function v(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}v.prototype.isReactComponent={};v.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?t("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};v.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function w(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}function x(){}x.prototype=v.prototype;var y=w.prototype=new x;y.constructor=w;f(y,v.prototype);y.isPureReactComponent=!0;function z(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}var A=z.prototype=new x;A.constructor=z;f(A,v.prototype);A.unstable_isAsyncReactComponent=!0;A.render=function(){return this.props.children};
