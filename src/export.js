@@ -9,6 +9,7 @@ export { Validator } from './form/Validator';
 export { Dropdown } from './components/other/Dropdown';
 
 // Other
+export { Tag } from './components/other/Tag';
 export { Text } from './components/other/Text';
 export { Button } from './components/other/Button';
 export { ToggleButton } from './components/other/ToggleButton';

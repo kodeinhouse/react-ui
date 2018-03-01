@@ -1,0 +1,66 @@
+.autocomplete
+{
+    position: relative;
+    color: initial;
+    text-transform: initial;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    padding: 0px 5px;
+
+    input {
+        outline: none;
+        border: none;
+        width: 80px;
+
+        &:focus
+        {
+            box-shadow: none;
+        }
+    }
+}
+
+.autocomplete .popover
+{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.autocomplete .item
+{
+    display: block;
+    white-space: nowrap;
+    padding: 8px 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.autocomplete .item:hover
+{
+    background-color: #F3F3F3;
+    cursor: pointer;
+}
+
+.autocomplete .item-header
+{
+    color: gray;
+    padding: 2px 5px;
+    border: 1px solid #ECECEC;
+    background-color: #F3F3F3;
+}
+
+.autocomplete
+{
+    .tag
+    {
+        cursor: pointer;
+        display: -webkit-inline-flex;
+        margin: 3px 2px;
+    }
+
+    .tag + .tag
+    {
+
+    }
+}

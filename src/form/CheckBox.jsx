@@ -29,7 +29,7 @@ export class CheckBox extends Component
 
         return (
             <div className={classes.join(' ')} style={this.props.style}>
-                <label>
+                <label style={{display: 'inline-block'}}>
                     {leftSide}
                     <BaseField
                         value={this.props.value}

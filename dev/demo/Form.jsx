@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Form, TextField, NumberField } from 'form';
+import { Form, TextField, NumberField, AutoComplete } from 'form';
+import { Dropdown } from 'components';
 
 import {
     Menu,
@@ -87,6 +88,8 @@ export class FormDemo extends Component
                             </Form.FormField>
                             <Form.SearchField label="Search Field" required/>
                             <Form.SpinnerField label="Spinner Field" value={1} min={0} template={"{number} Test"} required/>
+                            <Form.MultiSelect label="Multi Select" value={['1', '3']} items={[{id: '1', text: 'Uno'}, {id: '2', text: 'Dos'}, {id: '3', text: 'Tres'}]}/>
+                            <Form.AutoComplete label="Tags" items={[{id: 'cat', text: 'Cat'}, {id: 'dog', text: 'Dog'}, {id: 'horse', text: 'Horse'}]}/>
                         </Form.FieldGroup>
                     </Container>
                 </Container>
