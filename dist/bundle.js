@@ -20116,8 +20116,8 @@ var FieldGroup = function (_Component) {
             var children = __WEBPACK_IMPORTED_MODULE_0_react___default.a.Children.map(this.props.children, function (child, index) {
                 if (child != null) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(child, {
-                        labelWidth: child.labelWidth || props.labelWidth,
-                        labelAlign: child.labelAlign || props.labelAlign
+                        labelWidth: child.props.labelWidth || props.labelWidth,
+                        labelAlign: child.props.labelAlign || props.labelAlign
                     });
                 } else return child;
             });
@@ -24874,10 +24874,12 @@ var DisplayField = function (_Component) {
 
             if (this.props.inline && !this.props.stacked) classes.push('inline');
 
+            console.log(this.props.labelWidth);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__FormField__["a" /* FormField */],
                 { className: classes.join(' ') },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                this.props.label && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2__Label__["a" /* Label */],
                     { width: this.props.labelWidth, align: this.props.labelAlign },
                     this.props.label,

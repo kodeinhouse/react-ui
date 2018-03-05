@@ -17,8 +17,8 @@ export class FieldGroup extends Component
             if(child != null)
             {
                 return React.cloneElement(child, {
-                    labelWidth: child.labelWidth || props.labelWidth,
-                    labelAlign: child.labelAlign || props.labelAlign
+                    labelWidth: child.props.labelWidth || props.labelWidth,
+                    labelAlign: child.props.labelAlign || props.labelAlign
                 });
             }
             else
