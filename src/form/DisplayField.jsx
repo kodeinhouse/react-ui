@@ -23,8 +23,6 @@ export class DisplayField extends Component
         if(this.props.inline && !this.props.stacked)
             classes.push('inline');
 
-        console.log(this.props.labelWidth);
-
         return (
             <FormField className={classes.join(' ')}>
                 {this.props.label && (<Label width={this.props.labelWidth} align={this.props.labelAlign}>{this.props.label}:</Label>)}
