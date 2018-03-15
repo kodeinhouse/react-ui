@@ -22089,8 +22089,8 @@ var Timeline = function (_Component) {
             var chartSize = chart.getBBox();
             var containerSize = container.getBoundingClientRect();
 
-            var width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.height) : Math.floor(chartSize.width);
-            var height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height);
+            var width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.width) : Math.floor(chartSize.width) + 20;
+            var height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 20;
 
             if (this.state.width != width || this.state.height != height) this.setState({ width: width, height: height });
         }
@@ -22303,7 +22303,7 @@ var Timeline = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
-                    { layout: 'border', overflow: false, orientation: 'vertical' },
+                    { region: 'center', layout: 'border', overflow: false, orientation: 'vertical' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
                         { className: 'chart-dates', layout: 'border', scrollable: true, style: { backgroundColor: '' } },

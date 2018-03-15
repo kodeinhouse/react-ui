@@ -32,8 +32,8 @@ export class Timeline extends Component {
         let chartSize = chart.getBBox();
         let containerSize = container.getBoundingClientRect();
 
-        let width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.height) : Math.floor(chartSize.width);
-        let height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height);
+        let width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.width) : Math.floor(chartSize.width) + 20;
+        let height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 20;
 
         if(this.state.width != width || this.state.height != height)
             this.setState({width: width, height: height});
@@ -231,7 +231,7 @@ export class Timeline extends Component {
                         {tasks.length > 0 && this.renderTasks(tasks)}
                     </svg>
                 </Container>
-                <Container layout="border" overflow={false} orientation="vertical">
+                <Container region="center" layout="border" overflow={false} orientation="vertical">
                     <Container className="chart-dates" layout="border" scrollable style={{backgroundColor: ''}}>
                         <svg style={{minWidth: this.state.width}} height="30px">
                             {tasks.length > 0 && this.renderDates(tasks)}
