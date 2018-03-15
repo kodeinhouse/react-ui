@@ -3,9 +3,10 @@ import { Container } from 'container';
 import { Application } from 'react-layout';
 import { Menu, MenuItem, Icon, Badge, Link as MenuLink } from 'components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import { FormDemo } from './Form';
-import { RadioForm } from './RadioForm';
-import { TabPanelDemo } from './TabPanel';
+import { FormDemo } from './FormDemo';
+import { RadioFormDemo } from './RadioFormDemo';
+import { TabPanelDemo } from './TabPanelDemo';
+import { ChartDemo } from './ChartDemo';
 
 export class App extends Component
 {
@@ -47,6 +48,9 @@ export class App extends Component
                     <Link to="/tabpanel" className="link">Tab Panel</Link>
                 </MenuItem>
                 <MenuItem>
+                    <Link to="/gantt" className="link">Gantt</Link>
+                </MenuItem>
+                <MenuItem>
                     <MenuLink path="/horizontal-nav"><Icon className="customer" /><span>Horizontal</span></MenuLink>
                     <Menu></Menu>
                 </MenuItem>
@@ -72,11 +76,12 @@ export class App extends Component
                             <Route exact path="/" component={() => { return <Container>Home Path</Container>}}/>
                             <Route path="/form" component={() => { return <FormDemo />}}/>
                             <Route path="/textfield" component={() => { return <Container>Text Field Demo</Container>}}/>
-                            <Route path="/radiobutton" component={() => { return <RadioForm />}}/>
+                            <Route path="/radiobutton" component={() => { return <RadioFormDemo />}}/>
                             <Route path="/checkbox" component={() => { return <Container>Check Box Demo</Container>}}/>
                             <Route path="/dropdown" component={() => { return <Container>Dropdown Demo</Container>}}/>
                             <Route path="/tabpanel" component={() => { return <TabPanelDemo /> }} />
                             <Route path="/navigation" component={() => { return <Container>Navigation Demo</Container>}}/>
+                            <Route path="/chart" component={ChartDemo} />
                         </Application.Content>
                         <Application.Aside>
                             Aside

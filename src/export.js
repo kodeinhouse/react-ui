@@ -70,3 +70,8 @@ export { Card } from './container/Card';
 export { Grid } from './grid/Grid';
 export { SimpleGrid } from './grid/SimpleGrid';
 export { GroupingGrid } from './grid/GroupingGrid';
+
+// Gantt
+export { Timeline } from './chart/Timeline';
+export { Gantt } from './chart/Gantt';
+export { Bar } from './chart/Bar';

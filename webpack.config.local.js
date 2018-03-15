@@ -9,6 +9,7 @@ module.exports = {
         alias: {
             menu: resolve(__dirname, 'src/menu.js'),
             grid: resolve(__dirname, 'src/grid.js'),
+            chart: resolve(__dirname, 'src/chart.js'),
             form: resolve(__dirname, 'src/form.js'),
             util: resolve(__dirname, 'src/util.js'),
             container: resolve(__dirname, 'src/container.js'),
@@ -53,6 +54,11 @@ module.exports = {
             {
                 test: /\.(png|gif)$/,
                 loader: "url-loader"
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+                exclude: [resolve(__dirname, 'styles/_components'), resolve(__dirname, 'styles/_core')]
             }
         ]
     },

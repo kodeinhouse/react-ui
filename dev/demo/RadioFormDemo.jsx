@@ -4,7 +4,7 @@ import {
     RadioButton
 } from 'form';
 
-export class RadioForm extends Component
+export class RadioFormDemo extends Component
 {
     constructor(props)
     {
