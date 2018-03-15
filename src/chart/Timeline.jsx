@@ -1,26 +1,59 @@
 import React, { Component } from 'react';
 import { Chart } from './Chart';
+import { Container } from '../container/Container';
+import ReactDOM from 'react-dom';
 
 export class Timeline extends Component {
-    getTasks(){
-        let tasks = [];
-        let dates = [new Date(2018, 0, 28), new Date(2018, 1, 28), new Date(2018, 2, 28)];
-        let startDate, endDate;
+    constructor(props){
+        super(props);
 
-        for (let i = 0; i < 10; i++) {
-            startDate = new Date(2018, 0, parseInt(((Math.random() * 100) * 30) / 100));
-            endDate = new Date(startDate.getTime());
+        this.state = {
+            width: props.width,
+            height: props.height
+        };
 
-            endDate.setDate(endDate.getDate() + parseInt(((Math.random() * 100) * 30) / 100));
-
-            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate});
-        }
-
-        return tasks;
+        this.onScroll = this.onScroll.bind(this);
     }
 
-    getDates(tasks){
+    onScroll(event){
+        let node = ReactDOM.findDOMNode(this);
+        let slots = node.querySelector(".chart-slots");
+        let dates = node.querySelector(".chart-dates");
+        let items = node.querySelector(".chart-items");
 
+        dates.scrollLeft = slots.scrollLeft;
+        items.scrollTop = slots.scrollTop;
+    }
+
+    resizeSVG(){
+        let container = ReactDOM.findDOMNode(this).querySelector(".chart-slots");
+        let chart = container.querySelector("svg:last-child");
+
+        let chartSize = chart.getBBox();
+        let containerSize = container.getBoundingClientRect();
+
+        let width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.height) : Math.floor(chartSize.width) + 20;
+        let height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 20;
+
+        if(this.state.width != width || this.state.height != height)
+            this.setState({width: width, height: height});
+    }
+
+    componentDidMount(){
+        this.resizeSVG();
+
+        let node = ReactDOM.findDOMNode(this);
+        let slots = node.querySelector(".chart-slots");
+
+        slots.addEventListener('scroll', this.onScroll);
+    }
+
+    componentDidUpdate(){
+        this.resizeSVG()
+    }
+
+    getTasks(){
+        return this.props.tasks;
     }
 
     getUTCDate(date)
@@ -73,6 +106,38 @@ export class Timeline extends Component {
 		return diff;
 	}
 
+    renderLanes(tasks){
+        let minDate = this.getMinDate(tasks);
+        let maxDate = this.getMaxDate(tasks);
+        let auxDate = new Date(minDate.getTime());
+        let dateCount = this.getDateDiff(minDate, maxDate);
+
+        let dates = [];
+
+        for (let i = 0; i < dateCount; i++) {
+            dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
+
+            auxDate.setDate(auxDate.getDate() + 1);
+        }
+
+        let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
+        let paddingLeft = 15;
+
+        return (
+            <g transform={`translate(${paddingLeft}, 0)`}>
+                {dates.map((c, index) => {
+                    let x = 50 * index;
+
+                    return (
+                        <g key={`g-${index}`} transform={`translate(${x}, 0)`}>
+                            <line y1="10" y2={columnHeight} x1="20" x2="20" stroke="lightgrey" shapeRendering="crispEdges"></line>
+                        </g>
+                    );
+                })}
+            </g>
+        );
+    }
+
     renderDates(tasks){
         let minDate = this.getMinDate(tasks);
         let maxDate = this.getMaxDate(tasks);
@@ -87,14 +152,16 @@ export class Timeline extends Component {
             auxDate.setDate(auxDate.getDate() + 1);
         }
 
+        let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
+        let paddingLeft = 15;
+
         return (
-            <g transform="translate(75, 20)">
+            <g transform={`translate(${paddingLeft}, 20)`}>
                 {dates.map((c, index) => {
                     let x = 50 * index;
 
                     return (
                         <g key={`g-${index}`} transform={`translate(${x}, 0)`}>
-                            <line y1="20" y2="300" x1="20" x2="20" stroke="lightgrey" shapeRendering="crispEdges"></line>
                             <text>{c.toLocaleDateString('en-US', {month: 'short', day: '2-digit'})}</text>
                         </g>
                     );
@@ -107,15 +174,36 @@ export class Timeline extends Component {
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
         let minDate = this.getMinDate(tasks);
 
+        let rectHeight = 25;
+        let gap = 5;
+
+        return (
+            <g transform="translate(0, 10)">
+                {tasks.map((c, index) => {
+                    let rectY = ((rectHeight + gap) * index);
+                    let textY = 18 + rectY;
+
+                    return (
+                        <g key={`task-${index}`}>
+                            <text y={textY}>{c.text}</text>
+                        </g>
+                    );
+                })}
+            </g>
+        );
+    }
+
+    renderSlots(tasks){
+        let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
+        let minDate = this.getMinDate(tasks);
+
         let columnWidth = 50;
         let rectHeight = 25;
         let gap = 5;
-        let paddingLeft = 70;
+        let paddingLeft = 15;
 
-        console.log(tasks);
-        
         return (
-            <g transform="translate(0, 40)">
+            <g transform="translate(0, 10)">
                 {tasks.map((c, index) => {
                     let rectX = paddingLeft + (columnWidth * this.getDateDiff(minDate, c.startDate));
                     let rectY = ((rectHeight + gap) * index);
@@ -126,7 +214,6 @@ export class Timeline extends Component {
                     return (
                         <g key={`task-${index}`}>
                             <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[index]}></rect>
-                            <text y={textY}>{c.text}</text>
                         </g>
                     );
                 })}
@@ -138,10 +225,27 @@ export class Timeline extends Component {
         let tasks = this.getTasks();
 
         return (
-            <Chart width={this.props.width} height={this.props.height}>
-                {this.renderDates(tasks)}
-                {this.renderTasks(tasks)}
-            </Chart>
+            <Container className="timeline" region={this.props.region} layout="border" overflow={false}>
+                <Container className="chart-items" padding="0px 10px" scrollableY style={{minWidth: '200px', marginTop: '30px'}}>
+                    <svg height={this.state.height}>
+                        {tasks.length > 0 && this.renderTasks(tasks)}
+                    </svg>
+                </Container>
+                <Container layout="border" overflow={false} orientation="vertical">
+                    <Container className="chart-dates" layout="border" scrollable style={{backgroundColor: ''}}>
+                        <svg style={{minWidth: this.state.width}} height="30px">
+                            {tasks.length > 0 && this.renderDates(tasks)}
+                        </svg>
+                    </Container>
+                    <Container className="chart-slots" region="center" scrollable style={{backgroundColor: 'white', borderLeft: '1px solid lightgray', borderTop: '1px solid lightgray'}}>
+                        <Chart width={this.state.width} height={this.state.height} viewBox={this.props.viewBox} preserveAspectRatio={this.props.preserveAspectRatio}>
+                            {tasks.length > 0 && this.renderLanes(tasks)}
+                            {tasks.length > 0 && this.renderSlots(tasks)}
+                        </Chart>
+                    </Container>
+                </Container>
+
+            </Container>
         );
     }
 }

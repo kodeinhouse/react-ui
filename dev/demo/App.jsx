@@ -48,7 +48,7 @@ export class App extends Component
                     <Link to="/tabpanel" className="link">Tab Panel</Link>
                 </MenuItem>
                 <MenuItem>
-                    <Link to="/gantt" className="link">Gantt</Link>
+                    <Link to="/chart" className="link">Chart</Link>
                 </MenuItem>
                 <MenuItem>
                     <MenuLink path="/horizontal-nav"><Icon className="customer" /><span>Horizontal</span></MenuLink>
