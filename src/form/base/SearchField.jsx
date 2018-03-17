@@ -26,6 +26,9 @@ export class SearchField extends Component
 
     render()
     {
-        return <input type="search" {...this.props} onChange={this.onChange} onKeyPress={this.onKeyPress} />;
+        return <input type="search"
+                        {...this.props}
+                        onChange={this.onChange}
+                        onKeyPress={this.onKeyPress} />;
     }
 }

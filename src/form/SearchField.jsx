@@ -4,17 +4,6 @@ import { SearchField as BaseField } from './base/SearchField';
 
 export class SearchField extends Field
 {
-    /*render()
-    {
-        let props = Object.assign({value: ''}, this.props);
-
-        return (
-            <FormField {...this.props}>
-                <BaseField {...props}/>
-            </FormField>
-        );
-    }*/
-
     createField()
     {
         let value = this.processValue(this.pick(this.props.value, this.state.value));
@@ -30,6 +19,8 @@ export class SearchField extends Field
                     placeholder={this.props.placeholder}
                     onChange={this.onChange}
                     onKeyPress={this.props.onKeyPress}
+                    onKeyDown={this.props.onKeyDown}
+                    onKeyUp={this.props.onKeyUp}
                     onBlur={this.onBlur} />;
     }
 }

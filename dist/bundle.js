@@ -25878,17 +25878,6 @@ var SearchField = function (_Field) {
 
     _createClass(SearchField, [{
         key: 'createField',
-
-        /*render()
-        {
-            let props = Object.assign({value: ''}, this.props);
-             return (
-                <FormField {...this.props}>
-                    <BaseField {...props}/>
-                </FormField>
-            );
-        }*/
-
         value: function createField() {
             var _React$createElement;
 
@@ -25904,7 +25893,7 @@ var SearchField = function (_Field) {
                 readOnly: this.props.readOnly,
                 placeholder: this.props.placeholder,
                 onChange: this.onChange
-            }, _defineProperty(_React$createElement, 'onKeyPress', this.props.onKeyPress), _defineProperty(_React$createElement, 'onBlur', this.onBlur), _React$createElement));
+            }, _defineProperty(_React$createElement, 'onKeyPress', this.props.onKeyPress), _defineProperty(_React$createElement, 'onKeyDown', this.props.onKeyDown), _defineProperty(_React$createElement, 'onKeyUp', this.props.onKeyUp), _defineProperty(_React$createElement, 'onBlur', this.onBlur), _React$createElement));
         }
     }]);
 
@@ -26523,7 +26512,10 @@ var SearchField = function (_Component) {
     }, {
         key: "render",
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", _extends({ type: "search" }, this.props, { onChange: this.onChange, onKeyPress: this.onKeyPress }));
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", _extends({ type: "search"
+            }, this.props, {
+                onChange: this.onChange,
+                onKeyPress: this.onKeyPress }));
         }
     }]);
 
