@@ -25562,15 +25562,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DropdownField = function (_Field) {
     _inherits(DropdownField, _Field);
 
-    function DropdownField(props) {
+    function DropdownField() {
         _classCallCheck(this, DropdownField);
 
-        return _possibleConstructorReturn(this, (DropdownField.__proto__ || Object.getPrototypeOf(DropdownField)).call(this, props));
+        return _possibleConstructorReturn(this, (DropdownField.__proto__ || Object.getPrototypeOf(DropdownField)).apply(this, arguments));
     }
 
     _createClass(DropdownField, [{
-        key: 'render',
-        value: function render() {
+        key: 'createField',
+        value: function createField() {
             var _this2 = this;
 
             var value = this.pick(this.props.value, this.state.value);
@@ -25579,23 +25579,14 @@ var DropdownField = function (_Field) {
             });
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_3__FormField__["a" /* FormField */],
-                null,
+                __WEBPACK_IMPORTED_MODULE_4__components_other_Dropdown__["a" /* Dropdown */],
+                { position: 'absolute', className: 'wrapper', items: this.props.items, style: { border: '1px solid #E3E3E3', borderRadius: '3px' }, onChange: function onChange(field, item) {
+                        _this2.onChange(field, item.id);
+                    } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_2__Label__["a" /* Label */],
-                    null,
-                    this.props.label
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_4__components_other_Dropdown__["a" /* Dropdown */],
-                    { position: 'absolute', className: 'wrapper', items: this.props.items, style: { border: '1px solid #E3E3E3', borderRadius: '3px' }, onChange: function onChange(field, item) {
-                            _this2.onChange(field, item.id);
-                        } },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { style: { padding: '6px 5px', minHeight: '30px' } },
-                        items.length > 0 ? items[0].text : null
-                    )
+                    'div',
+                    { style: { padding: '6px 5px', minHeight: '30px' } },
+                    items.length > 0 ? items[0].text : null
                 )
             );
         }
