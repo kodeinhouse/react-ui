@@ -90,6 +90,9 @@ export class FormDemo extends Component
                             <Form.SpinnerField label="Spinner Field" value={1} min={0} template={"{number} Test"} required/>
                             <Form.MultiSelect label="Multi Select" value={['1', '3']} items={[{id: '1', text: 'Uno'}, {id: '2', text: 'Dos'}, {id: '3', text: 'Tres'}]}/>
                             <Form.AutoComplete label="Tags" items={[{id: 'cat', text: 'Cat'}, {id: 'dog', text: 'Dog'}, {id: 'horse', text: 'Horse'}]}/>
+                            <Form.DropdownField label="Dropdown" items={[{id: 'id1', text: 'Item 1'}, {id: 'id2', text: 'Item 2'}, {id: 'id3', text: 'Item 3'}]}>
+                                
+                            </Form.DropdownField>
                         </Form.FieldGroup>
                     </Container>
                 </Container>

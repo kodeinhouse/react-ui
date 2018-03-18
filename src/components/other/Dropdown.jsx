@@ -86,21 +86,29 @@ export class Dropdown extends Component
 		let classes = ['popover', this.props.align].join(' ');
 		let items = this.props.items.map(this.onCreateItem.bind(self));
 		let dimension = this.child.getBoundingClientRect();
+		let style = null;
 
-		let {top, left, width, height} = dimension;
+		if(this.props.position != 'absolute'){
+			let {top, left, width, height} = dimension;
 
-		if(this.props.align == 'left')
-			left = left;
-		else
-			if(this.props.align == 'center')
-				left = left + (width / 2);
+			if(this.props.align == 'left')
+				left = left;
 			else
-				if(this.props.align == 'right')
-					left = left + width;
+				if(this.props.align == 'center')
+					left = left + (width / 2);
+				else
+					if(this.props.align == 'right')
+						left = left + width;
+
+			style = {top: top + height + 2, left: left};
+		}
+		else
+			style = {position: 'absolute', top: dimension.height, width: '100%'};
+
 		if(items.length == 0)
 			items = <div style={{padding: '0px 10px'}}>No results found</div>;
 
-		return (<div className={classes} style={{top: top + height + 2, left: left}} onMouseLeave={this.onMouseLeave}>{items}</div>);
+		return (<div className={classes} style={style}>{items}</div>);
 	}
 
 	render()
