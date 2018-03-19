@@ -25569,6 +25569,11 @@ var DropdownField = function (_Field) {
     }
 
     _createClass(DropdownField, [{
+        key: 'renderItem',
+        value: function renderItem(item) {
+            if (item != null) return this.props.onCreateItem ? this.props.onCreateItem(item) : item.text;else return null;
+        }
+    }, {
         key: 'createField',
         value: function createField() {
             var _this2 = this;
@@ -25580,13 +25585,13 @@ var DropdownField = function (_Field) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_4__components_other_Dropdown__["a" /* Dropdown */],
-                { position: 'absolute', className: 'wrapper', items: this.props.items, style: { border: '1px solid #E3E3E3', borderRadius: '3px' }, onChange: function onChange(field, item) {
+                { onCreateItem: this.props.onCreateItem, position: 'absolute', className: 'wrapper', items: this.props.items, style: { border: '1px solid #E3E3E3', borderRadius: '3px' }, onChange: function onChange(field, item) {
                         _this2.onChange(field, item.id);
                     } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { style: { padding: '6px 5px', minHeight: '30px' } },
-                    items.length > 0 ? items[0].text : null
+                    items.length > 0 ? this.renderItem(items[0]) : null
                 )
             );
         }
