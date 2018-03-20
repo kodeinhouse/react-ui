@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 153);
@@ -22042,9 +22042,10 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Chart__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__container_Container__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_dom__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Pie__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__container_Container__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_dom__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22052,6 +22053,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -22078,7 +22080,7 @@ var Timeline = function (_Component) {
     _createClass(Timeline, [{
         key: 'onScroll',
         value: function onScroll(event) {
-            var node = __WEBPACK_IMPORTED_MODULE_3_react_dom___default.a.findDOMNode(this);
+            var node = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this);
             var slots = node.querySelector(".chart-slots");
             var dates = node.querySelector(".chart-dates");
             var items = node.querySelector(".chart-items");
@@ -22089,14 +22091,14 @@ var Timeline = function (_Component) {
     }, {
         key: 'resizeSVG',
         value: function resizeSVG() {
-            var container = __WEBPACK_IMPORTED_MODULE_3_react_dom___default.a.findDOMNode(this).querySelector(".chart-slots");
+            var container = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this).querySelector(".chart-slots");
             var chart = container.querySelector("svg:last-child");
 
             var chartSize = chart.getBBox();
             var containerSize = container.getBoundingClientRect();
 
             var width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.width) : Math.floor(chartSize.width) + 20;
-            var height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 20;
+            var height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 10;
 
             if (this.state.width != width || this.state.height != height) this.setState({ width: width, height: height });
         }
@@ -22105,7 +22107,7 @@ var Timeline = function (_Component) {
         value: function componentDidMount() {
             this.resizeSVG();
 
-            var node = __WEBPACK_IMPORTED_MODULE_3_react_dom___default.a.findDOMNode(this);
+            var node = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this);
             var slots = node.querySelector(".chart-slots");
 
             slots.addEventListener('scroll', this.onScroll);
@@ -22237,27 +22239,22 @@ var Timeline = function (_Component) {
             var colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
             var minDate = this.getMinDate(tasks);
 
-            var rectHeight = 25;
-            var gap = 5;
+            var rectHeight = '25px';
+            var gap = '5px';
 
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'g',
-                { transform: 'translate(0, 10)' },
-                tasks.map(function (c, index) {
-                    var rectY = (rectHeight + gap) * index;
-                    var textY = 18 + rectY;
-
-                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'g',
-                        { key: 'task-' + index },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'text',
-                            { y: textY },
-                            c.text
-                        )
-                    );
-                })
-            );
+            return tasks.map(function (c, index) {
+                var style = { height: rectHeight, marginBottom: gap, marginTop: index > 0 ? gap : '0px', display: 'flex' };
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { key: "cat-" + index, style: style },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { style: { margin: 'auto 0px' } },
+                        c.text
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Pie__["a" /* Pie */], { size: 20, progress: c.progress, style: { margin: 'auto 0px auto 20px' } })
+                );
+            });
         }
     }, {
         key: 'renderSlots',
@@ -22296,22 +22293,18 @@ var Timeline = function (_Component) {
             var tasks = this.getTasks();
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
+                __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
                 { className: 'timeline', region: this.props.region, layout: 'border', overflow: false },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
-                    { className: 'chart-items', padding: '0px 10px', scrollableY: true, style: { minWidth: '200px', marginTop: '30px' } },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'svg',
-                        { height: this.state.height },
-                        tasks.length > 0 && this.renderTasks(tasks)
-                    )
+                    __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
+                    { className: 'chart-items', padding: '10px 10px 0px 10px', scrollableY: true, style: { maxWidth: '200px', marginTop: '30px' } },
+                    tasks.length > 0 && this.renderTasks(tasks)
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
+                    __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
                     { region: 'center', layout: 'border', overflow: false, orientation: 'vertical' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
+                        __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
                         { className: 'chart-dates', layout: 'border', scrollable: true, style: { backgroundColor: '' } },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'svg',
@@ -22320,7 +22313,7 @@ var Timeline = function (_Component) {
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_2__container_Container__["a" /* Container */],
+                        __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
                         { className: 'chart-slots', region: 'center', scrollable: true, style: { backgroundColor: 'white', borderLeft: '1px solid lightgray', borderTop: '1px solid lightgray' } },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_1__Chart__["a" /* Chart */],
@@ -49852,6 +49845,73 @@ module.exports = function(module) {
 
 module.exports = __webpack_require__(54);
 
+
+/***/ }),
+/* 154 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Pie; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Chart__ = __webpack_require__(26);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Pie = function (_Component) {
+    _inherits(Pie, _Component);
+
+    function Pie() {
+        _classCallCheck(this, Pie);
+
+        return _possibleConstructorReturn(this, (Pie.__proto__ || Object.getPrototypeOf(Pie)).apply(this, arguments));
+    }
+
+    _createClass(Pie, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                size = _props.size,
+                progress = _props.progress,
+                style = _props.style;
+
+            //stroke-dasharray: 60 158; /* 2π × 25 ≈ 158 */
+
+            var center = size / 2;
+            var radius = size / 2;
+
+            var circumference = Math.round(Math.PI * 2 * radius);
+            var fill = progress * circumference / 100;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Chart__["a" /* Chart */],
+                { className: 'pie', width: size, height: size, style: style },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', { r: radius.toString(), cx: center.toString(), cy: center.toString(), strokeWidth: size.toString(), strokeDasharray: fill + ' ' + circumference })
+            );
+        }
+    }]);
+
+    return Pie;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(Pie, 'Pie', '/Users/brittongr/Development/packages/react-ui/src/chart/Pie.jsx');
+}();
+
+;
 
 /***/ })
 /******/ ]);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Chart } from './Chart';
+import { Pie as PieChart } from './Pie';
 import { Container } from '../container/Container';
 import ReactDOM from 'react-dom';
 
@@ -33,7 +34,7 @@ export class Timeline extends Component {
         let containerSize = container.getBoundingClientRect();
 
         let width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.width) : Math.floor(chartSize.width) + 20;
-        let height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 20;
+        let height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height) + 10;
 
         if(this.state.width != width || this.state.height != height)
             this.setState({width: width, height: height});
@@ -174,23 +175,18 @@ export class Timeline extends Component {
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
         let minDate = this.getMinDate(tasks);
 
-        let rectHeight = 25;
-        let gap = 5;
+        let rectHeight = '25px';
+        let gap = '5px';
 
-        return (
-            <g transform="translate(0, 10)">
-                {tasks.map((c, index) => {
-                    let rectY = ((rectHeight + gap) * index);
-                    let textY = 18 + rectY;
-
-                    return (
-                        <g key={`task-${index}`}>
-                            <text y={textY}>{c.text}</text>
-                        </g>
-                    );
-                })}
-            </g>
-        );
+        return tasks.map((c, index) => {
+            let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px'), display: 'flex'};
+            return (
+                <div key={"cat-" + index} style={style}>
+                    <span style={{margin: 'auto 0px'}}>{c.text}</span>
+                    <PieChart size={20} progress={c.progress} style={{margin: 'auto 0px auto 20px'}}/>
+                </div>
+            );
+        });
     }
 
     renderSlots(tasks){
@@ -226,10 +222,8 @@ export class Timeline extends Component {
 
         return (
             <Container className="timeline" region={this.props.region} layout="border" overflow={false}>
-                <Container className="chart-items" padding="0px 10px" scrollableY style={{minWidth: '200px', marginTop: '30px'}}>
-                    <svg height={this.state.height}>
-                        {tasks.length > 0 && this.renderTasks(tasks)}
-                    </svg>
+                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: '200px', marginTop: '30px'}}>
+                    {tasks.length > 0 && this.renderTasks(tasks)}
                 </Container>
                 <Container region="center" layout="border" overflow={false} orientation="vertical">
                     <Container className="chart-dates" layout="border" scrollable style={{backgroundColor: ''}}>

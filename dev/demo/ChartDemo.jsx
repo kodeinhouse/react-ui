@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FrappeGantt, Task, ViewMode } from 'frappe-gantt-react';
-import { Bar as BarChart, Timeline as TimelineChart } from 'chart';
+import { Bar as BarChart, Timeline as TimelineChart, Pie as PieChart } from 'chart';
 
 export class ChartDemo extends Component {
     getTasks(){
@@ -14,7 +14,7 @@ export class ChartDemo extends Component {
 
             endDate.setDate(endDate.getDate() + parseInt(((Math.random() * 100) * 30) / 100));
 
-            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate});
+            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate, progress: (Math.random() * 100)});
         }
 
         return tasks;
@@ -60,7 +60,7 @@ export class FrappeGanttDemo extends Component{
             name: 'Redesign website',
             start: '2016-12-28',
             end: '2016-12-31',
-            progress: 0,
+            progress: 43,
             dependencies: 'Task 2, Task 1'
         }];
 
