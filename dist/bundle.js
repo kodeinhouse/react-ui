@@ -22127,6 +22127,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+var ViewMode = {
+    MONTH: 'MONTH',
+    DAY: 'DAY'
+};
+
 var Timeline = function (_Component) {
     _inherits(Timeline, _Component);
 
@@ -22231,13 +22236,20 @@ var Timeline = function (_Component) {
             return diff;
         }
     }, {
-        key: 'renderLanes',
-        value: function renderLanes(tasks) {
-            var minDate = this.getMinDate(tasks);
-            var maxDate = this.getMaxDate(tasks);
+        key: 'getMonthDiff',
+        value: function getMonthDiff(minDate, maxDate) {
+            return (maxDate.getFullYear() - minDate.getFullYear()) * 12 + (maxDate.getMonth() - minDate.getMonth());
+        }
+    }, {
+        key: 'getUnitDiff',
+        value: function getUnitDiff(minDate, maxDate) {
+            if (this.props.viewMode == ViewMode.DAY) return this.getDateDiff(minDate, maxDate);else return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
+        }
+    }, {
+        key: 'getDates',
+        value: function getDates(minDate, maxDate) {
+            var dateCount = this.getDateDiff(minDate, maxDate) + 1;
             var auxDate = new Date(minDate.getTime());
-            var dateCount = this.getDateDiff(minDate, maxDate);
-
             var dates = [];
 
             for (var i = 0; i < dateCount; i++) {
@@ -22245,6 +22257,36 @@ var Timeline = function (_Component) {
 
                 auxDate.setDate(auxDate.getDate() + 1);
             }
+
+            return dates;
+        }
+    }, {
+        key: 'getMonths',
+        value: function getMonths(minDate, maxDate) {
+            var dateCount = this.getMonthDiff(minDate, maxDate) + 1;
+            var auxDate = new Date(minDate.getTime());
+            var dates = [];
+
+            for (var i = 0; i < dateCount; i++) {
+                dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
+
+                auxDate.setMonth(auxDate.getMonth() + 1);
+            }
+
+            return dates;
+        }
+    }, {
+        key: 'getUnits',
+        value: function getUnits(minDate, maxDate) {
+            if (this.props.viewMode == ViewMode.DAY) return this.getDates(minDate, maxDate);else return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
+        }
+    }, {
+        key: 'renderLanes',
+        value: function renderLanes(tasks) {
+            var minDate = this.getMinDate(tasks);
+            var maxDate = this.getMaxDate(tasks);
+
+            var dates = this.getUnits(minDate, maxDate);
 
             var columnHeight = isNaN(this.state.height - 20) ? 0 : this.state.height - 20;
             var paddingLeft = 15;
@@ -22268,16 +22310,8 @@ var Timeline = function (_Component) {
         value: function renderDates(tasks) {
             var minDate = this.getMinDate(tasks);
             var maxDate = this.getMaxDate(tasks);
-            var auxDate = new Date(minDate.getTime());
-            var dateCount = this.getDateDiff(minDate, maxDate);
 
-            var dates = [];
-
-            for (var i = 0; i < dateCount; i++) {
-                dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
-
-                auxDate.setDate(auxDate.getDate() + 1);
-            }
+            var dates = this.getUnits(minDate, maxDate);
 
             var columnHeight = isNaN(this.state.height - 20) ? 0 : this.state.height - 20;
             var paddingLeft = 15;
@@ -22316,7 +22350,7 @@ var Timeline = function (_Component) {
                     { key: "cat-" + index, style: style },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'span',
-                        { style: { margin: 'auto 0px' } },
+                        { style: { margin: 'auto 0px', flex: 1 } },
                         c.text
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Pie__["a" /* Pie */], { size: 20, progress: c.progress, style: { margin: 'auto 0px auto 20px' } })
@@ -22328,6 +22362,7 @@ var Timeline = function (_Component) {
         value: function renderSlots(tasks) {
             var _this2 = this;
 
+            console.log(tasks);
             var colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
             var minDate = this.getMinDate(tasks);
 
@@ -22340,10 +22375,10 @@ var Timeline = function (_Component) {
                 'g',
                 { transform: 'translate(0, 10)' },
                 tasks.map(function (c, index) {
-                    var rectX = paddingLeft + columnWidth * _this2.getDateDiff(minDate, c.startDate);
+                    var rectX = paddingLeft + columnWidth * _this2.getUnitDiff(minDate, c.startDate);
                     var rectY = (rectHeight + gap) * index;
 
-                    var rectWidth = columnWidth * _this2.getDateDiff(c.startDate, c.endDate);
+                    var rectWidth = columnWidth * (_this2.getUnitDiff(c.startDate, c.endDate) + 1);
                     var textY = 18 + rectY;
 
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -22402,6 +22437,8 @@ var _temp = function () {
     if (typeof __REACT_HOT_LOADER__ === 'undefined') {
         return;
     }
+
+    __REACT_HOT_LOADER__.register(ViewMode, 'ViewMode', '/Users/brittongr/Development/packages/react-ui/src/chart/Timeline.jsx');
 
     __REACT_HOT_LOADER__.register(Timeline, 'Timeline', '/Users/brittongr/Development/packages/react-ui/src/chart/Timeline.jsx');
 }();

@@ -4,6 +4,11 @@ import { Pie as PieChart } from './Pie';
 import { Container } from '../container/Container';
 import ReactDOM from 'react-dom';
 
+const ViewMode = {
+    MONTH: 'MONTH',
+    DAY: 'DAY'
+};
+
 export class Timeline extends Component {
     constructor(props){
         super(props);
@@ -107,12 +112,20 @@ export class Timeline extends Component {
 		return diff;
 	}
 
-    renderLanes(tasks){
-        let minDate = this.getMinDate(tasks);
-        let maxDate = this.getMaxDate(tasks);
-        let auxDate = new Date(minDate.getTime());
-        let dateCount = this.getDateDiff(minDate, maxDate);
+    getMonthDiff(minDate, maxDate){
+        return (maxDate.getFullYear() - minDate.getFullYear()) * 12 + (maxDate.getMonth() - minDate.getMonth());
+    }
 
+    getUnitDiff(minDate, maxDate){
+        if(this.props.viewMode == ViewMode.DAY)
+            return this.getDateDiff(minDate, maxDate);
+        else
+            return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
+    }
+
+    getDates(minDate, maxDate){
+        let dateCount = this.getDateDiff(minDate, maxDate) + 1;
+        let auxDate = new Date(minDate.getTime());
         let dates = [];
 
         for (let i = 0; i < dateCount; i++) {
@@ -120,6 +133,36 @@ export class Timeline extends Component {
 
             auxDate.setDate(auxDate.getDate() + 1);
         }
+
+        return dates;
+    }
+
+    getMonths(minDate, maxDate){
+        let dateCount = this.getMonthDiff(minDate, maxDate) + 1;
+        let auxDate = new Date(minDate.getTime());
+        let dates = [];
+
+        for (let i = 0; i < dateCount; i++) {
+            dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
+
+            auxDate.setMonth(auxDate.getMonth() + 1);
+        }
+
+        return dates;
+    }
+
+    getUnits(minDate, maxDate){
+        if(this.props.viewMode == ViewMode.DAY)
+            return this.getDates(minDate, maxDate);
+        else
+            return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
+    }
+
+    renderLanes(tasks){
+        let minDate = this.getMinDate(tasks);
+        let maxDate = this.getMaxDate(tasks);
+
+        let dates = this.getUnits(minDate, maxDate);
 
         let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
         let paddingLeft = 15;
@@ -142,16 +185,8 @@ export class Timeline extends Component {
     renderDates(tasks){
         let minDate = this.getMinDate(tasks);
         let maxDate = this.getMaxDate(tasks);
-        let auxDate = new Date(minDate.getTime());
-        let dateCount = this.getDateDiff(minDate, maxDate);
 
-        let dates = [];
-
-        for (let i = 0; i < dateCount; i++) {
-            dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
-
-            auxDate.setDate(auxDate.getDate() + 1);
-        }
+        let dates = this.getUnits(minDate, maxDate);
 
         let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
         let paddingLeft = 15;
@@ -182,7 +217,7 @@ export class Timeline extends Component {
             let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px'), display: 'flex'};
             return (
                 <div key={"cat-" + index} style={style}>
-                    <span style={{margin: 'auto 0px'}}>{c.text}</span>
+                    <span style={{margin: 'auto 0px', flex: 1}}>{c.text}</span>
                     <PieChart size={20} progress={c.progress} style={{margin: 'auto 0px auto 20px'}}/>
                 </div>
             );
@@ -190,6 +225,7 @@ export class Timeline extends Component {
     }
 
     renderSlots(tasks){
+        console.log(tasks);
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
         let minDate = this.getMinDate(tasks);
 
@@ -201,10 +237,10 @@ export class Timeline extends Component {
         return (
             <g transform="translate(0, 10)">
                 {tasks.map((c, index) => {
-                    let rectX = paddingLeft + (columnWidth * this.getDateDiff(minDate, c.startDate));
+                    let rectX = paddingLeft + (columnWidth * this.getUnitDiff(minDate, c.startDate));
                     let rectY = ((rectHeight + gap) * index);
 
-                    let rectWidth = columnWidth * this.getDateDiff(c.startDate, c.endDate);
+                    let rectWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
                     let textY = 18 + rectY;
 
                     return (
