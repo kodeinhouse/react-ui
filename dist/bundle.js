@@ -22173,7 +22173,7 @@ var Timeline = function (_Component) {
                 var width = Math.floor(containerSize.width) > Math.floor(chartSize.width) ? Math.floor(containerSize.width) : Math.floor(chartSize.width);
                 var height = Math.floor(containerSize.height) > Math.floor(chartSize.height) ? Math.floor(containerSize.height) : Math.floor(chartSize.height);
 
-                if (this.state.width != width || this.state.height != height) this.setState({ width: width, height: height });
+                if ((this.state.width || 0) < width || (this.state.height || 0) < height) this.setState({ width: width, height: height });
             }
         }
     }, {
