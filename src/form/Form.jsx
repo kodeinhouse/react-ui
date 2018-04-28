@@ -21,6 +21,7 @@ import { AutoTextArea } from './AutoTextArea';
 import { MultiSelect } from './AutoComplete';
 import { AutoComplete } from './AutoComplete';
 import { DropdownField } from './DropdownField';
+import { InlineEditor } from './InlineEditor';
 import { Helper } from '../helper';
 
 export class Form extends Component
@@ -63,3 +64,4 @@ Form.DisplayField = DisplayField;
 Form.MultiSelect = MultiSelect;
 Form.AutoComplete = AutoComplete;
 Form.DropdownField = DropdownField;
+Form.InlineEditor = InlineEditor;

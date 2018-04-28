@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart } from './Chart';
 import { Pie as PieChart } from './Pie';
 import { Container } from '../container/Container';
+import { Form } from '../form/Form';
 import ReactDOM from 'react-dom';
 
 const ViewMode = {
@@ -116,25 +117,33 @@ export class Timeline extends Component {
 	}
 
     getMonthDiff(minDate, maxDate){
-        return (maxDate.getFullYear() - minDate.getFullYear()) * 12 + (maxDate.getMonth() - minDate.getMonth());
+        if(minDate != null && maxDate != null)
+            return (maxDate.getFullYear() - minDate.getFullYear()) * 12 + (maxDate.getMonth() - minDate.getMonth());
+        else
+            return null;
     }
 
     getUnitDiff(minDate, maxDate){
         if(this.props.viewMode == ViewMode.DAY)
             return this.getDateDiff(minDate, maxDate);
         else
-            return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
+            if(minDate != null && maxDate != null)
+                return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
     }
 
     getDates(minDate, maxDate){
-        let dateCount = this.getDateDiff(minDate, maxDate) + 1;
-        let auxDate = new Date(minDate.getTime());
         let dates = [];
 
-        for (let i = 0; i < dateCount; i++) {
-            dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
+        if(minDate != null && maxDate != null){
+            let dateCount = this.getDateDiff(minDate, maxDate) + 1;
+            let auxDate = new Date(minDate.getTime());
 
-            auxDate.setDate(auxDate.getDate() + 1);
+
+            for (let i = 0; i < dateCount; i++) {
+                dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
+
+                auxDate.setDate(auxDate.getDate() + 1);
+            }
         }
 
         return dates;
@@ -211,7 +220,6 @@ export class Timeline extends Component {
 
     renderTasks(tasks){
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
-        let minDate = this.getMinDate(tasks);
 
         let rectHeight = '25px';
         let gap = '5px';
@@ -245,13 +253,24 @@ export class Timeline extends Component {
                     let rectWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
                     let textY = 18 + rectY;
 
-                    return (
-                        <g key={`task-${index}`}>
-                            <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[index]}></rect>
-                        </g>
-                    );
+                    if(!isNaN(rectX) && !isNaN(rectWidth))
+                    {
+                        return (
+                            <g key={`task-${index}`}>
+                                <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[index]}></rect>
+                            </g>
+                        );
+                    }
+                    else
+                        return null;
                 })}
             </g>
+        );
+    }
+
+    renderField(){
+        return (
+            <Form.InlineEditor onTextEnter={this.props.onTextEnter} />
         );
     }
 
@@ -262,6 +281,7 @@ export class Timeline extends Component {
             <Container className="timeline" region={this.props.region} layout="border" overflow={false}>
                 <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: '200px', marginTop: '30px'}}>
                     {tasks.length > 0 && this.renderTasks(tasks)}
+                    {this.renderField()}
                 </Container>
                 <Container region="center" layout="border" overflow={false} orientation="vertical">
                     <Container className="chart-dates" layout="border" scrollable style={{backgroundColor: ''}}>

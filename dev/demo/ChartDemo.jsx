@@ -3,6 +3,16 @@ import { FrappeGantt, Task, ViewMode } from 'frappe-gantt-react';
 import { Bar as BarChart, Timeline as TimelineChart, Pie as PieChart } from 'chart';
 
 export class ChartDemo extends Component {
+    constructor(props){
+        super(props);
+
+        this.onTextEnter = this.onTextEnter.bind(this);
+    }
+
+    onTextEnter(event){
+        console.log(event.target.value);
+    }
+
     getTasks(){
         let tasks = [];
         let dates = [new Date(2018, 0, 28), new Date(2018, 1, 28), new Date(2018, 2, 28)];
@@ -21,7 +31,7 @@ export class ChartDemo extends Component {
     }
 
     render(){
-        return  <TimelineChart region="center" tasks={this.getTasks()} />;
+        return  <TimelineChart region="center" tasks={this.getTasks()} onTextEnter={this.onTextEnter}/>;
     }
 }
 
