@@ -24038,13 +24038,17 @@ var DialogComponent = function (_Component) {
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
             if (!this.resizeSensor) {
-                var element = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this).querySelector(".overlay");
+                var element = __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.findDOMNode(this);
 
                 if (element != null) {
-                    var ResizeSensor = __webpack_require__(115);
+                    element = element.querySelector(".overlay");
 
-                    // Start sensor to detect resize
-                    this.resizeSensor = new ResizeSensor(element, this.onResize);
+                    if (element != null) {
+                        var ResizeSensor = __webpack_require__(115);
+
+                        // Start sensor to detect resize
+                        this.resizeSensor = new ResizeSensor(element, this.onResize);
+                    }
                 }
             }
         }
