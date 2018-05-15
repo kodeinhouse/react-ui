@@ -46,14 +46,18 @@ export class DialogComponent extends Component
     {
         if(!this.resizeSensor)
         {
-            let element = ReactDOM.findDOMNode(this).querySelector(".overlay");
+            let element = ReactDOM.findDOMNode(this);
 
             if(element != null)
             {
-                const ResizeSensor = require("css-element-queries/src/ResizeSensor");
+                element = element.querySelector(".overlay");
 
-                // Start sensor to detect resize
-                this.resizeSensor = new ResizeSensor(element, this.onResize);
+                if(element != null){
+                    const ResizeSensor = require("css-element-queries/src/ResizeSensor");
+
+                    // Start sensor to detect resize
+                    this.resizeSensor = new ResizeSensor(element, this.onResize);
+                }
             }
         }
     }
