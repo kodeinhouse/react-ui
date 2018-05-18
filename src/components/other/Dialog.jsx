@@ -44,27 +44,35 @@ export class DialogComponent extends Component
 
     componentDidUpdate()
     {
-        if(!this.resizeSensor)
+        /*if(!this.resizeSensor)
         {
-            let element = ReactDOM.findDOMNode(this);
+            try {
+                let element = ReactDOM.findDOMNode(this);
 
-            if(element != null)
-            {
-                element = element.querySelector(".overlay");
+                if(element != null)
+                {
+                    element = element.querySelector(".overlay");
 
-                if(element != null){
-                    const ResizeSensor = require("css-element-queries/src/ResizeSensor");
+                    if(element != null){
+                        const ResizeSensor = require("css-element-queries/src/ResizeSensor");
 
-                    // Start sensor to detect resize
-                    this.resizeSensor = new ResizeSensor(element, this.onResize);
+                        // Start sensor to detect resize
+                        this.resizeSensor = new ResizeSensor(element, this.onResize);
+                    }
                 }
             }
-        }
+            catch (e) {
+                console.log(e.message);
+            }
+            finally {
+
+            }
+        }*/
     }
 
     onResize()
     {
-        let element = ReactDOM.findDOMNode(this);
+        /*let element = ReactDOM.findDOMNode(this);
 
         if(this.state.opened)
         {
@@ -75,7 +83,7 @@ export class DialogComponent extends Component
                 dialog.style.marginTop = ''; // We let the browser calculate automatically the new position
                 dialog.style.marginTop = dialog.getBoundingClientRect().top + 'px'; // Then we get control of it again
             }
-        }
+        }*/
     }
 
     onHide(event)
@@ -163,23 +171,14 @@ export class DialogComponent extends Component
         let classes = ['overlay', this.props.position];
 
         return (
-            <CSSTransitionGroup
-                component="div"
-                transitionEnterTimeout={this.props.transitionEnterTimeout}
-                transitionAppearTimeout={this.props.transitionAppearTimeout}
-                transitionLeaveTimeout={this.props.transitionLeaveTimeout}
-                transitionName={'dialog' + (this.props.transition != '' ? '-' + this.props.transition : '')}
-                transitionAppear={true}
-                transitionEnter={true}
-                transitionLeave={true}>
-                {
+            <div>{
                     this.state.opened ?
                         <div key={"my-overlay"} className={classes.join(' ')} onClick={this.onHide}>
                             {this.renderContent()}
                         </div>
                         : null
                 }
-            </CSSTransitionGroup>
+            </div>
         );
     }
 }

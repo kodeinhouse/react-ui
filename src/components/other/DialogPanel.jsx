@@ -14,7 +14,7 @@ export class DialogPanel extends Panel
 
     componentDidMount()
     {
-        let element = ReactDOM.findDOMNode(this);
+        /*let element = ReactDOM.findDOMNode(this);
 
         if(this.props.position != 'relative')
         {
@@ -22,7 +22,7 @@ export class DialogPanel extends Panel
 
             // We want the dialog to stay still while switching between options that could make it large
             element.style.marginTop = clientRect.top + 'px';
-        }
+        }*/
     }
 }
 

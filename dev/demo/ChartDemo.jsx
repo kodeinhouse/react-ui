@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FrappeGantt, Task, ViewMode } from 'frappe-gantt-react';
+//import { FrappeGantt, Task, ViewMode } from 'frappe-gantt-react';
 import { Bar as BarChart, Timeline as TimelineChart, Pie as PieChart } from 'chart';
 
 export class ChartDemo extends Component {
