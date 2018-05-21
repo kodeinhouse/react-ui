@@ -379,7 +379,7 @@ var Container = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                _extends({ id: this.props.id, className: classes.join(' '), style: style, onClick: this.props.onClick }, dnd),
+                _extends({ id: this.props.id, ref: this.props.myRef, className: classes.join(' '), style: style, onClick: this.props.onClick }, dnd),
                 this.props.children
             );
         }
@@ -22282,7 +22282,7 @@ var Timeline = function (_Component) {
     _createClass(Timeline, [{
         key: 'onScroll',
         value: function onScroll(event) {
-            var node = __WEBPACK_IMPORTED_MODULE_5_react_dom___default.a.findDOMNode(this);
+            var node = this.container;
             var slots = node.querySelector(".chart-slots");
             var dates = node.querySelector(".chart-dates");
             var items = node.querySelector(".chart-items");
@@ -22293,7 +22293,9 @@ var Timeline = function (_Component) {
     }, {
         key: 'resizeSVG',
         value: function resizeSVG() {
-            var container = __WEBPACK_IMPORTED_MODULE_5_react_dom___default.a.findDOMNode(this).querySelector(".chart-slots");
+            //console.log(this.container);
+
+            var container = this.container.querySelector(".chart-slots");
             var chart = container.querySelector("svg:last-child");
 
             var chartSize = chart.getBBox();
@@ -22311,7 +22313,7 @@ var Timeline = function (_Component) {
         value: function componentDidMount() {
             this.resizeSVG();
 
-            var node = __WEBPACK_IMPORTED_MODULE_5_react_dom___default.a.findDOMNode(this);
+            var node = this.container;
             var slots = node.querySelector(".chart-slots");
 
             slots.addEventListener('scroll', this.onScroll);
@@ -22532,11 +22534,15 @@ var Timeline = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this3 = this;
+
             var tasks = this.getTasks();
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
-                { className: 'timeline', region: this.props.region, layout: 'border', overflow: false },
+                { myRef: function myRef(c) {
+                        _this3.container = c;
+                    }, className: 'timeline', region: this.props.region, layout: 'border', overflow: false },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
                     { className: 'chart-items', padding: '10px 10px 0px 10px', scrollableY: true, style: { maxWidth: '200px', marginTop: '30px' } },

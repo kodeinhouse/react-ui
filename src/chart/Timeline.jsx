@@ -23,7 +23,7 @@ export class Timeline extends Component {
     }
 
     onScroll(event){
-        let node = ReactDOM.findDOMNode(this);
+        let node = this.container;
         let slots = node.querySelector(".chart-slots");
         let dates = node.querySelector(".chart-dates");
         let items = node.querySelector(".chart-items");
@@ -33,7 +33,9 @@ export class Timeline extends Component {
     }
 
     resizeSVG(){
-        let container = ReactDOM.findDOMNode(this).querySelector(".chart-slots");
+        //console.log(this.container);
+
+        let container = this.container.querySelector(".chart-slots");
         let chart = container.querySelector("svg:last-child");
 
         let chartSize = chart.getBBox();
@@ -52,7 +54,7 @@ export class Timeline extends Component {
     componentDidMount(){
         this.resizeSVG();
 
-        let node = ReactDOM.findDOMNode(this);
+        let node = this.container;
         let slots = node.querySelector(".chart-slots");
 
         slots.addEventListener('scroll', this.onScroll);
@@ -278,7 +280,7 @@ export class Timeline extends Component {
         let tasks = this.getTasks();
 
         return (
-            <Container className="timeline" region={this.props.region} layout="border" overflow={false}>
+            <Container myRef={(c) => {this.container = c; }} className="timeline" region={this.props.region} layout="border" overflow={false}>
                 <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: '200px', marginTop: '30px'}}>
                     {tasks.length > 0 && this.renderTasks(tasks)}
                     {this.renderField()}
