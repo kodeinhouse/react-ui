@@ -172,6 +172,13 @@ export class Timeline extends Component {
             return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
     }
 
+    getColumnWidth(){
+        if(this.props.viewMode == ViewMode.MONTH)
+            return 50;
+        else
+            return 30;
+    }
+
     renderLanes(tasks){
         let minDate = this.getMinDate(tasks);
         let maxDate = this.getMaxDate(tasks);
@@ -180,11 +187,12 @@ export class Timeline extends Component {
 
         let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
         let paddingLeft = 15;
+        let slotWidth = this.getColumnWidth();
 
         return (
             <g transform={`translate(${paddingLeft}, 0)`}>
                 {dates.map((c, index) => {
-                    let x = 50 * index;
+                    let x = slotWidth * index;
 
                     return (
                         <g key={`g-${index}`} transform={`translate(${x}, 0)`}>
@@ -196,6 +204,13 @@ export class Timeline extends Component {
         );
     }
 
+    getHeaderFormat(){
+        if(this.props.viewMode == ViewMode.MONTH)
+            return {month: 'short', day: '2-digit'};
+        else
+            return {day: '2-digit'};
+    }
+
     renderDates(tasks){
         let minDate = this.getMinDate(tasks);
         let maxDate = this.getMaxDate(tasks);
@@ -204,15 +219,59 @@ export class Timeline extends Component {
 
         let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
         let paddingLeft = 15;
-
+        let slotWidth = this.getColumnWidth();
+        let headerFormat = this.getHeaderFormat();
+        let fontSize = (this.props.viewMode == ViewMode.MONTH ? 'inherit' : '12px');
         return (
-            <g transform={`translate(${paddingLeft}, 20)`}>
+            <g transform={`translate(${paddingLeft}, 25)`}>
                 {dates.map((c, index) => {
-                    let x = 50 * index;
+                    let x = slotWidth * index;
 
                     return (
                         <g key={`g-${index}`} transform={`translate(${x}, 0)`}>
-                            <text>{c.toLocaleDateString('en-US', {month: 'short', day: '2-digit'})}</text>
+                            <text fontSize={fontSize}>{c.toLocaleDateString('en-US', headerFormat)}</text>
+                        </g>
+                    );
+                })}
+            </g>
+        );
+    }
+
+    renderMonths(tasks){
+        if(this.props.viewMode != ViewMode.DAY)
+            return;
+
+        let minDate = this.getMinDate(tasks);
+        let maxDate = this.getMaxDate(tasks);
+
+        let dates = this.getUnits(minDate, maxDate);
+
+        let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
+        let paddingLeft = 15;
+        let slotWidth = this.getColumnWidth();
+        let headerFormat = this.getHeaderFormat();
+
+        let months = {};
+
+        dates.forEach(function(date){
+            let name = date.toLocaleDateString('en-US', {month: 'long'});
+
+            months[name] = (months[name] || 0) + 1;
+        });
+
+        let x = 0;
+        let count = 0;
+
+        return (
+            <g transform={`translate(${paddingLeft}, 10)`}>
+                {Object.keys(months).map((c, index) => {
+                    x = slotWidth * (count + (months[c] / 2));
+
+                    count += months[c];
+
+                    return (
+                        <g key={`g-${index}`} transform={`translate(${x}, 0)`}>
+                            <text fontSize="12px">{c}</text>
                         </g>
                     );
                 })}
@@ -230,7 +289,7 @@ export class Timeline extends Component {
             let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px'), display: 'flex'};
             return (
                 <div key={"cat-" + index} style={style}>
-                    <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap'}}>{c.text}</span>
+                    <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden'}} title={c.text}>{c.text}</span>
                     <PieChart size={20} progress={c.progress} style={{margin: 'auto 0px auto 20px'}}/>
                 </div>
             );
@@ -241,7 +300,7 @@ export class Timeline extends Component {
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
         let minDate = this.getMinDate(tasks);
 
-        let columnWidth = 50;
+        let columnWidth = this.getColumnWidth();
         let rectHeight = 25;
         let gap = 5;
         let paddingLeft = 15;
@@ -289,6 +348,7 @@ export class Timeline extends Component {
                     <Container className="chart-dates" layout="border" scrollable style={{backgroundColor: ''}}>
                         <svg style={{minWidth: this.state.width}} height="30px">
                             {tasks.length > 0 && this.renderDates(tasks)}
+                            {tasks.length > 0 && this.renderMonths(tasks)}
                         </svg>
                     </Container>
                     <Container className="chart-slots" region="center" scrollable style={{backgroundColor: 'white', borderLeft: '1px solid lightgray', borderTop: '1px solid lightgray'}}>
