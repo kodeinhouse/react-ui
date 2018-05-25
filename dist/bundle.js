@@ -22578,6 +22578,8 @@ var Timeline = function (_Component) {
 
     return Timeline;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+Timeline.ViewMode = ViewMode;
 ;
 
 var _temp = function () {

@@ -303,3 +303,5 @@ export class Timeline extends Component {
         );
     }
 }
+
+Timeline.ViewMode = ViewMode;
