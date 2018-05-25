@@ -107,12 +107,12 @@ export class AutoComplete extends Field
 
     componentWillReceiveProps(nextProps){
         super.componentWillReceiveProps(nextProps);
-        
+
         this.setState({items: nextProps.items});
     }
 
     onBlur(event){
-        this.onHide();
+        //this.onHide();
     }
 
     onRemove(field, item){
@@ -154,7 +154,7 @@ export class AutoComplete extends Field
     }
 
     onHide(){
-        this.setState({open: false});
+        //this.setState({open: false});
     }
 
     onItemClick(item){
@@ -219,7 +219,7 @@ export class AutoComplete extends Field
 		if(items.length == 0)
 			items = <div style={{padding: '0px 10px'}}>No results found</div>;
 
-		return (<div className={classes} style={{left: 0, top: height + 2, right: 0, position: 'absolute'}} onMouseLeave={this.onMouseLeave}>{items.map(this.onCreateItem.bind(self))}</div>);
+		return (<div className={classes} style={{left: left, top: top + height + 2, width: width, position: 'fixed'}} onMouseLeave={this.onMouseLeave}>{items.map(this.onCreateItem.bind(self))}</div>);
 	}
 
     getSelectedTags(values){
