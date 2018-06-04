@@ -16,7 +16,7 @@ export class DropdownField extends Field {
         let items = this.props.items.filter(c => c.id == value);
 
         return (
-            <Dropdown onCreateItem={this.props.onCreateItem} position="absolute" className="wrapper" items={this.props.items} style={{border: '1px solid #E3E3E3', borderRadius: '3px'}} onChange={(field, item) => {this.onChange(field, item.id)}}>
+            <Dropdown onCreateItem={this.props.onCreateItem} className="wrapper" items={this.props.items} style={{border: '1px solid #E3E3E3', borderRadius: '3px'}} onChange={(field, item) => {this.onChange(field, item.id)}}>
                 <div style={{padding: '6px 5px', minHeight: '30px'}}>{items.length > 0 ? this.renderItem(items[0]) : null}</div>
             </Dropdown>
         );

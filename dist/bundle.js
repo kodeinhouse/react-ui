@@ -1677,6 +1677,8 @@ var Dropdown = function (_Component) {
 				style = { top: top + height + 2, left: left };
 			} else style = { position: 'absolute', top: dimension.height, width: '100%' };
 
+			console.log(this.props.position);
+
 			if (items.length == 0) items = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
 				{ style: { padding: '0px 10px' } },
@@ -25892,7 +25894,7 @@ var DropdownField = function (_Field) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_4__components_other_Dropdown__["a" /* Dropdown */],
-                { onCreateItem: this.props.onCreateItem, position: 'absolute', className: 'wrapper', items: this.props.items, style: { border: '1px solid #E3E3E3', borderRadius: '3px' }, onChange: function onChange(field, item) {
+                { onCreateItem: this.props.onCreateItem, className: 'wrapper', items: this.props.items, style: { border: '1px solid #E3E3E3', borderRadius: '3px' }, onChange: function onChange(field, item) {
                         _this2.onChange(field, item.id);
                     } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
