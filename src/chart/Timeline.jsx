@@ -289,7 +289,7 @@ export class Timeline extends Component {
             let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px'), display: 'flex'};
             return (
                 <div key={"cat-" + index} style={style}>
-                    <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden'}} title={c.text}>{c.text}</span>
+                    <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', fontSize: '12px'}} title={c.text}>{c.text}</span>
                     <PieChart size={20} progress={c.progress} style={{margin: 'auto 0px auto 20px'}}/>
                 </div>
             );

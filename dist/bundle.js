@@ -22547,7 +22547,7 @@ var Timeline = function (_Component) {
                     { key: "cat-" + index, style: style },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'span',
-                        { style: { margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden' }, title: c.text },
+                        { style: { margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', fontSize: '12px' }, title: c.text },
                         c.text
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Pie__["a" /* Pie */], { size: 20, progress: c.progress, style: { margin: 'auto 0px auto 20px' } })
