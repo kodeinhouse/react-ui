@@ -287,6 +287,7 @@ export class Timeline extends Component {
 
         return tasks.map((c, index) => {
             let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px'), display: 'flex'};
+
             return (
                 <div key={"cat-" + index} style={style}>
                     <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', fontSize: '12px'}} title={c.text}>{c.text}</span>
@@ -304,6 +305,7 @@ export class Timeline extends Component {
         let rectHeight = 25;
         let gap = 5;
         let paddingLeft = 15;
+        let colorIndex = 0;
 
         return (
             <g transform="translate(0, 10)">
@@ -314,11 +316,17 @@ export class Timeline extends Component {
                     let rectWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
                     let textY = 18 + rectY;
 
+                    if(index > colors.length)
+                        colorIndex = 0;
+                    else
+                        if(index > 0)
+                            ++colorIndex;
+
                     if(!isNaN(rectX) && !isNaN(rectWidth))
                     {
                         return (
                             <g key={`task-${index}`}>
-                                <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[index]}></rect>
+                                <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[colorIndex]}></rect>
                             </g>
                         );
                     }
