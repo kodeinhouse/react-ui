@@ -316,17 +316,14 @@ export class Timeline extends Component {
                     let rectWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
                     let textY = 18 + rectY;
 
-                    if(index > colors.length)
+                    if(colorIndex == colors.length)
                         colorIndex = 0;
-                    else
-                        if(index > 0)
-                            ++colorIndex;
-
+                    
                     if(!isNaN(rectX) && !isNaN(rectWidth))
                     {
                         return (
                             <g key={`task-${index}`}>
-                                <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[colorIndex]}></rect>
+                                <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[colorIndex++]}></rect>
                             </g>
                         );
                     }

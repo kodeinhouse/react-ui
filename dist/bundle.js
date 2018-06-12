@@ -22579,13 +22579,13 @@ var Timeline = function (_Component) {
                     var rectWidth = columnWidth * (_this2.getUnitDiff(c.startDate, c.endDate) + 1);
                     var textY = 18 + rectY;
 
-                    if (index > colors.length) colorIndex = 0;else if (index > 0) ++colorIndex;
+                    if (colorIndex == colors.length) colorIndex = 0;
 
                     if (!isNaN(rectX) && !isNaN(rectWidth)) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'g',
                             { key: 'task-' + index },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { x: rectX, y: rectY, rx: '10', ry: '10', width: rectWidth, height: rectHeight, fill: colors[colorIndex] })
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { x: rectX, y: rectY, rx: '10', ry: '10', width: rectWidth, height: rectHeight, fill: colors[colorIndex++] })
                         );
                     } else return null;
                 })
