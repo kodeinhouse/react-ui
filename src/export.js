@@ -75,3 +75,4 @@ export { GroupingGrid } from './grid/GroupingGrid';
 export { Timeline } from './chart/Timeline';
 export { Gantt } from './chart/Gantt';
 export { Bar } from './chart/Bar';
+export { Pie } from './chart/Pie';

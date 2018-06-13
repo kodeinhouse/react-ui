@@ -19,7 +19,14 @@ export class Timeline extends Component {
             height: props.height
         };
 
+        this.onItemRender = this.onItemRender.bind(this);
         this.onScroll = this.onScroll.bind(this);
+    }
+
+    static get defaultProps(){
+        return {
+            itemsWidth: '200px'
+        };
     }
 
     onScroll(event){
@@ -279,19 +286,29 @@ export class Timeline extends Component {
         );
     }
 
+    onItemRender(item){
+        return (
+            <div style={{display: 'flex'}}>
+                <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', fontSize: '12px'}} title={item.text}>{item.text}</span>
+                <PieChart size={20} progress={item.progress} style={{margin: 'auto 0px auto 20px'}}/>
+            </div>
+        );
+    }
+
     renderTasks(tasks){
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
 
         let rectHeight = '25px';
         let gap = '5px';
 
+        let renderItem = this.props.onItemRender || this.onItemRender;
+
         return tasks.map((c, index) => {
-            let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px'), display: 'flex'};
+            let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px')};
 
             return (
                 <div key={"cat-" + index} style={style}>
-                    <span style={{margin: 'auto 0px', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', fontSize: '12px'}} title={c.text}>{c.text}</span>
-                    <PieChart size={20} progress={c.progress} style={{margin: 'auto 0px auto 20px'}}/>
+                    {renderItem(c)}
                 </div>
             );
         });
@@ -318,7 +335,7 @@ export class Timeline extends Component {
 
                     if(colorIndex == colors.length)
                         colorIndex = 0;
-                    
+
                     if(!isNaN(rectX) && !isNaN(rectWidth))
                     {
                         return (
@@ -345,7 +362,7 @@ export class Timeline extends Component {
 
         return (
             <Container myRef={(c) => {this.container = c; }} className="timeline" region={this.props.region} layout="border" overflow={false}>
-                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: '200px', marginTop: '30px'}}>
+                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: this.props.itemsWidth, marginTop: '30px'}}>
                     {tasks.length > 0 && this.renderTasks(tasks)}
                     {this.renderField()}
                 </Container>

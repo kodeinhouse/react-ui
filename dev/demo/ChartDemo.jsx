@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import { FrappeGantt, Task, ViewMode } from 'frappe-gantt-react';
 import { Bar as BarChart, Timeline as TimelineChart, Pie as PieChart } from 'chart';
+import { TaskItem } from './TaskItem';
 
 export class ChartDemo extends Component {
     constructor(props){
@@ -24,14 +25,14 @@ export class ChartDemo extends Component {
 
             endDate.setDate(endDate.getDate() + parseInt(((Math.random() * 100) * 30) / 100));
 
-            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate, progress: (Math.random() * 100)});
+            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate, progress: (Math.random() * 100), url: 'https://kasumi.s3.amazonaws.com/avatars/4WiHapnfQdwBgN3nA.jpg'});
         }
 
         return tasks;
     }
 
     render(){
-        return  <TimelineChart region="center" tasks={this.getTasks()} onTextEnter={this.onTextEnter}/>;
+        return  <TimelineChart region="center" tasks={this.getTasks()} viewMode="DAY" onItemRender={(c) => { return <TaskItem {...c}/>}} />;
     }
 }
 
