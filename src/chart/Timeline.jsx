@@ -259,7 +259,7 @@ export class Timeline extends Component {
         let months = {};
 
         dates.forEach(function(date){
-            let name = date.toLocaleDateString('en-US', {month: 'long'});
+            let name = date.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
 
             months[name] = (months[name] || 0) + 1;
         });

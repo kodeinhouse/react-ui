@@ -22506,7 +22506,7 @@ var Timeline = function (_Component) {
             var months = {};
 
             dates.forEach(function (date) {
-                var name = date.toLocaleDateString('en-US', { month: 'long' });
+                var name = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
                 months[name] = (months[name] || 0) + 1;
             });
