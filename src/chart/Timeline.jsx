@@ -40,8 +40,6 @@ export class Timeline extends Component {
     }
 
     resizeSVG(){
-        //console.log(this.container);
-
         let container = this.container.querySelector(".chart-slots");
         let chart = container.querySelector("svg:last-child");
 
@@ -193,7 +191,7 @@ export class Timeline extends Component {
         let dates = this.getUnits(minDate, maxDate);
 
         let columnHeight = isNaN(this.state.height - 20) ? 0 : (this.state.height - 20);
-        let paddingLeft = 15;
+        let paddingLeft = 0;
         let slotWidth = this.getColumnWidth();
 
         return (
@@ -321,7 +319,7 @@ export class Timeline extends Component {
         let columnWidth = this.getColumnWidth();
         let rectHeight = 25;
         let gap = 5;
-        let paddingLeft = 15;
+        let paddingLeft = 5;
         let colorIndex = 0;
 
         return (

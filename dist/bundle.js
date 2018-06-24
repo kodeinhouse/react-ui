@@ -22299,8 +22299,6 @@ var Timeline = function (_Component) {
     }, {
         key: 'resizeSVG',
         value: function resizeSVG() {
-            //console.log(this.container);
-
             var container = this.container.querySelector(".chart-slots");
             var chart = container.querySelector("svg:last-child");
 
@@ -22437,7 +22435,7 @@ var Timeline = function (_Component) {
             var dates = this.getUnits(minDate, maxDate);
 
             var columnHeight = isNaN(this.state.height - 20) ? 0 : this.state.height - 20;
-            var paddingLeft = 15;
+            var paddingLeft = 0;
             var slotWidth = this.getColumnWidth();
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -22581,7 +22579,7 @@ var Timeline = function (_Component) {
             var columnWidth = this.getColumnWidth();
             var rectHeight = 25;
             var gap = 5;
-            var paddingLeft = 15;
+            var paddingLeft = 5;
             var colorIndex = 0;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
