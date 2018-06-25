@@ -317,7 +317,7 @@ export class Timeline extends Component {
         let minDate = this.getMinDate(tasks);
 
         let columnWidth = this.getColumnWidth();
-        let rectHeight = 25;
+        let rectHeight = 28;
         let gap = 5;
         let paddingLeft = 5;
         let colorIndex = 0;

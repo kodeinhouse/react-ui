@@ -22577,7 +22577,7 @@ var Timeline = function (_Component) {
             var minDate = this.getMinDate(tasks);
 
             var columnWidth = this.getColumnWidth();
-            var rectHeight = 25;
+            var rectHeight = 28;
             var gap = 5;
             var paddingLeft = 5;
             var colorIndex = 0;
