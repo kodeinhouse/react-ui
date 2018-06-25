@@ -22559,7 +22559,7 @@ var Timeline = function (_Component) {
             var renderItem = this.props.onItemRender || this.onItemRender;
 
             return tasks.map(function (c, index) {
-                var style = { height: rectHeight, marginBottom: gap, marginTop: index > 0 ? gap : '0px' };
+                var style = { marginBottom: 0, marginTop: index > 0 ? gap : '0px' };
 
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',

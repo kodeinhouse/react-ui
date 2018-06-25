@@ -302,7 +302,7 @@ export class Timeline extends Component {
         let renderItem = this.props.onItemRender || this.onItemRender;
 
         return tasks.map((c, index) => {
-            let style = {height: rectHeight, marginBottom: gap, marginTop: (index > 0 ? gap: '0px')};
+            let style = {marginBottom: 0, marginTop: (index > 0 ? gap: '0px')};
 
             return (
                 <div key={"cat-" + index} style={style}>
