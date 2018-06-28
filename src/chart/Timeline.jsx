@@ -358,7 +358,7 @@ export class Timeline extends Component {
 
         return (
             <Container myRef={(c) => {this.container = c; }} className="timeline" region={this.props.region} layout="border" overflow={false}>
-                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: this.props.itemsWidth, marginTop: '30px', border: '1px solid black'}}>
+                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: this.props.itemsWidth, marginTop: '30px', border: '1px solid transparent'}}>
                     {tasks.length > 0 && this.renderTasks(tasks)}
                     {this.renderField()}
                 </Container>

@@ -22619,7 +22619,7 @@ var Timeline = function (_Component) {
                     }, className: 'timeline', region: this.props.region, layout: 'border', overflow: false },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
-                    { className: 'chart-items', padding: '10px 10px 0px 10px', scrollableY: true, style: { maxWidth: this.props.itemsWidth, marginTop: '30px', border: '1px solid black' } },
+                    { className: 'chart-items', padding: '10px 10px 0px 10px', scrollableY: true, style: { maxWidth: this.props.itemsWidth, marginTop: '30px', border: '1px solid transparent' } },
                     tasks.length > 0 && this.renderTasks(tasks),
                     this.renderField()
                 ),
