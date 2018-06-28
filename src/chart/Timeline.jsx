@@ -25,7 +25,9 @@ export class Timeline extends Component {
 
     static get defaultProps(){
         return {
-            itemsWidth: '200px'
+            itemsWidth: '200px',
+            slotHeight: 26,
+            rowHeight: 40
         };
     }
 
@@ -296,13 +298,10 @@ export class Timeline extends Component {
     renderTasks(tasks){
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
 
-        let rectHeight = '25px';
-        let gap = '5px';
-
         let renderItem = this.props.onItemRender || this.onItemRender;
 
         return tasks.map((c, index) => {
-            let style = {marginBottom: 0, marginTop: (index > 0 ? gap: '0px')};
+            let style = {};
 
             return (
                 <div key={"cat-" + index} style={style}>
@@ -315,10 +314,10 @@ export class Timeline extends Component {
     renderSlots(tasks){
         let colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
         let minDate = this.getMinDate(tasks);
-
         let columnWidth = this.getColumnWidth();
-        let rectHeight = 25;
-        let gap = 8;
+        let slotHeight = this.props.slotHeight;
+        let rowHeight = this.props.rowHeight
+        let gap = (rowHeight - slotHeight) / 2;
         let paddingLeft = 5;
         let colorIndex = 0;
 
@@ -326,19 +325,18 @@ export class Timeline extends Component {
             <g transform="translate(0, 10)">
                 {tasks.map((c, index) => {
                     let rectX = paddingLeft + (columnWidth * this.getUnitDiff(minDate, c.startDate));
-                    let rectY = ((rectHeight + gap) * index);
+                    let rectY = (rowHeight * index) + gap;
 
-                    let rectWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
-                    let textY = 18 + rectY;
+                    let slotWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
 
                     if(colorIndex == colors.length)
                         colorIndex = 0;
 
-                    if(!isNaN(rectX) && !isNaN(rectWidth))
+                    if(!isNaN(rectX) && !isNaN(slotWidth))
                     {
                         return (
                             <g key={`task-${index}`}>
-                                <rect x={rectX} y={rectY} rx="10" ry="10" width={rectWidth} height={rectHeight} fill={colors[colorIndex++]}></rect>
+                                <rect x={rectX} y={rectY} rx="10" ry="10" width={slotWidth} height={slotHeight} fill={colors[colorIndex++]}></rect>
                             </g>
                         );
                     }
@@ -360,7 +358,7 @@ export class Timeline extends Component {
 
         return (
             <Container myRef={(c) => {this.container = c; }} className="timeline" region={this.props.region} layout="border" overflow={false}>
-                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: this.props.itemsWidth, marginTop: '30px'}}>
+                <Container className="chart-items" padding="10px 10px 0px 10px" scrollableY style={{maxWidth: this.props.itemsWidth, marginTop: '30px', border: '1px solid black'}}>
                     {tasks.length > 0 && this.renderTasks(tasks)}
                     {this.renderField()}
                 </Container>

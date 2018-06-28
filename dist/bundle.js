@@ -22553,13 +22553,10 @@ var Timeline = function (_Component) {
         value: function renderTasks(tasks) {
             var colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
 
-            var rectHeight = '25px';
-            var gap = '5px';
-
             var renderItem = this.props.onItemRender || this.onItemRender;
 
             return tasks.map(function (c, index) {
-                var style = { marginBottom: 0, marginTop: index > 0 ? gap : '0px' };
+                var style = {};
 
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
@@ -22575,10 +22572,10 @@ var Timeline = function (_Component) {
 
             var colors = ["#03a9f4", "#ff9800", "#00bcd4", "#66bb6a", "#ff7043", "#ba68c8", "#9575cd", "#7986cb", "#ef5350", "#66bb6a"];
             var minDate = this.getMinDate(tasks);
-
             var columnWidth = this.getColumnWidth();
-            var rectHeight = 25;
-            var gap = 8;
+            var slotHeight = this.props.slotHeight;
+            var rowHeight = this.props.rowHeight;
+            var gap = (rowHeight - slotHeight) / 2;
             var paddingLeft = 5;
             var colorIndex = 0;
 
@@ -22587,18 +22584,17 @@ var Timeline = function (_Component) {
                 { transform: 'translate(0, 10)' },
                 tasks.map(function (c, index) {
                     var rectX = paddingLeft + columnWidth * _this2.getUnitDiff(minDate, c.startDate);
-                    var rectY = (rectHeight + gap) * index;
+                    var rectY = rowHeight * index + gap;
 
-                    var rectWidth = columnWidth * (_this2.getUnitDiff(c.startDate, c.endDate) + 1);
-                    var textY = 18 + rectY;
+                    var slotWidth = columnWidth * (_this2.getUnitDiff(c.startDate, c.endDate) + 1);
 
                     if (colorIndex == colors.length) colorIndex = 0;
 
-                    if (!isNaN(rectX) && !isNaN(rectWidth)) {
+                    if (!isNaN(rectX) && !isNaN(slotWidth)) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'g',
                             { key: 'task-' + index },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { x: rectX, y: rectY, rx: '10', ry: '10', width: rectWidth, height: rectHeight, fill: colors[colorIndex++] })
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { x: rectX, y: rectY, rx: '10', ry: '10', width: slotWidth, height: slotHeight, fill: colors[colorIndex++] })
                         );
                     } else return null;
                 })
@@ -22623,7 +22619,7 @@ var Timeline = function (_Component) {
                     }, className: 'timeline', region: this.props.region, layout: 'border', overflow: false },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
-                    { className: 'chart-items', padding: '10px 10px 0px 10px', scrollableY: true, style: { maxWidth: this.props.itemsWidth, marginTop: '30px' } },
+                    { className: 'chart-items', padding: '10px 10px 0px 10px', scrollableY: true, style: { maxWidth: this.props.itemsWidth, marginTop: '30px', border: '1px solid black' } },
                     tasks.length > 0 && this.renderTasks(tasks),
                     this.renderField()
                 ),
@@ -22657,7 +22653,9 @@ var Timeline = function (_Component) {
         key: 'defaultProps',
         get: function get() {
             return {
-                itemsWidth: '200px'
+                itemsWidth: '200px',
+                slotHeight: 26,
+                rowHeight: 40
             };
         }
     }]);
