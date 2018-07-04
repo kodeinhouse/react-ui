@@ -92,7 +92,8 @@ export class Grid extends Component
 
     componentDidMount()
 	{
-        let dom = ReactDOM.findDOMNode(this);
+        let dom = this.grid;
+
         let headerWrapper = dom.querySelector(".grid-hd-wrapper");
         let bodyWrapper = dom.querySelector(".grid-bd-wrapper");
 
@@ -165,7 +166,7 @@ export class Grid extends Component
 
     onResize()
     {
-        let dom = ReactDOM.findDOMNode(this);
+        let dom = this.grid;
 
         if(dom != null)
         {
@@ -279,7 +280,7 @@ export class Grid extends Component
 
 	onRowClick(event)
     {
-        let dom = ReactDOM.findDOMNode(this);
+        let dom = this.grid;
         let target = event.target.closest("tr");
         let current = dom.querySelector('.x-selected');
         let targetIndex = this.getRowIndex(target);
@@ -371,7 +372,8 @@ export class Grid extends Component
 
     getSelectedRecord()
     {
-        let dom = ReactDOM.findDOMNode(this);
+        let dom = this.grid;
+        
         let body = dom.querySelector(".grid-bd-wrapper");
         let row = body.querySelector("tr.x-selected");
 
@@ -528,7 +530,7 @@ export class Grid extends Component
             classes.push(this.props.className);
 
         return (
-            <Container id={this.props.id} className={classes.join(' ')} style={this.props.style} layout="border" region={this.props.region} orientation="vertical" overflow={false}>
+            <Container myRef={(c) => {this.grid = c;}} id={this.props.id} className={classes.join(' ')} style={this.props.style} layout="border" region={this.props.region} orientation="vertical" overflow={false}>
                 {this.props.toolbar}
                 <Container className="grid-hd-wrapper" region="north">
                     <table className="grid-header">

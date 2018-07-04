@@ -20716,7 +20716,8 @@ var Grid = function (_Component) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var dom = this.grid;
+
             var headerWrapper = dom.querySelector(".grid-hd-wrapper");
             var bodyWrapper = dom.querySelector(".grid-bd-wrapper");
 
@@ -20783,7 +20784,7 @@ var Grid = function (_Component) {
     }, {
         key: 'onResize',
         value: function onResize() {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var dom = this.grid;
 
             if (dom != null) {
                 var headerWrapper = dom.querySelector(".grid-hd-wrapper");
@@ -20875,7 +20876,7 @@ var Grid = function (_Component) {
     }, {
         key: 'onRowClick',
         value: function onRowClick(event) {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var dom = this.grid;
             var target = event.target.closest("tr");
             var current = dom.querySelector('.x-selected');
             var targetIndex = this.getRowIndex(target);
@@ -20954,7 +20955,8 @@ var Grid = function (_Component) {
     }, {
         key: 'getSelectedRecord',
         value: function getSelectedRecord() {
-            var dom = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(this);
+            var dom = this.grid;
+
             var body = dom.querySelector(".grid-bd-wrapper");
             var row = body.querySelector("tr.x-selected");
 
@@ -21060,6 +21062,8 @@ var Grid = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var columns = this.props.columns;
             var width = (100 / columns.length).toFixed(2) + "%";
             var rows = [{ headers: [] }];
@@ -21104,7 +21108,9 @@ var Grid = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
-                { id: this.props.id, className: classes.join(' '), style: this.props.style, layout: 'border', region: this.props.region, orientation: 'vertical', overflow: false },
+                { myRef: function myRef(c) {
+                        _this2.grid = c;
+                    }, id: this.props.id, className: classes.join(' '), style: this.props.style, layout: 'border', region: this.props.region, orientation: 'vertical', overflow: false },
                 this.props.toolbar,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_3__container_Container__["a" /* Container */],
