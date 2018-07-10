@@ -19,6 +19,8 @@ export class NumberField extends Component
 
     render()
     {
-        return <input type="number" {...this.props} onChange={this.onChange} />;
+        let { inputRef, ...rest } = this.props;
+
+        return <input type="number" {...rest} onChange={this.onChange} />;
     }
 }

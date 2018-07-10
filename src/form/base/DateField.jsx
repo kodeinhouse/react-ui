@@ -19,6 +19,8 @@ export class DateField extends Component
 
     render()
     {
-        return <input type="date" {...this.props} onChange={this.onChange} />;
+        let { inputRef, ...rest } = this.props;
+
+        return <input type="date" {...rest} onChange={this.onChange} />;
     }
 }

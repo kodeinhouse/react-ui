@@ -373,7 +373,7 @@ export class Grid extends Component
     getSelectedRecord()
     {
         let dom = this.grid;
-        
+
         let body = dom.querySelector(".grid-bd-wrapper");
         let row = body.querySelector("tr.x-selected");
 

@@ -20,7 +20,9 @@ export class TextField extends Field
             onKeyPress: this.props.onKeyPress,
             onChange: this.onChange,
             onBlur: this.onBlur,
-            maxLength: this.props.maxLength
+            maxLength: this.props.maxLength,
+            inputRef: this.props.inputRef,
+            autoFocus: this.props.autoFocus
         }, this.getDataAttributes());
 
         return <BaseField {...props} />;

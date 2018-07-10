@@ -25,11 +25,11 @@ export class InlineEditor extends Component{
     onClick(){
         let self = this;
 
-        this.setState({adding: true}, function(){
-            let input = ReactDOM.findDOMNode(self.input).querySelector("input");
+        if(this.input != null)
+            this.input.focus();
 
-            if(input != null)
-                input.focus();
+        this.setState({adding: true}, function(){
+
         });
     }
 
@@ -54,12 +54,17 @@ export class InlineEditor extends Component{
         let children = null;
 
         if(this.state.adding)
-            children = <Form.TextField ref={(input) => {this.input = input}} onBlur={this.onBlur} onKeyPress={this.onKeyPress} autoFocus/>;
+            children = <Form.TextField inputRef={(input) => {this.input = input}} placeholder={this.props.placeholder} onBlur={this.onBlur} onKeyPress={this.onKeyPress} autoFocus/>;
         else
-            children = <a onClick={this.onClick} style={{color: 'gray', cursor: 'pointer'}}>New item</a>;
+        {
+            let text = this.props.text || this.props.placeholder || "New item";
+
+            children = <a onClick={this.onClick} style={{color: 'gray', cursor: 'pointer'}}>{text}</a>;
+        }
+
 
         return (
-            <Container style={{maxWidth: '140px'}}>
+            <Container style={this.props.style}>
                 {children}
             </Container>
         );

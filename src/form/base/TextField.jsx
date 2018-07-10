@@ -19,6 +19,8 @@ export class TextField extends Component
 
     render()
     {
-        return <input ref={(c) => {this.input = c;}} type="text" {...this.props} onChange={this.onChange} />;
+        let { inputRef, ...rest } = this.props;
+
+        return <input ref={inputRef} type="text" {...rest} onChange={this.onChange} />;
     }
 }

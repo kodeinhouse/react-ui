@@ -27,6 +27,7 @@ export class DateField extends Field
             onKeyPress: this.props.onKeyPress,
             onChange: this.onChange,
             onBlur: this.onBlur,
+            inputRef: this.props.inputRef
         }, this.getDataAttributes());
 
         return <BaseField {...props} />;
