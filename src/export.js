@@ -72,7 +72,8 @@ export { SimpleGrid } from './grid/SimpleGrid';
 export { GroupingGrid } from './grid/GroupingGrid';
 
 // Gantt
-export { Timeline } from './chart/Timeline';
 export { Gantt } from './chart/Gantt';
 export { Bar } from './chart/Bar';
+export { Timeline } from './chart/Timeline';
 export { Pie } from './chart/Pie';
+export { Funnel } from './chart/Funnel';
