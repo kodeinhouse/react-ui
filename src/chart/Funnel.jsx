@@ -38,6 +38,7 @@ export class Funnel extends Component {
 
         return (
             <div
+                className="pullDown"
                 key={`item-${index}`}
                 style={{...itemStyle, ...style}}
                 >
