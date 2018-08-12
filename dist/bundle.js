@@ -21933,6 +21933,7 @@ var Funnel = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 {
+                    className: 'pullDown',
                     key: 'item-' + index,
                     style: _extends({}, itemStyle, style)
                 },
