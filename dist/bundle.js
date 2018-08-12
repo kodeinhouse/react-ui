@@ -1703,8 +1703,6 @@ var Dropdown = function (_Component) {
 				style = { top: top + height + 2, left: left };
 			} else style = { position: 'absolute', top: dimension.height, width: '100%' };
 
-			console.log(this.props.position);
-
 			if (items.length == 0) items = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
 				{ style: { padding: '0px 10px' } },
@@ -20013,7 +20011,6 @@ var AutoComplete = function (_Field2) {
             var _this6 = this;
 
             if (tags.length > 0) {
-                console.log(tags);
                 var items = tags.map(function (c) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CustomTag, _extends({ key: 'tag-' + c.id, onRemove: function onRemove(e) {
                             return _this6.onRemove(_this6.props, c);

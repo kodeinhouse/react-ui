@@ -233,7 +233,6 @@ export class AutoComplete extends Field
 
     renderTags(tags){
         if(tags.length > 0){
-            console.log(tags);
             let items = tags.map(c => {return <CustomTag key={`tag-${c.id}`} onRemove={e => this.onRemove(this.props, c)} {...c} />});
 
             return items;

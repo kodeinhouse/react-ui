@@ -105,8 +105,6 @@ export class Dropdown extends Component
 		else
 			style = {position: 'absolute', top: dimension.height, width: '100%'};
 
-		console.log(this.props.position);
-
 		if(items.length == 0)
 			items = <div style={{padding: '0px 10px'}}>No results found</div>;
 
