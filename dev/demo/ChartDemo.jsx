@@ -32,7 +32,7 @@ export class ChartDemo extends Component {
     }
 
     render(){
-        return  <TimelineChart region="center" tasks={this.getTasks()} viewMode="DAY" onItemRender={(c) => { return <TaskItem {...c}/>}} />;
+        return  <TimelineChart region="center" tasks={this.getTasks()} viewMode="WEEK" onItemRender={(c) => { return <TaskItem {...c}/>}} />;
     }
 }
 

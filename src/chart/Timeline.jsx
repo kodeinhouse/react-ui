@@ -3,10 +3,12 @@ import { Chart } from './Chart';
 import { Pie as PieChart } from './Pie';
 import { Container } from '../container/Container';
 import { Form } from '../form/Form';
+import { DateHelper } from '../util/Date.js';
 import ReactDOM from 'react-dom';
 
 const ViewMode = {
     MONTH: 'MONTH',
+    WEEK: 'WEEK',
     DAY: 'DAY'
 };
 
@@ -125,6 +127,10 @@ export class Timeline extends Component {
 		return diff;
 	}
 
+    getWeekDiff(minDate, maxDate) {
+        return maxDate.getWeekDiff(minDate);
+    }
+
     getMonthDiff(minDate, maxDate){
         if(minDate != null && maxDate != null)
             return (maxDate.getFullYear() - minDate.getFullYear()) * 12 + (maxDate.getMonth() - minDate.getMonth());
@@ -136,8 +142,11 @@ export class Timeline extends Component {
         if(this.props.viewMode == ViewMode.DAY)
             return this.getDateDiff(minDate, maxDate);
         else
-            if(minDate != null && maxDate != null)
-                return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
+            if(this.props.viewMode == ViewMode.WEEK)
+                return this.getWeekDiff(minDate, maxDate);
+            else
+                if(minDate != null && maxDate != null)
+                    return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
     }
 
     getDates(minDate, maxDate){
@@ -147,7 +156,6 @@ export class Timeline extends Component {
             let dateCount = this.getDateDiff(minDate, maxDate) + 1;
             let auxDate = new Date(minDate.getTime());
 
-
             for (let i = 0; i < dateCount; i++) {
                 dates.push(new Date(auxDate.getFullYear(), auxDate.getMonth(), auxDate.getDate()));
 
@@ -156,6 +164,22 @@ export class Timeline extends Component {
         }
 
         return dates;
+    }
+
+    getWeeks(minDate, maxDate){
+        let weekCount = this.getWeekDiff(minDate, maxDate) + 1;
+        let week = minDate.getWeek();
+        let startDate = DateHelper.getMonday(minDate);
+
+        let weeks = [];
+
+        for (var i = 0; i < weekCount; i++) {
+            weeks.push(new Date(startDate.getTime()));
+
+            startDate.setDate(startDate.getDate() + 7);
+        }
+
+        return weeks;
     }
 
     getMonths(minDate, maxDate){
@@ -176,7 +200,10 @@ export class Timeline extends Component {
         if(this.props.viewMode == ViewMode.DAY)
             return this.getDates(minDate, maxDate);
         else
-            return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
+            if(this.props.viewMode == ViewMode.WEEK)
+                return this.getWeeks(minDate, maxDate);
+            else
+                return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
     }
 
     getColumnWidth(){
@@ -229,6 +256,7 @@ export class Timeline extends Component {
         let slotWidth = this.getColumnWidth();
         let headerFormat = this.getHeaderFormat();
         let fontSize = (this.props.viewMode == ViewMode.MONTH ? 'inherit' : '12px');
+
         return (
             <g transform={`translate(${paddingLeft}, 25)`}>
                 {dates.map((c, index) => {
@@ -245,7 +273,7 @@ export class Timeline extends Component {
     }
 
     renderMonths(tasks){
-        if(this.props.viewMode != ViewMode.DAY)
+        if(this.props.viewMode == ViewMode.MONTH)
             return;
 
         let minDate = this.getMinDate(tasks);
@@ -268,11 +296,12 @@ export class Timeline extends Component {
 
         let x = 0;
         let count = 0;
+        let monthWidth = 3 * 30;
 
         return (
             <g transform={`translate(${paddingLeft}, 10)`}>
                 {Object.keys(months).map((c, index) => {
-                    x = slotWidth * (count + (months[c] / 2));
+                    x = (slotWidth * count) + ((months[c] * slotWidth) / 2) - (monthWidth / 2);
 
                     count += months[c];
 
@@ -326,6 +355,7 @@ export class Timeline extends Component {
                 {tasks.map((c, index) => {
                     let rectX = paddingLeft + (columnWidth * this.getUnitDiff(minDate, c.startDate));
                     let rectY = (rowHeight * index) + gap;
+
 
                     let slotWidth = columnWidth * (this.getUnitDiff(c.startDate, c.endDate) + 1);
 

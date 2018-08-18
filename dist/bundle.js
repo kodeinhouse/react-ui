@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 140);
+/******/ 	return __webpack_require__(__webpack_require__.s = 141);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -84,9 +84,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(136);
+  module.exports = __webpack_require__(137);
 } else {
-  module.exports = __webpack_require__(135);
+  module.exports = __webpack_require__(136);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -394,7 +394,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/container/Container.jsx');
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/usuario/Development/packages/react-ui/src/container/Container.jsx');
 }();
 
 ;
@@ -475,7 +475,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/components/box/Container.jsx');
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/usuario/Development/packages/react-ui/src/components/box/Container.jsx');
 }();
 
 ;
@@ -519,9 +519,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(130);
+  module.exports = __webpack_require__(131);
 } else {
-  module.exports = __webpack_require__(129);
+  module.exports = __webpack_require__(130);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -716,7 +716,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/brittongr/Development/packages/react-ui/src/form/Field.jsx');
+    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/usuario/Development/packages/react-ui/src/form/Field.jsx');
 }();
 
 ;
@@ -848,7 +848,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormField.jsx');
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/usuario/Development/packages/react-ui/src/components/form/FormField.jsx');
 }();
 
 ;
@@ -911,7 +911,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/form/FormField.jsx');
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/usuario/Development/packages/react-ui/src/form/FormField.jsx');
 }();
 
 ;
@@ -1081,11 +1081,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(128)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(129)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(127)();
+  module.exports = __webpack_require__(128)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -1288,7 +1288,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/brittongr/Development/packages/react-ui/src/components/form/Field.jsx');
+    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/usuario/Development/packages/react-ui/src/components/form/Field.jsx');
 }();
 
 ;
@@ -1349,7 +1349,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Label, 'Label', '/Users/brittongr/Development/packages/react-ui/src/form/Label.jsx');
+    __REACT_HOT_LOADER__.register(Label, 'Label', '/Users/usuario/Development/packages/react-ui/src/form/Label.jsx');
 }();
 
 ;
@@ -1415,7 +1415,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, "TextField", "/Users/brittongr/Development/packages/react-ui/src/form/base/TextField.jsx");
+    __REACT_HOT_LOADER__.register(TextField, "TextField", "/Users/usuario/Development/packages/react-ui/src/form/base/TextField.jsx");
 }();
 
 ;
@@ -1564,7 +1564,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Chart, 'Chart', '/Users/brittongr/Development/packages/react-ui/src/chart/Chart.jsx');
+    __REACT_HOT_LOADER__.register(Chart, 'Chart', '/Users/usuario/Development/packages/react-ui/src/chart/Chart.jsx');
 }();
 
 ;
@@ -1746,7 +1746,7 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dropdown.jsx');
+	__REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/usuario/Development/packages/react-ui/src/components/other/Dropdown.jsx');
 }();
 
 ;
@@ -1849,7 +1849,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Panel, 'Panel', '/Users/brittongr/Development/packages/react-ui/src/components/other/Panel.jsx');
+    __REACT_HOT_LOADER__.register(Panel, 'Panel', '/Users/usuario/Development/packages/react-ui/src/components/other/Panel.jsx');
 }();
 
 ;
@@ -1977,7 +1977,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Form, 'Form', '/Users/brittongr/Development/packages/react-ui/src/form/Form.jsx');
+    __REACT_HOT_LOADER__.register(Form, 'Form', '/Users/usuario/Development/packages/react-ui/src/form/Form.jsx');
 }();
 
 ;
@@ -19072,7 +19072,7 @@ var _temp = function () {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(138), __webpack_require__(139)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(139), __webpack_require__(140)(module)))
 
 /***/ }),
 /* 21 */
@@ -19324,7 +19324,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Pie, 'Pie', '/Users/brittongr/Development/packages/react-ui/src/chart/Pie.jsx');
+    __REACT_HOT_LOADER__.register(Pie, 'Pie', '/Users/usuario/Development/packages/react-ui/src/chart/Pie.jsx');
 }();
 
 ;
@@ -19389,7 +19389,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NoteField, 'NoteField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NoteField.jsx');
+    __REACT_HOT_LOADER__.register(NoteField, 'NoteField', '/Users/usuario/Development/packages/react-ui/src/components/form/NoteField.jsx');
 }();
 
 ;
@@ -19442,7 +19442,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/components/form/TextField.jsx');
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/usuario/Development/packages/react-ui/src/components/form/TextField.jsx');
 }();
 
 ;
@@ -19531,7 +19531,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Button, 'Button', '/Users/brittongr/Development/packages/react-ui/src/components/other/Button.jsx');
+    __REACT_HOT_LOADER__.register(Button, 'Button', '/Users/usuario/Development/packages/react-ui/src/components/other/Button.jsx');
 }();
 
 ;
@@ -19587,7 +19587,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Tag, 'Tag', '/Users/brittongr/Development/packages/react-ui/src/components/other/Tag.jsx');
+    __REACT_HOT_LOADER__.register(Tag, 'Tag', '/Users/usuario/Development/packages/react-ui/src/components/other/Tag.jsx');
 }();
 
 ;
@@ -19648,7 +19648,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Text, 'Text', '/Users/brittongr/Development/packages/react-ui/src/components/other/Text.jsx');
+    __REACT_HOT_LOADER__.register(Text, 'Text', '/Users/usuario/Development/packages/react-ui/src/components/other/Text.jsx');
 }();
 
 ;
@@ -20052,11 +20052,11 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(MultiSelect, 'MultiSelect', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(MultiSelect, 'MultiSelect', '/Users/usuario/Development/packages/react-ui/src/form/AutoComplete.jsx');
 
-    __REACT_HOT_LOADER__.register(CustomTag, 'CustomTag', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(CustomTag, 'CustomTag', '/Users/usuario/Development/packages/react-ui/src/form/AutoComplete.jsx');
 
-    __REACT_HOT_LOADER__.register(AutoComplete, 'AutoComplete', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(AutoComplete, 'AutoComplete', '/Users/usuario/Development/packages/react-ui/src/form/AutoComplete.jsx');
 }();
 
 ;
@@ -20126,7 +20126,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CompositeField, 'CompositeField', '/Users/brittongr/Development/packages/react-ui/src/form/CompositeField.jsx');
+    __REACT_HOT_LOADER__.register(CompositeField, 'CompositeField', '/Users/usuario/Development/packages/react-ui/src/form/CompositeField.jsx');
 }();
 
 ;
@@ -20199,7 +20199,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DateField, 'DateField', '/Users/brittongr/Development/packages/react-ui/src/form/DateField.jsx');
+    __REACT_HOT_LOADER__.register(DateField, 'DateField', '/Users/usuario/Development/packages/react-ui/src/form/DateField.jsx');
 }();
 
 ;
@@ -20269,7 +20269,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FieldGroup, 'FieldGroup', '/Users/brittongr/Development/packages/react-ui/src/form/FieldGroup.jsx');
+    __REACT_HOT_LOADER__.register(FieldGroup, 'FieldGroup', '/Users/usuario/Development/packages/react-ui/src/form/FieldGroup.jsx');
 }();
 
 ;
@@ -20325,7 +20325,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Legend, 'Legend', '/Users/brittongr/Development/packages/react-ui/src/form/Legend.jsx');
+    __REACT_HOT_LOADER__.register(Legend, 'Legend', '/Users/usuario/Development/packages/react-ui/src/form/Legend.jsx');
 }();
 
 ;
@@ -20406,7 +20406,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioGroup, "RadioGroup", "/Users/brittongr/Development/packages/react-ui/src/form/RadioGroup.jsx");
+    __REACT_HOT_LOADER__.register(RadioGroup, "RadioGroup", "/Users/usuario/Development/packages/react-ui/src/form/RadioGroup.jsx");
 }();
 
 ;
@@ -20450,7 +20450,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Validator, "Validator", "/Users/brittongr/Development/packages/react-ui/src/form/Validator.js");
+    __REACT_HOT_LOADER__.register(Validator, "Validator", "/Users/usuario/Development/packages/react-ui/src/form/Validator.js");
 }();
 
 ;
@@ -20472,7 +20472,7 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_LoadingMask__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_clay_js__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_clay_js__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_clay_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_clay_js__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -21013,7 +21013,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/brittongr/Development/packages/react-ui/src/grid/Grid.jsx');
+    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/usuario/Development/packages/react-ui/src/grid/Grid.jsx');
 }();
 
 ;
@@ -21090,7 +21090,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/brittongr/Development/packages/react-ui/src/grid/TableColumnHeader.jsx");
+    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/usuario/Development/packages/react-ui/src/grid/TableColumnHeader.jsx");
 }();
 
 ;
@@ -21138,7 +21138,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(LoadingMask, "LoadingMask", "/Users/brittongr/Development/packages/react-ui/src/util/LoadingMask.jsx");
+    __REACT_HOT_LOADER__.register(LoadingMask, "LoadingMask", "/Users/usuario/Development/packages/react-ui/src/util/LoadingMask.jsx");
 }();
 
 ;
@@ -21211,7 +21211,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(126);
+var isTextNode = __webpack_require__(127);
 
 /*eslint-disable no-bitwise */
 
@@ -21864,7 +21864,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Bar, 'Bar', '/Users/brittongr/Development/packages/react-ui/src/chart/Bar.jsx');
+    __REACT_HOT_LOADER__.register(Bar, 'Bar', '/Users/usuario/Development/packages/react-ui/src/chart/Bar.jsx');
 }();
 
 ;
@@ -21972,7 +21972,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Funnel, 'Funnel', '/Users/brittongr/Development/packages/react-ui/src/chart/Funnel.jsx');
+    __REACT_HOT_LOADER__.register(Funnel, 'Funnel', '/Users/usuario/Development/packages/react-ui/src/chart/Funnel.jsx');
 }();
 
 ;
@@ -22020,7 +22020,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Gantt, "Gantt", "/Users/brittongr/Development/packages/react-ui/src/chart/Gantt.jsx");
+    __REACT_HOT_LOADER__.register(Gantt, "Gantt", "/Users/usuario/Development/packages/react-ui/src/chart/Gantt.jsx");
 }();
 
 ;
@@ -22037,8 +22037,9 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Pie__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__container_Container__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__form_Form__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_dom__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_Date_js__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_dom__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_dom__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22054,8 +22055,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var ViewMode = {
     MONTH: 'MONTH',
+    WEEK: 'WEEK',
     DAY: 'DAY'
 };
 
@@ -22166,6 +22169,11 @@ var Timeline = function (_Component) {
             return diff;
         }
     }, {
+        key: 'getWeekDiff',
+        value: function getWeekDiff(minDate, maxDate) {
+            return maxDate.getWeekDiff(minDate);
+        }
+    }, {
         key: 'getMonthDiff',
         value: function getMonthDiff(minDate, maxDate) {
             if (minDate != null && maxDate != null) return (maxDate.getFullYear() - minDate.getFullYear()) * 12 + (maxDate.getMonth() - minDate.getMonth());else return null;
@@ -22173,7 +22181,7 @@ var Timeline = function (_Component) {
     }, {
         key: 'getUnitDiff',
         value: function getUnitDiff(minDate, maxDate) {
-            if (this.props.viewMode == ViewMode.DAY) return this.getDateDiff(minDate, maxDate);else if (minDate != null && maxDate != null) return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
+            if (this.props.viewMode == ViewMode.DAY) return this.getDateDiff(minDate, maxDate);else if (this.props.viewMode == ViewMode.WEEK) return this.getWeekDiff(minDate, maxDate);else if (minDate != null && maxDate != null) return this.getMonthDiff(new Date(minDate.getFullYear(), minDate.getMonth(), 1), maxDate);
         }
     }, {
         key: 'getDates',
@@ -22194,6 +22202,23 @@ var Timeline = function (_Component) {
             return dates;
         }
     }, {
+        key: 'getWeeks',
+        value: function getWeeks(minDate, maxDate) {
+            var weekCount = this.getWeekDiff(minDate, maxDate) + 1;
+            var week = minDate.getWeek();
+            var startDate = __WEBPACK_IMPORTED_MODULE_5__util_Date_js__["a" /* DateHelper */].getMonday(minDate);
+
+            var weeks = [];
+
+            for (var i = 0; i < weekCount; i++) {
+                weeks.push(new Date(startDate.getTime()));
+
+                startDate.setDate(startDate.getDate() + 7);
+            }
+
+            return weeks;
+        }
+    }, {
         key: 'getMonths',
         value: function getMonths(minDate, maxDate) {
             var dateCount = this.getMonthDiff(minDate, maxDate) + 1;
@@ -22211,7 +22236,7 @@ var Timeline = function (_Component) {
     }, {
         key: 'getUnits',
         value: function getUnits(minDate, maxDate) {
-            if (this.props.viewMode == ViewMode.DAY) return this.getDates(minDate, maxDate);else return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
+            if (this.props.viewMode == ViewMode.DAY) return this.getDates(minDate, maxDate);else if (this.props.viewMode == ViewMode.WEEK) return this.getWeeks(minDate, maxDate);else return this.getMonths(new Date(minDate.getFullYear(), minDate.getMonth(), 1), new Date(maxDate.getFullYear(), maxDate.getMonth(), 1));
         }
     }, {
         key: 'getColumnWidth',
@@ -22262,6 +22287,7 @@ var Timeline = function (_Component) {
             var slotWidth = this.getColumnWidth();
             var headerFormat = this.getHeaderFormat();
             var fontSize = this.props.viewMode == ViewMode.MONTH ? 'inherit' : '12px';
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'g',
                 { transform: 'translate(' + paddingLeft + ', 25)' },
@@ -22283,7 +22309,7 @@ var Timeline = function (_Component) {
     }, {
         key: 'renderMonths',
         value: function renderMonths(tasks) {
-            if (this.props.viewMode != ViewMode.DAY) return;
+            if (this.props.viewMode == ViewMode.MONTH) return;
 
             var minDate = this.getMinDate(tasks);
             var maxDate = this.getMaxDate(tasks);
@@ -22305,12 +22331,13 @@ var Timeline = function (_Component) {
 
             var x = 0;
             var count = 0;
+            var monthWidth = 3 * 30;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'g',
                 { transform: 'translate(' + paddingLeft + ', 10)' },
                 Object.keys(months).map(function (c, index) {
-                    x = slotWidth * (count + months[c] / 2);
+                    x = slotWidth * count + months[c] * slotWidth / 2 - monthWidth / 2;
 
                     count += months[c];
 
@@ -22463,9 +22490,9 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(ViewMode, 'ViewMode', '/Users/brittongr/Development/packages/react-ui/src/chart/Timeline.jsx');
+    __REACT_HOT_LOADER__.register(ViewMode, 'ViewMode', '/Users/usuario/Development/packages/react-ui/src/chart/Timeline.jsx');
 
-    __REACT_HOT_LOADER__.register(Timeline, 'Timeline', '/Users/brittongr/Development/packages/react-ui/src/chart/Timeline.jsx');
+    __REACT_HOT_LOADER__.register(Timeline, 'Timeline', '/Users/usuario/Development/packages/react-ui/src/chart/Timeline.jsx');
 }();
 
 ;
@@ -22535,7 +22562,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/BorderLayout.jsx');
+    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/BorderLayout.jsx');
 }();
 
 ;
@@ -22594,7 +22621,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(ColumnLayout, 'ColumnLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/ColumnLayout.jsx');
+    __REACT_HOT_LOADER__.register(ColumnLayout, 'ColumnLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/ColumnLayout.jsx');
 }();
 
 ;
@@ -22676,7 +22703,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FitLayout.jsx');
+    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/FitLayout.jsx');
 }();
 
 ;
@@ -22748,7 +22775,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FlexLayout, 'FlexLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlexLayout.jsx');
+    __REACT_HOT_LOADER__.register(FlexLayout, 'FlexLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/FlexLayout.jsx');
 }();
 
 ;
@@ -22819,7 +22846,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlowLayout.jsx');
+    __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/FlowLayout.jsx');
 }();
 
 ;
@@ -22901,7 +22928,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
+    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
 }();
 
 ;
@@ -22983,7 +23010,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/VerticalLayout.jsx');
+    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/VerticalLayout.jsx');
 }();
 
 ;
@@ -23058,7 +23085,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/brittongr/Development/packages/react-ui/src/components/form/CheckBox.jsx');
+    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/usuario/Development/packages/react-ui/src/components/form/CheckBox.jsx');
 }();
 
 ;
@@ -23119,7 +23146,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayField.jsx');
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/usuario/Development/packages/react-ui/src/components/form/DisplayField.jsx');
 }();
 
 ;
@@ -23181,7 +23208,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayText, "DisplayText", "/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayText.jsx");
+    __REACT_HOT_LOADER__.register(DisplayText, "DisplayText", "/Users/usuario/Development/packages/react-ui/src/components/form/DisplayText.jsx");
 }();
 
 ;
@@ -23243,7 +23270,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/components/form/Fieldset.jsx');
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/usuario/Development/packages/react-ui/src/components/form/Fieldset.jsx');
 }();
 
 ;
@@ -23309,7 +23336,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormGroup, 'FormGroup', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormGroup.jsx');
+    __REACT_HOT_LOADER__.register(FormGroup, 'FormGroup', '/Users/usuario/Development/packages/react-ui/src/components/form/FormGroup.jsx');
 }();
 
 ;
@@ -23456,7 +23483,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormPanel.jsx');
+    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/usuario/Development/packages/react-ui/src/components/form/FormPanel.jsx');
 }();
 
 ;
@@ -23714,9 +23741,9 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/usuario/Development/packages/react-ui/src/components/form/NumberField.jsx');
 
-    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/usuario/Development/packages/react-ui/src/components/form/NumberField.jsx');
 }();
 
 ;
@@ -23806,7 +23833,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/brittongr/Development/packages/react-ui/src/components/form/RadioButton.jsx');
+    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/usuario/Development/packages/react-ui/src/components/form/RadioButton.jsx');
 }();
 
 ;
@@ -23922,7 +23949,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/brittongr/Development/packages/react-ui/src/components/form/SearchField.jsx');
+    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/usuario/Development/packages/react-ui/src/components/form/SearchField.jsx');
 }();
 
 ;
@@ -24010,7 +24037,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Link.jsx');
+    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/usuario/Development/packages/react-ui/src/components/nav/Link.jsx');
 }();
 
 ;
@@ -24073,7 +24100,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Navigation.jsx');
+    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/usuario/Development/packages/react-ui/src/components/nav/Navigation.jsx');
 }();
 
 ;
@@ -24129,7 +24156,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Badge, 'Badge', '/Users/brittongr/Development/packages/react-ui/src/components/other/Badge.jsx');
+    __REACT_HOT_LOADER__.register(Badge, 'Badge', '/Users/usuario/Development/packages/react-ui/src/components/other/Badge.jsx');
 }();
 
 ;
@@ -24203,7 +24230,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Breadcrumb, 'Breadcrumb', '/Users/brittongr/Development/packages/react-ui/src/components/other/Breadcrumb.jsx');
+    __REACT_HOT_LOADER__.register(Breadcrumb, 'Breadcrumb', '/Users/usuario/Development/packages/react-ui/src/components/other/Breadcrumb.jsx');
 }();
 
 ;
@@ -24219,7 +24246,7 @@ var _temp = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Button__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DialogPanel__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_transition_group_CSSTransitionGroup__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_dom__);
@@ -24584,15 +24611,15 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 }();
 
 ;
@@ -24660,7 +24687,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DialogPanel, 'DialogPanel', '/Users/brittongr/Development/packages/react-ui/src/components/other/DialogPanel.jsx');
+    __REACT_HOT_LOADER__.register(DialogPanel, 'DialogPanel', '/Users/usuario/Development/packages/react-ui/src/components/other/DialogPanel.jsx');
 }();
 
 ;
@@ -24715,7 +24742,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Icon, 'Icon', '/Users/brittongr/Development/packages/react-ui/src/components/other/Icon.jsx');
+    __REACT_HOT_LOADER__.register(Icon, 'Icon', '/Users/usuario/Development/packages/react-ui/src/components/other/Icon.jsx');
 }();
 
 ;
@@ -24771,7 +24798,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Logo, 'Logo', '/Users/brittongr/Development/packages/react-ui/src/components/other/Logo.jsx');
+    __REACT_HOT_LOADER__.register(Logo, 'Logo', '/Users/usuario/Development/packages/react-ui/src/components/other/Logo.jsx');
 }();
 
 ;
@@ -24862,7 +24889,7 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(ToggleButton, "ToggleButton", "/Users/brittongr/Development/packages/react-ui/src/components/other/ToggleButton.jsx");
+	__REACT_HOT_LOADER__.register(ToggleButton, "ToggleButton", "/Users/usuario/Development/packages/react-ui/src/components/other/ToggleButton.jsx");
 }();
 
 ;
@@ -24903,7 +24930,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Toolbar, 'Toolbar', '/Users/brittongr/Development/packages/react-ui/src/components/other/Toolbar.jsx');
+  __REACT_HOT_LOADER__.register(Toolbar, 'Toolbar', '/Users/usuario/Development/packages/react-ui/src/components/other/Toolbar.jsx');
 }();
 
 ;
@@ -24964,7 +24991,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Card, 'Card', '/Users/brittongr/Development/packages/react-ui/src/container/Card.jsx');
+    __REACT_HOT_LOADER__.register(Card, 'Card', '/Users/usuario/Development/packages/react-ui/src/container/Card.jsx');
 }();
 
 ;
@@ -25035,7 +25062,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Porlet, 'Porlet', '/Users/brittongr/Development/packages/react-ui/src/container/Porlet.jsx');
+    __REACT_HOT_LOADER__.register(Porlet, 'Porlet', '/Users/usuario/Development/packages/react-ui/src/container/Porlet.jsx');
 }();
 
 ;
@@ -25102,7 +25129,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TabItem, 'TabItem', '/Users/brittongr/Development/packages/react-ui/src/container/TabItem.jsx');
+    __REACT_HOT_LOADER__.register(TabItem, 'TabItem', '/Users/usuario/Development/packages/react-ui/src/container/TabItem.jsx');
 }();
 
 ;
@@ -25224,7 +25251,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TabPanel, 'TabPanel', '/Users/brittongr/Development/packages/react-ui/src/container/TabPanel.jsx');
+    __REACT_HOT_LOADER__.register(TabPanel, 'TabPanel', '/Users/usuario/Development/packages/react-ui/src/container/TabPanel.jsx');
 }();
 
 ;
@@ -25366,7 +25393,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(AutoTextArea, 'AutoTextArea', '/Users/brittongr/Development/packages/react-ui/src/form/AutoTextArea.jsx');
+    __REACT_HOT_LOADER__.register(AutoTextArea, 'AutoTextArea', '/Users/usuario/Development/packages/react-ui/src/form/AutoTextArea.jsx');
 }();
 
 ;
@@ -25460,7 +25487,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/brittongr/Development/packages/react-ui/src/form/CheckBox.jsx');
+    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/usuario/Development/packages/react-ui/src/form/CheckBox.jsx');
 }();
 
 ;
@@ -25516,7 +25543,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckGroup, "CheckGroup", "/Users/brittongr/Development/packages/react-ui/src/form/CheckGroup.jsx");
+    __REACT_HOT_LOADER__.register(CheckGroup, "CheckGroup", "/Users/usuario/Development/packages/react-ui/src/form/CheckGroup.jsx");
 }();
 
 ;
@@ -25602,7 +25629,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/form/DisplayField.jsx');
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/usuario/Development/packages/react-ui/src/form/DisplayField.jsx');
 }();
 
 ;
@@ -25659,7 +25686,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/brittongr/Development/packages/react-ui/src/form/Dropdown.jsx');
+    __REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/usuario/Development/packages/react-ui/src/form/Dropdown.jsx');
 }();
 
 ;
@@ -25737,7 +25764,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DropdownField, 'DropdownField', '/Users/brittongr/Development/packages/react-ui/src/form/DropdownField.jsx');
+    __REACT_HOT_LOADER__.register(DropdownField, 'DropdownField', '/Users/usuario/Development/packages/react-ui/src/form/DropdownField.jsx');
 }();
 
 ;
@@ -25791,7 +25818,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/form/Fieldset.jsx');
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/usuario/Development/packages/react-ui/src/form/Fieldset.jsx');
 }();
 
 ;
@@ -25906,7 +25933,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(InlineEditor, 'InlineEditor', '/Users/brittongr/Development/packages/react-ui/src/form/InlineEditor.jsx');
+    __REACT_HOT_LOADER__.register(InlineEditor, 'InlineEditor', '/Users/usuario/Development/packages/react-ui/src/form/InlineEditor.jsx');
 }();
 
 ;
@@ -25974,7 +26001,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/usuario/Development/packages/react-ui/src/form/NumberField.jsx');
 }();
 
 ;
@@ -26047,7 +26074,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/brittongr/Development/packages/react-ui/src/form/RadioButton.jsx');
+    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/usuario/Development/packages/react-ui/src/form/RadioButton.jsx');
 }();
 
 ;
@@ -26115,7 +26142,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/brittongr/Development/packages/react-ui/src/form/SearchField.jsx');
+    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/usuario/Development/packages/react-ui/src/form/SearchField.jsx');
 }();
 
 ;
@@ -26222,7 +26249,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SpinnerField, 'SpinnerField', '/Users/brittongr/Development/packages/react-ui/src/form/SpinnerField.jsx');
+    __REACT_HOT_LOADER__.register(SpinnerField, 'SpinnerField', '/Users/usuario/Development/packages/react-ui/src/form/SpinnerField.jsx');
 }();
 
 ;
@@ -26278,7 +26305,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/brittongr/Development/packages/react-ui/src/form/TextArea.jsx');
+    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/usuario/Development/packages/react-ui/src/form/TextArea.jsx');
 }();
 
 ;
@@ -26348,7 +26375,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/form/TextField.jsx');
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/usuario/Development/packages/react-ui/src/form/TextField.jsx');
 }();
 
 ;
@@ -26417,7 +26444,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, "CheckBox", "/Users/brittongr/Development/packages/react-ui/src/form/base/CheckBox.jsx");
+    __REACT_HOT_LOADER__.register(CheckBox, "CheckBox", "/Users/usuario/Development/packages/react-ui/src/form/base/CheckBox.jsx");
 }();
 
 ;
@@ -26483,7 +26510,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DateField, "DateField", "/Users/brittongr/Development/packages/react-ui/src/form/base/DateField.jsx");
+    __REACT_HOT_LOADER__.register(DateField, "DateField", "/Users/usuario/Development/packages/react-ui/src/form/base/DateField.jsx");
 }();
 
 ;
@@ -26556,7 +26583,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Dropdown, "Dropdown", "/Users/brittongr/Development/packages/react-ui/src/form/base/Dropdown.jsx");
+    __REACT_HOT_LOADER__.register(Dropdown, "Dropdown", "/Users/usuario/Development/packages/react-ui/src/form/base/Dropdown.jsx");
 }();
 
 ;
@@ -26622,7 +26649,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, "NumberField", "/Users/brittongr/Development/packages/react-ui/src/form/base/NumberField.jsx");
+    __REACT_HOT_LOADER__.register(NumberField, "NumberField", "/Users/usuario/Development/packages/react-ui/src/form/base/NumberField.jsx");
 }();
 
 ;
@@ -26682,7 +26709,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, "RadioButton", "/Users/brittongr/Development/packages/react-ui/src/form/base/RadioButton.jsx");
+    __REACT_HOT_LOADER__.register(RadioButton, "RadioButton", "/Users/usuario/Development/packages/react-ui/src/form/base/RadioButton.jsx");
 }();
 
 ;
@@ -26757,7 +26784,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, "SearchField", "/Users/brittongr/Development/packages/react-ui/src/form/base/SearchField.jsx");
+    __REACT_HOT_LOADER__.register(SearchField, "SearchField", "/Users/usuario/Development/packages/react-ui/src/form/base/SearchField.jsx");
 }();
 
 ;
@@ -26815,7 +26842,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/brittongr/Development/packages/react-ui/src/form/base/TextArea.jsx');
+    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/usuario/Development/packages/react-ui/src/form/base/TextArea.jsx');
 }();
 
 ;
@@ -26949,7 +26976,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GridBase, 'GridBase', '/Users/brittongr/Development/packages/react-ui/src/grid/GridBase.jsx');
+    __REACT_HOT_LOADER__.register(GridBase, 'GridBase', '/Users/usuario/Development/packages/react-ui/src/grid/GridBase.jsx');
 }();
 
 ;
@@ -27069,7 +27096,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/brittongr/Development/packages/react-ui/src/grid/GroupingGrid.jsx');
+    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/usuario/Development/packages/react-ui/src/grid/GroupingGrid.jsx');
 }();
 
 ;
@@ -27154,7 +27181,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/brittongr/Development/packages/react-ui/src/grid/RowGroup.jsx');
+    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/usuario/Development/packages/react-ui/src/grid/RowGroup.jsx');
 }();
 
 ;
@@ -27242,7 +27269,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SimpleGrid, 'SimpleGrid', '/Users/brittongr/Development/packages/react-ui/src/grid/SimpleGrid.jsx');
+    __REACT_HOT_LOADER__.register(SimpleGrid, 'SimpleGrid', '/Users/usuario/Development/packages/react-ui/src/grid/SimpleGrid.jsx');
 }();
 
 ;
@@ -27284,7 +27311,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/brittongr/Development/packages/react-ui/src/grid/Sort.js');
+    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/usuario/Development/packages/react-ui/src/grid/Sort.js');
 }();
 
 ;
@@ -27312,7 +27339,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Helper, "Helper", "/Users/brittongr/Development/packages/react-ui/src/helper.js");
+    __REACT_HOT_LOADER__.register(Helper, "Helper", "/Users/usuario/Development/packages/react-ui/src/helper.js");
 }();
 
 ;
@@ -27368,7 +27395,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Menu, 'Menu', '/Users/brittongr/Development/packages/react-ui/src/menu/Menu.jsx');
+    __REACT_HOT_LOADER__.register(Menu, 'Menu', '/Users/usuario/Development/packages/react-ui/src/menu/Menu.jsx');
 }();
 
 ;
@@ -27426,7 +27453,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(MenuItem, 'MenuItem', '/Users/brittongr/Development/packages/react-ui/src/menu/MenuItem.jsx');
+    __REACT_HOT_LOADER__.register(MenuItem, 'MenuItem', '/Users/usuario/Development/packages/react-ui/src/menu/MenuItem.jsx');
 }();
 
 ;
@@ -27484,13 +27511,86 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Avatar, 'Avatar', '/Users/brittongr/Development/packages/react-ui/src/util/Avatar.jsx');
+    __REACT_HOT_LOADER__.register(Avatar, 'Avatar', '/Users/usuario/Development/packages/react-ui/src/util/Avatar.jsx');
 }();
 
 ;
 
 /***/ }),
 /* 114 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DateHelper; });
+Date.prototype.getWeek = function () {
+    // https://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php#
+
+    var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+    var dayNum = d.getUTCDay() || 7;
+
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+
+    return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+};
+
+/**
+  * @desc {date} it's expected to be less than the current object
+  */
+Date.prototype.getWeekDiff = function (date) {
+    // Monday = 1, Sunday = 7
+
+    // Reset the hours of the dates involved
+    var date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    var date2 = new Date(this.getFullYear(), this.getMonth(), this.getDate());
+
+    // Set the date1 to the same day of the current instance
+    date1.setDate(date1.getDate() + (this.getDay() - date1.getDay()));
+
+    var diff = date2 - date1;
+
+    return Math.round(diff / 1000 / 60 / 60 / 24 / 7);
+};
+
+var DateHelper = {
+    getMonday: function getMonday(date) {
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+        date.setHours(0);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        date.setMilliseconds(0);
+
+        var day = date.getDay(),
+            diff = date.getDate() - day + (day == 0 ? -6 : 1);
+
+        return new Date(date.setDate(diff));
+    },
+    getDateOfISOWeek: function getDateOfISOWeek(w, y) {
+        var simple = new Date(Date.UTC(y, 0, 1 + (w - 1) * 7));
+        var dow = simple.getDay();
+        var ISOweekStart = simple;
+
+        if (dow <= 4) ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);else ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+
+        return ISOweekStart;
+    }
+};
+;
+
+var _temp = function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(DateHelper, "DateHelper", "/Users/usuario/Development/packages/react-ui/src/util/Date.js");
+}();
+
+;
+
+/***/ }),
+/* 115 */
 /***/ (function(module, exports) {
 
 
@@ -27516,7 +27616,7 @@ module.exports = function chain(){
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var require;var require;(function(f){if(true){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.clay = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return require(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
@@ -27781,7 +27881,7 @@ module.exports = {
 });
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27792,7 +27892,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = addClass;
 
-var _hasClass = __webpack_require__(117);
+var _hasClass = __webpack_require__(118);
 
 var _hasClass2 = _interopRequireDefault(_hasClass);
 
@@ -27804,7 +27904,7 @@ function addClass(element, className) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27820,7 +27920,7 @@ function hasClass(element, className) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27831,7 +27931,7 @@ module.exports = function removeClass(element, className) {
 };
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27947,7 +28047,7 @@ function getTransitionProperties() {
 }
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28006,7 +28106,7 @@ exports.default = compatRaf;
 module.exports = exports['default'];
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28041,7 +28141,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28056,7 +28156,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(121);
+var camelize = __webpack_require__(122);
 
 var msPattern = /^-ms-/;
 
@@ -28084,7 +28184,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28120,7 +28220,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28135,7 +28235,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(123);
+var hyphenate = __webpack_require__(124);
 
 var msPattern = /^ms-/;
 
@@ -28162,7 +28262,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28190,7 +28290,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28205,7 +28305,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(125);
+var isNode = __webpack_require__(126);
 
 /**
  * @param {*} object The object to check.
@@ -28218,7 +28318,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28283,7 +28383,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28833,7 +28933,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28865,8 +28965,8 @@ var getActiveElement = __webpack_require__(44);
 var shallowEqual = __webpack_require__(45);
 var containsNode = __webpack_require__(43);
 var emptyObject = __webpack_require__(14);
-var hyphenateStyleName = __webpack_require__(124);
-var camelizeStyleName = __webpack_require__(122);
+var hyphenateStyleName = __webpack_require__(125);
+var camelizeStyleName = __webpack_require__(123);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -46271,7 +46371,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46518,7 +46618,7 @@ var Ai={default:vi},Bi=Ai&&vi||Ai;module.exports=Bi.default?Bi.default:Bi;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46536,11 +46636,11 @@ var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _TransitionGroup = __webpack_require__(133);
+var _TransitionGroup = __webpack_require__(134);
 
 var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
 
-var _CSSTransitionGroupChild = __webpack_require__(132);
+var _CSSTransitionGroupChild = __webpack_require__(133);
 
 var _CSSTransitionGroupChild2 = _interopRequireDefault(_CSSTransitionGroupChild);
 
@@ -46619,7 +46719,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46629,19 +46729,19 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _addClass = __webpack_require__(116);
+var _addClass = __webpack_require__(117);
 
 var _addClass2 = _interopRequireDefault(_addClass);
 
-var _removeClass = __webpack_require__(118);
+var _removeClass = __webpack_require__(119);
 
 var _removeClass2 = _interopRequireDefault(_removeClass);
 
-var _requestAnimationFrame = __webpack_require__(120);
+var _requestAnimationFrame = __webpack_require__(121);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
-var _properties = __webpack_require__(119);
+var _properties = __webpack_require__(120);
 
 var _react = __webpack_require__(0);
 
@@ -46855,7 +46955,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46865,7 +46965,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _chainFunction = __webpack_require__(114);
+var _chainFunction = __webpack_require__(115);
 
 var _chainFunction2 = _interopRequireDefault(_chainFunction);
 
@@ -46877,11 +46977,11 @@ var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _warning = __webpack_require__(137);
+var _warning = __webpack_require__(138);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _ChildMapping = __webpack_require__(134);
+var _ChildMapping = __webpack_require__(135);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47131,7 +47231,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47228,7 +47328,7 @@ function mergeChildMappings(prev, next) {
 }
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48722,7 +48822,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48751,7 +48851,7 @@ assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default?Z.default:Z;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48819,7 +48919,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 var g;
@@ -48846,7 +48946,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -48874,7 +48974,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(49);
