@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 140);
@@ -394,7 +394,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/container/Container.jsx');
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/usuario/Development/packages/react-ui/src/container/Container.jsx');
 }();
 
 ;
@@ -475,7 +475,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/brittongr/Development/packages/react-ui/src/components/box/Container.jsx');
+    __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/usuario/Development/packages/react-ui/src/components/box/Container.jsx');
 }();
 
 ;
@@ -716,7 +716,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/brittongr/Development/packages/react-ui/src/form/Field.jsx');
+    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/usuario/Development/packages/react-ui/src/form/Field.jsx');
 }();
 
 ;
@@ -848,7 +848,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormField.jsx');
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/usuario/Development/packages/react-ui/src/components/form/FormField.jsx');
 }();
 
 ;
@@ -911,7 +911,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/brittongr/Development/packages/react-ui/src/form/FormField.jsx');
+    __REACT_HOT_LOADER__.register(FormField, 'FormField', '/Users/usuario/Development/packages/react-ui/src/form/FormField.jsx');
 }();
 
 ;
@@ -1288,7 +1288,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/brittongr/Development/packages/react-ui/src/components/form/Field.jsx');
+    __REACT_HOT_LOADER__.register(Field, 'Field', '/Users/usuario/Development/packages/react-ui/src/components/form/Field.jsx');
 }();
 
 ;
@@ -1349,7 +1349,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Label, 'Label', '/Users/brittongr/Development/packages/react-ui/src/form/Label.jsx');
+    __REACT_HOT_LOADER__.register(Label, 'Label', '/Users/usuario/Development/packages/react-ui/src/form/Label.jsx');
 }();
 
 ;
@@ -1415,7 +1415,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, "TextField", "/Users/brittongr/Development/packages/react-ui/src/form/base/TextField.jsx");
+    __REACT_HOT_LOADER__.register(TextField, "TextField", "/Users/usuario/Development/packages/react-ui/src/form/base/TextField.jsx");
 }();
 
 ;
@@ -1564,7 +1564,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Chart, 'Chart', '/Users/brittongr/Development/packages/react-ui/src/chart/Chart.jsx');
+    __REACT_HOT_LOADER__.register(Chart, 'Chart', '/Users/usuario/Development/packages/react-ui/src/chart/Chart.jsx');
 }();
 
 ;
@@ -1746,7 +1746,7 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dropdown.jsx');
+	__REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/usuario/Development/packages/react-ui/src/components/other/Dropdown.jsx');
 }();
 
 ;
@@ -1849,7 +1849,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Panel, 'Panel', '/Users/brittongr/Development/packages/react-ui/src/components/other/Panel.jsx');
+    __REACT_HOT_LOADER__.register(Panel, 'Panel', '/Users/usuario/Development/packages/react-ui/src/components/other/Panel.jsx');
 }();
 
 ;
@@ -1977,7 +1977,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Form, 'Form', '/Users/brittongr/Development/packages/react-ui/src/form/Form.jsx');
+    __REACT_HOT_LOADER__.register(Form, 'Form', '/Users/usuario/Development/packages/react-ui/src/form/Form.jsx');
 }();
 
 ;
@@ -19324,7 +19324,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Pie, 'Pie', '/Users/brittongr/Development/packages/react-ui/src/chart/Pie.jsx');
+    __REACT_HOT_LOADER__.register(Pie, 'Pie', '/Users/usuario/Development/packages/react-ui/src/chart/Pie.jsx');
 }();
 
 ;
@@ -19389,7 +19389,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NoteField, 'NoteField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NoteField.jsx');
+    __REACT_HOT_LOADER__.register(NoteField, 'NoteField', '/Users/usuario/Development/packages/react-ui/src/components/form/NoteField.jsx');
 }();
 
 ;
@@ -19442,7 +19442,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/components/form/TextField.jsx');
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/usuario/Development/packages/react-ui/src/components/form/TextField.jsx');
 }();
 
 ;
@@ -19531,7 +19531,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Button, 'Button', '/Users/brittongr/Development/packages/react-ui/src/components/other/Button.jsx');
+    __REACT_HOT_LOADER__.register(Button, 'Button', '/Users/usuario/Development/packages/react-ui/src/components/other/Button.jsx');
 }();
 
 ;
@@ -19587,7 +19587,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Tag, 'Tag', '/Users/brittongr/Development/packages/react-ui/src/components/other/Tag.jsx');
+    __REACT_HOT_LOADER__.register(Tag, 'Tag', '/Users/usuario/Development/packages/react-ui/src/components/other/Tag.jsx');
 }();
 
 ;
@@ -19648,7 +19648,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Text, 'Text', '/Users/brittongr/Development/packages/react-ui/src/components/other/Text.jsx');
+    __REACT_HOT_LOADER__.register(Text, 'Text', '/Users/usuario/Development/packages/react-ui/src/components/other/Text.jsx');
 }();
 
 ;
@@ -20052,11 +20052,11 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(MultiSelect, 'MultiSelect', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(MultiSelect, 'MultiSelect', '/Users/usuario/Development/packages/react-ui/src/form/AutoComplete.jsx');
 
-    __REACT_HOT_LOADER__.register(CustomTag, 'CustomTag', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(CustomTag, 'CustomTag', '/Users/usuario/Development/packages/react-ui/src/form/AutoComplete.jsx');
 
-    __REACT_HOT_LOADER__.register(AutoComplete, 'AutoComplete', '/Users/brittongr/Development/packages/react-ui/src/form/AutoComplete.jsx');
+    __REACT_HOT_LOADER__.register(AutoComplete, 'AutoComplete', '/Users/usuario/Development/packages/react-ui/src/form/AutoComplete.jsx');
 }();
 
 ;
@@ -20126,7 +20126,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CompositeField, 'CompositeField', '/Users/brittongr/Development/packages/react-ui/src/form/CompositeField.jsx');
+    __REACT_HOT_LOADER__.register(CompositeField, 'CompositeField', '/Users/usuario/Development/packages/react-ui/src/form/CompositeField.jsx');
 }();
 
 ;
@@ -20199,7 +20199,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DateField, 'DateField', '/Users/brittongr/Development/packages/react-ui/src/form/DateField.jsx');
+    __REACT_HOT_LOADER__.register(DateField, 'DateField', '/Users/usuario/Development/packages/react-ui/src/form/DateField.jsx');
 }();
 
 ;
@@ -20269,7 +20269,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FieldGroup, 'FieldGroup', '/Users/brittongr/Development/packages/react-ui/src/form/FieldGroup.jsx');
+    __REACT_HOT_LOADER__.register(FieldGroup, 'FieldGroup', '/Users/usuario/Development/packages/react-ui/src/form/FieldGroup.jsx');
 }();
 
 ;
@@ -20325,7 +20325,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Legend, 'Legend', '/Users/brittongr/Development/packages/react-ui/src/form/Legend.jsx');
+    __REACT_HOT_LOADER__.register(Legend, 'Legend', '/Users/usuario/Development/packages/react-ui/src/form/Legend.jsx');
 }();
 
 ;
@@ -20406,7 +20406,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioGroup, "RadioGroup", "/Users/brittongr/Development/packages/react-ui/src/form/RadioGroup.jsx");
+    __REACT_HOT_LOADER__.register(RadioGroup, "RadioGroup", "/Users/usuario/Development/packages/react-ui/src/form/RadioGroup.jsx");
 }();
 
 ;
@@ -20450,7 +20450,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Validator, "Validator", "/Users/brittongr/Development/packages/react-ui/src/form/Validator.js");
+    __REACT_HOT_LOADER__.register(Validator, "Validator", "/Users/usuario/Development/packages/react-ui/src/form/Validator.js");
 }();
 
 ;
@@ -21013,7 +21013,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/brittongr/Development/packages/react-ui/src/grid/Grid.jsx');
+    __REACT_HOT_LOADER__.register(Grid, 'Grid', '/Users/usuario/Development/packages/react-ui/src/grid/Grid.jsx');
 }();
 
 ;
@@ -21090,7 +21090,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/brittongr/Development/packages/react-ui/src/grid/TableColumnHeader.jsx");
+    __REACT_HOT_LOADER__.register(TableColumnHeader, "TableColumnHeader", "/Users/usuario/Development/packages/react-ui/src/grid/TableColumnHeader.jsx");
 }();
 
 ;
@@ -21138,7 +21138,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(LoadingMask, "LoadingMask", "/Users/brittongr/Development/packages/react-ui/src/util/LoadingMask.jsx");
+    __REACT_HOT_LOADER__.register(LoadingMask, "LoadingMask", "/Users/usuario/Development/packages/react-ui/src/util/LoadingMask.jsx");
 }();
 
 ;
@@ -21864,7 +21864,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Bar, 'Bar', '/Users/brittongr/Development/packages/react-ui/src/chart/Bar.jsx');
+    __REACT_HOT_LOADER__.register(Bar, 'Bar', '/Users/usuario/Development/packages/react-ui/src/chart/Bar.jsx');
 }();
 
 ;
@@ -21972,7 +21972,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Funnel, 'Funnel', '/Users/brittongr/Development/packages/react-ui/src/chart/Funnel.jsx');
+    __REACT_HOT_LOADER__.register(Funnel, 'Funnel', '/Users/usuario/Development/packages/react-ui/src/chart/Funnel.jsx');
 }();
 
 ;
@@ -22020,7 +22020,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Gantt, "Gantt", "/Users/brittongr/Development/packages/react-ui/src/chart/Gantt.jsx");
+    __REACT_HOT_LOADER__.register(Gantt, "Gantt", "/Users/usuario/Development/packages/react-ui/src/chart/Gantt.jsx");
 }();
 
 ;
@@ -22463,9 +22463,9 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(ViewMode, 'ViewMode', '/Users/brittongr/Development/packages/react-ui/src/chart/Timeline.jsx');
+    __REACT_HOT_LOADER__.register(ViewMode, 'ViewMode', '/Users/usuario/Development/packages/react-ui/src/chart/Timeline.jsx');
 
-    __REACT_HOT_LOADER__.register(Timeline, 'Timeline', '/Users/brittongr/Development/packages/react-ui/src/chart/Timeline.jsx');
+    __REACT_HOT_LOADER__.register(Timeline, 'Timeline', '/Users/usuario/Development/packages/react-ui/src/chart/Timeline.jsx');
 }();
 
 ;
@@ -22535,7 +22535,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/BorderLayout.jsx');
+    __REACT_HOT_LOADER__.register(BorderLayout, 'BorderLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/BorderLayout.jsx');
 }();
 
 ;
@@ -22594,7 +22594,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(ColumnLayout, 'ColumnLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/ColumnLayout.jsx');
+    __REACT_HOT_LOADER__.register(ColumnLayout, 'ColumnLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/ColumnLayout.jsx');
 }();
 
 ;
@@ -22676,7 +22676,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FitLayout.jsx');
+    __REACT_HOT_LOADER__.register(FitLayout, 'FitLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/FitLayout.jsx');
 }();
 
 ;
@@ -22748,7 +22748,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FlexLayout, 'FlexLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlexLayout.jsx');
+    __REACT_HOT_LOADER__.register(FlexLayout, 'FlexLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/FlexLayout.jsx');
 }();
 
 ;
@@ -22819,7 +22819,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/FlowLayout.jsx');
+    __REACT_HOT_LOADER__.register(FlowLayout, 'FlowLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/FlowLayout.jsx');
 }();
 
 ;
@@ -22901,7 +22901,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
+    __REACT_HOT_LOADER__.register(HorizontalLayout, 'HorizontalLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/HorizontalLayout.jsx');
 }();
 
 ;
@@ -22983,7 +22983,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/brittongr/Development/packages/react-ui/src/components/box/VerticalLayout.jsx');
+    __REACT_HOT_LOADER__.register(VerticalLayout, 'VerticalLayout', '/Users/usuario/Development/packages/react-ui/src/components/box/VerticalLayout.jsx');
 }();
 
 ;
@@ -23058,7 +23058,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/brittongr/Development/packages/react-ui/src/components/form/CheckBox.jsx');
+    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/usuario/Development/packages/react-ui/src/components/form/CheckBox.jsx');
 }();
 
 ;
@@ -23119,7 +23119,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayField.jsx');
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/usuario/Development/packages/react-ui/src/components/form/DisplayField.jsx');
 }();
 
 ;
@@ -23181,7 +23181,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayText, "DisplayText", "/Users/brittongr/Development/packages/react-ui/src/components/form/DisplayText.jsx");
+    __REACT_HOT_LOADER__.register(DisplayText, "DisplayText", "/Users/usuario/Development/packages/react-ui/src/components/form/DisplayText.jsx");
 }();
 
 ;
@@ -23243,7 +23243,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/components/form/Fieldset.jsx');
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/usuario/Development/packages/react-ui/src/components/form/Fieldset.jsx');
 }();
 
 ;
@@ -23309,7 +23309,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormGroup, 'FormGroup', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormGroup.jsx');
+    __REACT_HOT_LOADER__.register(FormGroup, 'FormGroup', '/Users/usuario/Development/packages/react-ui/src/components/form/FormGroup.jsx');
 }();
 
 ;
@@ -23456,7 +23456,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/brittongr/Development/packages/react-ui/src/components/form/FormPanel.jsx');
+    __REACT_HOT_LOADER__.register(FormPanel, 'FormPanel', '/Users/usuario/Development/packages/react-ui/src/components/form/FormPanel.jsx');
 }();
 
 ;
@@ -23714,9 +23714,9 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/usuario/Development/packages/react-ui/src/components/form/NumberField.jsx');
 
-    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/brittongr/Development/packages/react-ui/src/components/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(Validator, 'Validator', '/Users/usuario/Development/packages/react-ui/src/components/form/NumberField.jsx');
 }();
 
 ;
@@ -23806,7 +23806,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/brittongr/Development/packages/react-ui/src/components/form/RadioButton.jsx');
+    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/usuario/Development/packages/react-ui/src/components/form/RadioButton.jsx');
 }();
 
 ;
@@ -23922,7 +23922,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/brittongr/Development/packages/react-ui/src/components/form/SearchField.jsx');
+    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/usuario/Development/packages/react-ui/src/components/form/SearchField.jsx');
 }();
 
 ;
@@ -24010,7 +24010,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Link.jsx');
+    __REACT_HOT_LOADER__.register(Link, 'Link', '/Users/usuario/Development/packages/react-ui/src/components/nav/Link.jsx');
 }();
 
 ;
@@ -24073,7 +24073,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/brittongr/Development/packages/react-ui/src/components/nav/Navigation.jsx');
+    __REACT_HOT_LOADER__.register(Navigation, 'Navigation', '/Users/usuario/Development/packages/react-ui/src/components/nav/Navigation.jsx');
 }();
 
 ;
@@ -24129,7 +24129,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Badge, 'Badge', '/Users/brittongr/Development/packages/react-ui/src/components/other/Badge.jsx');
+    __REACT_HOT_LOADER__.register(Badge, 'Badge', '/Users/usuario/Development/packages/react-ui/src/components/other/Badge.jsx');
 }();
 
 ;
@@ -24203,7 +24203,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Breadcrumb, 'Breadcrumb', '/Users/brittongr/Development/packages/react-ui/src/components/other/Breadcrumb.jsx');
+    __REACT_HOT_LOADER__.register(Breadcrumb, 'Breadcrumb', '/Users/usuario/Development/packages/react-ui/src/components/other/Breadcrumb.jsx');
 }();
 
 ;
@@ -24584,15 +24584,15 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogComponent, 'DialogComponent', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(Dialog, 'Dialog', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogBody, 'DialogBody', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogHeader, 'DialogHeader', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 
-    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/brittongr/Development/packages/react-ui/src/components/other/Dialog.jsx');
+    __REACT_HOT_LOADER__.register(DialogFooter, 'DialogFooter', '/Users/usuario/Development/packages/react-ui/src/components/other/Dialog.jsx');
 }();
 
 ;
@@ -24660,7 +24660,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DialogPanel, 'DialogPanel', '/Users/brittongr/Development/packages/react-ui/src/components/other/DialogPanel.jsx');
+    __REACT_HOT_LOADER__.register(DialogPanel, 'DialogPanel', '/Users/usuario/Development/packages/react-ui/src/components/other/DialogPanel.jsx');
 }();
 
 ;
@@ -24715,7 +24715,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Icon, 'Icon', '/Users/brittongr/Development/packages/react-ui/src/components/other/Icon.jsx');
+    __REACT_HOT_LOADER__.register(Icon, 'Icon', '/Users/usuario/Development/packages/react-ui/src/components/other/Icon.jsx');
 }();
 
 ;
@@ -24771,7 +24771,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Logo, 'Logo', '/Users/brittongr/Development/packages/react-ui/src/components/other/Logo.jsx');
+    __REACT_HOT_LOADER__.register(Logo, 'Logo', '/Users/usuario/Development/packages/react-ui/src/components/other/Logo.jsx');
 }();
 
 ;
@@ -24862,7 +24862,7 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(ToggleButton, "ToggleButton", "/Users/brittongr/Development/packages/react-ui/src/components/other/ToggleButton.jsx");
+	__REACT_HOT_LOADER__.register(ToggleButton, "ToggleButton", "/Users/usuario/Development/packages/react-ui/src/components/other/ToggleButton.jsx");
 }();
 
 ;
@@ -24903,7 +24903,7 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Toolbar, 'Toolbar', '/Users/brittongr/Development/packages/react-ui/src/components/other/Toolbar.jsx');
+  __REACT_HOT_LOADER__.register(Toolbar, 'Toolbar', '/Users/usuario/Development/packages/react-ui/src/components/other/Toolbar.jsx');
 }();
 
 ;
@@ -24964,7 +24964,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Card, 'Card', '/Users/brittongr/Development/packages/react-ui/src/container/Card.jsx');
+    __REACT_HOT_LOADER__.register(Card, 'Card', '/Users/usuario/Development/packages/react-ui/src/container/Card.jsx');
 }();
 
 ;
@@ -25035,7 +25035,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Porlet, 'Porlet', '/Users/brittongr/Development/packages/react-ui/src/container/Porlet.jsx');
+    __REACT_HOT_LOADER__.register(Porlet, 'Porlet', '/Users/usuario/Development/packages/react-ui/src/container/Porlet.jsx');
 }();
 
 ;
@@ -25102,7 +25102,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TabItem, 'TabItem', '/Users/brittongr/Development/packages/react-ui/src/container/TabItem.jsx');
+    __REACT_HOT_LOADER__.register(TabItem, 'TabItem', '/Users/usuario/Development/packages/react-ui/src/container/TabItem.jsx');
 }();
 
 ;
@@ -25224,7 +25224,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TabPanel, 'TabPanel', '/Users/brittongr/Development/packages/react-ui/src/container/TabPanel.jsx');
+    __REACT_HOT_LOADER__.register(TabPanel, 'TabPanel', '/Users/usuario/Development/packages/react-ui/src/container/TabPanel.jsx');
 }();
 
 ;
@@ -25366,7 +25366,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(AutoTextArea, 'AutoTextArea', '/Users/brittongr/Development/packages/react-ui/src/form/AutoTextArea.jsx');
+    __REACT_HOT_LOADER__.register(AutoTextArea, 'AutoTextArea', '/Users/usuario/Development/packages/react-ui/src/form/AutoTextArea.jsx');
 }();
 
 ;
@@ -25460,7 +25460,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/brittongr/Development/packages/react-ui/src/form/CheckBox.jsx');
+    __REACT_HOT_LOADER__.register(CheckBox, 'CheckBox', '/Users/usuario/Development/packages/react-ui/src/form/CheckBox.jsx');
 }();
 
 ;
@@ -25516,7 +25516,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckGroup, "CheckGroup", "/Users/brittongr/Development/packages/react-ui/src/form/CheckGroup.jsx");
+    __REACT_HOT_LOADER__.register(CheckGroup, "CheckGroup", "/Users/usuario/Development/packages/react-ui/src/form/CheckGroup.jsx");
 }();
 
 ;
@@ -25602,7 +25602,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/brittongr/Development/packages/react-ui/src/form/DisplayField.jsx');
+    __REACT_HOT_LOADER__.register(DisplayField, 'DisplayField', '/Users/usuario/Development/packages/react-ui/src/form/DisplayField.jsx');
 }();
 
 ;
@@ -25659,7 +25659,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/brittongr/Development/packages/react-ui/src/form/Dropdown.jsx');
+    __REACT_HOT_LOADER__.register(Dropdown, 'Dropdown', '/Users/usuario/Development/packages/react-ui/src/form/Dropdown.jsx');
 }();
 
 ;
@@ -25737,7 +25737,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DropdownField, 'DropdownField', '/Users/brittongr/Development/packages/react-ui/src/form/DropdownField.jsx');
+    __REACT_HOT_LOADER__.register(DropdownField, 'DropdownField', '/Users/usuario/Development/packages/react-ui/src/form/DropdownField.jsx');
 }();
 
 ;
@@ -25791,7 +25791,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/brittongr/Development/packages/react-ui/src/form/Fieldset.jsx');
+    __REACT_HOT_LOADER__.register(Fieldset, 'Fieldset', '/Users/usuario/Development/packages/react-ui/src/form/Fieldset.jsx');
 }();
 
 ;
@@ -25906,7 +25906,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(InlineEditor, 'InlineEditor', '/Users/brittongr/Development/packages/react-ui/src/form/InlineEditor.jsx');
+    __REACT_HOT_LOADER__.register(InlineEditor, 'InlineEditor', '/Users/usuario/Development/packages/react-ui/src/form/InlineEditor.jsx');
 }();
 
 ;
@@ -25974,7 +25974,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/brittongr/Development/packages/react-ui/src/form/NumberField.jsx');
+    __REACT_HOT_LOADER__.register(NumberField, 'NumberField', '/Users/usuario/Development/packages/react-ui/src/form/NumberField.jsx');
 }();
 
 ;
@@ -26047,7 +26047,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/brittongr/Development/packages/react-ui/src/form/RadioButton.jsx');
+    __REACT_HOT_LOADER__.register(RadioButton, 'RadioButton', '/Users/usuario/Development/packages/react-ui/src/form/RadioButton.jsx');
 }();
 
 ;
@@ -26115,7 +26115,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/brittongr/Development/packages/react-ui/src/form/SearchField.jsx');
+    __REACT_HOT_LOADER__.register(SearchField, 'SearchField', '/Users/usuario/Development/packages/react-ui/src/form/SearchField.jsx');
 }();
 
 ;
@@ -26222,7 +26222,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SpinnerField, 'SpinnerField', '/Users/brittongr/Development/packages/react-ui/src/form/SpinnerField.jsx');
+    __REACT_HOT_LOADER__.register(SpinnerField, 'SpinnerField', '/Users/usuario/Development/packages/react-ui/src/form/SpinnerField.jsx');
 }();
 
 ;
@@ -26278,7 +26278,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/brittongr/Development/packages/react-ui/src/form/TextArea.jsx');
+    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/usuario/Development/packages/react-ui/src/form/TextArea.jsx');
 }();
 
 ;
@@ -26348,7 +26348,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/brittongr/Development/packages/react-ui/src/form/TextField.jsx');
+    __REACT_HOT_LOADER__.register(TextField, 'TextField', '/Users/usuario/Development/packages/react-ui/src/form/TextField.jsx');
 }();
 
 ;
@@ -26417,7 +26417,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(CheckBox, "CheckBox", "/Users/brittongr/Development/packages/react-ui/src/form/base/CheckBox.jsx");
+    __REACT_HOT_LOADER__.register(CheckBox, "CheckBox", "/Users/usuario/Development/packages/react-ui/src/form/base/CheckBox.jsx");
 }();
 
 ;
@@ -26483,7 +26483,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(DateField, "DateField", "/Users/brittongr/Development/packages/react-ui/src/form/base/DateField.jsx");
+    __REACT_HOT_LOADER__.register(DateField, "DateField", "/Users/usuario/Development/packages/react-ui/src/form/base/DateField.jsx");
 }();
 
 ;
@@ -26556,7 +26556,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Dropdown, "Dropdown", "/Users/brittongr/Development/packages/react-ui/src/form/base/Dropdown.jsx");
+    __REACT_HOT_LOADER__.register(Dropdown, "Dropdown", "/Users/usuario/Development/packages/react-ui/src/form/base/Dropdown.jsx");
 }();
 
 ;
@@ -26622,7 +26622,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(NumberField, "NumberField", "/Users/brittongr/Development/packages/react-ui/src/form/base/NumberField.jsx");
+    __REACT_HOT_LOADER__.register(NumberField, "NumberField", "/Users/usuario/Development/packages/react-ui/src/form/base/NumberField.jsx");
 }();
 
 ;
@@ -26682,7 +26682,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RadioButton, "RadioButton", "/Users/brittongr/Development/packages/react-ui/src/form/base/RadioButton.jsx");
+    __REACT_HOT_LOADER__.register(RadioButton, "RadioButton", "/Users/usuario/Development/packages/react-ui/src/form/base/RadioButton.jsx");
 }();
 
 ;
@@ -26757,7 +26757,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SearchField, "SearchField", "/Users/brittongr/Development/packages/react-ui/src/form/base/SearchField.jsx");
+    __REACT_HOT_LOADER__.register(SearchField, "SearchField", "/Users/usuario/Development/packages/react-ui/src/form/base/SearchField.jsx");
 }();
 
 ;
@@ -26815,7 +26815,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/brittongr/Development/packages/react-ui/src/form/base/TextArea.jsx');
+    __REACT_HOT_LOADER__.register(TextArea, 'TextArea', '/Users/usuario/Development/packages/react-ui/src/form/base/TextArea.jsx');
 }();
 
 ;
@@ -26949,7 +26949,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GridBase, 'GridBase', '/Users/brittongr/Development/packages/react-ui/src/grid/GridBase.jsx');
+    __REACT_HOT_LOADER__.register(GridBase, 'GridBase', '/Users/usuario/Development/packages/react-ui/src/grid/GridBase.jsx');
 }();
 
 ;
@@ -27027,9 +27027,9 @@ var GroupingGrid = function (_Grid) {
         }
     }, {
         key: 'createGroup',
-        value: function createGroup(group, data, columns, width) {
+        value: function createGroup(group, data, columns, width, index) {
             var self = this;
-            var master = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__RowGroup__["a" /* RowGroup */], { span: columns.length, name: group.name, state: group.state, onExpandCollapse: this.onExpandCollapse });
+            var master = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__RowGroup__["a" /* RowGroup */], { key: 'group-' + index, span: columns.length, name: group.name, state: group.state, onExpandCollapse: this.onExpandCollapse });
 
             var detail = [];
 
@@ -27047,14 +27047,14 @@ var GroupingGrid = function (_Grid) {
                 var groups = this.getGroups(field, data);
                 var items = this.state.groups || [];
 
-                return groups.map(function (group) {
+                return groups.map(function (group, index) {
                     // Filter the records based on each group
                     var subset = data.filter(function (c) {
                         return c[field] == group;
                     });
                     var state = items[group] != null ? items[group].state : 'expanded';
 
-                    return self.createGroup({ name: group, state: state }, subset, columns, width);
+                    return self.createGroup({ index: index, name: group, state: state }, subset, columns, width);
                 });
             } else return _get(GroupingGrid.prototype.__proto__ || Object.getPrototypeOf(GroupingGrid.prototype), 'getRecords', this).call(this, columns, width);
         }
@@ -27069,7 +27069,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/brittongr/Development/packages/react-ui/src/grid/GroupingGrid.jsx');
+    __REACT_HOT_LOADER__.register(GroupingGrid, 'GroupingGrid', '/Users/usuario/Development/packages/react-ui/src/grid/GroupingGrid.jsx');
 }();
 
 ;
@@ -27154,7 +27154,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/brittongr/Development/packages/react-ui/src/grid/RowGroup.jsx');
+    __REACT_HOT_LOADER__.register(RowGroup, 'RowGroup', '/Users/usuario/Development/packages/react-ui/src/grid/RowGroup.jsx');
 }();
 
 ;
@@ -27242,7 +27242,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(SimpleGrid, 'SimpleGrid', '/Users/brittongr/Development/packages/react-ui/src/grid/SimpleGrid.jsx');
+    __REACT_HOT_LOADER__.register(SimpleGrid, 'SimpleGrid', '/Users/usuario/Development/packages/react-ui/src/grid/SimpleGrid.jsx');
 }();
 
 ;
@@ -27284,7 +27284,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/brittongr/Development/packages/react-ui/src/grid/Sort.js');
+    __REACT_HOT_LOADER__.register(Sort, 'Sort', '/Users/usuario/Development/packages/react-ui/src/grid/Sort.js');
 }();
 
 ;
@@ -27312,7 +27312,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Helper, "Helper", "/Users/brittongr/Development/packages/react-ui/src/helper.js");
+    __REACT_HOT_LOADER__.register(Helper, "Helper", "/Users/usuario/Development/packages/react-ui/src/helper.js");
 }();
 
 ;
@@ -27368,7 +27368,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Menu, 'Menu', '/Users/brittongr/Development/packages/react-ui/src/menu/Menu.jsx');
+    __REACT_HOT_LOADER__.register(Menu, 'Menu', '/Users/usuario/Development/packages/react-ui/src/menu/Menu.jsx');
 }();
 
 ;
@@ -27426,7 +27426,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(MenuItem, 'MenuItem', '/Users/brittongr/Development/packages/react-ui/src/menu/MenuItem.jsx');
+    __REACT_HOT_LOADER__.register(MenuItem, 'MenuItem', '/Users/usuario/Development/packages/react-ui/src/menu/MenuItem.jsx');
 }();
 
 ;
@@ -27484,7 +27484,7 @@ var _temp = function () {
         return;
     }
 
-    __REACT_HOT_LOADER__.register(Avatar, 'Avatar', '/Users/brittongr/Development/packages/react-ui/src/util/Avatar.jsx');
+    __REACT_HOT_LOADER__.register(Avatar, 'Avatar', '/Users/usuario/Development/packages/react-ui/src/util/Avatar.jsx');
 }();
 
 ;

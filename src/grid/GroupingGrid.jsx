@@ -40,10 +40,10 @@ export class GroupingGrid extends Grid
         return Array.from(new Set(values));
     }
 
-    createGroup(group, data, columns, width)
+    createGroup(group, data, columns, width, index)
     {
         let self = this;
-        let master = <RowGroup span={columns.length} name={group.name} state={group.state} onExpandCollapse={this.onExpandCollapse} />;
+        let master = <RowGroup key={`group-${index}`} span={columns.length} name={group.name} state={group.state} onExpandCollapse={this.onExpandCollapse} />;
 
         let detail = [];
 
@@ -63,12 +63,12 @@ export class GroupingGrid extends Grid
             let groups = this.getGroups(field, data);
             let items = this.state.groups || [];
 
-            return groups.map(function(group){
+            return groups.map(function(group, index){
                 // Filter the records based on each group
                 let subset = data.filter( c => c[field] == group);
                 let state = items[group] != null ? items[group].state : 'expanded';
 
-                return self.createGroup({name: group, state: state}, subset, columns, width);
+                return self.createGroup({index: index, name: group, state: state}, subset, columns, width);
             });
         }
         else

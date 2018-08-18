@@ -7,6 +7,7 @@ import { FormDemo } from './FormDemo';
 import { RadioFormDemo } from './RadioFormDemo';
 import { TabPanelDemo } from './TabPanelDemo';
 import { ChartDemo } from './ChartDemo';
+import { GridDemo } from './GridDemo';
 
 export class App extends Component
 {
@@ -51,6 +52,9 @@ export class App extends Component
                     <Link to="/chart" className="link">Chart</Link>
                 </MenuItem>
                 <MenuItem>
+                    <Link to="/grid" className="link">Grid</Link>
+                </MenuItem>
+                <MenuItem>
                     <MenuLink path="/horizontal-nav"><Icon className="customer" /><span>Horizontal</span></MenuLink>
                     <Menu></Menu>
                 </MenuItem>
@@ -82,6 +86,7 @@ export class App extends Component
                             <Route path="/tabpanel" component={() => { return <TabPanelDemo /> }} />
                             <Route path="/navigation" component={() => { return <Container>Navigation Demo</Container>}}/>
                             <Route path="/chart" component={ChartDemo} />
+                            <Route path="/grid" component={GridDemo} />
                         </Application.Content>
                         <Application.Aside>
                             Aside
