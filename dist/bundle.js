@@ -22413,7 +22413,24 @@ var Timeline = function (_Component) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'g',
                             { key: 'task-' + index },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { x: rectX, y: rectY, rx: '10', ry: '10', width: slotWidth, height: slotHeight, fill: colors[colorIndex++] })
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('rect', { x: rectX, y: rectY, rx: '10', ry: '10', width: slotWidth, height: slotHeight, fill: colors[colorIndex++] }),
+                            c.assignees.map(function (assignee, index2) {
+                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'g',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'defs',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'clipPath',
+                                            { id: '' + assignee.id + index + index2 },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('circle', { cx: rectX + 15 + index2 * 15, cy: rectY + 13, r: '12', fill: '#fafafa' })
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('image', { width: '26', height: '26', x: rectX + 3 + index2 * 15, y: rectY, xlinkHref: assignee.avatarURL, clipPath: 'url(#' + assignee.id + index + index2 + ')' })
+                                );
+                            }),
+                            ')}'
                         );
                     } else return null;
                 })

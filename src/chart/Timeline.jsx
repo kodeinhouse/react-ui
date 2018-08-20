@@ -352,6 +352,8 @@ export class Timeline extends Component {
 
         return (
             <g transform="translate(0, 10)">
+
+
                 {tasks.map((c, index) => {
                     let rectX = paddingLeft + (columnWidth * this.getUnitDiff(minDate, c.startDate));
                     let rectY = (rowHeight * index) + gap;
@@ -367,6 +369,19 @@ export class Timeline extends Component {
                         return (
                             <g key={`task-${index}`}>
                                 <rect x={rectX} y={rectY} rx="10" ry="10" width={slotWidth} height={slotHeight} fill={colors[colorIndex++]}></rect>
+                                {c.assignees.map(function(assignee, index2) {
+                                    return (
+                                        <g>
+                                            <defs>
+                                                <clipPath id={`${assignee.id}${index}${index2}`}>
+                                                    <circle cx={(rectX + 15) + (index2 * 15)} cy={rectY + 13} r="12" fill="#fafafa" />
+                                                </clipPath>
+                                            </defs>
+                                            <image width="26" height="26" x={(rectX + 3) + (index2 * 15)} y={rectY} xlinkHref={assignee.avatarURL} clipPath={`url(#${assignee.id}${index}${index2})`}></image>
+                                        </g>
+                                    );
+                                })
+                                })}
                             </g>
                         );
                     }
