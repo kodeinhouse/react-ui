@@ -11,7 +11,13 @@ export class GridDemo extends Component
     {
         super(props);
 
+        this.state = {
+            pageIndex: 1,
+            pageSize: 20
+        };
+
         this.openDialog = this.openDialog.bind(this);
+        this.onFetch = this.onFetch.bind(this);
     }
 
     onSelectionChange(current, previous)
@@ -20,11 +26,10 @@ export class GridDemo extends Component
         console.log(previous)
     }
 
-    getGridPanel(fit)
-    {
+    getColumns(fit) {
         let minWidth = (fit == 'normal' ? 150 : null);
 
-        var columns = [{
+        return [{
             header: 'Stock #',
             dataIndex: 'StockNumber',
             minWidth: minWidth
@@ -89,10 +94,12 @@ export class GridDemo extends Component
             dataIndex: 'Phone',
             minWidth: minWidth
         }];
+    }
 
-        var records = [];
+    getRecords() {
+        let records = [];
 
-        for(var i = 0; i < 10; i++)
+        for(let i = 0; i < 10; i++)
               records.push({
                   key: i.toString(),
                   StockNumber: 1600 + i,
@@ -110,122 +117,53 @@ export class GridDemo extends Component
                   Phone: '555-2332'
           });
 
-          var items = [{
-              text: 'New',
-              cls: 'button-new',
-              handler: this.openDialog
-          }];
+          return records;
+    }
 
-          let toolbar =<Toolbar items={items}></Toolbar>;
+    getGridPanel(fit)
+    {
+        let minWidth = (fit == 'normal' ? 150 : null);
 
-          return <Grid
+        let columns = this.getColumns(fit);
+        let records = this.getRecords();
+
+        let items = [{
+            text: 'New',
+            cls: 'button-new',
+            handler: this.openDialog
+        }];
+
+        let toolbar = <Toolbar items={items}></Toolbar>;
+
+        return <Grid
+              region="center"
               toolbar={toolbar}
               title="Inventory"
+              pageSize={this.state.pageSize}
+              pageIndex={this.state.pageIndex}
               columns={columns}
               records={records}
+              onFetch={this.onFetch}
               onRowClick={this.onRowClick}
               onRowDoubleClick={this.onRowDoubleClick}
-              onSelectionChange={this.onSelectionChange}/>;
+              onSelectionChange={this.onSelectionChange} />;
     }
 
     getGroupingGrid(){
         let minWidth = null; //(fit == 'normal' ? 150 : null);
 
-        var columns = [{
-            header: 'Stock #',
-            dataIndex: 'StockNumber',
-            minWidth: minWidth
-        },
-        {
-            header: 'VIN',
-            renderer: function(record)
-            {
-                return record.VIN;
-            },
-            minWidth: minWidth
-        },
-        {
-            header: 'Year',
-            dataIndex: 'Year',
-            minWidth: minWidth
-        },
-        {
-            header: 'Make',
-            dataIndex: 'Make',
-            minWidth: minWidth
-        },
-        {
-            header: 'Model',
-            dataIndex: 'Model',
-            minWidth: minWidth
-        },
-        {
-            header: 'Trim',
-            dataIndex: 'Trim',
-            minWidth: minWidth
-        },
-        {
-            header: 'Style',
-            dataIndex: 'Style',
-            minWidth: minWidth
-        },
-        {
-            header: 'Active',
-            dataIndex: 'Active',
-            minWidth: minWidth
-        },
-        {
-            header: 'Miles',
-            dataIndex: 'Miles',
-            minWidth: minWidth
-        },
-        {
-            header: 'Sticker Price',
-            dataIndex: 'StickerPrice',
-            align: 'right',
-            format: 'money',
-            minWidth: minWidth
-        },
-        {
-            header: 'Lot',
-            dataIndex: 'Lot',
-            minWidth: minWidth
-        },
-        {
-            header: 'Phone',
-            dataIndex: 'Phone',
-            minWidth: minWidth
+        let columns = this.getColumns();
+        let records = this.getRecords();
+
+        let items = [{
+            text: 'New',
+            cls: 'button-new',
+            handler: this.openDialog
         }];
 
-        var records = [];
+        let toolbar =<Toolbar items={items}></Toolbar>;
 
-        for(var i = 0; i < 10; i++)
-              records.push({
-                  key: i.toString(),
-                  StockNumber: 1600 + i,
-                  VIN: 'WDDGF4HB7DR262079',
-                  Year: 2009,
-                  Make: 'Toyota',
-                  Model: 'Camry',
-                  Trim: 'XL',
-                  Style: 'Sedan',
-                  Color: 'Red',
-                  Active: ((Math.random() ^ i) % 2) == 0,
-                  Miles: 2592,
-                  StickerPrice: 14999,
-                  Lot: 'Miami',
-                  Phone: '555-2332'
-          });
-
-          var items = [{
-              text: 'New',
-              cls: 'button-new',
-              handler: this.openDialog
-          }];
-
-          let toolbar =<Toolbar items={items}></Toolbar>;
-
-          return <GroupingGrid
+        return <GroupingGrid
               toolbar={toolbar}
               title="Inventory"
               columns={columns}
@@ -241,101 +179,18 @@ export class GridDemo extends Component
     {
         let minWidth = (fit == 'normal' ? 150 : null);
 
-        var columns = [{
-            header: 'Stock #',
-            dataIndex: 'StockNumber',
-            minWidth: minWidth
-        },
-        {
-            header: 'VIN',
-            renderer: function(record)
-            {
-                return record.VIN;
-            },
-            minWidth: minWidth
-        },
-        {
-            header: 'Year',
-            dataIndex: 'Year',
-            minWidth: minWidth
-        },
-        {
-            header: 'Make',
-            dataIndex: 'Make',
-            minWidth: minWidth
-        },
-        {
-            header: 'Model',
-            dataIndex: 'Model',
-            minWidth: minWidth
-        },
-        {
-            header: 'Trim',
-            dataIndex: 'Trim',
-            minWidth: minWidth
-        },
-        {
-            header: 'Style',
-            dataIndex: 'Style',
-            minWidth: minWidth
-        },
-        {
-            header: 'Active',
-            dataIndex: 'Active',
-            minWidth: minWidth
-        },
-        {
-            header: 'Miles',
-            dataIndex: 'Miles',
-            minWidth: minWidth
-        },
-        {
-            header: 'Sticker Price',
-            dataIndex: 'StickerPrice',
-            align: 'right',
-            format: 'money',
-            minWidth: minWidth
-        },
-        {
-            header: 'Lot',
-            dataIndex: 'Lot',
-            minWidth: minWidth
-        },
-        {
-            header: 'Phone',
-            dataIndex: 'Phone',
-            minWidth: minWidth
+        let columns = this.getColumns();
+        let records = this.getRecords();
+
+        let items = [{
+            text: 'New',
+            cls: 'button-new',
+            handler: this.openDialog
         }];
 
-        var records = [];
+        let toolbar =<Toolbar items={items}></Toolbar>;
 
-        for(var i = 0; i < 10; i++)
-              records.push({
-                  key: i.toString(),
-                  StockNumber: 1600 + i,
-                  VIN: 'WDDGF4HB7DR262079',
-                  Year: 2009,
-                  Make: 'Toyota',
-                  Model: 'Camry',
-                  Trim: 'XL',
-                  Style: 'Sedan',
-                  Color: 'Red',
-                  Active: ((Math.random() ^ i) % 2) == 0,
-                  Miles: 2592,
-                  StickerPrice: 14999,
-                  Lot: 'Miami',
-                  Phone: '555-2332'
-          });
-
-          var items = [{
-              text: 'New',
-              cls: 'button-new',
-              handler: this.openDialog
-          }];
-
-          let toolbar =<Toolbar items={items}></Toolbar>;
-
-          return <GridPreview
+        return <GridPreview
               toolbar={toolbar}
               title="Inventory"
               columns={columns}
@@ -362,12 +217,23 @@ export class GridDemo extends Component
 
     }
 
+    onFetch(pageIndex, pageSize) {
+        console.log(pageIndex, pageSize);
+
+        this.setState({
+            pageIndex: pageIndex,
+            pageSize: pageSize
+        });
+    }
+
     render()
     {
-        return <Container region="center">
+
+        // {this.getGroupingGrid()}
+        // {this.getGridPreview('fit')}
+
+        return <Container region="center" layout="border">
                     {this.getGridPanel('auto')}
-                    {this.getGroupingGrid()}
-                    {this.getGridPreview('fit')}
                     {this.getDialogPanel()}
                 </Container>;
     }

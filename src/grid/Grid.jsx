@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Button } from '../components/other/Button';
 import { Panel } from '../components/other/Panel';
 import { Container } from '../container/Container';
 import { TableColumnHeader } from './TableColumnHeader';
@@ -352,12 +353,15 @@ export class Grid extends Component
     {
         let sortOrder = this.state.sortOrder;
         let dataIndex = this.state.sortField;
+        let records = this.props.records;
+        let pageSize = this.props.pageSize;
+        let pageIndex = this.props.pageIndex;
 
         if(sortOrder != null && dataIndex != null)
         {
             let order = sortOrder == 'ASC' ? 1 : -1;
 
-            return this.props.records.sort(function(a, b){
+            records = records.sort(function(a, b){
 
                 a = a[dataIndex];
                 b = b[dataIndex];
@@ -366,8 +370,8 @@ export class Grid extends Component
                 return (a === b ? 0 : a > b ? 1 : -1) * order;
             });
         }
-        else
-            return this.props.records;
+
+        return records;
     }
 
     getSelectedRecord()
@@ -483,6 +487,10 @@ export class Grid extends Component
         });
     }
 
+    getFooter() {
+        return (<PagingBar size={this.props.pageSize} page={this.props.pageIndex} count={this.props.totalCount} onFetch={this.props.onFetch} fetching={this.props.fetching}/>);
+    }
+
     render()
     {
         let columns = this.props.columns;
@@ -539,13 +547,89 @@ export class Grid extends Component
                         </thead>
                     </table>
                 </Container>
-                <Container className={"grid-bd-wrapper " + (this.props.loading ? 'mask' : '')} region="center" scrollable={true}>
-                    <table className="grid-body">
-                        <tbody>
-                            {records}
-                        </tbody>
-                    </table>
-                </Container>
+                <ScrollPanel records={records}
+                             className={"grid-bd-wrapper " + (this.props.loading ? 'mask' : '')}
+                             region="center"
+                             size={this.props.pageSize}
+                             page={this.props.pageIndex}
+                             count={this.props.totalCount}
+                             onFetch={this.props.onFetch}
+                             fetching={this.props.fetching} />
+                {this.getFooter()}
+            </Container>
+        );
+    }
+}
+
+class ScrollPanel extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.container.addEventListener('scroll', event => this.validateFetch(event.target));
+    }
+
+    validateFetch(parent) {
+        if(!this.props.fetching) {
+            let child = parent.querySelector(".fetcher");
+
+            if(child != null)
+            {
+                let rect1 = child.getBoundingClientRect();
+                let rect2 = parent.getBoundingClientRect();
+
+                if(rect1.top < rect2.bottom && this.props.onFetch)
+                    this.props.onFetch(this.props.page + 1, this.props.size);
+            }
+        }
+    }
+
+    render() {
+        console.log(this.props.records.length, this.props.count, this.props.page);
+
+        return (
+            <Container myRef={c => {this.container = c;}} className={this.props.className} region={this.props.region} scrollable={true}>
+                <table className="grid-body">
+                    <tbody>
+                        {this.props.records}
+                    </tbody>
+                </table>
+                {this.props.records.length < this.props.count ? <div className="fetcher loader"></div> : null}
+            </Container>);
+    }
+}
+
+class PagingBar extends Component {
+    constructor(props) {
+        super(props);
+
+        this.onPrev = this.onPrev.bind(this);
+        this.onNext = this.onNext.bind(this);
+    }
+
+    onPrev() {
+        this.onFetch(this.props.page - 1);
+    }
+
+    onNext() {
+        this.onFetch(this.props.page + 1);
+    }
+
+    onFetch(page) {
+        if(this.props.onFetch)
+            this.props.onFetch(page, this.props.size);
+    }
+
+    render() {
+        let totalPages = Math.ceil(this.props.count / this.props.size)
+        let pageIndex = this.props.page;
+
+        return (
+            <Container>
+                <Button onClick={this.onPrev} disabled={this.props.page == 1 || this.props.fetching}>Prev</Button>
+                <input value={`${pageIndex}/${totalPages}`} readOnly style={{textAlign: 'center'}}/>
+                <Button onClick={this.onNext} disabled={this.props.page == totalPages || this.props.fetching}>Next</Button>
             </Container>
         );
     }
