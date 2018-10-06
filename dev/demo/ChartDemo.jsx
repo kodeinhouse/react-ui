@@ -25,7 +25,7 @@ export class ChartDemo extends Component {
 
             endDate.setDate(endDate.getDate() + parseInt(((Math.random() * 100) * 30) / 100));
 
-            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate, progress: (Math.random() * 100), url: 'https://kasumi.s3.amazonaws.com/avatars/4WiHapnfQdwBgN3nA.jpg'});
+            tasks.push({text: `Task ${i}`, startDate: startDate,  endDate: endDate, progress: (Math.random() * 100), assignees: [{id: `xxx-${i}`, avatarURL: 'https://kasumi.s3.amazonaws.com/avatars/4WiHapnfQdwBgN3nA.jpg'}], url: 'https://kasumi.s3.amazonaws.com/avatars/4WiHapnfQdwBgN3nA.jpg'});
         }
 
         return tasks;
