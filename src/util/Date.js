@@ -39,7 +39,7 @@ export const DateHelper = {
         date.setSeconds(0);
         date.setMilliseconds(0);
 
-        var day = date.getDay(),
+        let day = date.getDay(),
             diff = date.getDate() - day + (day == 0 ? -6 : 1);
 
         return new Date(date.setDate(diff));

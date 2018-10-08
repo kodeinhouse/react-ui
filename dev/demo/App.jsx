@@ -7,6 +7,8 @@ import { FormDemo } from './FormDemo';
 import { RadioFormDemo } from './RadioFormDemo';
 import { TabPanelDemo } from './TabPanelDemo';
 import { ChartDemo } from './ChartDemo';
+import { DnD } from './DnD';
+import { Calendar } from './Calendar';
 
 export class App extends Component
 {
@@ -51,6 +53,12 @@ export class App extends Component
                     <Link to="/chart" className="link">Chart</Link>
                 </MenuItem>
                 <MenuItem>
+                    <Link to="/dnd" className="link">Drag n Drop</Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link to="/calendar" className="link">Calendar</Link>
+                </MenuItem>
+                <MenuItem>
                     <MenuLink path="/horizontal-nav"><Icon className="customer" /><span>Horizontal</span></MenuLink>
                     <Menu></Menu>
                 </MenuItem>
@@ -82,6 +90,8 @@ export class App extends Component
                             <Route path="/tabpanel" component={() => { return <TabPanelDemo /> }} />
                             <Route path="/navigation" component={() => { return <Container>Navigation Demo</Container>}}/>
                             <Route path="/chart" component={ChartDemo} />
+                            <Route path="/dnd" component={DnD} />
+                            <Route path="/calendar" component={Calendar} />
                         </Application.Content>
                         <Application.Aside>
                             Aside
