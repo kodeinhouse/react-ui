@@ -11,6 +11,7 @@ module.exports = {
           chart: resolve(__dirname, 'src/chart.js'),
           form: resolve(__dirname, 'src/form.js'),
           util: resolve(__dirname, 'src/util.js'),
+          dnd: resolve(__dirname, 'src/dnd.js'),
           container: resolve(__dirname, 'src/container.js'),
           components: resolve(__dirname, 'src/export.js')
       }

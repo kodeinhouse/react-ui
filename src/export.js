@@ -77,3 +77,6 @@ export { Bar } from './chart/Bar';
 export { Timeline } from './chart/Timeline';
 export { Pie } from './chart/Pie';
 export { Funnel } from './chart/Funnel';
+
+export { Draggable } from './dnd/Draggable';
+export { Droppable } from './dnd/Droppable';
