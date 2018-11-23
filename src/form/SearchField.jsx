@@ -9,6 +9,7 @@ export class SearchField extends Field
         let value = this.processValue(this.pick(this.props.value, this.state.value));
 
         return <BaseField
+                    id={this.props.id}
                     name={this.props.name}
                     value={value}
                     onKeyPress={this.props.onKeyPress}

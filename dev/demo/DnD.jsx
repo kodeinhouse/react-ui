@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import EventEmitter from 'wolfy87-eventemitter';
 import { Draggable } from 'dnd';
 
 export class DnD extends Component {

@@ -72,6 +72,7 @@ export { SimpleGrid } from './grid/SimpleGrid';
 export { GroupingGrid } from './grid/GroupingGrid';
 
 // Gantt
+export { Chart } from './chart/Chart';
 export { Gantt } from './chart/Gantt';
 export { Bar } from './chart/Bar';
 export { Timeline } from './chart/Timeline';
