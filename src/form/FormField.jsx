@@ -25,7 +25,7 @@ export class FormField extends Component
             props.style.display = 'none';
 
         return (
-            <div className={classes.join(' ')} style={props.style}>
+            <div id={props.id} className={classes.join(' ')} style={props.style}>
                 {this.props.children}
             </div>
         );

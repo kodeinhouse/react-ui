@@ -896,7 +896,7 @@ var FormField = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: classes.join(' '), style: props.style },
+                { id: props.id, className: classes.join(' '), style: props.style },
                 this.props.children
             );
         }
@@ -26565,7 +26565,6 @@ var SearchField = function (_Field) {
             var value = this.processValue(this.pick(this.props.value, this.state.value));
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_SearchField__["a" /* SearchField */], (_React$createElement = {
-                id: this.props.id,
                 name: this.props.name,
                 value: value,
                 onKeyPress: this.props.onKeyPress,
