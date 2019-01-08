@@ -11,7 +11,10 @@ export class MenuItem extends Component
 
         if(this.props.expanded)
             classes.push('expanded');
-            
+
+        if(this.props.className)
+            classes.push(this.props.className);
+
         return <li id={this.props.id} className={classes.join(' ')}>{this.props.children}</li>;
     }
 }

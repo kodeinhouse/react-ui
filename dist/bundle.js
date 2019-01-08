@@ -27881,6 +27881,8 @@ var MenuItem = function (_Component) {
 
             if (this.props.expanded) classes.push('expanded');
 
+            if (this.props.className) classes.push(this.props.className);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'li',
                 { id: this.props.id, className: classes.join(' ') },
