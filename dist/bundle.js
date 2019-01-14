@@ -25727,6 +25727,7 @@ var AutoTextArea = function (_Component) {
         get: function get() {
             return {
                 multiline: true,
+                shiftKey: false,
                 padding: 4 // Two pixels top and two pixels bottom
             };
         }
@@ -25779,7 +25780,7 @@ var AutoTextArea = function (_Component) {
         value: function onKeyPress(event) {
             if (this.props.onKeyPress) this.props.onKeyPress(event);
 
-            if (event.key == 'Enter' && this.props.multiline == false) {
+            if (event.key == 'Enter' && (this.props.multiline == false || this.props.shiftKey === true && event.shiftKey === false)) {
                 event.preventDefault();
                 event.stopPropagation();
 
