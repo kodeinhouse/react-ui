@@ -108,6 +108,6 @@ export class Container extends Component
             onDragEnd: this.onDragEnd
         };
 
-        return <div id={this.props.id} ref={this.props.myRef} className={classes.join(' ')} style={style} onClick={this.props.onClick} onDoubleClick={this.props.onDoubleClick} {...dnd}>{this.props.children}</div>;
+        return <div id={this.props.id} ref={this.props.myRef} className={classes.join(' ')} style={style} onClick={this.props.onClick} onDoubleClick={this.props.onDoubleClick} {...dnd} onScroll={this.props.onScroll}>{this.props.children}</div>;
     }
 }
