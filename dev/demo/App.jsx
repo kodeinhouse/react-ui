@@ -8,6 +8,7 @@ import { RadioFormDemo } from './RadioFormDemo';
 import { TabPanelDemo } from './TabPanelDemo';
 import { ChartDemo } from './ChartDemo';
 import { DnD } from './DnD';
+import { Dashboard } from './Dashboard';
 import { Calendar } from './Calendar';
 
 export class App extends Component
@@ -90,7 +91,7 @@ export class App extends Component
                             <Route path="/tabpanel" component={() => { return <TabPanelDemo /> }} />
                             <Route path="/navigation" component={() => { return <Container>Navigation Demo</Container>}}/>
                             <Route path="/chart" component={ChartDemo} />
-                            <Route path="/dnd" component={DnD} />
+                            <Route path="/dnd" component={Dashboard} />
                             <Route path="/calendar" component={Calendar} />
                         </Application.Content>
                         <Application.Aside>

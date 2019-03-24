@@ -1,0 +1,20 @@
+.dashboard-layout {
+    .dashed {
+        border: 1px dashed gray;
+
+        & + .dashed {
+            margin-left: 5px;
+        }
+    }
+
+    .layout-border {
+        &.vertical {
+            .dashed {
+                & + .dashed {
+                    margin-left: 0px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
