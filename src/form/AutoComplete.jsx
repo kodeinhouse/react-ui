@@ -101,6 +101,7 @@ export class AutoComplete extends Field
             items: props.items || []
         };
 
+        this.onAdd = this.onAdd.bind(this);
         this.onRemove = this.onRemove.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
     }
@@ -115,22 +116,61 @@ export class AutoComplete extends Field
         //this.onHide();
     }
 
-    onRemove(field, item){
+    onAdd(item) {
+        const { props } = this;
+        const { onAdd } = props;
+
+        let values = this.pick(this.props.value, this.state.value) || [];
+        let index = values.indexOf(item.id);
+        let items = this.state.items;
+
+        // Remove the new item
+        if(item.id == 'none')
+        {
+            let index = items.map(c => { return c.id}).indexOf(item.id);
+
+            items[index].id = item.text.toLowerCase();
+
+            values.push(items[index].id);
+        }
+        else
+            values.push(item.id);
+
+        this.setState({open: false, filter: '', items: items, values: values});
+
+        onAdd && onAdd(item);
+
+        this.onChange(this.props, values);
+    }
+
+    onRemove(item){
+        const { props } = this;
+        const { onRemove } = props;
+
         let values = this.pick(this.props.value, this.state.value) || [];
         let index = values.indexOf(item.id);
 
         // Toggle the item
         values.splice(index, 1);
 
+        this.setState({values: values});
+
+        onRemove && onRemove(item);
+
         this.onChange(this.props, values);
     }
 
     onTextChange(field, value){
+        const { state } = this;
+        const { items } = state;
+
+        value = value.trim();
+
         // Filter out what has been already added
-        let items = this.state.items;
+
         let result = items.filter(c => c.text.toLowerCase().indexOf(value.toLowerCase()) != -1);
 
-        if(result.length == 0 && value.trim() != '')
+        if(result.length == 0 && value != '')
         {
             // Check now if there is already a new item added
             let index = items.map(c => { return c.id}).indexOf('none');
@@ -142,7 +182,7 @@ export class AutoComplete extends Field
                 items[index].text = value;
         }
         else
-            if(value.trim() == ''){
+            if(value == ''){
                 // Check now if there is already a new item added
                 let index = items.map(c => { return c.id}).indexOf('none');
 
@@ -150,33 +190,17 @@ export class AutoComplete extends Field
                     items.splice(index, 1);
             }
 
-        this.setState({open: (items.length > 0 && value.trim() != ''), items: items, filter: value.trim()});
+        this.setState(state => {
+            return {
+                open: (result.length > 0 || value != ''),
+                items: items,
+                filter: value
+            };
+        });
     }
 
     onHide(){
         //this.setState({open: false});
-    }
-
-    onItemClick(item){
-        let values = this.pick(this.props.value, this.state.value) || [];
-        let index = values.indexOf(item.id);
-        let items = this.state.items;
-
-        // Push the new item but using the text that will become the id
-        if(index == -1)
-            values.push(item.text.toLowerCase()); //
-
-        // Remove the new item
-        if(item.id == 'none')
-        {
-            let index = items.map(c => { return c.id}).indexOf(item.id);
-
-            items[index].id = item.text.toLowerCase();
-        }
-
-        this.setState({open: false, filter: '', items: items});
-
-        this.onChange(this.props, values);
     }
 
     onCreateItem(item)
@@ -199,7 +223,8 @@ export class AutoComplete extends Field
             if(item.cls != null)
                 classes.push(item.cls);
 
-            return (<div key={item.id} className={classes.join(' ')} onMouseDown={this.onItemClick.bind(this, item)}>{content}</div>);
+            //onMouseDown={this.onAdd(item)}
+            return (<div key={item.id} className={classes.join(' ')} onClick={event => this.onAdd(item)}>{content}</div>);
         }
     }
 
@@ -228,12 +253,12 @@ export class AutoComplete extends Field
         // Map values based on the id
         (this.state.items || []).forEach(c => { tags[c.id] = c;});
 
-        return values.map(c => { return tags[c]});
+        return values.map(c => { return tags[c]}).filter(c => c != null);
     }
 
     renderTags(tags){
         if(tags.length > 0){
-            let items = tags.map(c => {return <CustomTag key={`tag-${c.id}`} onRemove={e => this.onRemove(this.props, c)} {...c} />});
+            let items = tags.map(c => {return <CustomTag key={`tag-${c.id}`} onRemove={e => this.onRemove(c)} {...c} />});
 
             return items;
         }
@@ -245,7 +270,7 @@ export class AutoComplete extends Field
         let values = this.pick(this.props.value, this.state.value) || [];
 
         return (
-            <div className="autocomplete" ref={(c) => {this.child = c;}} onClick={(event) => {this.setState({visible: true})}}>
+            <div className="autocomplete" ref={(c) => {this.child = c;}} onClick={event => {event.stopPropagation(); event.preventDefault();}}>
                 {this.renderTags(this.getSelectedTags(values))}
                 <BaseField ref={(c) => {this.field = c;}} value={this.state.filter} onChange={this.onTextChange} placeholder={this.props.placeholder} onBlur={this.onBlur}/>
                 { this.state.open ? this.renderPopover() :  null}

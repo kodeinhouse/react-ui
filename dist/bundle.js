@@ -19838,6 +19838,7 @@ var AutoComplete = function (_Field2) {
             items: props.items || []
         };
 
+        _this4.onAdd = _this4.onAdd.bind(_this4);
         _this4.onRemove = _this4.onRemove.bind(_this4);
         _this4.onTextChange = _this4.onTextChange.bind(_this4);
         return _this4;
@@ -19856,26 +19857,68 @@ var AutoComplete = function (_Field2) {
             //this.onHide();
         }
     }, {
+        key: 'onAdd',
+        value: function onAdd(item) {
+            var props = this.props;
+            var onAdd = props.onAdd;
+
+
+            var values = this.pick(this.props.value, this.state.value) || [];
+            var index = values.indexOf(item.id);
+            var items = this.state.items;
+
+            // Remove the new item
+            if (item.id == 'none') {
+                var _index = items.map(function (c) {
+                    return c.id;
+                }).indexOf(item.id);
+
+                items[_index].id = item.text.toLowerCase();
+
+                values.push(items[_index].id);
+            } else values.push(item.id);
+
+            this.setState({ open: false, filter: '', items: items, values: values });
+
+            onAdd && onAdd(item);
+
+            this.onChange(this.props, values);
+        }
+    }, {
         key: 'onRemove',
-        value: function onRemove(field, item) {
+        value: function onRemove(item) {
+            var props = this.props;
+            var onRemove = props.onRemove;
+
+
             var values = this.pick(this.props.value, this.state.value) || [];
             var index = values.indexOf(item.id);
 
             // Toggle the item
             values.splice(index, 1);
 
+            this.setState({ values: values });
+
+            onRemove && onRemove(item);
+
             this.onChange(this.props, values);
         }
     }, {
         key: 'onTextChange',
         value: function onTextChange(field, value) {
+            var state = this.state;
+            var items = state.items;
+
+
+            value = value.trim();
+
             // Filter out what has been already added
-            var items = this.state.items;
+
             var result = items.filter(function (c) {
                 return c.text.toLowerCase().indexOf(value.toLowerCase()) != -1;
             });
 
-            if (result.length == 0 && value.trim() != '') {
+            if (result.length == 0 && value != '') {
                 // Check now if there is already a new item added
                 var index = items.map(function (c) {
                     return c.id;
@@ -19883,16 +19926,22 @@ var AutoComplete = function (_Field2) {
 
                 // If the none item is not found push the new tag otherwise update it
                 if (index == -1) items.push({ id: 'none', text: value });else items[index].text = value;
-            } else if (value.trim() == '') {
+            } else if (value == '') {
                 // Check now if there is already a new item added
-                var _index = items.map(function (c) {
+                var _index2 = items.map(function (c) {
                     return c.id;
                 }).indexOf('none');
 
-                if (_index != -1) items.splice(_index, 1);
+                if (_index2 != -1) items.splice(_index2, 1);
             }
 
-            this.setState({ open: items.length > 0 && value.trim() != '', items: items, filter: value.trim() });
+            this.setState(function (state) {
+                return {
+                    open: result.length > 0 || value != '',
+                    items: items,
+                    filter: value
+                };
+            });
         }
     }, {
         key: 'onHide',
@@ -19900,31 +19949,10 @@ var AutoComplete = function (_Field2) {
             //this.setState({open: false});
         }
     }, {
-        key: 'onItemClick',
-        value: function onItemClick(item) {
-            var values = this.pick(this.props.value, this.state.value) || [];
-            var index = values.indexOf(item.id);
-            var items = this.state.items;
-
-            // Push the new item but using the text that will become the id
-            if (index == -1) values.push(item.text.toLowerCase()); //
-
-            // Remove the new item
-            if (item.id == 'none') {
-                var _index2 = items.map(function (c) {
-                    return c.id;
-                }).indexOf(item.id);
-
-                items[_index2].id = item.text.toLowerCase();
-            }
-
-            this.setState({ open: false, filter: '', items: items });
-
-            this.onChange(this.props, values);
-        }
-    }, {
         key: 'onCreateItem',
         value: function onCreateItem(item) {
+            var _this5 = this;
+
             // This is used when we want to add group of items
             if ((item.items || []).length > 0) {
                 var result = item.items.map(this.onCreateItem.bind(this));
@@ -19949,9 +19977,12 @@ var AutoComplete = function (_Field2) {
 
                 if (item.cls != null) classes.push(item.cls);
 
+                //onMouseDown={this.onAdd(item)}
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { key: item.id, className: classes.join(' '), onMouseDown: this.onItemClick.bind(this, item) },
+                    { key: item.id, className: classes.join(' '), onClick: function onClick(event) {
+                            return _this5.onAdd(item);
+                        } },
                     content
                 );
             }
@@ -19959,10 +19990,10 @@ var AutoComplete = function (_Field2) {
     }, {
         key: 'getFilteredItems',
         value: function getFilteredItems(items) {
-            var _this5 = this;
+            var _this6 = this;
 
             return items.filter(function (c) {
-                return c.text.toLowerCase().indexOf(_this5.state.filter.toLowerCase()) != -1;
+                return c.text.toLowerCase().indexOf(_this6.state.filter.toLowerCase()) != -1;
             });
         }
     }, {
@@ -20003,17 +20034,19 @@ var AutoComplete = function (_Field2) {
 
             return values.map(function (c) {
                 return tags[c];
+            }).filter(function (c) {
+                return c != null;
             });
         }
     }, {
         key: 'renderTags',
         value: function renderTags(tags) {
-            var _this6 = this;
+            var _this7 = this;
 
             if (tags.length > 0) {
                 var items = tags.map(function (c) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(CustomTag, _extends({ key: 'tag-' + c.id, onRemove: function onRemove(e) {
-                            return _this6.onRemove(_this6.props, c);
+                            return _this7.onRemove(c);
                         } }, c));
                 });
 
@@ -20023,20 +20056,20 @@ var AutoComplete = function (_Field2) {
     }, {
         key: 'createField',
         value: function createField() {
-            var _this7 = this;
+            var _this8 = this;
 
             var values = this.pick(this.props.value, this.state.value) || [];
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'autocomplete', ref: function ref(c) {
-                        _this7.child = c;
+                        _this8.child = c;
                     }, onClick: function onClick(event) {
-                        _this7.setState({ visible: true });
+                        event.stopPropagation();event.preventDefault();
                     } },
                 this.renderTags(this.getSelectedTags(values)),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__base_TextField__["a" /* TextField */], { ref: function ref(c) {
-                        _this7.field = c;
+                        _this8.field = c;
                     }, value: this.state.filter, onChange: this.onTextChange, placeholder: this.props.placeholder, onBlur: this.onBlur }),
                 this.state.open ? this.renderPopover() : null
             );
